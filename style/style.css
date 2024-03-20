@@ -6,6 +6,8 @@ body {
 
 p {
     font-size: 20px;
+    font-style: normal;
+    text-align: justify;
 }
 
 #profile_photo{
