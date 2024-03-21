@@ -60,6 +60,7 @@ div.work_information {
 
 p.information_item {
     margin: 5px;
+    background-color: red;
 }
 
 div > hr.hr_section{    
