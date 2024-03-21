@@ -58,16 +58,16 @@ div.work_information {
     height: 100%;
 }
 
-.information_item {
+p.information_item {
     margin: 5px;
 }
 
-hr.hr_section{    
+div > hr.hr_section{    
     border: 2px solid #212121;
     width: 100%;
 }
 
-hr.hr_work{    
+hr.hr__work{    
     border: 1px solid gainsboro;
     width: 100%;
 }
@@ -77,7 +77,7 @@ h1.head_section {
     margin-bottom: 0px;
 }
 
-.logo_company{
+img.logo_company{
     width: 58px;
     height: 58px;
     object-fit: contain;
