@@ -1,8 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Open Sans';
     border: solid 1px;
     padding: 10px;
     margin: 20px;
+    overflow-x: hidden;
 }
 
 p.personal_profile {
@@ -81,4 +88,8 @@ img.logo_company{
     width: 58px;
     height: 58px;
     object-fit: contain;
+}
+
+ul {
+    margin: 20px;
 }
