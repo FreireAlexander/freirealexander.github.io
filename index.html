@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <style>
+    /**@import "https://www.nerdfonts.com/assets/css/webfont.css";*/
+    @font-face{
+        font-family:'NFSymbols';
+        src:url("fonts/nerdfonts.woff2") format("woff2");
+        font-weight:normal;
+        font-style:normal;
+        font-variant:normal;
+        text-transform:none;
+        line-height:1;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+    }
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
     html{
-        position: relative;
+        font-family: "Oswald", sans-serif;
         font-size: 62.5%;
     }
     body{
@@ -46,16 +58,19 @@
         width: 7.1rem;
         margin-left: 20px;
         border-radius: 50%;
+        font-family: 'Times New Roman', Times, serif;
         background: rgb(3,16,78);
         background: linear-gradient(135deg, rgba(3,16,78,1) 10%, rgba(20,20,113,1) 85%, rgba(251,248,255,1) 98%);
         
     }
     .logo p{
+        
         font-size: 7rem;
         color: rgba(245,245,247,1);
         color: #FBF8FF;
     }
     .brand{
+        font-family: 'Times New Roman', Times, serif;
         width: max-content;
         margin-left: 12px;
         color: #f3f5f7;
@@ -65,7 +80,6 @@
         line-height: 100%;
     }
     .hero{
-        height: 50vh;
         width: 100%;
         margin: 0 auto;
         padding-block: 50px;
@@ -73,12 +87,15 @@
         color: rgba(245,245,247,1);
     }
     .hero h1 {
+        
         width: 80%;
         margin: 0 auto;
         font-size: 7rem;
         padding-top: 20px;
         padding-bottom: 0;
+        font-family: 'Times New Roman', Times, serif;
         line-height: 100%;
+
     }
     .hero p{
         width: 80%;
@@ -111,6 +128,9 @@
         margin: 0 auto;
         font-size: 4.8rem;
     }
+    .nf__icon{
+        font-family:'NFSymbols', sans-serif;
+    }
 </style>
 <body>
     <header>
@@ -127,7 +147,11 @@
             <h1>Freire Palomino</h1>
             <p>Developer & Civil Engineeer</p>
             <p style="color: lightcoral;">Hola</p>
-            <p style="color: darkgoldenrod;">Hola</p>
+            <p style="color: darkgoldenrod;">Hola <span class="nf__icon">&#xf349;</span></p>
+            <p>
+                Una de mis distros favoritas es Loc-Os Linux 
+                <span class="nf__icon">&#xf349;</span> que es muy incluso para el uso de comandos de terminal <span class="nf__icon">&#xe795; </span>
+            </p>
         </section>
         <section class="section">
             <h2>Title</h2>
