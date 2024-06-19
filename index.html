@@ -3,62 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freire Alexander</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/mobile.css">
-    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        position: relative;
+        font-size: 62.5%;
+    }
+    body{
+        color: #1d1e1d;
+        background-color: #01061D;
+    }
+    header nav{
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 60px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        /**background-color: #191664;*/
+        background-color: #f3f5f7;
+        background-color: #161664;
+        background-color: #141522;
+        background-color: #01061D;
+        background: rgba(1,6,29,0.95);
+       
+    }
+    .logo{
+        display: grid;
+        place-content: center;
+        border-color: #f3f5f7;
+        border-width: 2px;
+        border-style: solid;
+        height: 7.1rem;
+        width: 7.1rem;
+        margin-left: 20px;
+        border-radius: 50%;
+        background-color: #141471;
+        background-color: #03104E;
+        background-color: #041567;
+    }
+    .logo p{
+        font-size: 7rem;
+        color: rgba(245,245,247,1);
+    }
+    .brand{
+        width: max-content;
+        margin-left: 12px;
+        color: #f3f5f7;
+    }
+    .brand p{
+        font-size: 3.5rem;
+        line-height: 100%;
+    }
+    .hero{
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+        padding-block: 50px;
+        background-color: #01061D;
+        color: rgba(245,245,247,1);
+    }
+    .hero h1 {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 7rem;
+        padding-top: 20px;
+        padding-bottom: 0;
+        line-height: 100%;
+    }
+    .hero p{
+        width: 80%;
+        margin: 0 auto;
+        line-height: 100%;
+        font-size: 1.6rem;
+        padding-block: 4px;
+    }
+    .section{
+        width: 100%;
+        height: 50vh;
+        margin: 0 auto;
+        font-size: 1.6rem;
+        background-color: #01061D;
+        color: rgba(245,245,247,1);
+    }
+
+    .section:nth-child(2n+1){
+        color: rgba(245,245,247,1);
+    }
+
+    .section p, h2{
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    .section h2{
+        font-size: 4.8rem;
+    }
+</style>
 <body>
-    <section class="introduction">
-        <figure class="profile_photo">
-            <img class="profile_photo__photo" src="./media/profile_photo.jpg" alt="Foto de Perfil">
-            <figcaption class="profile_photo__caption">
-            </figcaption>
-        </figure>
-        <div class="personal_resume">
-            <div class="personal_information">
-                <h4>Freire Alexander Palomino Palma</h4>
-                <h5>
-                    Ingeniero Civil
-                    - Magister en Ingenieria Civil
-                </h5>
-                <p>
-                    Barranquilla - 
-                    +57 3187563750 - freirealexander0214@gmail.com - 
-                    <a href="https://www.linkedin.com/in/freirealexander/">
-                        LinkedIn
-                    </a>
-                </p>
-                <h4 class="personal_profile__title">Perfil Profesional</h4>
-                <hr>
-                <p class="personal_resume__personal_profile">
-                    Ingeniero Civil con maestría en el exterior sobre infraestructura de transporte. Puedo gestionar y desarrollar
-                    análisis y diseños de infraestructuras viales en concreto y asfalto. Cuento con experiencia en redacción de
-                    documentos técnicos de obra y estudios de alternativas de soluciones para nuevos proyectos civiles o
-                    rehabilitaciones de estructuras. También puedo llevar de manera organizada los detalles diarios realizados y
-                    organizar esquemas de trabajo y supervisión para el control de la calidad y avances de proyectos. Gracias a mi
-                    experiencia docente manejo una buena expresión oral y cuento con la habilidad de manejar grandes grupos
-                    de trabajo a su vez de crear herramientas didácticas para lograr una mejor comprensión. Además, hablo y
-                    escribo fluidamente en inglés e italiano y también tengo un nivel básico en francés. Igualmente consigo una
-                    rápida adaptación a trabajar con diferentes programas informáticos y a nuevas experiencias gracias en gran
-                    parte a mi afición sobre la tecnología y las herramientas informáticas, otorgándome buenas destrezas en
-                    programas de ofimática básica como Word, Excel o Power Point en diferentes sistemas operativos.
-                </p>
+    <header>
+        <nav>
+            <div class="logo">
+                <p>F</p>
             </div>
-        </div>
-    </section>
-    <section>
-        <h4 class="personal_profile__title">Experiencia Profesional</h4>
-        <hr>
-    </section>
-    <div>
-        <h4>Imagenes y logos tomados de:</h4>    
-        <a href="https://www.flaticon.es/iconos-gratis/personas" title="personas iconos">Personas iconos creados por Freepik - Flaticon</a>
-    </div>
+            <div class="brand">
+                <p>Freire</p>
+                <p>Palomino</p>
+            </div>
+        </nav>
+        <section class="hero">
+            <h1>Freire Palomino</h1>
+            <p>Developer & Civil Engineeer</p>
+            <p style="color: lightcoral;">Hola</p>
+            <p style="color: darkgoldenrod;">Hola</p>
+        </section>
+        <section class="section">
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non repellat cum facilis cupiditate saepe? Facilis voluptatem animi doloribus et voluptates hic assumenda illum, autem modi distinctio molestias incidunt, ipsam dicta.</p>
+        </section>
+        <section class="section">
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non repellat cum facilis cupiditate saepe? Facilis voluptatem animi doloribus et voluptates hic assumenda illum, autem modi distinctio molestias incidunt, ipsam dicta.</p>
+        </section>
+        <section class="section">
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non repellat cum facilis cupiditate saepe? Facilis voluptatem animi doloribus et voluptates hic assumenda illum, autem modi distinctio molestias incidunt, ipsam dicta.</p>
+        </section>
+    </header>
 </body>
 </html>
