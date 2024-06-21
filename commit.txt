@@ -1,0 +1,7 @@
+feat(commit): set commit.txt file
+
+this a th file where it should be write the commits
+
+
+author: Zero
+
