@@ -1,7 +1,6 @@
-feat(commit): set commit.txt file
+chore(): init folder tree and file system
 
-this a th file where it should be write the commits
-
+    All the files and folder for preliminar start has been set up 
 
 author: Zero
 
