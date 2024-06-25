@@ -1,4 +1,4 @@
-chore(): greetings section
+fix(header): fix sticky navbar
 
 author: Zero
 

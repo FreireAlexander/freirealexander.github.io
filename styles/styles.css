@@ -16,27 +16,32 @@
     html{
         font-family: "Oswald", sans-serif;
         font-size: 62.5%;
+        user-select: none;
     }
 
     body{
         color: var(--color);
-        background-color: var(--white);
-    }
-    header{
         background-color: rgba(var(--dark_blue),1);
     }
-    header nav{
+
+    main{
+        background-color: var(--white);
+    }
+
+    header{
         position: sticky;
-        top: 0;
+        top: 0px;
         left: 0;
+    }
+
+    nav.navbar{
         display: flex;
         align-items: center;
-
         width: 100%;
         height: auto;
         padding-top: 10px;
         padding-bottom: 10px;
-        background-color: rgba(var(--dark_blue),0.95);
+        background-color: rgba(var(--dark_blue),0.85);
     }
     
     .logo{
@@ -58,13 +63,13 @@
         
         font-size: calc(var(--logo) - 0.1rem);
         color: rgba(245,245,247,1);
-        color: #FBF8FF;
+        color: var(--white);
     }
     .brand{
         font-family: 'Times New Roman', Times, serif;
         width: max-content;
         margin-left: 6px;
-        color: #f3f5f7;
+        color: var(--white);
     }
     .brand p{
         font-size: calc(var(--logo) / 2);
@@ -78,7 +83,7 @@
         padding-block: 20px 50px;
         padding-inline: 20px;
         background-color: rgba(var(--dark_blue),1);
-        color: rgba(245,245,247,1);
+        color: var(--white);
     }
 
     .greetings__content{
@@ -127,6 +132,15 @@
 
     .greetings__pictures img {
         width: 280px;
+        height: 280px;
         margin: 0 auto;
         border-radius: 32px;
+        object-fit: cover;
+    }
+
+    footer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color: var(--white);
     }
