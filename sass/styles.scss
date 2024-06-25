@@ -1,0 +1,144 @@
+/** Color Palette */
+$black: #1d1e1d;
+$white: #f3f5f7;
+$dark_blue: #01061d;
+$color: #1d1e1d;
+$logo: 4rem;
+
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-family: "Oswald", sans-serif;
+        font-size: 62.5%;
+        user-select: none;
+    }
+
+    body{
+        color: $color;
+        background-color: rgba($dark_blue, 1);
+    }
+
+    main{
+        background-color: $white;
+    }
+
+    header{
+        position: sticky;
+        top: 0px;
+        left: 0;
+    }
+
+    nav.navbar{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgba($dark_blue, 0.85);
+    }
+    
+    .logo{
+        display: grid;
+        place-content: center;
+        border-color: $white;
+        border-width: 2px;
+        border-style: solid;
+        height: $logo;
+        width: $logo;
+        margin-left: 20px;
+        border-radius: 50%;
+        font-family: 'Times New Roman', Times, serif;
+        background: rgb(3,16,78);
+        background: linear-gradient(135deg, rgba(3,16,78,1) 10%, rgba(20,20,113,1) 85%, rgba(251,248,255,1) 98%);
+        
+    }
+    .logo p{
+        
+        font-size: $logo - 0.1rem;
+        color: $white;
+    }
+    .brand{
+        font-family: 'Times New Roman', Times, serif;
+        width: max-content;
+        margin-left: 6px;
+        color: $white;
+    }
+    .brand p{
+        font-size: $logo / 2;
+        line-height: 100%;
+    }
+    .greetings{
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        width: 100%;
+        padding-block: 20px 50px;
+        padding-inline: 20px;
+        background-color: rgba($dark_blue, 1);
+        color: $white;
+    }
+
+    .greetings__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .greetings h1 {
+        font-size: 3.5rem;
+        padding-top: 20px;
+        padding-bottom: 0;
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 100%;
+    }
+    .greetings__content h1 span:last-child{
+        font-size: 3.2rem;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    .greetings__content p{
+        line-height: 100%;
+        font-size: 2.4rem;
+        padding-block: 4px;
+    }
+
+    .greetings__content button{
+        width: 150px;
+        margin-block: 8px;
+        padding: 4px;
+        font-size: 2rem;
+        border-width: 0;
+        border-radius: 48px;
+        color: $white;
+        background-color: rgba(20,20,113,1);
+        line-height: 100%;
+    }
+
+    .greetings__pictures{
+        display: grid;
+        place-items: center;
+        padding-block: 4px;
+    }
+
+    .greetings__pictures img {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+        border-radius: 32px;
+        object-fit: cover;
+    }
+
+    footer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color: $white;
+    }
