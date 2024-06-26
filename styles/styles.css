@@ -2,24 +2,31 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
   font-family: "Oswald", sans-serif;
   font-size: 62.5%;
-  user-select: none; }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
 
 body {
   color: #1d1e1d;
-  background-color: #01061d; }
+  background-color: #01061d;
+}
 
 main {
-  background-color: #f3f5f7; }
+  background-color: #f3f5f7;
+}
 
 header {
   position: sticky;
   top: 0px;
-  left: 0; }
+  left: 0;
+}
 
 nav.navbar {
   display: flex;
@@ -28,7 +35,8 @@ nav.navbar {
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: rgba(1, 6, 29, 0.85); }
+  background-color: rgba(1, 6, 29, 0.85);
+}
 
 .logo {
   display: grid;
@@ -40,23 +48,28 @@ nav.navbar {
   width: 4rem;
   margin-left: 20px;
   border-radius: 50%;
-  font-family: 'Times New Roman', Times, serif;
-  background: #03104e;
-  background: linear-gradient(135deg, #03104e 10%, #141471 85%, #fbf8ff 98%); }
+  font-family: "Times New Roman", Times, serif;
+  background: rgb(3, 16, 78);
+  background: linear-gradient(135deg, rgb(3, 16, 78) 10%, rgb(20, 20, 113) 85%, rgb(251, 248, 255) 98%);
+}
 
 .logo p {
   font-size: 3.9rem;
-  color: #f3f5f7; }
+  color: #f3f5f7;
+}
 
 .brand {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
+  width: -moz-max-content;
   width: max-content;
   margin-left: 6px;
-  color: #f3f5f7; }
+  color: #f3f5f7;
+}
 
 .brand p {
   font-size: 2rem;
-  line-height: 100%; }
+  line-height: 100%;
+}
 
 .greetings {
   display: grid;
@@ -66,30 +79,35 @@ nav.navbar {
   padding-block: 20px 50px;
   padding-inline: 20px;
   background-color: #01061d;
-  color: #f3f5f7; }
+  color: #f3f5f7;
+}
 
 .greetings__content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: auto; }
+  width: auto;
+}
 
 .greetings h1 {
   font-size: 3.5rem;
   padding-top: 20px;
   padding-bottom: 0;
-  font-family: 'Times New Roman', Times, serif;
-  line-height: 100%; }
+  font-family: "Times New Roman", Times, serif;
+  line-height: 100%;
+}
 
 .greetings__content h1 span:last-child {
   font-size: 3.2rem;
   color: whitesmoke;
-  text-align: center; }
+  text-align: center;
+}
 
 .greetings__content p {
   line-height: 100%;
   font-size: 2.4rem;
-  padding-block: 4px; }
+  padding-block: 4px;
+}
 
 .greetings__content button {
   width: 150px;
@@ -99,25 +117,28 @@ nav.navbar {
   border-width: 0;
   border-radius: 48px;
   color: #f3f5f7;
-  background-color: #141471;
-  line-height: 100%; }
+  background-color: rgb(20, 20, 113);
+  line-height: 100%;
+}
 
 .greetings__pictures {
   display: grid;
   place-items: center;
-  padding-block: 4px; }
+  padding-block: 4px;
+}
 
 .greetings__pictures img {
   width: 280px;
   height: 280px;
   margin: 0 auto;
   border-radius: 32px;
-  object-fit: cover; }
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: #f3f5f7; }
-
-/*# sourceMappingURL=styles.css.map */
+  color: #f3f5f7;
+}/*# sourceMappingURL=styles.css.map */
