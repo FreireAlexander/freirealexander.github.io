@@ -1,6 +1,6 @@
-chore(): update gitignore
+feat(): text animation
 
-    adding sass-cache folder to be ignored
+    Text animation for role description
 
 author: Zero
 
