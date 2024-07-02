@@ -1,6 +1,7 @@
-feat(): text animation
+chore(): greetings responsive
 
-    Text animation for role description
+    - add screen size variable to sass file
+    - make responsive greetings section design
 
 author: Zero
 

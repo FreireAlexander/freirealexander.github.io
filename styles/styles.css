@@ -1,3 +1,4 @@
+/** Screen Size */
 /** Color Palette */
 * {
   margin: 0;
@@ -72,21 +73,41 @@ nav.navbar {
 }
 
 .greetings {
+  background-color: #01061d;
+  color: #f3f5f7;
+}
+
+.greetings > div {
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
   width: 100%;
+  max-width: 1024px;
   padding-block: 20px 50px;
   padding-inline: 20px;
-  background-color: #01061d;
-  color: #f3f5f7;
+}
+@media (width >= 768px) {
+  .greetings > div {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
 }
 
 .greetings__content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-block: 24px;
+}
+@media (width >= 768px) {
+  .greetings__content {
+    width: 50%;
+    align-items: start;
+    place-self: center;
+    padding-right: 24px;
+  }
 }
 
 .greetings h1 {
@@ -125,6 +146,13 @@ nav.navbar {
   display: grid;
   place-items: center;
   padding-block: 4px;
+  width: 100%;
+}
+@media (width >= 768px) {
+  .greetings__pictures {
+    place-self: start;
+    padding: 0;
+  }
 }
 
 .greetings__pictures img {
