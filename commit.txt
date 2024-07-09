@@ -1,4 +1,7 @@
-chore(): saving work
+feat(): New sections
+
+    - Skills section added
+    - Footer has been filled
 
 author: Zero
 
