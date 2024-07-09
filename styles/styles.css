@@ -9,9 +9,7 @@
 html {
   font-family: "Oswald", sans-serif;
   font-size: 62.5%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 body {
@@ -61,7 +59,6 @@ nav.navbar {
 
 .brand {
   font-family: "Times New Roman", Times, serif;
-  width: -moz-max-content;
   width: max-content;
   margin-left: 6px;
   color: #f3f5f7;
@@ -203,8 +200,7 @@ a.button {
   height: 280px;
   margin: 0 auto;
   border-radius: 32px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .introduction {
@@ -227,9 +223,16 @@ a.button {
   text-align: justify;
 }
 
+.skills {
+  width: 100%;
+  background-color: rgba(243, 245, 247, 0.5);
+}
+
 footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   color: #f3f5f7;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

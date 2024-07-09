@@ -1,7 +1,4 @@
-chore(): introduction section
-
-    - add introduction section
-    - add description as elevator pitch
+chore(): saving work
 
 author: Zero
 
