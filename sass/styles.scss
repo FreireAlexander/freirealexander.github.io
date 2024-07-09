@@ -118,6 +118,7 @@ nav.navbar{
         width: 50%;
         place-self: center;
         padding-right: 24px;
+        text-align: left;
     }
 }
 
@@ -127,6 +128,10 @@ nav.navbar{
     padding-bottom: 0;
     font-family: 'Times New Roman', Times, serif;
     line-height: 100%;
+    text-align: center;
+    @media (width>=$tablet){
+        text-align: left;
+    }
 }
 
 .greetings__content h1 span:last-child{
@@ -139,18 +144,48 @@ nav.navbar{
     line-height: 100%;
     font-size: 2.4rem;
     padding-block: 4px;
+    text-align: center;
+    @media (width>=$tablet){
+        text-align: left;
+    }
 }
 
-.greetings__content button{
+.greetings__content div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (width>=$laptopSmall){
+        width: 300px;
+        flex-direction: row;
+        gap: 16px;
+    }
+}
+
+.button{
+    align-self: center;
     width: 150px;
     margin-block: 8px;
     padding: 4px;
     font-size: 2rem;
     border-width: 0;
     border-radius: 48px;
+    text-decoration: none;
     color: $white;
     background-color: rgba(20,20,113,1);
     line-height: 100%;
+    @media (width>=$tablet){
+        align-self: flex-start;
+    }
+}
+
+a.button{
+    text-align: center;
+    color: rgba(20,20,113,1);
+    background-color: $white;
+    @media (width>=$tablet){
+        align-self: flex-start;
+    }
 }
 
 .greetings__pictures{
@@ -170,6 +205,26 @@ nav.navbar{
     margin: 0 auto;
     border-radius: 32px;
     object-fit: cover;
+}
+
+.introduction{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin-block: 20px;
+}
+
+.introduction h2{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.introduction p{
+    width: 100%;
+    max-width: 800px;
+    font-size: 1.8rem;
+    padding: 16px;
+    text-align: justify;
 }
 
 footer{

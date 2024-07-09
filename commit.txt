@@ -1,7 +1,7 @@
-chore(): greetings responsive
+chore(): introduction section
 
-    - add screen size variable to sass file
-    - make responsive greetings section design
+    - add introduction section
+    - add description as elevator pitch
 
 author: Zero
 

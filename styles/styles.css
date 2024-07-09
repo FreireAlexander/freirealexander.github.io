@@ -97,16 +97,15 @@ nav.navbar {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   padding-block: 24px;
 }
 @media (width >= 768px) {
   .greetings__content {
     width: 50%;
-    align-items: start;
     place-self: center;
     padding-right: 24px;
+    text-align: left;
   }
 }
 
@@ -116,6 +115,12 @@ nav.navbar {
   padding-bottom: 0;
   font-family: "Times New Roman", Times, serif;
   line-height: 100%;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .greetings h1 {
+    text-align: left;
+  }
 }
 
 .greetings__content h1 span:last-child {
@@ -128,18 +133,56 @@ nav.navbar {
   line-height: 100%;
   font-size: 2.4rem;
   padding-block: 4px;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .greetings__content p {
+    text-align: left;
+  }
 }
 
-.greetings__content button {
+.greetings__content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (width >= 1024px) {
+  .greetings__content div {
+    width: 300px;
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.button {
+  align-self: center;
   width: 150px;
   margin-block: 8px;
   padding: 4px;
   font-size: 2rem;
   border-width: 0;
   border-radius: 48px;
+  text-decoration: none;
   color: #f3f5f7;
   background-color: rgb(20, 20, 113);
   line-height: 100%;
+}
+@media (width >= 768px) {
+  .button {
+    align-self: flex-start;
+  }
+}
+
+a.button {
+  text-align: center;
+  color: rgb(20, 20, 113);
+  background-color: #f3f5f7;
+}
+@media (width >= 768px) {
+  a.button {
+    align-self: flex-start;
+  }
 }
 
 .greetings__pictures {
@@ -162,6 +205,26 @@ nav.navbar {
   border-radius: 32px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.introduction {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-block: 20px;
+}
+
+.introduction h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.introduction p {
+  width: 100%;
+  max-width: 800px;
+  font-size: 1.8rem;
+  padding: 16px;
+  text-align: justify;
 }
 
 footer {
