@@ -1,6 +1,7 @@
-feat(): Slider Skills
+feat(): Slider skills animation
 
-    - Slider skills added
+    - Slider skills animation added
+    - All logos added
 
 author: Zero
 

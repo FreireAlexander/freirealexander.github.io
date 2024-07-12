@@ -229,7 +229,7 @@ a.button {
   place-items: center;
   width: 100%;
   background: #01061d;
-  background: linear-gradient(135deg, rgba(1, 6, 29, 0.95) 0%, #01061d 50%, rgba(1, 6, 29, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(1, 6, 29, 0.85) 0%, #01061d 50%, rgba(1, 6, 29, 0.8) 100%);
   color: #f3f5f7;
 }
 .skills h2 {
@@ -343,83 +343,130 @@ a.button {
   font-size: 1.8rem;
 }
 
-.skills .softwares {
-  width: 100%;
+.softwares {
   padding-block: 24px;
   background: #f3f5f7;
   color: #1d1e1d;
-  overflow: hidden;
 }
-.skills .softwares h3 {
+.softwares h3 {
   font-size: 2.8rem;
   text-align: center;
+  padding-block: 32px;
+}
+.softwares h4 {
+  font-size: 2rem;
+  text-align: center;
+  padding-block: 32px;
+}
+.softwares div.container {
+  width: max-content;
+  margin: 0 auto;
+  padding-block: 16px 32px;
+}
+.softwares p {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.softwares ul {
+  width: 100%;
+  font-size: 1.6rem;
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
-.softwares .slider {
+.slider {
   margin-block: 12px;
   width: 100%;
-  min-width: calc(var(--width) * var(--quantity));
   height: var(--height);
+  overflow: hidden;
 }
-.softwares .slider .slides {
+.slider .slides {
   display: flex;
+  flex-wrap: nowrap;
   position: relative;
+  width: 100%;
 }
-.softwares .slider .slides .slide {
+.slider .slides .slide {
   position: absolute;
   left: 100%;
   width: var(--width);
   height: var(--height);
   padding-inline: 8px;
   object-fit: scale-down;
-  animation: sliderRight var(--time) linear infinite;
+  animation: sliderRightToLeft var(--time) linear infinite;
   animation-delay: calc(var(--time) / var(--quantity) * (var(--pos) - 1));
 }
-@media (width >= 768px) {
-  .softwares .slider {
-    min-width: calc(var(--width) * 2 * var(--quantity));
-    height: calc(var(--height) * 2);
-  }
-  .softwares .slider .slides .slide {
-    width: calc(var(--width) * 2);
-    height: calc(var(--height) * 2);
-  }
-}
-@keyframes sliderRight {
+@keyframes sliderRightToLeft {
   from {
     left: 100%;
   }
   to {
-    left: calc(var(--width) * 2 * -1);
+    left: calc(-100% - var(--width));
+  }
+}
+@keyframes sliderLeftToRight {
+  from {
+    right: 100%;
+  }
+  to {
+    right: calc(-100% - var(--width));
+  }
+}
+@media (width >= 768px) {
+  .slider {
+    height: calc(var(--height) * 2);
+  }
+  .slider .slides .slide {
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
   }
 }
 
-.softwares .slider[reverse=true] {
+.slider__reverse {
   margin-block: 12px;
   width: 100%;
-  min-width: calc(var(--width) * var(--quantity));
   height: var(--height);
+  overflow: hidden;
 }
-.softwares .slider[reverse=true] .slides .slide {
-  animation: sliderLeft var(--time) linear infinite;
+.slider__reverse .slides {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+}
+.slider__reverse .slides .slide {
+  position: absolute;
+  right: 100%;
+  width: var(--width);
+  height: var(--height);
+  padding-inline: 8px;
+  object-fit: scale-down;
+  animation: sliderLeftToRight var(--time) linear infinite;
   animation-delay: calc(var(--time) / var(--quantity) * (var(--pos) - 1));
 }
-@media (width >= 768px) {
-  .softwares .slider[reverse=true] {
-    min-width: calc(var(--width) * 2 * var(--quantity));
-    height: calc(var(--height) * 2);
-  }
-  .softwares .slider[reverse=true] .slides .slide {
-    width: calc(var(--width) * 2);
-    height: calc(var(--height) * 2);
-  }
-}
-@keyframes sliderLeft {
+@keyframes sliderRightToLeft {
   from {
-    left: calc(var(--width) * 2 * -1);
+    left: 100%;
   }
   to {
-    left: 100%;
+    left: calc(-100% - var(--width));
+  }
+}
+@keyframes sliderLeftToRight {
+  from {
+    right: 100%;
+  }
+  to {
+    right: calc(-100% - var(--width));
+  }
+}
+@media (width >= 768px) {
+  .slider__reverse {
+    height: calc(var(--height) * 2);
+  }
+  .slider__reverse .slides .slide {
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
   }
 }
 
@@ -476,6 +523,4 @@ a.button {
 }
 .socials a span.nf__icon {
   color: #f3f5f7;
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

@@ -236,7 +236,7 @@ a.button{
     place-items: center;
     width: 100%;
     background: rgba($dark_blue, 1);
-    background: linear-gradient(135deg,rgba($dark_blue, 0.95) 0%, rgba($dark_blue, 1) 50%,rgba($dark_blue, 0.95) 100%);
+    background: linear-gradient(135deg,rgba($dark_blue, 0.85) 0%, rgba($dark_blue, 1) 50%, rgba($dark_blue, 0.8) 100%);
     color: $white;
     h2{
         font-size: 3.2rem;
@@ -355,32 +355,54 @@ a.button{
     font-size: 1.8rem;
 }
 
-.skills .softwares{
-    width: 100%;
+.softwares{
     padding-block: 24px;
     background: $white;
     color: $black;
-    overflow: hidden;
+    //overflow: hidden;
     h3{
         font-size: 2.8rem;
         text-align: center;
+        padding-block: 32px;
+    }
+    h4{
+        font-size: 2rem;
+        text-align: center;
+        padding-block: 32px;
+    }
+    div.container{
+        width: max-content;
+        margin: 0 auto;
+        padding-block: 16px 32px;
+    }
+    p{
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    ul{
+        width: 100%;
+        font-size: 1.6rem;
+        list-style-type: disc;
+        list-style-position: inside;
     }
 }
 
-.softwares .slider{
+.slider{
     $width: var(--width);
     $height: var(--height);
     $quantity: var(--quantity);
     $time: var(--time);
     margin-block: 12px;
     width: 100%;
-    min-width: calc( $width * $quantity);
     height: $height;
-    
+    overflow: hidden;
 
     .slides{
         display: flex;
+        flex-wrap: nowrap;
         position: relative;
+        width: 100%;
+        
 
         .slide{
             $position: var(--pos);
@@ -390,18 +412,33 @@ a.button{
             height: $height;
             padding-inline: 8px;
             object-fit: scale-down;
-            animation: sliderRight $time linear infinite;
-            animation-delay: calc( ($time / $quantity) * ($position - 1 ));
+            animation: sliderRightToLeft $time linear infinite;
+            animation-delay: calc( ($time / $quantity) * ($position - 1 ) );
+            
+
+            @keyframes sliderRightToLeft {
+                from{
+                    left: 100%;
+                }to{
+                    left: calc(-100% - $width);
+                }
+            }
+
+            @keyframes sliderLeftToRight {
+                from{
+                    right: 100%;
+                }to{
+                    right: calc(-100% - $width);
+                }
+            }
         }
 
     }
 
-    
 
     @media (width>=$tablet){
         $width: calc($width * 2);
         $height: calc($height * 2);
-        min-width: calc( $width * $quantity);
         height: $height;
         .slides{
             .slide{
@@ -411,40 +448,61 @@ a.button{
         }
         
     }
-
-    @keyframes sliderRight {
-        from{
-            left: 100%;
-        }to{
-            left: calc($width * -1);
-        }
-        
-    }
-
     
 }
 
-.softwares .slider[reverse="true"]{
+
+.slider__reverse{
     $width: var(--width);
     $height: var(--height);
     $quantity: var(--quantity);
     $time: var(--time);
     margin-block: 12px;
     width: 100%;
-    min-width: calc( $width * $quantity);
     height: $height;
-    .slides .slide{
-        $position: var(--pos);
-        $width: var(--width);
-        $time: var(--time);
-        animation: sliderLeft $time linear infinite;
-        animation-delay: calc( ($time / $quantity) * ($position - 1 ));
+    overflow: hidden;
+
+    .slides{
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        width: 100%;
+        
+
+        .slide{
+            $position: var(--pos);
+            position: absolute;
+            right: 100%;
+            width: $width;
+            height: $height;
+            padding-inline: 8px;
+            object-fit: scale-down;
+            animation: sliderLeftToRight $time linear infinite;
+            animation-delay: calc( ($time / $quantity) * ($position - 1 ) );
+           
+            @keyframes sliderRightToLeft {
+                from{
+                    left: 100%;
+                }to{
+                    left: calc(-100% - $width);
+                }
+            }
+
+            @keyframes sliderLeftToRight {
+                from{
+                    right: 100%;
+                }to{
+                    right: calc(-100% - $width);
+                }
+            }
+        }
+
     }
+
 
     @media (width>=$tablet){
         $width: calc($width * 2);
         $height: calc($height * 2);
-        min-width: calc( $width * $quantity);
         height: $height;
         .slides{
             .slide{
@@ -454,16 +512,7 @@ a.button{
         }
         
     }
-
-    @keyframes sliderLeft {
-        from{
-            left: calc($width * -1);
-        }to{
-            left: 100%;
-        }
-        
-    }
-
+    
 }
 
 
