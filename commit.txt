@@ -1,7 +1,6 @@
-feat(): New sections
+feat(): Slider Skills
 
-    - Skills section added
-    - Footer has been filled
+    - Slider skills added
 
 author: Zero
 

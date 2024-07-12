@@ -70,7 +70,8 @@ nav.navbar {
 }
 
 .greetings {
-  background-color: #01061d;
+  background: #01061d;
+  background: linear-gradient(180deg, #01061d 0%, rgba(1, 6, 29, 0.95) 50%, rgba(1, 6, 29, 0.9) 100%);
   color: #f3f5f7;
 }
 
@@ -227,7 +228,8 @@ a.button {
   display: grid;
   place-items: center;
   width: 100%;
-  background-color: #01061d;
+  background: #01061d;
+  background: linear-gradient(135deg, rgba(1, 6, 29, 0.95) 0%, #01061d 50%, rgba(1, 6, 29, 0.95) 100%);
   color: #f3f5f7;
 }
 .skills h2 {
@@ -341,6 +343,86 @@ a.button {
   font-size: 1.8rem;
 }
 
+.skills .softwares {
+  width: 100%;
+  padding-block: 24px;
+  background: #f3f5f7;
+  color: #1d1e1d;
+  overflow: hidden;
+}
+.skills .softwares h3 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.softwares .slider {
+  margin-block: 12px;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  height: var(--height);
+}
+.softwares .slider .slides {
+  display: flex;
+  position: relative;
+}
+.softwares .slider .slides .slide {
+  position: absolute;
+  left: 100%;
+  width: var(--width);
+  height: var(--height);
+  padding-inline: 8px;
+  object-fit: scale-down;
+  animation: sliderRight var(--time) linear infinite;
+  animation-delay: calc(var(--time) / var(--quantity) * (var(--pos) - 1));
+}
+@media (width >= 768px) {
+  .softwares .slider {
+    min-width: calc(var(--width) * 2 * var(--quantity));
+    height: calc(var(--height) * 2);
+  }
+  .softwares .slider .slides .slide {
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+  }
+}
+@keyframes sliderRight {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * 2 * -1);
+  }
+}
+
+.softwares .slider[reverse=true] {
+  margin-block: 12px;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  height: var(--height);
+}
+.softwares .slider[reverse=true] .slides .slide {
+  animation: sliderLeft var(--time) linear infinite;
+  animation-delay: calc(var(--time) / var(--quantity) * (var(--pos) - 1));
+}
+@media (width >= 768px) {
+  .softwares .slider[reverse=true] {
+    min-width: calc(var(--width) * 2 * var(--quantity));
+    height: calc(var(--height) * 2);
+  }
+  .softwares .slider[reverse=true] .slides .slide {
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+  }
+}
+@keyframes sliderLeft {
+  from {
+    left: calc(var(--width) * 2 * -1);
+  }
+  to {
+    left: 100%;
+  }
+}
+
 .footer {
   display: grid;
   place-items: center;
@@ -394,4 +476,6 @@ a.button {
 }
 .socials a span.nf__icon {
   color: #f3f5f7;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
