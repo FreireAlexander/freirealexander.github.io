@@ -1,5 +1,6 @@
-feat(): Scroll Animation
+feat(): projects and works section 
 
+    - Bug in Scroll Animation
     - Scroll Animation added
     - Skill section improved
     - Style Sections

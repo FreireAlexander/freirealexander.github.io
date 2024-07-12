@@ -84,6 +84,7 @@ nav.navbar {
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
+  place-content: center;
   width: 100%;
   max-width: 1024px;
   padding-block: 20px 50px;
@@ -91,6 +92,7 @@ nav.navbar {
 }
 @media (width >= 768px) {
   .greetings > div {
+    place-items: center;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
   }
@@ -138,7 +140,7 @@ nav.navbar {
 }
 
 .button {
-  align-self: center;
+  align-self: flex-start;
   width: 150px;
   margin-block: 8px;
   padding: 4px;
@@ -167,11 +169,21 @@ a.button {
   }
 }
 
+a.button.more {
+  display: inline-flex;
+  width: max-content;
+  margin-block: 8px;
+  padding: 8px 12px;
+  color: #f3f5f7;
+  background-color: #000080;
+}
+
 .greetings__pictures {
   display: grid;
   place-items: center;
   padding-block: 4px;
   width: 100%;
+  height: 100%;
 }
 @media (width >= 768px) {
   .greetings__pictures {
@@ -199,16 +211,17 @@ a.button {
   line-height: 120%;
   font-size: 3.2rem;
   text-align: center;
-  animation: scrollTextAnimation both;
-  animation-timeline: view(10% 25%);
 }
 
 @keyframes scrollTextAnimation {
-  from {
+  0% {
     transform: translateZ(600px) scale(0);
   }
-  to {
+  30%, 70% {
     transform: translateZ(0) scale(1);
+  }
+  100% {
+    transform: translateZ(600px) scale(0);
   }
 }
 .introduction p {
@@ -240,7 +253,7 @@ a.button {
   gap: 16px 8px;
 }
 .skills_container h3 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   padding-block: 12px;
 }
 @media (width >= 768px) {
@@ -258,7 +271,7 @@ a.button {
 @media (width >= 1024px) {
   .skills_container {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto;
     gap: 8px;
     max-width: 1024px;
   }
@@ -304,7 +317,7 @@ a.button {
 .skills_container .card {
   display: grid;
   place-items: center;
-  width: 280px;
+  width: 300px;
   margin: 0 auto;
   margin-block: 8px;
   padding: 8px 12px;
@@ -319,13 +332,14 @@ a.button {
   animation-timeline: view(75% 25%);
 }
 .skills_container .card div:nth-child(2) p {
-  font-size: 1.6rem;
+  font-size: 2rem;
   text-align: justify;
 }
 
 .card_title {
   display: flex;
   justify-self: start;
+  align-items: center;
 }
 .card_title span {
   font-size: 2rem;
@@ -339,14 +353,13 @@ a.button {
   color: #B58A00;
 }
 .card_title p {
-  align-self: center;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: bold;
 }
 
 .card_description {
   padding-block: 20px 8px;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 125%;
 }
 
@@ -377,15 +390,15 @@ a.button {
   font-size: 2.8rem;
   text-align: center;
   padding-block: 16px;
-  animation: scrollTextAnimation both;
-  animation-timeline: view(10% 25%);
+  animation: scrollTextAnimation linear both;
+  animation-timeline: view();
 }
 .softwares h4 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-align: center;
   padding-block: 16px;
-  animation: scrollTextAnimation both;
-  animation-timeline: view(10% 25%);
+  animation: scrollTextAnimation linear both;
+  animation-timeline: view();
 }
 .softwares div.container {
   width: max-content;
@@ -395,7 +408,7 @@ a.button {
   animation-timeline: view(10% 25%);
 }
 .softwares p {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   text-align: center;
 }
 .softwares ul {
@@ -404,7 +417,7 @@ a.button {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   list-style-type: list-emoji;
   list-style-position: inside;
 }
@@ -491,6 +504,114 @@ a.button {
     width: calc(var(--width) * 2);
     height: calc(var(--height) * 2);
   }
+}
+
+.projects {
+  padding-block: 52px 104px;
+  background: #01061d;
+  background: linear-gradient(135deg, rgba(1, 6, 29, 0.85) 0%, #01061d 50%, rgba(1, 6, 29, 0.8) 100%);
+  color: #f3f5f7;
+  text-align: center;
+}
+.projects h2 a.button {
+  display: flex;
+  margin: 0 auto;
+  font-size: 3.2rem;
+  padding: 16px 32px;
+  transition: ease-in-out 600ms;
+}
+.projects h2 a.button:hover {
+  background-color: #f3f5f7;
+  color: #1d1e1d;
+  transition: ease-in-out 600ms;
+}
+.projects h3 {
+  font-size: 2.8rem;
+  padding-block: 8px;
+}
+.projects .projects_container {
+  display: grid;
+  row-gap: 8px;
+}
+.projects .projects_container .card:hover {
+  box-shadow: 0 0 16px 0 #f3f5f7;
+  transition: box-shadow 600ms;
+  transition-timing-function: ease-in-out;
+}
+.projects .projects_container .card {
+  width: 300px;
+  margin: 0 auto;
+  margin-block: 12px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000080;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 16px 0 navy;
+  background-color: rgba(243, 245, 247, 0.95);
+  color: #1d1e1d;
+  animation: scrollAnimation both;
+  animation-timeline: view(75% 25%);
+  transition: box-shadow 600ms;
+  transition-timing-function: ease-in-out;
+}
+.projects .projects_container .card a {
+  color: inherit;
+  text-decoration: none;
+}
+.projects .projects_container .card a .card__content .nf__icon {
+  transition: transform 400ms;
+  transition-timing-function: ease-in-out;
+}
+.projects .projects_container .card a:hover {
+  cursor: pointer;
+}
+.projects .projects_container .card a:hover .card__content .nf__icon {
+  transform: translateY(-8px);
+  transition: transform 600ms;
+  transition-timing-function: ease-in-out;
+}
+.projects .projects_container .card img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+.projects .projects_container .card .card__content {
+  display: grid;
+  justify-items: left;
+}
+.projects .projects_container .card .card__content .description {
+  padding-block: 8px 16px;
+  padding-left: 12px;
+  font-size: 1.8rem;
+  text-align: left;
+  line-height: 120%;
+}
+.projects .projects_container .card .card__content .card__title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 2.4rem;
+}
+.projects .projects_container .card .card__content .card__title .nf__icon {
+  padding-inline: 8px;
+  font-size: 1.8rem;
+}
+.projects .projects_container .card .card__content .tag {
+  justify-self: start;
+  font-size: 1.8rem;
+  margin-left: 12px;
+  padding-inline: 8px;
+  border-radius: 4px;
+}
+.projects .projects_container .card .card__content .tag--blue {
+  color: #f3f5f7;
+  background-color: #000080;
+}
+.projects .projects_container .card.top {
+  box-shadow: 0 0 16px 0 #b58a00;
 }
 
 .footer {
