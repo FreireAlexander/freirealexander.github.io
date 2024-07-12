@@ -1,7 +1,8 @@
-feat(): Slider skills animation
+feat(): Scroll Animation
 
-    - Slider skills animation added
-    - All logos added
+    - Scroll Animation added
+    - Skill section improved
+    - Style Sections
 
 author: Zero
 

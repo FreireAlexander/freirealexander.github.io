@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** Screen Size */
 /** Color Palette */
 * {
@@ -20,11 +21,15 @@ body {
 main {
   background-color: #f3f5f7;
 }
+main section {
+  user-select: none;
+}
 
 header {
   position: sticky;
-  top: 0px;
+  top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 nav.navbar {
@@ -107,36 +112,15 @@ nav.navbar {
   }
 }
 
-.greetings h1 {
+.greetings__content h1 {
+  display: grid;
+  width: max-content;
+  max-width: 320px;
   font-size: 3.5rem;
   padding-top: 20px;
-  padding-bottom: 0;
+  padding-bottom: 12px;
   font-family: "Times New Roman", Times, serif;
   line-height: 100%;
-  text-align: center;
-}
-@media (width >= 768px) {
-  .greetings h1 {
-    text-align: left;
-  }
-}
-
-.greetings__content h1 span:last-child {
-  font-size: 3.2rem;
-  color: whitesmoke;
-  text-align: center;
-}
-
-.greetings__content p {
-  line-height: 100%;
-  font-size: 2.4rem;
-  padding-block: 4px;
-  text-align: center;
-}
-@media (width >= 768px) {
-  .greetings__content p {
-    text-align: left;
-  }
 }
 
 .greetings__content div {
@@ -147,7 +131,7 @@ nav.navbar {
 }
 @media (width >= 1024px) {
   .greetings__content div {
-    width: 300px;
+    width: 320px;
     flex-direction: row;
     gap: 16px;
   }
@@ -212,10 +196,21 @@ a.button {
 }
 
 .introduction h2 {
+  line-height: 120%;
   font-size: 3.2rem;
   text-align: center;
+  animation: scrollTextAnimation both;
+  animation-timeline: view(10% 25%);
 }
 
+@keyframes scrollTextAnimation {
+  from {
+    transform: translateZ(600px) scale(0);
+  }
+  to {
+    transform: translateZ(0) scale(1);
+  }
+}
 .introduction p {
   width: 100%;
   max-width: 800px;
@@ -228,6 +223,7 @@ a.button {
   display: grid;
   place-items: center;
   width: 100%;
+  padding-block: 52px 104px;
   background: #01061d;
   background: linear-gradient(135deg, rgba(1, 6, 29, 0.85) 0%, #01061d 50%, rgba(1, 6, 29, 0.8) 100%);
   color: #f3f5f7;
@@ -240,6 +236,8 @@ a.button {
   display: grid;
   place-items: center;
   width: 100%;
+  padding-inline: 4px;
+  gap: 16px 8px;
 }
 .skills_container h3 {
   font-size: 2.4rem;
@@ -260,14 +258,23 @@ a.button {
 @media (width >= 1024px) {
   .skills_container {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 8px;
     max-width: 1024px;
   }
   .skills_container h3 {
     grid-column: 1/4;
   }
-  .skills_container .card:last-child {
-    grid-column: auto;
+  .skills_container .card:nth-child(4) {
+    grid-column: 3/4;
+  }
+  .skills_container .card:nth-child(5) {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+  .skills_container .card:nth-child(6) {
+    grid-column: 2/4;
+    grid-row: 3/4;
   }
 }
 @media (width >= 2560px) {
@@ -284,10 +291,20 @@ a.button {
   }
 }
 
+@keyframes scrollAnimation {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .skills_container .card {
   display: grid;
   place-items: center;
-  width: 300px;
+  width: 280px;
   margin: 0 auto;
   margin-block: 8px;
   padding: 8px 12px;
@@ -295,8 +312,11 @@ a.button {
   border-style: solid;
   border-color: #000080;
   border-radius: 8px;
+  box-shadow: 0 0 16px 0 navy;
   background-color: rgba(243, 245, 247, 0.95);
   color: #1d1e1d;
+  animation: scrollAnimation both;
+  animation-timeline: view(75% 25%);
 }
 .skills_container .card div:nth-child(2) p {
   font-size: 1.6rem;
@@ -343,6 +363,11 @@ a.button {
   font-size: 1.8rem;
 }
 
+@counter-style list-emoji {
+  system: cyclic;
+  symbols: "⭐";
+  suffix: " ";
+}
 .softwares {
   padding-block: 24px;
   background: #f3f5f7;
@@ -351,27 +376,79 @@ a.button {
 .softwares h3 {
   font-size: 2.8rem;
   text-align: center;
-  padding-block: 32px;
+  padding-block: 16px;
+  animation: scrollTextAnimation both;
+  animation-timeline: view(10% 25%);
 }
 .softwares h4 {
   font-size: 2rem;
   text-align: center;
-  padding-block: 32px;
+  padding-block: 16px;
+  animation: scrollTextAnimation both;
+  animation-timeline: view(10% 25%);
 }
 .softwares div.container {
   width: max-content;
   margin: 0 auto;
-  padding-block: 16px 32px;
+  padding-block: 8px 16px;
+  animation: scrollTextAnimation both;
+  animation-timeline: view(10% 25%);
 }
 .softwares p {
   font-size: 1.6rem;
   text-align: center;
 }
 .softwares ul {
+  display: grid;
+  place-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
   width: 100%;
   font-size: 1.6rem;
-  list-style-type: disc;
+  list-style-type: list-emoji;
   list-style-position: inside;
+}
+
+.slider[reverse=true] {
+  margin-block: 12px;
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+}
+.slider[reverse=true] .slides {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+}
+.slider[reverse=true] .slides .slide {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  padding-inline: 8px;
+  object-fit: scale-down;
+}
+.slider[reverse=true] .slides .slide {
+  right: 100%;
+  animation: sliderLeft var(--time) linear infinite;
+  animation-delay: calc(var(--time) / var(--quantity) * (var(--pos) - 1));
+}
+@keyframes sliderLeft {
+  from {
+    right: 100%;
+  }
+  to {
+    right: -100%;
+  }
+}
+@media (width >= 768px) {
+  .slider[reverse=true] {
+    height: calc(var(--height) * 2);
+  }
+  .slider[reverse=true] .slides .slide {
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+  }
 }
 
 .slider {
@@ -388,28 +465,22 @@ a.button {
 }
 .slider .slides .slide {
   position: absolute;
-  left: 100%;
   width: var(--width);
   height: var(--height);
   padding-inline: 8px;
   object-fit: scale-down;
-  animation: sliderRightToLeft var(--time) linear infinite;
+}
+.slider .slides .slide {
+  right: 100%;
+  animation: sliderRight var(--time) linear infinite;
   animation-delay: calc(var(--time) / var(--quantity) * (var(--pos) - 1));
 }
-@keyframes sliderRightToLeft {
+@keyframes sliderRight {
   from {
     left: 100%;
   }
   to {
-    left: calc(-100% - var(--width));
-  }
-}
-@keyframes sliderLeftToRight {
-  from {
-    right: 100%;
-  }
-  to {
-    right: calc(-100% - var(--width));
+    left: -100%;
   }
 }
 @media (width >= 768px) {
@@ -417,54 +488,6 @@ a.button {
     height: calc(var(--height) * 2);
   }
   .slider .slides .slide {
-    width: calc(var(--width) * 2);
-    height: calc(var(--height) * 2);
-  }
-}
-
-.slider__reverse {
-  margin-block: 12px;
-  width: 100%;
-  height: var(--height);
-  overflow: hidden;
-}
-.slider__reverse .slides {
-  display: flex;
-  flex-wrap: nowrap;
-  position: relative;
-  width: 100%;
-}
-.slider__reverse .slides .slide {
-  position: absolute;
-  right: 100%;
-  width: var(--width);
-  height: var(--height);
-  padding-inline: 8px;
-  object-fit: scale-down;
-  animation: sliderLeftToRight var(--time) linear infinite;
-  animation-delay: calc(var(--time) / var(--quantity) * (var(--pos) - 1));
-}
-@keyframes sliderRightToLeft {
-  from {
-    left: 100%;
-  }
-  to {
-    left: calc(-100% - var(--width));
-  }
-}
-@keyframes sliderLeftToRight {
-  from {
-    right: 100%;
-  }
-  to {
-    right: calc(-100% - var(--width));
-  }
-}
-@media (width >= 768px) {
-  .slider__reverse {
-    height: calc(var(--height) * 2);
-  }
-  .slider__reverse .slides .slide {
     width: calc(var(--width) * 2);
     height: calc(var(--height) * 2);
   }
