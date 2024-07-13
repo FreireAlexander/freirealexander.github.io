@@ -1,6 +1,6 @@
 fix(): Safari ScrollTextAnimation 
 
-    - Bug in Scroll Animation
+    - Bug in Scroll Animation 
 
 author: Zero
 

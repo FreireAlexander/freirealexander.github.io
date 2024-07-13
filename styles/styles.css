@@ -410,8 +410,8 @@ a.button.more {
   width: max-content;
   margin: 0 auto;
   padding-block: 8px 16px;
-  animation: scrollTextAnimation both;
-  animation-timeline: view(10% 25%);
+  animation: scrollTextAnimation linear both;
+  animation-timeline: view();
 }
 .softwares p {
   font-size: 2.2rem;
