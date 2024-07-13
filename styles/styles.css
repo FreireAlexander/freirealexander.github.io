@@ -216,20 +216,6 @@ a.button.more {
   text-align: center;
 }
 
-@keyframes scrollTextAnimation {
-  0% {
-    transform: translateZ(600px) scale(0);
-  }
-  30% {
-    transform: translateZ(0) scale(1);
-  }
-  70% {
-    transform: translateZ(0) scale(1);
-  }
-  100% {
-    transform: translateZ(600px) scale(0);
-  }
-}
 .introduction p {
   width: 100%;
   max-width: 800px;
@@ -318,6 +304,20 @@ a.button.more {
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+@keyframes scrollTextAnimation {
+  0% {
+    transform: translateZ(600px) scale(0);
+  }
+  30% {
+    transform: translateZ(0) scale(1);
+  }
+  70% {
+    transform: translateZ(0) scale(1);
+  }
+  100% {
+    transform: translateZ(600px) scale(0);
   }
 }
 .skills_container .card {
