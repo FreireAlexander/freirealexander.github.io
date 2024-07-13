@@ -99,10 +99,13 @@ nav.navbar {
 }
 
 .greetings__content {
+  place-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
   padding-block: 24px;
 }
 @media (width >= 768px) {
@@ -217,7 +220,10 @@ a.button.more {
   0% {
     transform: translateZ(600px) scale(0);
   }
-  30%, 70% {
+  30% {
+    transform: translateZ(0) scale(1);
+  }
+  70% {
     transform: translateZ(0) scale(1);
   }
   100% {

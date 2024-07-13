@@ -1,9 +1,6 @@
-feat(): projects and works section 
+fix(): Safari ScrollTextAnimation 
 
     - Bug in Scroll Animation
-    - Scroll Animation added
-    - Skill section improved
-    - Style Sections
 
 author: Zero
 
