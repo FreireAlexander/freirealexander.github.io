@@ -315,18 +315,12 @@ a.button.more{
     }
 }
 
-@keyframes scrollTextAnimation{
-    0% {
+@keyframes scrollTextAnimation {
+    from {
         transform: translateZ(600px) scale(0);
     }
-    30% {
+    to {
         transform: translateZ(0) scale(1);
-    }
-    70% {
-        transform: translateZ(0) scale(1);
-    }
-    100% {
-        transform: translateZ(600px) scale(0);
     }
 }
 
@@ -414,14 +408,14 @@ a.button.more{
         text-align: center;
         padding-block: 16px;
         animation: scrollTextAnimation linear both;
-        animation-timeline: view();
+        animation-timeline: view(70% 30%);
     }
     h4{
         font-size: 2.4rem;
         text-align: center;
         padding-block: 16px;
         animation: scrollTextAnimation linear both;
-        animation-timeline: view();
+        animation-timeline: view(70% 30%);
     }
     div.container{
         width: max-content;
