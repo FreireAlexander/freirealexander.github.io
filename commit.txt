@@ -1,7 +1,6 @@
-chore(): Complete Contact Section
+fix(): Button pointer not added
 
-    - formsubmit added
-    - update informatio
+    - cursor: pointer;
 
 author: Zero
 

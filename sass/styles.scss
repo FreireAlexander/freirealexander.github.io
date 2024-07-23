@@ -175,6 +175,7 @@ nav.navbar{
     color: $white;
     background-color: rgba(20,20,113,1);
     line-height: 100%;
+    cursor: pointer;
     @media (width>=$tablet){
         align-self: flex-start;
     }
