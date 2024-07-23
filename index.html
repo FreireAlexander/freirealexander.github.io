@@ -57,16 +57,16 @@
                     </h1>
                     
                     <div>
-                        <button class="button" type="button">
+                        <a href="#contact" class="button">
                             <span class="nf__icon">&#xf1d8;</span> contact me 
-                         </button>
-                         <a href="#projects" class="button">
-                             More
-                         </a>
+                        </a>
+                        <a href="#projects" class="button">
+                            <span class="nf__icon">&#xf1ea;</span> Portfolio & News
+                        </a>
                     </div>
                 </div>
                 <figure class="greetings__pictures">
-                    <img src="/media/images/profile_photos/Photo_1.jpg" alt="Freire Pictures as Engineer">
+                    <img src="/media/images/profile_photos/Photo_3.webp" alt="Freire Pictures as Engineer">
                 </figure>
             </div>
         </section>
@@ -329,7 +329,7 @@
             <div class="projects_container">
                 <article class="card">
                     <a href="https://smartsourcinglatam.com/">
-                        <img src="./media/images/smartsourcing.png" alt="default">
+                        <img src="./media/images/smartsourcing.png" alt="Smart sourcing home page">
                         <div class="card__content">
                             <div class="card__title">
                                 <p>Smart Sourcing Latam</p><span class="nf__icon">&#xf08e;</span>
@@ -343,12 +343,36 @@
                         </div>
                     </a>
                 </article>
+
+                <article class="card">
+                    <a href="">
+                        <img src="./media/images/default.png" alt="default">
+                        <div class="card__content">
+                            <div class="card__title">
+                                <p>Site Plan in U.S.</p><span class="nf__icon">&#xf08e;</span>
+                            </div>
+                            <div class="tag_container">
+                                <div class="tag tag--blue">
+                                    Site Plan
+                                </div>
+                                <div class="tag tag--green">
+                                    CAD
+                                </div>
+                            </div>
+                            <p class="description">
+                                Site plan for townhouses in the United States. Including Grading and Utilities design
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                
                 
             </div>
             <h3>Coming Soon</h3>
 
             <div class="projects_container">
-                <article class="card">
+                <article class="card" style="cursor: none;">
                     <a href="">
                         <img src="./media/brand/dogos.svg" alt="DogOS Linux Logo" style="background-color: #F0FFFF;">
                         <div class="card__content">
@@ -364,16 +388,70 @@
                         </div>
                     </a>
                 </article>
+
+                <article class="card">
+                    <a href="" style="cursor: none;">
+                        <img src="./media/images/default.png" alt="DogOS Linux Logo" style="background-color: #F0FFFF; object-fit: scale-down;">
+                        <div class="card__content">
+                            <div class="card__title">
+                                <p>Flex Pave</p><span class="nf__icon">&#xf08e;</span>
+                            </div>
+                            <div class="tag tag--blue">
+                                App
+                            </div>
+                            <p class="description">
+                                Flexible Pavement design app
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a href="" style="cursor: none;">
+                        <img src="./media/images/default.png" alt="DogOS Linux Logo" style="background-color: #F0FFFF; object-fit: scale-down;">
+                        <div class="card__content">
+                            <div class="card__title">
+                                <p>MVC for CAD projects</p><span class="nf__icon">&#xf08e;</span>
+                            </div>
+                            <div class="tag_container">
+                                <div class="tag tag--blue">
+                                    CAD
+                                </div>
+                                <div class="tag tag--red">
+                                    Project Management
+                                </div>
+                            </div>
+                            
+                            
+                            <p class="description">
+                                Flexible Pavement design app
+                            </p>
+                        </div>
+                    </a>
+                </article>
                 
             </div>
 
 
             
         </section>
-        <section class="contact">
-            <h3> </h3>
+        <section id="contact" class="contact">
+            <h3> Contact Me </h3>
+            
+            <form class="contact_form" action="https://formsubmit.co/freirealexander0214+website@gmail.com" method="POST">
+                 <label for="name">Name</label>
+                 <input type="text" name="name" required autocomplete="name" placeholder="Your name">
+                 <label for="email">email</label>
+                 <input type="email" name="email" required autocomplete="email" placeholder="Your email">
+                 <label for="message">Text me</label>
+                 <textarea class="textarea" name="message" placeholder="Leave me a great Message..."></textarea>
+                 <input type="hidden" name="_next" value="https://freirealexander.top/thanks.html">
+                 <input type="hidden" name="_subject" value="New submission from home page!">
+                 <input type="hidden" name="_autoresponse" value="Thank you for your message. We will be in contact as soon as possible, have a nice day &#128075;">
+                 <button type="submit" class="button">Send</button>
+            </form>
         </section>
-        
+                
     </main>
     <footer class="footer">
         <section class="brand">

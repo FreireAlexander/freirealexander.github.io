@@ -14,6 +14,8 @@ $white: #f3f5f7;
 $white_azure:#F0FFFF;
 $dark_blue: #01061d;
 $blue: #000080;
+$red: #821F00;
+$green: #006158;
 $yellow: #B58A00;
 $color: #1d1e1d;
 $logo: 4rem;
@@ -160,13 +162,16 @@ nav.navbar{
 
 .button{
     align-self: flex-start;
-    width: 150px;
+    width: fit-content;
+    min-width: 150px;
+    max-width: 300px;
     margin-block: 8px;
-    padding: 4px;
+    padding: 4px 12px;
     font-size: 2rem;
     border-width: 0;
     border-radius: 48px;
     text-decoration: none;
+    text-align: center;
     color: $white;
     background-color: rgba(20,20,113,1);
     line-height: 100%;
@@ -175,22 +180,13 @@ nav.navbar{
     }
 }
 
-a.button{
+a.button:nth-child(2){
     text-align: center;
     color: rgba(20,20,113,1);
     background-color: $white;
     @media (width>=$tablet){
         align-self: flex-start;
     }
-}
-
-a.button.more{
-    display: inline-flex;
-    width: max-content;
-    margin-block: 8px;
-    padding: 8px 12px;
-    color: $white;
-    background-color: $blue;
 }
 
 .greetings__pictures{
@@ -619,6 +615,10 @@ a.button.more{
                     }
                 }
 
+                .tag_container{
+                    display: flex;
+                }
+
                 .tag{
                     justify-self: start;
                     font-size: 1.8rem;
@@ -630,6 +630,21 @@ a.button.more{
                 .tag--blue{
                     color: $white;
                     background-color: $blue;
+                }
+
+                .tag--red{
+                    color: $white;
+                    background-color: $red;
+                }
+
+                .tag--yellow{
+                    color: $white;
+                    background-color: $yellow;
+                }
+
+                .tag--green{
+                    color: $white;
+                    background-color: $green;
                 }
             }
 
@@ -643,6 +658,62 @@ a.button.more{
 
     }
 }
+
+.contact{
+    padding-block: 12px ;
+    h3{
+        font-size: 2.8rem;
+        padding-block: 8px;
+        text-align: center;
+        width: 100%;
+        min-width: 300px;
+        max-width: 600px;
+        margin: 4px auto;
+    }
+}
+
+
+
+.contact_form{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 8px auto;
+    padding: 16px 12px;
+
+    font-size: 1.8rem;
+    
+
+    input{
+        border: none;
+        border-bottom: 2px solid $dark_blue;
+        background-color: transparent;
+        padding-left: 8px;
+        padding-top: 8px;
+        padding-bottom: 2px;
+        font-size: 1.8rem;
+    }
+
+    .textarea{
+        width: 100%;
+        height: 150px;
+        resize: none;
+        border: 2px solid $dark_blue;
+        border-radius: 4px;
+        font-size: 1.8rem;
+        padding: 8px;
+    }
+
+    label{
+        font-size: 2.4rem;
+        padding-block: 12px 4px;
+    }
+
+}
+
 
 .footer{
     display: grid;

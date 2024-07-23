@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank U</title>
+    <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/global.css">
+</head>
+<style>
+    /**@import "https://www.nerdfonts.com/assets/css/webfont.css";*/
+    @font-face{
+        font-family:'NFSymbols';
+        src:url("fonts/nerdfonts.woff2") format("woff2");
+        font-weight:normal;
+        font-style:normal;
+        font-variant:normal;
+        text-transform:none;
+        line-height:1;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+    }
+    
+    .nf__icon{
+        font-family:'NFSymbols', sans-serif;
+    }
+</style>
+<body>
+    <header>
+        <section>
+            <nav class="navbar">
+                <div class="logo">
+                    <p>F</p>
+                </div>
+                <div class="brand">
+                    <p>Freire</p>
+                    <p>Palomino</p>
+                </div>
+            </nav>
+        </section>
+    </header>
+        
+   
+    <main>
+        <section class="greetings" style="height: 100vh;">
+            <div>
+                <div class="greetings__content">
+                    <h1>
+                        <span class="animated-text notranslate"></span>
+                        <span>for leaving me a message</span>
+                    </h1>
+                    <p style="font-size: 1.8rem; padding-block: 12px;">Keep looking for more information, articles and News</p>
+                    
+                    <div>
+                        <a href="/" class="button">
+                            <span class="nf__icon">&#xf190;</span> Keep Looking
+                        </a>
+                    </div>
+                </div>
+                <figure class="greetings__pictures">
+                    <img src="/media/images/profile_photos/Photo_3.webp" alt="Freire Pictures as Engineer">
+                </figure>
+            </div>
+        </section>
+</body>
+<script src="/scripts/thanks.js"></script>
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+</html>

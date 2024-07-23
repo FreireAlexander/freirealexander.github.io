@@ -1,6 +1,7 @@
-fix(): Safari ScrollTextAnimation 
+chore(): Complete Contact Section
 
-    - Bug in Scroll Animation
+    - formsubmit added
+    - update informatio
 
 author: Zero
 
