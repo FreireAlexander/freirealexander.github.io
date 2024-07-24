@@ -1,6 +1,6 @@
-chore(): taking feedbacks
+chore(): disabled buttons
 
-    - Disable some portfolio works
+    - Disabling some portfolio works
 
 author: Zero
 

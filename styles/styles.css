@@ -593,7 +593,7 @@ a.button:nth-child(2) {
 .projects .projects_container .card img {
   display: block;
   width: 100%;
-  max-height: 150px;
+  height: 150px;
   object-fit: cover;
 }
 .projects .projects_container .card .card__content {
