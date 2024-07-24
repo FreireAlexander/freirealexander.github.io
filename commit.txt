@@ -1,7 +1,6 @@
 chore(): taking feedbacks
 
-    - trilingual
-    - Tex-align left 
+    - Disable some portfolio works
 
 author: Zero
 
