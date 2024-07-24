@@ -157,6 +157,7 @@ nav.navbar {
   color: #f3f5f7;
   background-color: rgb(20, 20, 113);
   line-height: 100%;
+  cursor: pointer;
 }
 @media (width >= 768px) {
   .button {
@@ -215,7 +216,7 @@ a.button:nth-child(2) {
   max-width: 800px;
   font-size: 1.8rem;
   padding: 16px;
-  text-align: justify;
+  text-align: left;
 }
 
 .skills {
@@ -327,7 +328,7 @@ a.button:nth-child(2) {
 }
 .skills_container .card div:nth-child(2) p {
   font-size: 2rem;
-  text-align: justify;
+  text-align: left;
 }
 
 .card_title {

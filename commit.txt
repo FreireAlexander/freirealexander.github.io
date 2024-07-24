@@ -1,6 +1,7 @@
-fix(): Button pointer not added
+chore(): taking feedbacks
 
-    - cursor: pointer;
+    - trilingual
+    - Tex-align left 
 
 author: Zero
 
