@@ -1,6 +1,6 @@
-chore(): disabled buttons
+chore(): update layout
 
-    - Disabling some portfolio works
+    - Removing some stuffs
 
 author: Zero
 
