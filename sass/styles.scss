@@ -35,6 +35,10 @@ html{
 }
 
 body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    
     color: $color;
     background-color: rgba($dark_blue, 1);
 }
@@ -46,22 +50,52 @@ main{
     }
 }
 
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: $white;
+}
+
 header{
     position: sticky;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
     top: 0;
     left: 0;
     z-index: 1000;
+    background-color: rgba($dark_blue, 0.85);
+
+    nav.navbar{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        color: $white;
+        row-gap: 8px;
+
+        list-style: none;
+
+        li{
+            width: auto;
+            padding: 0px 20px;
+        }
+    }
 }
 
-nav.navbar{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgba($dark_blue, 0.85);
-}
+
+
+
 
 .logo{
     display: grid;
@@ -401,7 +435,7 @@ a.button:nth-child(2){
 
 .softwares{
     padding-block: 24px;
-    background: $white;
+    background: linear-gradient(180deg,rgba($dark_blue, 1) 0%, rgba($dark_blue, 0.95) 50%,rgba($dark_blue, 0.90) 100%);
     color: $black;
     //overflow: hidden;
     h3{

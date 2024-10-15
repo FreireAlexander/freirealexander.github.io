@@ -9,16 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/global.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'G-TW9HZ9TTYP');
+        gtag('config', 'G-TW9HZ9TTYP');
     </script>
     <!-- Consent Manager -->
     <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
@@ -27,7 +26,7 @@
     /**@import "https://www.nerdfonts.com/assets/css/webfont.css";*/
     @font-face{
         font-family:'NFSymbols';
-        src:url("/fonts/nerdfonts.woff2") format("woff2");
+        src:url("fonts/nerdfonts.woff2") format("woff2");
         font-weight:normal;
         font-style:normal;
         font-variant:normal;
@@ -64,6 +63,9 @@
                         </a>
                     </div>
                 </div>
+                <figure class="greetings__pictures">
+                    <img src="/media/images/profile_photos/Photo_3.webp" alt="Freire Pictures as Engineer">
+                </figure>
             </div>
         </section>
         <section class="introduction">
@@ -494,14 +496,5 @@
     
 </body>
 <script src="/scripts/loadComponents.js"></script>
-<script>
-    // Cargar el header y el footer al cargar la página
-    const basePath = "/";
-    document.addEventListener("DOMContentLoaded", function() {
-        loadHTML('header', '/components/header.html');
-        loadHTML('footer', '/components/footer.html');
-    });
-</script>
 <script src="/scripts/index.js"></script>
-
 </html>

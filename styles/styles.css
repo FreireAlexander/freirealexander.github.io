@@ -14,6 +14,9 @@ html {
 }
 
 body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
   color: #1d1e1d;
   background-color: #01061d;
 }
@@ -25,21 +28,41 @@ main section {
   user-select: none;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #f3f5f7;
+}
+
 header {
   position: sticky;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   top: 0;
   left: 0;
   z-index: 1000;
+  background-color: rgba(1, 6, 29, 0.85);
 }
-
-nav.navbar {
+header nav.navbar {
   display: flex;
   align-items: center;
   width: 100%;
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: rgba(1, 6, 29, 0.85);
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: #f3f5f7;
+  row-gap: 8px;
+  list-style: none;
+}
+header ul li {
+  width: auto;
+  padding: 0px 20px;
 }
 
 .logo {
@@ -384,7 +407,7 @@ a.button:nth-child(2) {
 }
 .softwares {
   padding-block: 24px;
-  background: #f3f5f7;
+  background: linear-gradient(180deg, #01061d 0%, rgba(1, 6, 29, 0.95) 50%, rgba(1, 6, 29, 0.9) 100%);
   color: #1d1e1d;
 }
 .softwares h3 {
@@ -766,4 +789,6 @@ a.button:nth-child(2) {
 }
 .references a {
   text-decoration: none;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
