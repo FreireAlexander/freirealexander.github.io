@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/styles.css">
-    
+    <link rel="stylesheet" href="/styles/mobile.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
@@ -48,8 +48,18 @@
         Impedit eum qui autem dignissimos fugit, at inventore porro ut natus repellat ab consequatur doloremque cupiditate nemo veritatis, et vero? Sit veniam maxime corrupti dolores qui beatae non nobis error?</p>
     </main>
     <footer id="footer"></footer>
+    <footer id="header-mobile"></footer>
 </div>
 </body>
-<script src="/scripts/loadComponents.js"></script>
-<script src="/scripts/index.js"></script>
+    <script src="/scripts/loadComponents.js"></script>
+    
+    <script src="/scripts/mobileMenu.js"></script>
+    <script>
+        // Cargar el header y el footer al cargar la página
+        document.addEventListener("DOMContentLoaded", function() {
+            loadHTML('header', '/components/header.html');
+            loadHTML('header-mobile', '/components/header_mobile.html');
+            loadHTML('footer', '/components/footer.html');
+        });
+    </script>
 </html>

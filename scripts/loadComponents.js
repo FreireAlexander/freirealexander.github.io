@@ -13,8 +13,4 @@ function loadHTML(elementId, filePath) {
         .catch(error => console.error('Error:', error));
 }
 
-// Cargar el header y el footer al cargar la página
-document.addEventListener("DOMContentLoaded", function() {
-    loadHTML('header', '/components/header.html');
-    loadHTML('footer', '/components/footer.html');
-});
+

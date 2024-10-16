@@ -1,0 +1,23 @@
+.mobile-menu-item{
+    display: grid;
+    place-items: center;
+
+    font-size: 1.4rem;
+
+    border: 1px solid white;
+
+    filter: grayscale(1);
+
+    figure > img {
+        max-width: 48px;
+        max-height: 48px;
+    }
+
+    :current(p){
+        background-color: yellow;
+    }
+}
+
+.mobile-menu-item.active{
+    filter: grayscale(0);
+}
