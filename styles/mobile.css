@@ -2,7 +2,6 @@
   display: grid;
   place-items: center;
   font-size: 1.4rem;
-  border: 1px solid white;
   filter: grayscale(1);
 }
 .mobile-menu-item figure > img {

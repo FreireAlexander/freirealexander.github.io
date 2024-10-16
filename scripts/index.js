@@ -41,12 +41,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Ejemplo de uso
     const textElement = document.querySelector(".animated-text");
     const roles = [
-      "a Developer", 
-      "an Engineer", 
-      "a Web Developer", 
-      "a Civil Engineer",
-      "a CAD Technician",
-      "a Linux Lover"
+        "a Civil Engineer",
+        "a Web Developer",   
+        "a CAD Technician",
+        "a Top Professional"
       ];
     const colors = {
         "blue": "#0068BD",

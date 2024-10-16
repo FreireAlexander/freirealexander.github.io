@@ -1,20 +1,51 @@
 /** Screen Size */
 /** Color Palette */
+/** Font Family **/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
 }
 
 html {
-  font-family: "Oswald", sans-serif;
   font-size: 62.5%;
   user-select: none;
+  color: #f3f5f7;
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-size: 4.2rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h4, h5, h6, p {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
 }
 
 a {
   text-decoration: none;
-  color: #f3f5f7;
+}
+
+.section {
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.button-primary {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 4px rgba(0, 153, 255, 0.5);
+  background-color: #0099FF;
+  color: #F0FFFF;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 div.body {
@@ -51,6 +82,7 @@ div.body {
   left: 0;
   bottom: 0;
   z-index: 1000;
+  padding: 8px 0px;
   background-color: rgba(1, 6, 29, 0.85);
 }
 @media (width <= 768px) {
@@ -109,4 +141,40 @@ nav.navbar {
   width: max-content;
   margin-left: 6px;
   color: #f3f5f7;
+}
+
+.personal-introduction {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 350px;
+  margin: 12px 0;
+}
+
+#contact h2 {
+  text-align: center;
+  padding-block: 12px 24px;
+}
+#contact .contact-form {
+  display: grid;
+  place-items: center;
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+#contact .contact-form label, #contact .contact-form input, #contact .contact-form textarea {
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 8px;
+}
+#contact .contact-form label[for=message] {
+  padding-block: 12px 4px;
+}
+#contact .contact-form textarea {
+  height: 150px;
+  padding: 12px 8px;
+  resize: none;
+}
+#contact .contact-form .button-primary {
+  margin-block: 16px 12px;
 }/*# sourceMappingURL=styles.css.map */
