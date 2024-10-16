@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use "sass:string";
 /** Screen Size */
 $mobileSmall: 320px;
 $mobileMedium: 375px;
@@ -12,6 +13,7 @@ $laptopLarge: 2560px;
 $black: #1d1e1d;
 $white: #f3f5f7;
 $white_azure:#F0FFFF;
+$gray: #444447;
 $dark_blue: #01061d;
 $blue: #000080;
 $red: #821F00;
@@ -22,6 +24,7 @@ $logo: 4rem;
 
 
 
+
 *{
     margin: 0;
     padding: 0;
@@ -29,73 +32,60 @@ $logo: 4rem;
 }
 
 html{
-    font-family: "Oswald", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 62.5%;
     user-select: none;
 }
 
-body{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    
-    color: $color;
-    background-color: rgba($dark_blue, 1);
-}
-
-main{
-    background-color: $white;
-    section{
-        user-select: none;
-    }
-}
-
 a{
     text-decoration: none;
-    cursor: pointer;
     color: $white;
+}
+
+$circle-size: 20px; // Tamaño de cada círculo
+$spacing: 40px; 
+
+div.body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
+
+
+    color: $white_azure;
+    
+    
+    @function remove-hash($hex) {
+        // Convertir el color a cadena hexadecimal
+        $hex-string: $hex;
+        // Retornar la subcadena desde el índice 2
+        @return str-slice(#{$hex-string}, -6); // Usar string.slice
+    }
+    
+    $line: #021530;
+    $dots: #0D1828;
+
+    background-color: $dark_blue;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23#{remove-hash($line)}' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg opacity='0.85' fill='%23#{remove-hash($dots)}'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 header{
     position: sticky;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    top: 0;
     left: 0;
+    top: 0;
     z-index: 1000;
+
     background-color: rgba($dark_blue, 0.85);
-
-    nav.navbar{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        
-    }
-
-    ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        color: $white;
-        row-gap: 8px;
-
-        list-style: none;
-
-        li{
-            width: auto;
-            padding: 0px 20px;
-        }
-    }
 }
 
-
-
-
+nav.navbar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 .logo{
     display: grid;
@@ -105,16 +95,15 @@ header{
     border-style: solid;
     height: $logo;
     width: $logo;
-    margin-left: 20px;
     border-radius: 50%;
     font-family: 'Times New Roman', Times, serif;
     background: rgb(3,16,78);
     background: linear-gradient(135deg, rgba(3,16,78,1) 10%, rgba(20,20,113,1) 85%, rgba(251,248,255,1) 98%);
-    
-}
-.logo p{
-    font-size: $logo - 0.1rem;
-    color: $white;
+
+    p{
+        font-size: $logo - 0.1rem;
+        color: $white;
+    }
 }
 
 .brand{
@@ -124,728 +113,20 @@ header{
     color: $white;
 }
 
-.brand p{
-    font-size: math.div($logo , 2);
-    line-height: 100%;
-}
-
-
-
-.greetings{
-    background: rgba($dark_blue, 1);
-    background: linear-gradient(180deg,rgba($dark_blue, 1) 0%, rgba($dark_blue, 0.95) 50%,rgba($dark_blue, 0.90) 100%);
-    color: $white;
-}
-
-.greetings > div {
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
-    place-content: center;
-    width: 100%;
-    max-width: 1024px;
-    padding-block: 20px 50px;
-    padding-inline: 20px;
+.header{
+    display: flex;
     
-    @media (width>=$tablet){
-        place-items: center;
-        grid-template-columns: 1fr 1fr;
-        margin: 0 auto;
-    }
-}
 
-.greetings__content{
-    place-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
-    padding-block: 24px;
-    @media (width>=$tablet){
-        width: 50%;
-        place-self: center;
-        padding-right: 24px;
-        text-align: left;
-    }
-}
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
 
-.greetings__content h1 {
-    display: grid;
-    width: max-content;
-    max-width: $mobileSmall;
-    font-size: 3.5rem;
-    padding-top: 20px;
-    padding-bottom: 12px;
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 100%;
-}
-
-.greetings__content div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @media (width>=$laptopSmall){
-        width: $mobileSmall;
-        flex-direction: row;
-        gap: 16px;
-    }
-}
-
-.button{
-    align-self: flex-start;
-    width: fit-content;
-    min-width: 150px;
-    max-width: 300px;
-    margin-block: 8px;
-    padding: 4px 12px;
-    font-size: 2rem;
-    border-width: 0;
-    border-radius: 48px;
-    text-decoration: none;
-    text-align: center;
-    color: $white;
-    background-color: rgba(20,20,113,1);
-    line-height: 100%;
-    cursor: pointer;
-    @media (width>=$tablet){
+    nav.header-menu{
         align-self: flex-start;
-    }
-}
-
-a.button:nth-child(2){
-    text-align: center;
-    color: rgba(20,20,113,1);
-    background-color: $white;
-    @media (width>=$tablet){
-        align-self: flex-start;
-    }
-}
-
-.greetings__pictures{
-    display: grid;
-    place-items: center;
-    padding-block: 4px;
-    width: 100%;
-    height: 100%;
-    @media (width>=$tablet){
-        place-self: start;
-        padding: 0;
-    }
-}
-
-.greetings__pictures img {
-    width: 280px;
-    height: 280px;
-    margin: 0 auto;
-    border-radius: 32px;
-    object-fit: cover;
-}
-
-.introduction{
-    display: grid;
-    place-items: center;
-    width: 100%;
-    margin-block: 20px;
-}
-
-.introduction h2{
-    line-height: 120%;
-    font-size: 3.2rem;
-    text-align: center;
-    padding-inline: 0;
-}
-
-.introduction p{
-    width: 100%;
-    max-width: 800px;
-    font-size: 1.8rem;
-    padding: 16px;
-    text-align: justify;
-    @media (width>=$tablet){
-        text-align: left;
-    }
-}
-
-.skills{
-    display: grid;
-    place-items: center;
-    width: 100%;
-    padding-block: 52px 104px;
-    background: rgba($dark_blue, 1);
-    background: linear-gradient(135deg,rgba($dark_blue, 0.85) 0%, rgba($dark_blue, 1) 50%, rgba($dark_blue, 0.8) 100%);
-    color: $white;
-    h2{
-        font-size: 3.2rem;
-    }
-}
-
-.skills_container{
-    display: grid;
-    place-items: center;
-    width: 100%;
-    padding-inline: 4px;
-    gap: 16px 8px;
-
-    h3{
-        font-size: 2.8rem;
-        padding-block: 12px;
-    }
-
-    @media (width>=$tablet){
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        h3{
-            grid-column: 1/3;
-        }
-        .card:last-child{
-            grid-column: 1/3;
-        }
-    }
-
-    @media (width>=$laptopSmall){
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        gap: 8px;
-        max-width: 1024px;
-        h3{
-            grid-column: 1/4;
-        }
-        .card:nth-child(4){
-            grid-column: 3/4;
-        }
-        .card:nth-child(5){
-            grid-column: 1/3;
-            grid-row: 3/4;
-        }
-        .card:nth-child(6){
-            grid-column: 2/4;
-            grid-row: 3/4;
-        }
-    }
-
-    @media (width>=$laptopLarge){
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        max-width: 2500px;
-        h3{
-            grid-column: 1/4;
-        }
-        .card:last-child{
-            grid-column: auto;
-        }
-    }
-    
-}
-
-@keyframes scrollAnimation{
-    from{
-        transform: scale(0.3);
-        opacity: 0;
-    }to{
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes scrollTextAnimation {
-    from {
-        transform: translateZ(600px) scale(0);
-    }
-    to {
-        transform: translateZ(0) scale(1);
-    }
-}
-
-.skills_container .card{
-    display: grid;
-    place-items: center;
-    width: 300px;
-    margin: 0 auto;
-    margin-block: 8px;
-
-    padding: 8px 12px;
-
-    border-width: 4px;
-    border-style: solid;
-    border-color: $blue;
-    border-radius: 8px;
-
-    box-shadow: 0 0 16px 0 rgba($blue, 1);
-
-    background-color: rgba($white, 0.95);
-    color: $black;
-    animation: scrollAnimation both;
-    animation-timeline: view(75% 25%);
-    div:nth-child(2) p{
-        font-size: 2rem;
-        text-align: left;
-    }   
-}
-
-.card_title{
-    display: flex;
-    justify-self: start;
-    align-items: center;
-
-    span{
-        font-size: 2rem;
-        margin-right: 8px;
-        padding: 4px;
-        border-width: 3px;
-        border-style: solid;
-        border-color: $yellow;
-        border-radius: 8px;
-        background-color: $blue;
-        color: $yellow;
-    }
-
-    p{
-        font-size: 2.4rem;
-        font-weight: bold;
-    }
-}
-
-.card_description{
-    padding-block: 20px 8px;
-    font-size: 1.8rem;
-    line-height: 125%;
-}
-
-.card_description::first-letter{
-    font-size: 2.2rem;
-    font-weight: bold;
-}
-
-.card_description + div {
-    display: flex;
-    justify-content: end;
-    margin-block: 20px 12px;
-    margin-right: 8px;
-    font-size: 1.8rem;
-}
-
-@counter-style list-emoji{
-    system: cyclic;
-    symbols: "\2B50";
-    suffix: " ";
-}
-
-.softwares{
-    padding-block: 24px;
-    background: linear-gradient(180deg,rgba($dark_blue, 1) 0%, rgba($dark_blue, 0.95) 50%,rgba($dark_blue, 0.90) 100%);
-    color: $black;
-    //overflow: hidden;
-    h3{
-        font-size: 2.8rem;
-        text-align: center;
-        padding-block: 16px;
-        animation: scrollTextAnimation linear both;
-        animation-timeline: view(70% 30%);
-    }
-    h4{
-        font-size: 2.4rem;
-        text-align: center;
-        padding-block: 16px;
-        animation: scrollTextAnimation linear both;
-        animation-timeline: view(70% 30%);
-    }
-    div.container{
-        width: max-content;
-        margin: 0 auto;
-        padding-block: 8px 16px;
-        animation: scrollAnimation both;
-        animation-timeline: view(75% 25%);
-    }
-    p{
-        font-size: 2.2rem;
-        text-align: center;
-    }
-    ul{
-        display: grid;
-        place-items: start;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        width: 100%;
-        font-size: 2.2rem;
-        list-style-type: list-emoji;
-        list-style-position: inside;
-    }
-}
-
-@mixin slider($width, $height, $quantity, $time, $position , $right: true){
-    margin-block: 12px;
-    width: 100%;
-    height: $height;
-    overflow: hidden;
-
-    .slides{
-        display: flex;
-        flex-wrap: nowrap;
-        position: relative;
-        width: 100%;
-        
-        .slide{
-            position: absolute;
-            width: $width;
-            height: $height;
-            padding-inline: 8px;
-            object-fit: scale-down;
+        ul{
+            align-self: center;
             
+            list-style: none;
         }
-
-    }
-
-    @if $right {
-        .slides .slide{
-            right: 100%;
-            animation: sliderRight $time linear infinite;
-            animation-delay: calc( ($time / $quantity) * ($position - 1 ) );
-            @keyframes sliderRight{
-                from{
-                    left: 100%;
-                }to{
-                    left: -100%;
-                }
-            }
-
-        }
-    }@else{
-        .slides .slide{
-            right: 100%;
-            animation: sliderLeft $time linear infinite;
-            animation-delay: calc( ($time / $quantity) * ($position - 1 ) );
-            @keyframes sliderLeft{
-                from{
-                    right: 100%;
-                }to{
-                    right: -100%;
-                }
-            }
-
-        }
-    }
-
-    @media (width>=$tablet){
-        $width: calc($width * 2);
-        $height: calc($height * 2);
-        height: $height;
-        .slides{
-            .slide{
-                width: $width;
-                height: $height;
-            }
-        }
-        
-    }
-
-}
-
-.slider[reverse="true"]{
-    @include slider(var(--width), var(--height), var(--quantity), var(--time), var(--pos), $right: false);
-}
-
-.slider{
-    @include slider(var(--width), var(--height), var(--quantity), var(--time), var(--pos), $right: true);   
-}
-
-.projects{
-
-    padding-block: 52px 104px;
-    background: rgba($dark_blue, 1);
-    background: linear-gradient(135deg,rgba($dark_blue, 0.85) 0%, rgba($dark_blue, 1) 50%, rgba($dark_blue, 0.8) 100%);
-    color: $white;
-    text-align: center;
-    h2{
-        a.button{
-            display: flex;
-            margin: 0 auto;
-            font-size: 3.2rem;
-            padding: 16px 32px;
-            transition: ease-in-out 600ms;
-        }
-        a.button:hover{
-            background-color: $white;
-            color: $black;
-            transition: ease-in-out 600ms;
-        }
-    }
-    h3{
-        font-size: 2.8rem;
-        padding-block: 8px;
-    }
-
-    .projects_container{
-        display: grid;
-        row-gap: 8px;
-
-        @media (width>=$tablet){
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
-            
-            .card:nth-child(3){
-                grid-column: 1/3;
-            }
-        }
-
-        @media (width>=$laptopMedium){
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
-            .card:nth-child(3){
-                grid-column: auto;
-            }
-        }
-
-        
-
-        .card:hover{
-            box-shadow: 0 0 16px 0 rgba($white, 1);
-            transition: box-shadow 600ms;
-            transition-timing-function: ease-in-out;
-        }
-        .card{
-            width: 300px;
-            margin: 0 auto;
-            margin-block: 12px;
-            border-width: 2px;
-            border-style: solid;
-            border-color: $blue;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 16px 0 rgba($blue, 1);
-
-            background-color: rgba($white, 0.95);
-            color: $black;
-            animation: scrollAnimation both;
-            animation-timeline: view(75% 25%);
-            transition: box-shadow 600ms;
-            transition-timing-function: ease-in-out;
-
-            a{
-                color: inherit;
-                text-decoration: none;
-                .card__content .nf__icon{
-                    transition: transform 400ms;
-                    transition-timing-function: ease-in-out;
-                }
-            }
-
-            a:hover{
-                cursor: pointer;
-                .card__content {
-                    .nf__icon{
-                        transform: translateY(-8px);
-                        transition: transform 600ms;
-                        transition-timing-function: ease-in-out;
-                    }
-                }
-            }
-
-            img{
-                display: block;
-                width: 100%;
-                height: 150px;
-                object-fit: cover;
-            }
-
-            .card__content{
-                display: grid;
-                justify-items: left;
-
-                .description{
-                    padding-block: 8px 16px;
-                    padding-left: 12px;
-                    font-size: 1.8rem;
-                    text-align: left;
-                    line-height: 120%;
-                }
-                .card__title{
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-                    padding: 8px 12px;
-                    font-size: 2.4rem;
-                    text-align: left;
-
-                    p{
-                        width: 100%;
-                    }
-
-                    .nf__icon{
-                        padding-inline: 8px;
-                        font-size: 1.8rem;
-                    }
-                }
-
-                .tag_container{
-                    display: flex;
-                }
-
-                .tag{
-                    justify-self: start;
-                    font-size: 1.8rem;
-                    margin-left: 12px;
-                    padding-inline: 8px;
-                    border-radius: 4px;
-                }
-
-                .tag--blue{
-                    color: $white;
-                    background-color: $blue;
-                }
-
-                .tag--red{
-                    color: $white;
-                    background-color: $red;
-                }
-
-                .tag--yellow{
-                    color: $white;
-                    background-color: $yellow;
-                }
-
-                .tag--green{
-                    color: $white;
-                    background-color: $green;
-                }
-            }
-
-            
-            
-        }
-
-        .card.top{
-            box-shadow: 0 0 16px 0 rgba($yellow, 1);
-        }
-
-
-    }
-}
-
-.contact{
-    padding-block: 12px ;
-    h3{
-        font-size: 2.8rem;
-        padding-block: 8px;
-        text-align: center;
-        width: 100%;
-        min-width: 300px;
-        max-width: 600px;
-        margin: 4px auto;
-    }
-}
-
-
-
-.contact_form{
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 8px;
-    width: 100%;
-    min-width: 300px;
-    max-width: 600px;
-    margin: 8px auto;
-    padding: 16px 12px;
-
-    font-size: 1.8rem;
-    
-
-    input{
-        border: none;
-        border-bottom: 2px solid $dark_blue;
-        background-color: transparent;
-        padding-left: 8px;
-        padding-top: 8px;
-        padding-bottom: 2px;
-        font-size: 1.8rem;
-    }
-
-    .textarea{
-        width: 100%;
-        height: 150px;
-        resize: none;
-        border: 2px solid $dark_blue;
-        border-radius: 4px;
-        font-size: 1.8rem;
-        padding: 8px;
-    }
-
-    label{
-        font-size: 2.4rem;
-        padding-block: 12px 4px;
-    }
-
-}
-
-
-.footer{
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr;
-    width: 100%;
-    margin: 0;
-    padding-block: 20px;
-    color: $white;
-    .brand{
-        padding: 0;
-        display: flex;
-        align-items: center;
-        .logo{
-            height: $logo - 1rem;
-            width: $logo - 1rem;
-            padding: 0;
-            margin: 0;
-        }
-        .brand{
-            font-size: $logo - 0.1rem - 1rem;
-            display: block;
-        }
-    }
-
-    @media (width>=$tablet){
-        grid-template-columns: repeat(3, 1fr);
-        .socials{
-            grid-column: auto;
-        }
-    }
-}
-
-.copyright{
-    display: grid;
-    place-items: center;
-    font-size: 1.2rem;
-}
-
-.socials{
-    display: flex;
-    margin-top: 8px;
-    font-size: 2.4rem;
-    grid-column: 1/3;
-    gap: 32px;
-    a{
-        text-decoration: none;
-        cursor: pointer;
-        span.nf__icon{
-            color: $white;
-        }
-    }
-}
-
-.references{
-    color: $white;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 24px;
-
-    h5{
-        font-size: 1.2rem;
-        padding-bottom: 12px;
-    }
-
-    a{
-        text-decoration: none;
     }
 }
