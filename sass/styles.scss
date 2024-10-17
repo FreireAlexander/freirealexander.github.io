@@ -1,28 +1,22 @@
 @use 'sass:math';
 @use "sass:string";
-/** Screen Size */
-$mobileSmall: 320px;
-$mobileMedium: 375px;
-$mobileLarge: 425px;
-$tablet: 768px;
-$laptopSmall: 1024px;
-$laptopMedium: 1440px;
-$laptopLarge: 2560px;
-/** Color Palette */
-$black: #1d1e1d;
-$white: #f3f5f7;
-$white_azure:#F0FFFF;
-$gray: #444447;
-$dark_blue: #01061d;
-$light_blue: #0099FF;
-$blue: #000080;
-$red: #821F00;
-$green: #006158;
-$yellow: #B58A00;
-$color: #1d1e1d;
-$logo: 4rem;
-/** Font Family **/
-$fontFamily: 'Oswald';
+@import 'variables.scss';
+
+@font-face{
+    font-family:'NerdFont';
+    src:url("/fonts/nerdfonts.woff2") format("woff2");
+    font-weight:normal;
+    font-style:normal;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+.icon--nf{
+    font-family:'NerdFont', sans-serif;
+}
 
 *{
     margin: 0;
@@ -50,6 +44,7 @@ h2{
 h4,h5,h6,p{
     font-size: 1.8rem;
     line-height: 2.4rem;
+    margin: 12px 0;
 }
 
 a{
@@ -62,6 +57,8 @@ a{
 }
 
 .button-primary{
+    display: block;
+    width: fit-content;
     padding: 8px 16px;
     border: 0;
     border-radius: 8px;
@@ -70,8 +67,31 @@ a{
     color: $white_azure;
     font-size: 1.8rem;
     cursor: pointer;
+    transition: transform 400ms;
+    transition-timing-function: ease-in-out;
+
+    .icon--nf.send{
+        transition: transform 600ms;
+        transition-timing-function: ease-in-out;
+    }
 }
 
+.button-primary:hover{
+    transform: translateY(-8px);
+    transition: transform 600ms;
+    transition-timing-function: ease-in-out;
+    .icon--nf.send{
+        display: inline;
+        transform: rotate(-45deg);
+    }
+}
+
+
+.container--icon{
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+}
 
 div.body{
     display: grid;
@@ -175,24 +195,29 @@ nav.navbar{
     background: rgb(3,16,78);
     background: linear-gradient(135deg, rgba(3,16,78,1) 10%, rgba(20,20,113,1) 85%, rgba(251,248,255,1) 98%);
 
-    p{
+    p{  
+        font-family: 'Times New Roman', Times, serif;
         font-size: $logo - 0.1rem;
         color: $white;
     }
 }
 
 .brand{
-    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     width: max-content;
     margin-left: 6px;
+    font-family: 'Times New Roman', Times, serif;
     color: $white;
+    div > p{margin: 0;}
 }
 
 .personal-introduction{
     display: grid;
-    place-items: center;
+    align-items: center;
     width: 100%;
-    min-height: 350px;
+    height: 450px;
     margin: 12px 0;
 }
 
@@ -229,5 +254,26 @@ nav.navbar{
         .button-primary{
             margin-block: 16px 12px;
         }
+    }
+}
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px;
+    .copyright{
+        display: grid;
+        place-items: center;
+        place-self: center;
+        #copyright-year, p{
+            margin: 0;
+            font-size: 1.4rem;
+        }
+    }
+    .socials > a {
+        margin-inline: 4px;
+        font-size: 3.2rem;
+        color: $white_azure;
     }
 }

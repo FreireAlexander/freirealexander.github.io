@@ -1,4 +1,8 @@
 window.onload = function(){
+    const currentYear = new Date().getFullYear();
+    console.log(currentYear);
+    document.getElementById("copyright-year").textContent = currentYear;
+
     const activePage = window.location.pathname;
     const navLinks = document.querySelectorAll('.mobile-menu-item');
     console.log(navLinks);
