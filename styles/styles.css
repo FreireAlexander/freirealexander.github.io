@@ -30,7 +30,6 @@ html {
 }
 
 h1 {
-  font-size: 4.8rem;
   font-size: 4.2rem;
 }
 
@@ -112,8 +111,29 @@ div.body {
 }
 @media (width > 768px) {
   #header {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 16px;
   }
+}
+#header .header-menu {
+  height: max-content;
+  background-color: #006158;
+}
+#header .header-menu > ul {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  list-style: none;
+}
+#header .header-menu > ul li > a {
+  display: block;
+  font-size: 1.8rem;
+  color: #f3f5f7;
+}
+#header .header-menu > ul li > a:hover {
+  transform: translateY(-8px);
 }
 
 #header-mobile {
@@ -194,8 +214,10 @@ nav.navbar {
   display: grid;
   align-items: center;
   width: 100%;
-  height: 450px;
   margin: 12px 0;
+}
+.personal-introduction span {
+  height: 250px;
 }
 
 #contact h2 {
@@ -231,6 +253,7 @@ nav.navbar {
   align-items: center;
   justify-content: space-evenly;
   gap: 8px;
+  margin: 36px 0 48px 0;
 }
 #footer .copyright {
   display: grid;
@@ -243,6 +266,6 @@ nav.navbar {
 }
 #footer .socials > a {
   margin-inline: 4px;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   color: #F0FFFF;
 }/*# sourceMappingURL=styles.css.map */

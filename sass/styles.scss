@@ -33,7 +33,6 @@ html{
 }
 
 h1{
-    font-size: 4.8rem;
     font-size: 4.2rem;
 }
 
@@ -131,9 +130,36 @@ div.body{
 
     background-color: rgba($dark_blue, 0.85);
 
+
     @media (width>$tablet){
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 16px;
     }
+    .header-menu{
+        height: max-content;
+        background-color: $green;
+    }
+
+    .header-menu > ul{
+        display: flex;
+        align-items: stretch;
+        gap: 16px;
+        list-style: none;
+        
+        li > a {
+            display: block;
+            font-size: 1.8rem;
+            
+            color: $white;
+            
+        }
+        li > a:hover{
+            transform: translateY(-8px);
+        }
+    }
+
 }
 
 #header-mobile{
@@ -217,8 +243,11 @@ nav.navbar{
     display: grid;
     align-items: center;
     width: 100%;
-    height: 450px;
+    
     margin: 12px 0;
+    span{
+        height: 250px;
+    }
 }
 
 #contact{
@@ -262,6 +291,7 @@ nav.navbar{
     align-items: center;
     justify-content: space-evenly;
     gap: 8px;
+    margin: 36px 0 48px 0;
     .copyright{
         display: grid;
         place-items: center;
@@ -273,7 +303,7 @@ nav.navbar{
     }
     .socials > a {
         margin-inline: 4px;
-        font-size: 3.2rem;
+        font-size: 2.4rem;
         color: $white_azure;
     }
 }
