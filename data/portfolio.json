@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Introducción a JavaScript",
+        "description": "JavaScript es un lenguaje de programación muy popular...",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-01",
+        "tags": ["javascript", "coding", "web"], 
+        "coverPage": "/portfolio/",
+        "href": "/portfolio/B24-/"
+    }
+]
