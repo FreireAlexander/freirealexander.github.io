@@ -42,6 +42,10 @@ h2 {
   font-size: 3.2rem;
 }
 
+h1, h2, h3 {
+  font-weight: bolder;
+}
+
 h4, h5, h6, p {
   font-size: 1.8rem;
   line-height: 2.4rem;
@@ -50,58 +54,6 @@ h4, h5, h6, p {
 
 a {
   text-decoration: none;
-}
-
-.section {
-  margin: 0 auto;
-  padding: 24px 16px;
-}
-
-.button-primary {
-  display: block;
-  width: fit-content;
-  padding: 8px 16px;
-  border: 0;
-  border-radius: 8px;
-  box-shadow: 0 0 6px 4px rgba(0, 153, 255, 0.5);
-  background-color: #0099FF;
-  color: #F0FFFF;
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: transform 400ms;
-  transition-timing-function: ease-in-out;
-}
-.button-primary .icon--nf.send {
-  transition: transform 600ms;
-  transition-timing-function: ease-in-out;
-}
-
-.button-primary:hover {
-  transform: translateY(-8px);
-  transition: transform 600ms;
-  transition-timing-function: ease-in-out;
-}
-.button-primary:hover .icon--nf.send {
-  display: inline;
-  transform: rotate(-45deg);
-}
-
-.container--icon {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-div.body {
-  display: grid;
-  grid-template-rows: 1fr auto auto;
-  min-height: 100vh;
-  color: #F0FFFF;
-}
-@media (width > 768px) {
-  div.body {
-    grid-template-rows: auto 1fr auto;
-  }
 }
 
 #header {
@@ -291,4 +243,95 @@ nav.navbar {
   margin-inline: 4px;
   font-size: 2.4rem;
   color: #F0FFFF;
+}
+
+.section {
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.button-primary {
+  display: block;
+  width: fit-content;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 4px rgba(0, 153, 255, 0.5);
+  background-color: #0099FF;
+  color: #F0FFFF;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: transform 400ms;
+  transition-timing-function: ease-in-out;
+}
+.button-primary .icon--nf.send {
+  transition: transform 600ms;
+  transition-timing-function: ease-in-out;
+}
+
+.button-primary:hover {
+  transform: translateY(-8px);
+  transition: transform 600ms;
+  transition-timing-function: ease-in-out;
+}
+.button-primary:hover .icon--nf.send {
+  display: inline;
+  transform: rotate(-45deg);
+}
+
+.button-secondary {
+  display: block;
+  width: fit-content;
+  padding: 8px 16px;
+  border: 2px solid;
+  border-color: #F0FFFF;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 4px rgba(243, 245, 247, 0.2);
+  background-color: rgba(0, 153, 255, 0.85);
+  color: #f3f5f7;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 400ms;
+  transition-timing-function: ease-in-out;
+}
+.button-secondary .icon--nf.send {
+  transition: transform 600ms;
+  transition-timing-function: ease-in-out;
+}
+
+.button-secondary:hover {
+  transform: translateY(-8px);
+  transition: transform 600ms;
+  transition-timing-function: ease-in-out;
+}
+.button-secondary:hover .icon--nf.send {
+  display: inline;
+  transform: rotate(-45deg);
+}
+
+.container--icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+div.body {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  min-height: 100vh;
+  color: #F0FFFF;
+}
+@media (width > 768px) {
+  div.body {
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+.flex {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  padding: 4px 16px;
 }/*# sourceMappingURL=styles.css.map */

@@ -44,13 +44,13 @@ document.addEventListener("DOMContentLoaded", function() {
         "a Civil Engineer",
         "a Web Developer",   
         "a CAD Technician",
-        "a Top Professional"
+        "a Top Pro"
       ];
     const colors = {
-        "blue": "#0068BD",
-        "red": "#ff6f69",
-        "yellow": "#ffeead",
-        "green": "#96ceb4"
+        "light_blue": "#0099FF",
+        "red": "#ff2600",
+        "green": "#00ff62",
+        "yellow": "#fff200"
     };
 
     createTypewriterAnimation(textElement, roles, colors);
