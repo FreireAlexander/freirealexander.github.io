@@ -4,13 +4,16 @@
 .mobile-menu-item {
   display: grid;
   place-items: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   filter: grayscale(1);
   color: #F0FFFF;
 }
 .mobile-menu-item figure > img {
-  max-width: 48px;
-  max-height: 48px;
+  max-width: 32px;
+  max-height: 32px;
+}
+.mobile-menu-item p {
+  text-align: center;
 }
 
 .mobile-menu-item.active {
