@@ -55,12 +55,19 @@ h2{
     font-size: 3.2rem;
 }
 
+h3{
+    font-size: 2.4rem;
+}
+
 h1,h2,h3{
+    color: $white;
     font-weight: bolder;
 }
 
 h4,h5,h6,p{
+    color: $white_azure;
     font-size: 1.8rem;
+    font-weight: normal;
     line-height: 2.4rem;
     margin: 12px 0;
 }
@@ -316,12 +323,12 @@ nav.navbar{
     display: block;
     width: fit-content;
     padding: 8px 16px;
-    border: 2px solid;
-    border-color: $white_azure;
+    border: 1px solid;
+    border-color: rgba($white_azure, 0.5);
     border-radius: 8px;
     box-shadow: 0 0 8px 4px rgba($white, 0.2);
-    background-color: rgba($light_blue, 0.85);
-    color: $white;
+    background-color: rgba($light_blue, 0.45);
+    color: $white_azure;
     font-size: 1.8rem;
     font-weight: bold;
     cursor: pointer;
@@ -373,4 +380,53 @@ div.body{
     gap: 16px;
     width: 100%;
     padding: 4px 16px;
+}
+
+.grid, .center{
+    display: grid;
+    place-items: center;
+    row-gap: 24px;
+}
+
+.work-in-progress{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: max-content;
+    min-height: 400px;
+    margin: 0 auto;
+    overflow: clip;
+    img{
+        max-width: 512px;
+        width: 50%;
+        margin: 0 auto;
+        object-fit: contain;
+        animation: workInProgress 5s infinite ease-in-out;
+        transform-origin: top center;
+    }
+}
+
+@keyframes workInProgress{
+    0% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(10deg); /* Reducción del ángulo */
+    }
+    30% {
+        transform: rotate(-5deg); /* Oscilación inversa */
+    }
+    45% {
+        transform: rotate(5deg); /* Oscilación positiva más leve */
+    }
+    60% {
+        transform: rotate(-3deg); /* Más leve de nuevo */
+    }
+    75% {
+        transform: rotate(2deg); /* Regresa hacia la posición neutra */
+    }
+    100% {
+        transform: rotate(0deg); /* Termina en la posición original */
+    }
 }
