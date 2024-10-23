@@ -39,22 +39,23 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Ejemplo de uso
-    const textElement = document.querySelector(".animated-text");
+    const textElement1 = document.querySelector("[id='thanks-1']");
+    const textElement2 = document.querySelector("#thanks-2");
     const roles = [
-      "Merci :)",
-      "Obrigado :)",
-      "Grazie :)",
-      "Gracias :)",
-      "Danke :)",
-      "gràcies :)",
-      "ありがとう :)"
-      ];
+                "Merci :)",
+                "Obrigado :)",
+                "Grazie :)",
+                "Gracias :)",
+                "Danke :)",
+                "gràcies :)",
+                "ありがとう :)"
+            ];
     const colors = {
-        "blue": "#0068BD",
-        "red": "#ff6f69",
-        "yellow": "#ffeead",
-        "green": "#96ceb4"
-    };
-
-    createTypewriterAnimation(textElement, roles, colors);
+                "light_blue": "#0099FF",
+                "red": "#ff2600",
+                "green": "#00ff62",
+                "yellow": "#fff200"
+            };
+    createTypewriterAnimation(textElement1, roles, colors);
+    createTypewriterAnimation(textElement2, roles, colors);
 });

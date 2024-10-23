@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
+    <title>Sorry, Page not available</title>
     <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,40 +29,18 @@
     <main>
         <section id="section-1" class="section">
             <h1>
-                <span id="thanks-1" class="notranslate"></span>
-                <span>for leaving me a message</span>
+                <span>Sorry, Page does not exist</span>
             </h1>
         </section>
-        <section id="latest-videos" class="section">
-            <h2>Keep watching videos on Youtube</h2>
+        <section class="section" >
             <figure class="work-in-progress">
-                <img  src="/media/icons/work-in-progress.png" alt="Work in progress sign">
+                <img  src="/media/icons/404-error.png" alt="Work in progress sign">
             </figure>
-            <div class="flex">
-                <a href="https://www.youtube.com/channel/UCx2OMBd9f3XKPjedSKJAPqw" class="button-primary container--icon youtube">
-                    <span class="icon--nf" style="display: block;">&#xf16a;</span> Youtube 
+            <h2 class="center">
+                <a href="/">Come back to Home page 
+                    <span class="icon--nf">&#xF054C;</span>
                 </a>
-            </div>
-        </section>
-        <section class="section">
-            <h2>Or invite me a coffe</h2>
-            <p>I invite you to buy me a coffe for keeping working</p>
-            <div class="center" id="buy-me-a-coffe">
-                <a href="" class="button-primary container--icon">
-                    Buy me a coffe 
-                    <span class="icon--nf" >&#xe26f;</span>
-                </a>
-            </div>
-        </section>
-        <section id="thanks" class="section" >
-            <h2>Keep Exploring</h2>
-            <p>There are a lot of interesting Blogs and Projects</p>
-            <figure class="work-in-progress">
-                <img  src="/media/icons/work-in-progress.png" alt="Work in progress sign">
-            </figure>
-            <h3 class="center">
-                <span id="thanks-2" class="notranslate"></span>
-            </h3>
+            </h2>
         </section>
     </main>
     <footer id="footer"></footer>
@@ -75,10 +53,12 @@
     <script src="/scripts/mobileMenu.js"></script>
     
     <script>
+        // Cargar el header y el footer al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
             loadHTML('header', '/components/header.html');
             loadHTML('header-mobile', '/components/header_mobile.html');
             loadHTML('footer', '/components/footer.html');
+            loadHTML('contact', '/components/contact_form.html');
         });
     </script>
 </html>

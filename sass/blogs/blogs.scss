@@ -85,5 +85,9 @@
 }
 
 .border{
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.8rem;
     border-radius: 8px;
+    user-select: text;
+    cursor: text;
 }
