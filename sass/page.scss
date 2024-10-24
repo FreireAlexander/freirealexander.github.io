@@ -1,8 +1,5 @@
 @import 'variables.scss';
 
-body{
-    user-select: text;
-}
 
 
 li{
@@ -24,6 +21,7 @@ a{
 }
 
 #page-cover{
+    
     width: 100%;
     margin: 0;
     padding: 0;
@@ -35,6 +33,7 @@ a{
 }
 
 #page-data{
+    
     width: 100%;
     margin: 0 auto;
     padding: 12px 16px 48px 16px;
@@ -58,6 +57,7 @@ a{
 .tags{
     display: flex;
     flex-wrap: wrap;
+    width: 100;
     row-gap: 16px;
     column-gap: 8px;
     padding: 12px 0;
@@ -70,12 +70,19 @@ a{
         }
         &.blue{
             background-color: $light_blue;
+            box-shadow: 0 0 6px 4px rgba($light_blue, 0.5);
         }
         &.green{
             background-color: $green;
+            box-shadow: 0 0 6px 4px rgba($green, 0.5);
         }
         &.yellow{
             background-color: $yellow;
+            box-shadow: 0 0 6px 4px rgba($yellow, 0.5);
+        }
+        &.gray, &.grey{
+            background-color: $gray;
+            box-shadow: 0 0 6px 4px rgba($gray, 0.5);
         }
         .icon--nf{
             padding: 0;
@@ -87,28 +94,43 @@ a{
 #page-body{
     width: 100%;
     padding: 4px 16px;
-    figure{
-        display: grid;
-        place-items: center;
-        width: 100%;
-        img{
-            max-width: 200px;
-            max-height: 512px;
-            object-fit: contain;
-        }
-        figcaption{
-            border-radius: 8px;
-            padding: 8px 4px;
-            font-size: 1.2rem;
-            font-weight: 500;
-            width: 80%;
-            color: $white_azure;
-            a{
-                text-decoration: none;
-                color: inherit;
+    & , .gallery{
+        figure{
+            display: grid;
+            place-items: center;
+            img{
+                max-width: 200px;
+                max-height: 512px;
+                object-fit: contain;
+            }
+            figcaption{
+                border-radius: 8px;
+                padding: 8px 4px;
+                font-size: 1.2rem;
+                font-weight: 500;
+                width: 80%;
+                color: $white_azure;
+                a{
+                    text-decoration: none;
+                    color: inherit;
+                }
             }
         }
-    }    
+    }
+    .gallery{
+        
+        display: grid;
+        figure{
+            figcaption{
+                text-align: center;
+            }
+        }
+
+        @media (width>$mobileLarge) {
+            overflow: hidden;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }     
 }
 
 #page-references{
@@ -134,7 +156,8 @@ a{
 }
 
 .section--page{
-    margin: 0 auto;
+    
+    margin: 0;
     padding: 24px 16px;
 }
 
@@ -177,19 +200,10 @@ a{
     }
 }
 
-.gallery{
-    display: flex;
-    flex-wrap: nowrap;
-    figure{
-        display: grid;
-        place-items: center;
-        figcaption{
-            text-align: center;
-        }
-    }
-}
+
 
 .repo{
+    
     h3{
         text-align: center;
     }

@@ -368,14 +368,8 @@ nav.navbar{
 div.body{
     display: grid;
     grid-template-rows: 1fr auto auto;
-
     min-height: 100vh;
-
-
     color: $white_azure;
-    
-    
-    
     @media (width>$tablet){
         grid-template-rows: auto 1fr auto;
     }

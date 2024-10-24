@@ -1,10 +1,6 @@
 /** Screen Size */
 /** Color Palette */
 /** Font Family **/
-body {
-  user-select: text;
-}
-
 li {
   list-style-position: inside;
 }
@@ -57,6 +53,7 @@ a.link {
 .tags {
   display: flex;
   flex-wrap: wrap;
+  width: 100;
   row-gap: 16px;
   column-gap: 8px;
   padding: 12px 0;
@@ -71,12 +68,19 @@ a.link {
 }
 .tags span.blue {
   background-color: #0099FF;
+  box-shadow: 0 0 6px 4px rgba(0, 153, 255, 0.5);
 }
 .tags span.green {
   background-color: #006158;
+  box-shadow: 0 0 6px 4px rgba(0, 97, 88, 0.5);
 }
 .tags span.yellow {
   background-color: #B58A00;
+  box-shadow: 0 0 6px 4px rgba(181, 138, 0, 0.5);
+}
+.tags span.gray, .tags span.grey {
+  background-color: #444447;
+  box-shadow: 0 0 6px 4px rgba(68, 68, 71, 0.5);
 }
 .tags span .icon--nf {
   padding: 0;
@@ -87,17 +91,16 @@ a.link {
   width: 100%;
   padding: 4px 16px;
 }
-#page-body figure {
+#page-body figure, #page-body .gallery figure {
   display: grid;
   place-items: center;
-  width: 100%;
 }
-#page-body figure img {
+#page-body figure img, #page-body .gallery figure img {
   max-width: 200px;
   max-height: 512px;
   object-fit: contain;
 }
-#page-body figure figcaption {
+#page-body figure figcaption, #page-body .gallery figure figcaption {
   border-radius: 8px;
   padding: 8px 4px;
   font-size: 1.2rem;
@@ -105,9 +108,21 @@ a.link {
   width: 80%;
   color: #F0FFFF;
 }
-#page-body figure figcaption a {
+#page-body figure figcaption a, #page-body .gallery figure figcaption a {
   text-decoration: none;
   color: inherit;
+}
+#page-body .gallery {
+  display: grid;
+}
+#page-body .gallery figure figcaption {
+  text-align: center;
+}
+@media (width > 425px) {
+  #page-body .gallery {
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 #page-references h2 {
@@ -131,7 +146,7 @@ a.link {
 }
 
 .section--page {
-  margin: 0 auto;
+  margin: 0;
   padding: 24px 16px;
 }
 
@@ -170,18 +185,6 @@ a.link {
 .code-block .code-header .copy-button:hover {
   transform: scale(1.3);
   border-radius: 4px;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.gallery figure {
-  display: grid;
-  place-items: center;
-}
-.gallery figure figcaption {
-  text-align: center;
 }
 
 .repo h3 {
