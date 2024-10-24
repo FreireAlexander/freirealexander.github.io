@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freire Alexander</title>
-    <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/mobile.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Freire Alexander</title>
+        <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/styles.css">
+        <link rel="stylesheet" href="/styles/mobile.css">
+        <link rel="stylesheet" href="/styles/page.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
     
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-TW9HZ9TTYP');
-    </script>
-    <!-- Consent Manager -->
-    <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
-</head>
+            gtag('config', 'G-TW9HZ9TTYP');
+        </script>
+        <!-- Consent Manager -->
+        <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+    </head>
 <body>
-<div class="body">
-    <header id="header"></header>
-    <main>
-        <section class="section">
-            <h1>Portfolio</h12>
-            <figure class="work-in-progress">
-                <img  src="/media/icons/work-in-progress.png" alt="Work in progress sign">
-            </figure>
-        </section>
-    </main>
-    <footer id="footer"></footer>
-    <footer id="header-mobile"></footer>
-</div>
-</body>
-    <script src="/scripts/setCurrentYear.js"></script>
-    <script src="/scripts/loadComponents.js"></script>
-    <script src="/scripts/index.js"></script>
-    <script src="/scripts/mobileMenu.js"></script>
-    <script>
-        // Cargar el header y el footer al cargar la página
-        document.addEventListener("DOMContentLoaded", function() {
-            loadHTML('header', '/components/header.html');
-            loadHTML('header-mobile', '/components/header_mobile.html');
-            loadHTML('footer', '/components/footer.html');
-        });
-    </script>
+    <div class="body">
+        <header id="header"></header>
+        <main>
+            <section class="section">
+                <h1>Portfolio</h1>
+                <figure class="work-in-progress">
+                    <img  src="/media/icons/work-in-progress.png" alt="Work in progress sign">
+                </figure>
+            </section>
+            <section class="section">
+                <a href="/portfolio/template/" class="button-primary">Portfolio Template</a>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+        <footer id="header-mobile"></footer>
+    </div>
+    </body>
+        <script src="/scripts/loadComponents.js"></script>
+        <script src="/scripts/setCurrentYear.js"></script>
+        <script src="/scripts/index.js"></script>
+        <script src="/scripts/mobileMenu.js"></script>
+        <script>
+            // Cargar el header y el footer al cargar la página
+            document.addEventListener("DOMContentLoaded", function() {
+                loadHTML('header', '/components/header.html');
+                loadHTML('header-mobile', '/components/header_mobile.html');
+                loadHTML('footer', '/components/footer.html');
+            });
+        </script>
 </html>

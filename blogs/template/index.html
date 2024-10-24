@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/styles/mobile.css">
     <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.css">
     <script src="/scripts/highlight/highlight.min.js"></script>
-    <link rel="stylesheet" href="/styles/blogs.css">
+    <link rel="stylesheet" href="/styles/page.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
     <script>
@@ -29,19 +29,29 @@
 <div class="body">
     <header id="header"></header>
     <main>
-        <section id="blog-cover"></section>
-        <section id="blog-data" class="section--blog">
+        <section id="page-cover" class="section--page">
+            <img class="cover-page" src="/blogs/template/coverPage.webp" alt="cover page">
+        </section>
+        <section id="page-data" class="section--page">
             <h1 class="title">Roads Projects</h1>
-            
             <div>
                 <p class="author">Author: Freire Alexander Palomino Palma</p>
-                <p class="publish">Publish date: <time datetime="01-01-2024">01/01/2024</time> </p>
+                <p class="publish">Publish date: <time datetime="01-01-2024">01/01/2024</time></p>
+                <div>
+                    <p>Tags</p>
+                    <p class="tags">
+                        <span class="red"><span class="icon--nf">&#xf16a;</span>coding</span>
+                        <span class="green">Civil Engineering</span>
+                        <span class="blue">Learning</span>
+                        <span class="yellow">Programming</span>
+                    </p>
+                </div>
             </div>
-            <hr>
         </section>
-        <section id="blog-body" class="section--blog">
+        <section id="page-body" class="section--page">
+            <h3>Introduction</h3>
             <p>
-                Lorem ipsum, <a>dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
+                Lorem ipsum, <a class="link">dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
                 Id odit tempore veniam voluptatem at sed tempora porro ullam labore harum, laudantium assumenda velit exercitationem in fuga. Facilis dolorem expedita possimus iusto voluptate eius in aperiam nulla reiciendis ipsa.
                 Adipisci deserunt ipsa earum voluptatem nisi praesentium. Corrupti unde rem aliquam quia repellendus cupiditate ipsa fugit non labore facilis molestias, amet quo explicabo excepturi quidem aspernatur omnis, culpa nam distinctio.
                 Cupiditate, esse. Aperiam voluptates quidem recusandae? Excepturi inventore nam quibusdam fugit ad! Temporibus dignissimos voluptas nemo mollitia corporis! Voluptatum iusto voluptas unde itaque ut suscipit quibusdam optio excepturi eaque odio?
@@ -51,28 +61,44 @@
                 <img src="/blogs/template/coverPage.png" alt="image" title="images">
                 <figcaption>from: <a href=""> reference text or description </a></figcaption>
             </figure>
+            <h3 style="text-align: center;">Gallery Pictures</h3>
+            <div class="flex gallery">
+                <figure>
+                    <img src="/blogs/template/coverPage.png" alt="image" title="images">
+                    <figcaption>from: <a href=""> reference text or description </a></figcaption>
+                </figure>
+                <figure>
+                    <img src="/blogs/template/coverPage.png" alt="image" title="images">
+                    <figcaption>from: <a href=""> reference text or description </a></figcaption>
+                </figure>
+            </div>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
                 Id odit tempore veniam voluptatem at sed tempora porro ullam labore harum, laudantium assumenda velit exercitationem in fuga. Facilis dolorem expedita possimus iusto voluptate eius in aperiam nulla reiciendis ipsa.
-                Adipisci deserunt ipsa earum voluptatem nisi praesentium. Corrupti unde rem aliquam quia repellendus cupiditate ipsa fugit non labore facilis molestias, amet quo explicabo excepturi quidem aspernatur omnis, culpa nam distinctio.
+                Adipisci deserunt ipsa <i>Esto lo dijo menganito</i><a href="#ref-1" class="ref">[1]</a>earum voluptatem nisi praesentium. Corrupti unde rem aliquam quia repellendus cupiditate ipsa fugit non labore facilis molestias, amet quo explicabo excepturi quidem aspernatur omnis, culpa nam distinctio.
                 Cupiditate, esse. Aperiam voluptates quidem recusandae? Excepturi inventore nam quibusdam fugit ad! Temporibus dignissimos voluptas nemo mollitia corporis! Voluptatum iusto voluptas unde itaque ut suscipit quibusdam optio excepturi eaque odio?
                 Veniam nisi doloremque ex quisquam rerum asperiores cum ad sint iste placeat reiciendis ut ullam dolorem quam fugiat id beatae inventore amet, consequatur, debitis qui dicta delectus. Reprehenderit, veritatis quibusdam.
             </p>
-            <div>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="language-label">Python</span>
+                    <button class="copy-button icon--nf">&#xf4bb; Copy</button>
+                </div>
                 <pre>
-                    <code class="language-python border">
-/** Python Code **/
+                    
+<code class="language-python">/** Python Code **/
+    def function():
+        print("Hola mundo")
 
-def function():
-    print("Hola mundo")
-                    </code>
+</code>
                 </pre>
             </div>
         </section>
-        <section id="blog-references" class="section--blog">
+        <section id="page-references" class="section--page">
             <h2>References</h2>
             <ol>
-                <li>reference</li>
+                <li id="ref-1">E. H. Miller, “A note on reflector arrays,” <i>IEEE Trans</i>. Antennas Propag, to be published.</li>
+                <li id="ref-2">C. K. Kim, “Effect of gamma rays on plasma,” submitted for publication.</li>
             </ol>
         </section>
     </main>
@@ -90,6 +116,22 @@ def function():
             loadHTML('header', '/components/header.html');
             loadHTML('header-mobile', '/components/header_mobile.html');
             loadHTML('footer', '/components/footer.html');
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const originalText = button.innerHTML; // Guardar el contenido original
+                const code = button.parentElement.nextElementSibling.querySelector('code').textContent;
+
+                navigator.clipboard.writeText(code).then(() => {
+                    // Cambiar el texto a "Copied!" sin afectar al icono
+                    button.innerHTML = '&#xf00c; Copied!';
+                    
+                    // Restaurar el texto original después de 2 segundos
+                    setTimeout(() => button.innerHTML = originalText, 2000);
+                });
+            });
         });
     </script>
     <script>hljs.highlightAll();</script>

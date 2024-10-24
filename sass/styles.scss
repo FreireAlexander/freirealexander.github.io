@@ -64,7 +64,7 @@ h1,h2,h3{
     font-weight: bolder;
 }
 
-h4,h5,h6,p{
+h4,h5,h6,p,li{
     color: $white_azure;
     font-size: 1.8rem;
     font-weight: normal;
@@ -293,6 +293,7 @@ nav.navbar{
     padding: 24px 16px;
 }
 
+
 .button-primary{
     display: block;
     width: fit-content;
@@ -309,7 +310,7 @@ nav.navbar{
     transition-timing-function: ease-in-out;
 
     .icon--nf.send{
-        transition: transform 600ms;
+        transition: transform 400ms;
         transition-timing-function: ease-in-out;
     }
     
@@ -325,7 +326,7 @@ nav.navbar{
 }
 
 .button-primary:hover{
-    transform: translateY(-8px);
+    transform: scale(1.1);
     transition: transform 600ms;
     transition-timing-function: ease-in-out;
     .icon--nf.send{
@@ -349,21 +350,12 @@ nav.navbar{
     cursor: pointer;
     transition: transform 400ms;
     transition-timing-function: ease-in-out;
-
-    .icon--nf.send{
-        transition: transform 600ms;
-        transition-timing-function: ease-in-out;
-    }
 }
 
 .button-secondary:hover{
-    transform: translateY(-8px);
+    transform: scale(1.1);
     transition: transform 600ms;
     transition-timing-function: ease-in-out;
-    .icon--nf.send{
-        display: inline;
-        transform: rotate(-45deg);
-    }
 }
 
 
