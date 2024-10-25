@@ -214,16 +214,17 @@ a.link {
   padding: 12px 8px;
   background-color: #f3f5f7;
   color: #1d1e1d;
-  border-radius: 8px;
-  font-size: 1.8rem;
+  border-radius: 16px;
   line-height: 3.2rem;
 }
 .search-container .search-bar {
   width: 100%;
   border: 0;
   background-color: transparent;
+  font-size: 1.8rem;
 }
 .search-container .search-filter {
+  font-size: 1.8rem;
   border: 0;
   background-color: transparent;
 }/*# sourceMappingURL=page.css.map */

@@ -228,15 +228,17 @@ a{
     padding: 12px 8px;
     background-color: $white;
     color: $black;
-    border-radius: 8px;
-    font-size: 1.8rem;
+    border-radius: 16px;
+    
     line-height: 3.2rem;
     .search-bar{
         width: 100%;
         border: 0;
         background-color: transparent;
+        font-size: 1.8rem;
     }
     .search-filter{
+        font-size: 1.8rem;
         border: 0;
         background-color: transparent;
     }

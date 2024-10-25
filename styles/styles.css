@@ -99,7 +99,7 @@ a {
   transition-timing-function: ease-in-out;
   transition-duration: 400ms;
 }
-#header .header-menu > ul li > a:hover {
+#header .header-menu > ul li > a:hover, #header .header-menu > ul a:focus {
   transform: scale(1.4);
   transition-property: transform;
   transition-timing-function: ease-in-out;
@@ -290,12 +290,12 @@ nav.navbar {
   font-size: 3.2rem;
 }
 
-.button-primary:hover {
+.button-primary:hover, .button-primary:focus {
   transform: scale(1.1);
   transition: transform 600ms;
   transition-timing-function: ease-in-out;
 }
-.button-primary:hover .icon--nf.send {
+.button-primary:hover .icon--nf.send, .button-primary:focus .icon--nf.send {
   display: inline;
   transform: rotate(-45deg);
 }
@@ -304,11 +304,9 @@ nav.navbar {
   display: block;
   width: fit-content;
   padding: 8px 16px;
-  border: 1px solid;
-  border-color: rgba(240, 255, 255, 0.5);
   border-radius: 8px;
-  box-shadow: 0 0 8px 4px rgba(243, 245, 247, 0.2);
-  background-color: rgba(0, 153, 255, 0.45);
+  box-shadow: 0 0 6px 4px rgba(1, 72, 131, 0.85);
+  background-color: #014883;
   color: #F0FFFF;
   font-size: 1.8rem;
   font-weight: bold;
@@ -317,7 +315,7 @@ nav.navbar {
   transition-timing-function: ease-in-out;
 }
 
-.button-secondary:hover {
+.button-secondary:hover, .button-secondary:focus {
   transform: scale(1.1);
   transition: transform 600ms;
   transition-timing-function: ease-in-out;

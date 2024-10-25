@@ -112,7 +112,7 @@ a {
             transition-timing-function: ease-in-out;
             transition-duration: 400ms;
         }
-        li > a:hover{
+        li > a:hover, a:focus{
             transform: scale(1.4);
             transition-property: transform;
             transition-timing-function: ease-in-out;
@@ -325,7 +325,7 @@ nav.navbar{
     
 }
 
-.button-primary:hover{
+.button-primary:hover, .button-primary:focus{
     transform: scale(1.1);
     transition: transform 600ms;
     transition-timing-function: ease-in-out;
@@ -336,14 +336,13 @@ nav.navbar{
 }
 
 .button-secondary{
+    $buttonSecondaryColor: #014883;
     display: block;
     width: fit-content;
     padding: 8px 16px;
-    border: 1px solid;
-    border-color: rgba($white_azure, 0.5);
     border-radius: 8px;
-    box-shadow: 0 0 8px 4px rgba($white, 0.2);
-    background-color: rgba($light_blue, 0.45);
+    box-shadow: 0 0 6px 4px rgba($buttonSecondaryColor, 0.85);
+    background-color: $buttonSecondaryColor;
     color: $white_azure;
     font-size: 1.8rem;
     font-weight: bold;
@@ -352,7 +351,7 @@ nav.navbar{
     transition-timing-function: ease-in-out;
 }
 
-.button-secondary:hover{
+.button-secondary:hover, .button-secondary:focus{
     transform: scale(1.1);
     transition: transform 600ms;
     transition-timing-function: ease-in-out;
