@@ -200,8 +200,6 @@ a{
     }
 }
 
-
-
 .repo{
     
     h3{
@@ -212,5 +210,34 @@ a{
         flex-wrap: nowrap;
         justify-content: space-around;
         list-style: none;
+    }
+}
+#search-container{
+    position: sticky;
+    top: 24px;
+    z-index: 1000;
+    width: 100%;
+    padding: 24px 0 28px 0;
+    background-color: rgba($dark_blue, 0.85);
+}
+.search-container{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 8px;
+    background-color: $white;
+    color: $black;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    .search-bar{
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+    }
+    .search-filter{
+        border: 0;
+        background-color: transparent;
     }
 }

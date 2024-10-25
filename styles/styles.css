@@ -396,18 +396,6 @@ div.body {
     transform: rotate(0deg); /* Termina en la posición original  */
   }
 }
-.search-container {
-  position: sticky;
-  left: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 16px;
-  background-color: rgba(1, 6, 29, 0);
-  z-index: 1000;
-}
-
 #cards-container {
   display: grid;
   place-items: center;

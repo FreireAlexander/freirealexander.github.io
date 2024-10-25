@@ -195,4 +195,35 @@ a.link {
   flex-wrap: nowrap;
   justify-content: space-around;
   list-style: none;
+}
+
+#search-container {
+  position: sticky;
+  top: 24px;
+  z-index: 1000;
+  width: 100%;
+  padding: 24px 0 28px 0;
+  background-color: rgba(1, 6, 29, 0.85);
+}
+
+.search-container {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 8px;
+  background-color: #f3f5f7;
+  color: #1d1e1d;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+}
+.search-container .search-bar {
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+}
+.search-container .search-filter {
+  border: 0;
+  background-color: transparent;
 }/*# sourceMappingURL=page.css.map */

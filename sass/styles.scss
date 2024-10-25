@@ -432,18 +432,6 @@ div.body{
     }
 }
 
-.search-container{
-    position: sticky;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 16px;
-    background-color: rgba($dark_blue, 0);
-    z-index: 1000;
-}
-
 #cards-container{
     display: grid;
     place-items: center;

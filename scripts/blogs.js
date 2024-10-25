@@ -1,4 +1,4 @@
-// script.js
+
 
 let allItems = []; // Variable para almacenar todos los datos cargados
 
@@ -26,9 +26,14 @@ function createCards(items) {
 
     if (items.length === 0) {
         // Mostrar mensaje de "No se encontraron resultados"
-        const noResultsMessage = document.createElement('h3');
-        noResultsMessage.textContent = 'No se encontraron resultados para la búsqueda actual.';
-        noResultsMessage.classList.add('no-results-message');
+        const noResultsMessage = document.createElement('div');
+        noResultsMessage.classList.add('card');
+        noResultsMessage.innerHTML = `
+            <h3>No Results</h3>
+            <figure class="card-cover">
+                <img src="/media/icons/404-error.png" alt="No results">
+            </figure>
+        `;
         container.appendChild(noResultsMessage);
         return; // Salir de la función para no continuar con la generación de cards
     }
@@ -99,3 +104,25 @@ searchInput.addEventListener('input', () => {
 searchFilter.addEventListener('change', () => {
     filterCards(searchInput.value, searchFilter.value);
 });
+
+// script.js
+function updateStickySectionPosition() {
+    const header = document.getElementById('header');
+    const stickySection = document.getElementById('search-container');
+    const headerHeight = header.offsetHeight;
+    const minWidth = 768; // Ancho mínimo para aplicar el comportamiento
+
+    if (window.innerWidth > minWidth) {
+        // Solo aplica si el ancho de la ventana es mayor que el ancho mínimo
+        stickySection.style.top = `${headerHeight}px`;
+    } else {
+        // Restablece la posición si la pantalla es más pequeña
+        stickySection.style.top = '0';
+    }
+}
+
+// Actualizar la posición al cargar la página
+window.addEventListener('load', updateStickySectionPosition);
+
+// Actualizar la posición cuando se redimensiona la ventana
+window.addEventListener('resize', updateStickySectionPosition);
