@@ -28,9 +28,18 @@
     <main>
         <section class="section">
             <h1>Blogs and News</h1>
-            <figure class="work-in-progress">
-                <img  src="/media/icons/work-in-progress.png" alt="Work in progress sign">
-            </figure>
+        </section>
+        <section class="section">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search..." class="search-bar">
+                <select id="search-filter" class="search-filter">
+                    <option value="all">All</option>
+                    <option value="title">Title</option>
+                    <option value="tags">Tags</option>
+                    <option value="date">Date</option>
+                </select>
+            </div>
+            <section id="cards-container" class="section"></section>
         </section>
         <section class="section">
             <a href="/blogs/template/" class="button-primary">Blogs Template</a>
@@ -52,4 +61,5 @@
             loadHTML('footer', '/components/footer.html');
         });
     </script>
+    <script src="/scripts/blogs.js"></script>
 </html>

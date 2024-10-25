@@ -1,11 +1,29 @@
 [
     {
-        "title": "Introducción a JavaScript",
-        "description": "JavaScript es un lenguaje de programación muy popular...",
+        "title": "Civil Engineering Blog",
+        "description": "Civil Engineers are cool, they are really cool...",
         "author": "Freire A. Palomino Palma",
-        "date": "2024-10-01",
-        "tags": ["javascript", "coding", "web"], 
-        "coverPage": "/blogs/",
-        "href": "/blogs/B24-/"
+        "date": "2024-10-20",
+        "tags": ["Civil Engineering", "AutoCAD", "Civil 3D"], 
+        "coverPage": "/blogs/template/coverPage.webp",
+        "href": "/blogs/template/"
+    },
+    {
+        "title": "CADENERO",
+        "description": "Tools for calcs and computations every Civil Engineer need...",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-23",
+        "tags": ["Python", "Coding", "Software"], 
+        "coverPage": "/blogs/template/coverPage.webp",
+        "href": "/blogs/template/"
+    },
+    {
+        "title": "Why Anki is the best tool for learning and never forgetting",
+        "description": "Anki is a software who helps a lot of students around...",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-24",
+        "tags": ["Learning", "Studying"], 
+        "coverPage": "/blogs/template/coverPage.webp",
+        "href": "/blogs/template/"
     }
 ]

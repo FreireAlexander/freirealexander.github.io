@@ -431,3 +431,33 @@ div.body{
         transform: rotate(0deg); /* Termina en la posición original  */
     }
 }
+
+.search-container{
+    position: sticky;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background-color: rgba($dark_blue, 0);
+    z-index: 1000;
+}
+
+#cards-container{
+    display: grid;
+    place-items: center;
+    div.card{
+        display: grid;
+        width: 80%;
+        figure{
+            display: grid;
+            place-items: center;
+            img{
+                max-width: 200px;
+                max-height: 512px;
+                object-fit: contain;
+            }
+        }
+    }
+}
