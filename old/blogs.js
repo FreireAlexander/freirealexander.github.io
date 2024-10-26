@@ -1,5 +1,4 @@
 let allItems = []; // Variable para almacenar todos los datos cargados
-let filteredItems = []; // Variable para almacenar los elementos filtrados
 let currentIndex = 0; // Índice para el número de tarjetas cargadas inicialmente
 const increment = 3; // Cantidad de tarjetas a cargar por vez
 
@@ -35,9 +34,8 @@ async function loadJSON() {
             throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
-        allItems = data; // Guardar los datos originales
-        filteredItems = allItems; // Inicialmente, los elementos filtrados son todos los elementos
-        createCards(filteredItems.slice(0, increment)); // Generar las primeras tarjetas
+        allItems = data; // Guardar los datos para el filtrado
+        createCards(allItems.slice(0, increment)); // Generar las primeras tarjetas
         currentIndex = increment; // Actualizar el índice
         toggleLoadMoreButton(); // Mostrar u ocultar el botón de cargar más
     } catch (error) {
@@ -46,12 +44,9 @@ async function loadJSON() {
 }
 
 // Función para generar las cards y añadirlas al contenedor
-function createCards(items, clear = false) {
+function createCards(items) {
     const container = document.getElementById('cards-container');
-    
-    if (clear) {
-        container.innerHTML = ''; // Limpiar el contenedor si el parámetro clear es verdadero
-    }
+    container.innerHTML = ''; // Limpiar cualquier contenido previo
 
     if (items.length === 0 && currentIndex === 0) {
         // Mostrar mensaje de "No se encontraron resultados"
@@ -68,7 +63,7 @@ function createCards(items, clear = false) {
         return;
     }
     const path = getPath();
-    if (path === 'blogs') {
+    if (path === 'blogs'){
         items.forEach(item => {
             const card = document.createElement('div');
             card.classList.add('card');
@@ -88,7 +83,7 @@ function createCards(items, clear = false) {
             `;
             container.appendChild(card);
         });
-    } else {
+    }else{
         items.forEach(item => {
             const card = document.createElement('div');
             card.classList.add('card');
@@ -111,10 +106,12 @@ function createCards(items, clear = false) {
     }
 }
 
+//
+
 // Función para manejar el botón de cargar más
 function loadMoreCards() {
-    const nextItems = filteredItems.slice(currentIndex, currentIndex + increment);
-    createCards(nextItems); // Agregar las siguientes tarjetas sin borrar las existentes
+    const nextItems = allItems.slice(currentIndex, currentIndex + increment);
+    createCards(nextItems); // Cargar las siguientes tarjetas
     currentIndex += increment; // Actualizar el índice
     toggleLoadMoreButton(); // Mostrar u ocultar el botón de cargar más si no hay más tarjetas
 }
@@ -122,7 +119,7 @@ function loadMoreCards() {
 // Función para mostrar u ocultar el botón de cargar más
 function toggleLoadMoreButton() {
     const loadMoreButton = document.getElementById('load-more-button');
-    if (currentIndex >= filteredItems.length) {
+    if (currentIndex >= allItems.length) {
         loadMoreButton.style.display = 'none';
     } else {
         loadMoreButton.style.display = 'block';
@@ -135,7 +132,7 @@ function filterCards(searchTerm, filter) {
     const dateFilter = document.getElementById('date-filter').value;
 
     // Filtrado inicial por título, descripción o etiquetas
-    filteredItems = allItems.filter(item => {
+    let filteredItems = allItems.filter(item => {
         const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
         const titleMatch = item.title.toLowerCase().includes(lowerCaseSearchTerm);
@@ -162,9 +159,7 @@ function filterCards(searchTerm, filter) {
         });
     }
 
-    currentIndex = filteredItems.length < increment ? filteredItems.length : increment; // Reiniciar el índice de carga
-    createCards(filteredItems.slice(0, currentIndex), true); // Limpiar el contenedor y mostrar tarjetas filtradas
-    toggleLoadMoreButton(); // Mostrar u ocultar el botón de cargar más
+    createCards(filteredItems);
 }
 
 // Cargar los datos cuando el documento esté listo

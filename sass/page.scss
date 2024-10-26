@@ -222,9 +222,13 @@ a{
 }
 .search-container{
     margin: 0;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    place-items: flex-start;
+    align-items: baseline;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
     width: 100%;
+    height: auto;
     padding: 12px 8px;
     background-color: $white;
     color: $black;
@@ -237,9 +241,20 @@ a{
         background-color: transparent;
         font-size: 1.8rem;
     }
-    .search-filter{
+    .date-input{
+        width: 100%;
         font-size: 1.8rem;
+        border: 1px solid transparent;
+        background: transparent;
+        padding: 0;
+        display: inline-block;
+        visibility: visible;
+    }
+    .search-filter, .date-filter{
+        padding: 4px 8px;
+        width: 100%;
         border: 0;
         background-color: transparent;
+        font-size: 1.8rem;
     }
 }

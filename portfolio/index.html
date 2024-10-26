@@ -28,12 +28,33 @@
         <main>
             <section class="section">
                 <h1>Portfolio</h1>
-                <figure class="work-in-progress">
-                    <img  src="/media/icons/work-in-progress.webp" alt="Work in progress sign">
-                </figure>
             </section>
             <section class="section">
-                <a href="/portfolio/template/" class="button-primary">Portfolio Template</a>
+                <div id="search-container">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search by..." class="search-bar">
+                        <select id="search-filter" class="search-filter">
+                            <option value="all">All</option>
+                            <option value="title">Title</option>
+                            <option value="tags">Tags</option>
+                            <option value="description">Description</option>
+                            <option value="date">Date</option>
+                        </select>
+                        <!-- Campo de fecha para el filtro de Date -->
+                        <input type="date" id="date-input" class="date-input" style="display: none;">
+                        <select id="date-filter" class="date-filter" style="display: none;">
+                            <option value="on">On</option>
+                            <option value="before">Before</option>
+                            <option value="after">After</option>
+                        </select>
+                    </div>
+                </div>            
+                <section class="section">
+                    <div id="cards-container"></div>
+                    <div style="display: grid; place-items: center;">
+                        <button id="load-more-button" class="button-primary" style="display: none;">Cargar más</button>
+                    </div>
+                </section>
             </section>
         </main>
         <footer id="footer"></footer>
@@ -52,4 +73,5 @@
                 loadHTML('footer', '/components/footer.html');
             });
         </script>
+        <script src="/scripts/blogs.js"></script>
 </html>

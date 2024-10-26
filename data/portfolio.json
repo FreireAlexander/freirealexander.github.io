@@ -1,11 +1,65 @@
 [
     {
-        "title": "Introducción a JavaScript",
-        "description": "JavaScript es un lenguaje de programación muy popular...",
+        "title": "Civil 1",
+        "description": "civil 1",
         "author": "Freire A. Palomino Palma",
-        "date": "2024-10-01",
-        "tags": ["javascript", "coding", "web"], 
-        "coverPage": "/portfolio/",
-        "href": "/portfolio/B24-/"
+        "date": "2024-10-24",
+        "tags": ["civil"], 
+        "coverPage": "/portfolio/template/coverPage.webp",
+        "href": "/portfolio/B24000/"
+    },
+    {
+        "title": "Civil 2",
+        "description": "civil 2",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-25",
+        "tags": ["civil"], 
+        "coverPage": "/portfolio/template/coverPage.webp",
+        "href": "/portfolio/B24000/"
+    },
+    {
+        "title": "Civil 3",
+        "description": "civil 3",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-24",
+        "tags": ["civil"], 
+        "coverPage": "/portfolio/template/coverPage.webp",
+        "href": "/portfolio/B24000/"
+    },
+    {
+        "title": "anki 1",
+        "description": "anki",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-24",
+        "tags": ["anki"], 
+        "coverPage": "/portfolio/template/coverPage.webp",
+        "href": "/portfolio/B24000/"
+    },
+    {
+        "title": "anki 2",
+        "description": "anki",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-24",
+        "tags": ["anki"], 
+        "coverPage": "/portfolio/template/coverPage.webp",
+        "href": "/portfolio/B24000/"
+    },
+    {
+        "title": "anki 3",
+        "description": "anki",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-24",
+        "tags": ["anki"], 
+        "coverPage": "/portfolio/template/coverPage.webp",
+        "href": "/portfolio/B24000/"
+    },
+    {
+        "title": "anki 4",
+        "description": "civil",
+        "author": "Freire A. Palomino Palma",
+        "date": "2024-10-25",
+        "tags": ["anki"], 
+        "coverPage": "/portfolio/template/coverPage.webp",
+        "href": "/portfolio/B24000/"
     }
 ]
