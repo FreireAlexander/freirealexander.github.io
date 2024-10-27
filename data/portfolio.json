@@ -1,65 +1,67 @@
-[
-    {
-        "title": "Civil 1",
-        "description": "civil 1",
+[   
+    {   
+        "id": "P240005",
+        "title": "Cadenero",
+        "version": "0.0.0-dev",
+        "status": "development",
+        "description": "",
         "author": "Freire A. Palomino Palma",
-        "date": "2024-10-24",
-        "tags": ["civil"], 
-        "coverPage": "/portfolio/template/coverPage.webp",
-        "href": "/portfolio/B24000/"
+        "publishDate": "2024-11-01",
+        "lastUpdate": "2024-11-01",
+        "tags": ["Civil Engineering", "Programming", "Python", "Software"], 
+        "coverPage": "/portfolio/P240005/coverPage.webp",
+        "href": "/portfolio/P240005/"
     },
-    {
-        "title": "Civil 2",
-        "description": "civil 2",
+    {   
+        "id": "P240004",
+        "title": "Flexpave",
+        "version": "0.0.0-dev",
+        "status": "development",
+        "description": "",
         "author": "Freire A. Palomino Palma",
-        "date": "2024-10-25",
-        "tags": ["civil"], 
-        "coverPage": "/portfolio/template/coverPage.webp",
-        "href": "/portfolio/B24000/"
+        "publishDate": "2024-11-01",
+        "lastUpdate": "2024-11-01",
+        "tags": ["Civil Engineering", "Programming", "Python", "Software"], 
+        "coverPage": "/portfolio/P240004/coverPage.webp",
+        "href": "/portfolio/P240004/"
     },
-    {
-        "title": "Civil 3",
-        "description": "civil 3",
+    {   
+        "id": "P240003",
+        "title": "Joomthund",
+        "version": "0.0.0-dev",
+        "status": "development",
+        "description": "",
         "author": "Freire A. Palomino Palma",
-        "date": "2024-10-24",
-        "tags": ["civil"], 
-        "coverPage": "/portfolio/template/coverPage.webp",
-        "href": "/portfolio/B24000/"
+        "publishDate": "2024-11-01",
+        "lastUpdate": "2024-11-01",
+        "tags": ["Joomla", "Programming", "Web Design"], 
+        "coverPage": "/portfolio/P240003/coverPage.webp",
+        "href": "/portfolio/P240003/"
     },
-    {
-        "title": "anki 1",
-        "description": "anki",
+    {   
+        "id": "P240002",
+        "title": "OOCAD",
+        "version": "0.0.0-dev",
+        "status": "development",
+        "description": "",
         "author": "Freire A. Palomino Palma",
-        "date": "2024-10-24",
-        "tags": ["anki"], 
-        "coverPage": "/portfolio/template/coverPage.webp",
-        "href": "/portfolio/B24000/"
+        "publishDate": "2024-11-01",
+        "lastUpdate": "2024-11-01",
+        "tags": ["CAD", "Design", "Design System"], 
+        "coverPage": "/portfolio/P240002/coverPage.webp",
+        "href": "/portfolio/P240002/"
     },
-    {
-        "title": "anki 2",
-        "description": "anki",
+    {   
+        "id": "P240001",
+        "title": "Civil Engineering",
+        "version": "0.0.0-dev",
+        "status": "development",
+        "description": "",
         "author": "Freire A. Palomino Palma",
-        "date": "2024-10-24",
-        "tags": ["anki"], 
-        "coverPage": "/portfolio/template/coverPage.webp",
-        "href": "/portfolio/B24000/"
-    },
-    {
-        "title": "anki 3",
-        "description": "anki",
-        "author": "Freire A. Palomino Palma",
-        "date": "2024-10-24",
-        "tags": ["anki"], 
-        "coverPage": "/portfolio/template/coverPage.webp",
-        "href": "/portfolio/B24000/"
-    },
-    {
-        "title": "anki 4",
-        "description": "civil",
-        "author": "Freire A. Palomino Palma",
-        "date": "2024-10-25",
-        "tags": ["anki"], 
-        "coverPage": "/portfolio/template/coverPage.webp",
-        "href": "/portfolio/B24000/"
+        "publishDate": "2024-11-01",
+        "lastUpdate": "2024-11-01",
+        "tags": ["Civil Engineering", "CAD", "Design"], 
+        "coverPage": "/portfolio/P240001/coverPage.webp",
+        "href": "/portfolio/P240001/"
     }
 ]

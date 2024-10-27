@@ -1,3 +1,6 @@
-saving(): 
-    
+feat(): 
+    - Update Template Blogs and Portfolio
+    - Buy me a coffe component added
+    - Data structuctre defined
+    - Donation thanks page added
 author: Zero

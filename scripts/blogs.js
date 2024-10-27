@@ -78,7 +78,7 @@ function createCards(items, clear = false) {
                 </figure>
                 <div class="card-content">
                     <h3>${item.title}</h3>
-                    <small>Por: ${item.author} - ${new Date(item.date)}</small>
+                    <small>Por: ${item.author} - ${new Date(item.publishDate)}</small>
                     <div class="card-tags">
                         ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
                     </div>
@@ -97,8 +97,8 @@ function createCards(items, clear = false) {
                     <img src="${item.coverPage}" alt="${item.title}">
                 </figure>
                 <div class="card-content">
-                    <h3>Portfolio ${item.title}</h3>
-                    <small>Por: ${item.author} - ${new Date(item.date)}</small>
+                    <h3>${item.title}</h3>
+                    <small>Por: ${item.author} - ${new Date(item.publishDate)}</small>
                     <div class="card-tags">
                         ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
                     </div>
