@@ -70,7 +70,7 @@ function createCards(items, clear = false) {
     const path = getPath();
     if (path === 'blogs') {
         items.forEach(item => {
-            const card = document.createElement('div');
+            const card = document.createElement('article');
             card.classList.add('card');
             card.innerHTML = `
                 <figure class="card-cover">
@@ -78,7 +78,9 @@ function createCards(items, clear = false) {
                 </figure>
                 <div class="card-content">
                     <h3>${item.title}</h3>
-                    <small>Por: ${item.author} - ${new Date(item.publishDate)}</small>
+                    <small>
+                        <p>Por: ${item.author} - ${new Date(item.publishDate)}</p>
+                    </small>
                     <div class="card-tags">
                         ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
                     </div>
@@ -90,7 +92,7 @@ function createCards(items, clear = false) {
         });
     } else {
         items.forEach(item => {
-            const card = document.createElement('div');
+            const card = document.createElement('article');
             card.classList.add('card');
             card.innerHTML = `
                 <figure class="card-cover">
@@ -98,12 +100,24 @@ function createCards(items, clear = false) {
                 </figure>
                 <div class="card-content">
                     <h3>${item.title}</h3>
-                    <small>Por: ${item.author} - ${new Date(item.publishDate)}</small>
+                    <div class="card-data">
+                        <small> Author: ${item.author}</small>
+                        <small> Version: ${item.version}</small>
+                        <small> Publish Date: ${new Date(item.publishDate)}</small>
+                        <small> Last update: ${new Date(item.lastUpdate)}</small>
+                        <div class="card-status">
+                            <small> Status: </small>
+                            <div class="status ${item.status} "> ${item.status} </div>
+                        </div>
+                    </div>
                     <div class="card-tags">
                         ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
                     </div>
-                    <p>${item.description}</p>
-                    <a href="${item.href}" class="card-link">Read more</a>
+                    <div class="card-description">
+                        <small> Resume: </small>
+                        <p>${item.description}</p>
+                    </div>
+                    <a href="${item.href}" class="card-button">Read more</a>
                 </div>
             `;
             container.appendChild(card);
