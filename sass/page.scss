@@ -19,7 +19,6 @@ a{
 }
 
 #page-cover{
-    
     width: 100%;
     margin: 0;
     padding: 0;
@@ -68,7 +67,6 @@ a{
             box-shadow: 0 0 6px 4px rgba($red, 0.5);
         }
         &.blue{
-            color: $black;
             background-color: $light_blue;
             box-shadow: 0 0 6px 4px rgba($light_blue, 0.5);
         }

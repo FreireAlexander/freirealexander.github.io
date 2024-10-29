@@ -96,7 +96,7 @@ function createCards(items, clear = false) {
             card.classList.add('card');
             card.innerHTML = `
                 <figure class="card-cover">
-                    <img src="${item.coverPage}" alt="${item.title}">
+                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
                     <div class="status ${item.type}"> ${item.type} </div>
                 </figure>
                 <div class="card-content">
@@ -126,7 +126,7 @@ function createCards(items, clear = false) {
             card.classList.add('card');
             card.innerHTML = `
                 <figure class="card-cover">
-                    <img src="${item.coverPage}" alt="${item.title}">
+                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
                     <div class="status ${item.status} "> ${item.status} </div>
                 </figure>
                 <div class="card-content">

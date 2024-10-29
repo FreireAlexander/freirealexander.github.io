@@ -548,9 +548,10 @@ div.body {
   transition: transform 300ms ease-in-out;
 }
 #top-3 .container article img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
+  object-fit: cover;
 }
 #top-3 .container article summary {
   position: absolute;

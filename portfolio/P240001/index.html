@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/mobile.css">
     <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.css">
-    <script src="/scripts/highlight/highlight.min.js"></script>
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="preload" href="/portfolio/P240001/coverPageMedium.webp" as="image">
     <!-- Google tag (gtag.js) -->
@@ -43,10 +42,10 @@
     <header id="header"></header>
     <main>
         <section id="page-cover" class="section--page">
-            <img fetchpriority="high" class="cover-page" src="/portfolio/P240001/coverPageMedium.webp" alt="cover page">
+            <img fetchpriority="high" class="cover-page" src="/portfolio/P240001/coverPage.webp" alt="cover page">
         </section>
         <section id="page-data" class="section--page">
-            <h1 class="title">Portfolio Template</h1>
+            <h1 class="title">Civil Projects</h1>
             <div>
                 <p class="author">Author: Freire Alexander Palomino Palma</p>
                 <p class="publish">Publish date: <time datetime="01-01-2024">01/01/2024</time></p>
@@ -138,8 +137,8 @@
 </div>
 </body>
     <script src="/scripts/loadComponents.js"></script>
-    <script src="/scripts/setCurrentYear.js"></script>
-    <script src="/scripts/setMobileItemsStatus.js"></script>
+    <script src="/scripts/setCurrentYear.js" defer></script>
+    <script src="/scripts/setMobileItemsStatus.js" defer></script>
     <script>
         // Cargar el header y el footer al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
@@ -148,7 +147,8 @@
             loadHTML('footer', '/components/footer.html');
         });
     </script>
-    <script>
+    <script src="/scripts/highlight/highlight.min.js" defer></script>
+    <script defer>
         document.querySelectorAll('.copy-button').forEach(button => {
             button.addEventListener('click', () => {
                 const originalText = button.innerHTML; // Guardar el contenido original
@@ -164,5 +164,5 @@
             });
         });
     </script>
-    <script>hljs.highlightAll();</script>
+    <script defer>hljs.highlightAll();</script>
 </html>
