@@ -37,10 +37,6 @@ a.link {
 #page-data h1 {
   display: block;
   text-align: center;
-  /**border: 0;
-  border-style: solid;
-  border-color: aqua;
-  border-bottom-width: 2px;**/
 }
 #page-data div {
   display: grid;
@@ -99,7 +95,6 @@ a.link {
   display: grid;
   place-items: center;
   width: 250px;
-  height: auto;
 }
 #page-body figure img {
   width: 250px;
@@ -136,11 +131,6 @@ a.link {
 #page-references ol li::before {
   content: "[ " counter(item) " ]";
   padding-right: 12px;
-}
-
-.section--page {
-  margin: 0;
-  padding: 24px 16px;
 }
 
 .code-block {

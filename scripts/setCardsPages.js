@@ -6,7 +6,7 @@ function updateStickySectionPosition() {
 
     if (window.innerWidth > minWidth) {
         // Solo aplica si el ancho de la ventana es mayor que el ancho mínimo
-        stickySection.style.top = `${headerHeight-0}px`;
+        stickySection.style.top = `${headerHeight}px`;
     } else {
         // Restablece la posición si la pantalla es más pequeña
         stickySection.style.top = '0';
