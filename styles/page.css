@@ -98,10 +98,12 @@ a.link {
 #page-body figure {
   display: grid;
   place-items: center;
+  width: 250px;
+  height: auto;
 }
 #page-body figure img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   object-fit: contain;
 }
 #page-body figure figcaption {
