@@ -1,3 +1,24 @@
+function updateStickySectionPosition() {
+    const header = document.getElementById('header');
+    const stickySection = document.getElementById('search-container');
+    const headerHeight = header.offsetHeight;
+    const minWidth = 768; // Ancho mínimo para aplicar el comportamiento
+
+    if (window.innerWidth > minWidth) {
+        // Solo aplica si el ancho de la ventana es mayor que el ancho mínimo
+        stickySection.style.top = `${headerHeight-0}px`;
+    } else {
+        // Restablece la posición si la pantalla es más pequeña
+        stickySection.style.top = '0';
+    }
+}
+
+// Actualizar la posición al cargar la página
+window.addEventListener('load', updateStickySectionPosition);
+
+// Actualizar la posición cuando se redimensiona la ventana
+window.addEventListener('resize', updateStickySectionPosition);
+
 let allItems = []; // Variable para almacenar todos los datos cargados
 let filteredItems = []; // Variable para almacenar los elementos filtrados
 let currentIndex = 0; // Índice para el número de tarjetas cargadas inicialmente
@@ -60,14 +81,15 @@ function createCards(items, clear = false) {
         noResultsMessage.classList.add('card');
         noResultsMessage.innerHTML = `
             <h3>No Results</h3>
-            <figure class="card-cover">
-                <img src="/media/icons/404-error.webp" alt="No results">
+            <figure>
+                <img src="/media/icons/404-error.webp" alt="No results" style="width: 250px; height: 250px; object-fit: contain;">
             </figure>
         `;
         container.appendChild(noResultsMessage);
         return;
     }
     const path = getPath();
+    const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
     if (path === 'blogs') {
         items.forEach(item => {
             const card = document.createElement('article');
@@ -75,17 +97,25 @@ function createCards(items, clear = false) {
             card.innerHTML = `
                 <figure class="card-cover">
                     <img src="${item.coverPage}" alt="${item.title}">
+                    <div class="status ${item.type}"> ${item.type} </div>
                 </figure>
                 <div class="card-content">
+                    <small class="update"> Last Revision: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
                     <h3>${item.title}</h3>
-                    <small>
-                        <p>Por: ${item.author} - ${new Date(item.publishDate)}</p>
-                    </small>
-                    <div class="card-tags">
-                        ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+                    <div class="card-data">
+                        <small> By <strong>${item.author}</strong> first published on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
                     </div>
-                    <p>${item.description}</p>
-                    <a href="${item.href}" class="card-link">Read more</a>
+                    <div class="card-tags">
+                        ${item.tags.map((tag, index) => {
+                            // Asigna el color correspondiente de la lista (si se excede, vuelve al inicio)
+                            const color = colors[index % colors.length];
+                            return `<span class="tag ${color}">${tag}</span>`;
+                        }).join(' ')}
+                    </div>
+                    <div class="card-description">
+                        <p>${item.description}</p>
+                    </div>
+                    <a href="${item.href}" class="card-button">Explore Article</a>
                 </div>
             `;
             container.appendChild(card);
@@ -97,27 +127,25 @@ function createCards(items, clear = false) {
             card.innerHTML = `
                 <figure class="card-cover">
                     <img src="${item.coverPage}" alt="${item.title}">
+                    <div class="status ${item.status} "> ${item.status} </div>
                 </figure>
                 <div class="card-content">
-                    <h3>${item.title}</h3>
+                    <small class="update"> Last Update: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
+                    <h3><span>${item.title}</span><span>${item.version}</span></h3>
                     <div class="card-data">
-                        <small> Author: ${item.author}</small>
-                        <small> Version: ${item.version}</small>
-                        <small> Publish Date: ${new Date(item.publishDate)}</small>
-                        <small> Last update: ${new Date(item.lastUpdate)}</small>
-                        <div class="card-status">
-                            <small> Status: </small>
-                            <div class="status ${item.status} "> ${item.status} </div>
-                        </div>
+                        <small> By <strong>${item.author}</strong> on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
                     </div>
                     <div class="card-tags">
-                        ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+                        ${item.tags.map((tag, index) => {
+                            // Asigna el color correspondiente de la lista (si se excede, vuelve al inicio)
+                            const color = colors[index % colors.length];
+                            return `<span class="tag ${color}">${tag}</span>`;
+                        }).join(' ')}
                     </div>
                     <div class="card-description">
-                        <small> Resume: </small>
                         <p>${item.description}</p>
                     </div>
-                    <a href="${item.href}" class="card-button">Read more</a>
+                    <a href="${item.href}" class="card-button">Explore Project</a>
                 </div>
             `;
             container.appendChild(card);
@@ -164,7 +192,7 @@ function filterCards(searchTerm, filter) {
         const filterDate = new Date(dateInput);
 
         filteredItems = filteredItems.filter(item => {
-            const itemDate = new Date(item.date);
+            const itemDate = new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString();
             if (dateFilter === 'on') {
                 return itemDate.toDateString() === filterDate.toDateString();
             } else if (dateFilter === 'before') {
@@ -212,3 +240,5 @@ dateInput.addEventListener('input', () => {
 dateFilter.addEventListener('change', () => {
     filterCards(searchInput.value, searchFilter.value);
 });
+
+

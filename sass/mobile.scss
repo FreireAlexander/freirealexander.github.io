@@ -7,8 +7,12 @@
     filter: grayscale(1);
     color: $white_azure;
     figure > img {
-        max-width: 32px;
-        max-height: 32px;
+        width: 32px;
+        height: 32px;
+        @media (width>$mobileLarge){
+            width: 48px;
+            height: 48px;
+        }
     }
     p{
         text-align: center;

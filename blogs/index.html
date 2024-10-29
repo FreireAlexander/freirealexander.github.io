@@ -31,12 +31,7 @@
         </section>
         <section class="section">
             <h2>Top Articles</h2>
-            <p>Top 3 Articles</p>
-            <div class="top-3">
-                <figure class="work-in-progress">
-                    <img  src="/media/icons/work-in-progress.webp" alt="Work in progress sign">
-                </figure>
-            </div>
+            <section id="top-3"></section>
         </section>
         <section class="section">
             <div id="search-container">
@@ -72,15 +67,15 @@
 </body>
     <script src="/scripts/loadComponents.js"></script>
     <script src="/scripts/setCurrentYear.js"></script>
-    <script src="/scripts/index.js"></script>
-    <script src="/scripts/mobileMenu.js"></script>
+    <script src="/scripts/setMobileItemsStatus.js"></script>
     <script>
         // Cargar el header y el footer al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
             loadHTML('header', '/components/header.html');
             loadHTML('header-mobile', '/components/header_mobile.html');
             loadHTML('footer', '/components/footer.html');
+            loadHTML('top-3', '/components/top_3_blogs.html');
         });
     </script>
-    <script src="/scripts/blogs.js"></script>
+    <script src="/scripts/setCardsPages.js"></script>
 </html>

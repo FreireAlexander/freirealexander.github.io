@@ -291,6 +291,9 @@ nav.navbar{
 .section{
     margin: 0 auto;
     padding: 24px 16px;
+    h2{
+        padding: 24px 0;
+    }
 }
 
 
@@ -398,12 +401,13 @@ div.body{
     margin: 0 auto;
     overflow: clip;
     img{
-        max-width: 512px;
-        width: 50%;
+        width: 256px;
+        height: 256px;
         margin: 0 auto;
         object-fit: contain;
         animation: workInProgress 5s infinite ease-in-out;
         transform-origin: top center;
+        
     }
 }
 
@@ -431,7 +435,7 @@ div.body{
     }
 }
 
-#cards-container{
+#cards-container, #latest-blogs, #top-projects{
     display: grid;
     place-items: center;
     row-gap: 24px;
@@ -453,6 +457,7 @@ div.body{
         border-top: 0;
         border-right: 0;
         figure{
+            position: relative;
             display: grid;
             width: 100%;
             place-items: center;
@@ -465,13 +470,43 @@ div.body{
                 border-bottom-right-radius: 0;
                 object-fit: cover;
             }
+            .status{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: fit-content;
+                border-top-left-radius: $border-radius;
+                padding: 4px 8px;
+                font-size: 1.4rem;
+                background-color: $green;
+                text-transform: capitalize;
+                &.development, &.article{
+                    color: $white_azure;
+                    background-color: $green;
+                }
+                &.news{
+                    color: $white_azure;
+                    background-color: $blue;
+                }
+            }
         }
         .card-content{
-            padding: 8px 4px 12px 4px;
+            width: 100%;
+            padding: 8px 8px 12px 8px;
+            small.update{
+                display: block;
+                width: 100%;
+                font-size: 1rem;
+                text-align: right;
+            }
             h3{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
                 color: $black;
                 font-size: 1.8rem;
-                line-height: 1.25;
+                line-height: 1.15;
             }
             .card-data{
                 display: grid;
@@ -481,34 +516,95 @@ div.body{
                     display: flex;
                     align-items: center;
                     gap: 4px;
-                    div.status{
-                        width: fit-content;
-                        border-radius: 4px;
-                        padding: 4px 8px;
-                        background-color: $green;
-                        text-transform: capitalize;
-                        &.development{
-                            color: $white_azure;
-                            background-color: $green;
-                        }
-                    }
                 }
             }
             .card-tags{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px;
                 padding: 8px 0 4px 0;
                 .tag{
                     color: $white_azure;
                     background-color: $blue;
                     padding: 2px 6px;
                     border-radius: 4px;
+                    &.red{
+                        background-color: $red;
+                    }
+                    &.blue{
+                        background-color: $blue;
+                    }
+                    &.green{
+                        background-color: $green;
+                    }
+                    &.yellow{
+                        background-color: $yellow;
+                    }
+                    &.grey{
+                        background-color: $gray;
+                    }
                 }
             }
             .card-button{
+                display: grid;
+                padding: 4px;
+                width: 100%;
+                border: 1px solid $gray;
                 border-radius: 4px;
-                padding: 8px;
-                width: fit-content;
-                background-color: rgba($blue, 0.85);
-                color: $white_azure;
+                text-align: center;
+                font-weight: normal;
+                font-size: 1.4rem;
+                color: $gray;
+                transition: transform 400ms ease-in-out;
+                transform: scale(0.9);
+                &:hover{
+                    transition: transform 200ms ease-in-out;
+                    transform: scale(1);
+                }
+            }
+        }
+
+        transition: transform 400ms ease-in-out;
+
+        &:hover,&:focus{
+            transition: transform 200ms ease-in-out;
+            transform: scale(1.05);
+        }
+    }
+}
+
+#top-3{
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 64px;
+        article{
+            position: relative;
+            display: grid;
+            place-items: center;
+            img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+            }
+            summary{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding: 8px 4px;
+                border-radius: 8px;
+                background-color: $white;
+                font-size: 1.8rem;
+                line-height: 1;
+                color: $black;
+                text-align: center;
+            }
+            transition: transform 300ms ease-in-out;
+            &:hover,&:focus{
+                transition: transform 200ms ease-in-out;
+                transform: scale(1.05);
             }
         }
     }

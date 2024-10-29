@@ -9,8 +9,14 @@
   color: #F0FFFF;
 }
 .mobile-menu-item figure > img {
-  max-width: 32px;
-  max-height: 32px;
+  width: 32px;
+  height: 32px;
+}
+@media (width > 425px) {
+  .mobile-menu-item figure > img {
+    width: 48px;
+    height: 48px;
+  }
 }
 .mobile-menu-item p {
   text-align: center;

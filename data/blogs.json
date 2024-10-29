@@ -1,12 +1,12 @@
 [
     {
         "id": "A240001",
-        "title": "Exciting News: It is finally here!!! freirealexander.top comes with a lot of exciting projects and news",
+        "type": "news",
+        "title": "freirealexander.top has a new look and awesome features",
         "description": "",
         "author": "Freire A. Palomino Palma",
         "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "revision": "none",
         "tags": ["Civil Engineering", "Coding", "Learning"], 
         "coverPage": "/blogs/A240001/coverPage.webp",
         "href": "/blogs/A240001/"
