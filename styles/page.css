@@ -6,7 +6,7 @@ li {
 }
 
 a {
-  color: #0099FF;
+  color: #0E76B4;
   cursor: pointer;
 }
 a.ref {
@@ -61,22 +61,24 @@ a.link {
 .tags span {
   border-radius: 4px;
   padding: 8px 12px;
+  font-weight: bold;
 }
 .tags span.red {
   background-color: #821F00;
   box-shadow: 0 0 6px 4px rgba(130, 31, 0, 0.5);
 }
 .tags span.blue {
-  background-color: #0099FF;
-  box-shadow: 0 0 6px 4px rgba(0, 153, 255, 0.5);
+  color: #1d1e1d;
+  background-color: #0E76B4;
+  box-shadow: 0 0 6px 4px rgba(14, 118, 180, 0.5);
 }
 .tags span.green {
   background-color: #006158;
   box-shadow: 0 0 6px 4px rgba(0, 97, 88, 0.5);
 }
 .tags span.yellow {
-  background-color: #B58A00;
-  box-shadow: 0 0 6px 4px rgba(181, 138, 0, 0.5);
+  background-color: #916A08;
+  box-shadow: 0 0 6px 4px rgba(145, 106, 8, 0.5);
 }
 .tags span.gray, .tags span.grey {
   background-color: #444447;
@@ -96,8 +98,8 @@ a.link {
   place-items: center;
 }
 #page-body figure img, #page-body .gallery figure img {
-  max-width: 200px;
-  max-height: 512px;
+  width: 200px;
+  height: 512px;
   object-fit: contain;
 }
 #page-body figure figcaption, #page-body .gallery figure figcaption {

@@ -12,6 +12,7 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
 }
 .icon--nf {
   font-family: "NerdFont", sans-serif;
@@ -106,10 +107,10 @@ a {
   transition-duration: 400ms;
 }
 #header .header-menu > ul li > a.active {
-  color: #0099FF;
+  color: #0E76B4;
   border: 0;
   border-style: solid;
-  border-color: #0099FF;
+  border-color: #0E76B4;
   border-bottom-width: 4px;
 }
 
@@ -272,9 +273,9 @@ nav.navbar {
   padding: 8px 16px;
   border: 0;
   border-radius: 8px;
-  box-shadow: 0 0 6px 4px rgba(0, 153, 255, 0.5);
-  background-color: #0099FF;
-  color: #F0FFFF;
+  box-shadow: 0 0 6px 4px rgba(14, 118, 180, 0.5);
+  background-color: #0E76B4;
+  color: #f3f5f7;
   font-size: 1.8rem;
   font-weight: bolder;
   cursor: pointer;
@@ -286,8 +287,9 @@ nav.navbar {
   transition-timing-function: ease-in-out;
 }
 .button-primary.youtube {
-  box-shadow: 0 0 6px 4px rgba(247, 0, 0, 0.5);
-  background-color: #F70000;
+  color: #f3f5f7;
+  box-shadow: 0 0 6px 4px rgba(225, 14, 11, 0.5);
+  background-color: #E10E0B;
 }
 .button-primary.youtube .icon--nf {
   font-size: 3.2rem;
@@ -489,10 +491,11 @@ div.body {
   padding: 8px 0 4px 0;
 }
 #cards-container article.card .card-content .card-tags .tag, #latest-blogs article.card .card-content .card-tags .tag, #top-projects article.card .card-content .card-tags .tag {
-  color: #F0FFFF;
-  background-color: #000080;
   padding: 2px 6px;
   border-radius: 4px;
+  font-weight: bold;
+  color: #F0FFFF;
+  background-color: #000080;
 }
 #cards-container article.card .card-content .card-tags .tag.red, #latest-blogs article.card .card-content .card-tags .tag.red, #top-projects article.card .card-content .card-tags .tag.red {
   background-color: #821F00;
@@ -504,7 +507,7 @@ div.body {
   background-color: #006158;
 }
 #cards-container article.card .card-content .card-tags .tag.yellow, #latest-blogs article.card .card-content .card-tags .tag.yellow, #top-projects article.card .card-content .card-tags .tag.yellow {
-  background-color: #B58A00;
+  background-color: #916A08;
 }
 #cards-container article.card .card-content .card-tags .tag.grey, #latest-blogs article.card .card-content .card-tags .tag.grey, #top-projects article.card .card-content .card-tags .tag.grey {
   background-color: #444447;

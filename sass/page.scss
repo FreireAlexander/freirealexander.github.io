@@ -1,7 +1,5 @@
 @import 'variables.scss';
 
-
-
 li{
     list-style-position: inside;
 }
@@ -64,11 +62,13 @@ a{
     span{
         border-radius: 4px;
         padding: 8px 12px;
+        font-weight: bold;
         &.red{
             background-color: $red;
             box-shadow: 0 0 6px 4px rgba($red, 0.5);
         }
         &.blue{
+            color: $black;
             background-color: $light_blue;
             box-shadow: 0 0 6px 4px rgba($light_blue, 0.5);
         }
@@ -99,8 +99,8 @@ a{
             display: grid;
             place-items: center;
             img{
-                max-width: 200px;
-                max-height: 512px;
+                width: 200px;
+                height: 512px;
                 object-fit: contain;
             }
             figcaption{

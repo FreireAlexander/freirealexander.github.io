@@ -306,7 +306,7 @@ nav.navbar{
     border-radius: 8px;
     box-shadow: 0 0 6px 4px rgba($light_blue, 0.5);
     background-color: $light_blue;
-    color: $white_azure;
+    color: $white;
     font-size: 1.8rem;
     font-weight: bolder;
     cursor: pointer;
@@ -319,7 +319,8 @@ nav.navbar{
     }
     
     &.youtube{
-        $youtubeColor: #F70000;
+        $youtubeColor: #E10E0B;
+        color: $white;
         box-shadow: 0 0 6px 4px rgba($youtubeColor, 0.5);
         background-color: $youtubeColor;
         .icon--nf{
@@ -524,10 +525,11 @@ div.body{
                 gap: 4px;
                 padding: 8px 0 4px 0;
                 .tag{
-                    color: $white_azure;
-                    background-color: $blue;
                     padding: 2px 6px;
                     border-radius: 4px;
+                    font-weight: bold;
+                    color: $white_azure;
+                    background-color: $blue;
                     &.red{
                         background-color: $red;
                     }

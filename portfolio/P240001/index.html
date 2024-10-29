@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Template</title>
+    <meta name="description" content="Civil Engineering, Coding and Learning">
+    <title>Project Page</title>
     <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/mobile.css">
     <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.css">
     <script src="/scripts/highlight/highlight.min.js"></script>
     <link rel="stylesheet" href="/styles/page.css">
+    <link rel="preload" href="/portfolio/P240001/coverPageMedium.webp" as="image">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
     <script>
@@ -29,7 +43,7 @@
     <header id="header"></header>
     <main>
         <section id="page-cover" class="section--page">
-            <img class="cover-page" src="/portfolio/P240001/coverPage.webp" alt="cover page">
+            <img fetchpriority="high" class="cover-page" src="/portfolio/P240001/coverPageMedium.webp" alt="cover page">
         </section>
         <section id="page-data" class="section--page">
             <h1 class="title">Portfolio Template</h1>
@@ -57,7 +71,7 @@
         <section id="page-body" class="section--page">
             <h2>Description</h2>
             <p>
-                Lorem ipsum, <a class="link">dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
+                Lorem ipsum, <a href="/" class="link">dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
                 Id odit tempore veniam voluptatem at sed tempora porro ullam labore harum, laudantium assumenda velit exercitationem in fuga. Facilis dolorem expedita possimus iusto voluptate eius in aperiam nulla reiciendis ipsa.
                 Adipisci deserunt ipsa earum voluptatem nisi praesentium. Corrupti unde rem aliquam quia repellendus cupiditate ipsa fugit non labore facilis molestias, amet quo explicabo excepturi quidem aspernatur omnis, culpa nam distinctio.
                 Cupiditate, esse. Aperiam voluptates quidem recusandae? Excepturi inventore nam quibusdam fugit ad! Temporibus dignissimos voluptas nemo mollitia corporis! Voluptatum iusto voluptas unde itaque ut suscipit quibusdam optio excepturi eaque odio?
