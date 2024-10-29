@@ -25,7 +25,7 @@ a.link {
 }
 #page-cover .cover-page {
   width: 100%;
-  height: 300px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -53,7 +53,7 @@ a.link {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  width: 100;
+  width: 100%;
   row-gap: 16px;
   column-gap: 8px;
   padding: 12px 0;
