@@ -1,5 +1,3 @@
 saving(): 
-    - Top Projects and Articles added
-    - Cards style set
-    - fetchpriority="high"
+    - font-display: swap
 author: Zero
