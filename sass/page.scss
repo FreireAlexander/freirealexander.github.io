@@ -59,8 +59,11 @@ a{
     column-gap: 8px;
     padding: 12px 0;
     span{
+        display: inline-block;
+        width: fit-content;
         border-radius: 4px;
-        padding: 8px 12px;
+        padding: 4px 8px;
+        font-size: 1.2rem;
         font-weight: bold;
         &.red{
             background-color: $red;
@@ -92,43 +95,26 @@ a{
 #page-body{
     width: 100%;
     padding: 4px 16px;
-    & , .gallery{
-        figure{
-            display: grid;
-            place-items: center;
-            img{
-                width: 200px;
-                height: 512px;
-                object-fit: contain;
-            }
-            figcaption{
-                border-radius: 8px;
-                padding: 8px 4px;
-                font-size: 1.2rem;
-                font-weight: 500;
-                width: 80%;
-                color: $white_azure;
-                a{
-                    text-decoration: none;
-                    color: inherit;
-                }
-            }
-        }
-    }
-    .gallery{
-        
+    figure{
         display: grid;
-        figure{
-            figcaption{
-                text-align: center;
+        place-items: center;
+        img{
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+        figcaption{
+            padding: 8px 4px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            width: 80%;
+            text-align: center;
+            a{
+                text-decoration: none;
+                color: inherit;
             }
         }
-
-        @media (width>$mobileLarge) {
-            overflow: hidden;
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }     
+    }   
 }
 
 #page-references{

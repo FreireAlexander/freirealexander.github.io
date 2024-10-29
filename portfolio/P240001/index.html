@@ -28,14 +28,14 @@
     <link rel="preload" href="/portfolio/P240001/coverPageMedium.webp" as="image">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-TW9HZ9TTYP');
     </script>
     <!-- Consent Manager -->
-    <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+    <script defer type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
 </head>
 <body>
 <div class="body">
@@ -54,7 +54,7 @@
                     <span class="green">Civil Engineering</span>
                     <span class="blue">Learning</span>
                     <span class="yellow">Programming</span>
-                    <span class="gray">Programming</span>
+                    <span class="gray">Engineering</span>
                 </p>
                 <div>
                     <p>Tags</p>
@@ -86,16 +86,10 @@
                 <figcaption>from: <a href=""> reference text or description </a></figcaption>
             </figure>
             <h3 style="text-align: center;">Gallery Pictures</h3>
-            <div class="flex gallery">
                 <figure>
                     <img src="/portfolio/P240001/coverPage.webp" alt="image" title="images">
                     <figcaption>from: <a href=""> reference text or description </a></figcaption>
                 </figure>
-                <figure>
-                    <img src="/portfolio/P240001/coverPage.webp" alt="image" title="images">
-                    <figcaption>from: <a href=""> reference text or description </a></figcaption>
-                </figure>
-            </div>
             <div class="repo">
                 <h3>Repositories</h3>
                 <ul>
@@ -120,7 +114,6 @@
 <code class="language-python">/** Python Code **/
     def function():
         print("Hola mundo")
-
 </code>
                 </pre>
             </div>
@@ -148,7 +141,7 @@
             loadHTML('footer', '/components/footer.html');
         });
     </script>
-    <script src="/scripts/highlight/highlight.min.js" defer></script>
+    
     <script defer>
         document.querySelectorAll('.copy-button').forEach(button => {
             button.addEventListener('click', () => {
@@ -165,5 +158,6 @@
             });
         });
     </script>
-    <script defer>hljs.highlightAll();</script>
+    <script src="/scripts/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </html>
