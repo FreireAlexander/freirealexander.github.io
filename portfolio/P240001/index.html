@@ -118,9 +118,8 @@
             ]);
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));
-            }, 300);
-            // Emitir evento una vez que todos los componentes se hayan cargado
-            document.dispatchEvent(new Event('componentsLoaded'));
+                setMobileItemsStatus();
+            }, 100); 
         })();
     </script>
     <script src="/scripts/setMobileItemsStatus.js"></script>

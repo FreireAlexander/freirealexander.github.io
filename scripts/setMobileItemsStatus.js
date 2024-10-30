@@ -17,6 +17,3 @@ async function setMobileItemsStatus() {
         }
     });
 }
-
-// Ejecuta la función solo cuando se haya emitido el evento personalizado 'componentsLoaded'
-document.addEventListener('componentsLoaded', setMobileItemsStatus);
