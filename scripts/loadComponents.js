@@ -1,5 +1,5 @@
 // Función para cargar contenido desde un archivo HTML en un elemento específico
-function loadHTML(elementId, filePath) {
+async function loadHTML(elementId, filePath) {
     fetch(filePath)
         .then(response => {
             if (!response.ok) {
