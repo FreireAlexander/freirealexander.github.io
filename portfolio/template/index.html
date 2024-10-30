@@ -8,81 +8,83 @@
     <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/mobile.css">
-    <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.css">
-    <script src="/scripts/highlight/highlight.min.js"></script>
-    <link rel="stylesheet" href="/styles/page.css">
+    <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+    <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.min.css" type="text/css">
+    <link rel="stylesheet" href="/styles/page.css" type="text/css">
+    <link rel="preload" href="/fonts/nerdfonts.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
+    <link rel="preload" href="/portfolio/P240001/coverPage.webp" as="image">
+    
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-    <script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
+    <script defer type="text/javascript">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-TW9HZ9TTYP');
     </script>
-    <!-- Consent Manager -->
-    <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
 </head>
 <body>
 <div class="body">
     <header id="header"></header>
     <main>
-        <section id="page-cover" class="section--page">
-            <img class="cover-page" src="/portfolio/template/coverPage.webp" alt="cover page">
+        <section id="page-cover" class="section">
+            <img fetchpriority="high" class="cover-page" src="/portfolio/P240001/coverPage.webp" alt="cover page">
         </section>
-        <section id="page-data" class="section--page">
-            <h1 class="title">Portfolio Template</h1>
+        <section id="page-data" class="section">
+            <h1 class="title">Civil Projects</h1>
             <div>
                 <p class="author">Author: Freire Alexander Palomino Palma</p>
                 <p class="publish">Publish date: <time datetime="01-01-2024">01/01/2024</time></p>
-                <div>
-                    <p>Tags</p>
-                    <p class="tags">
-                        <span class="red"><span class="icon--nf">&#xf16a;</span>coding</span>
-                        <span class="green">Civil Engineering</span>
-                        <span class="blue">Learning</span>
-                        <span class="yellow">Programming</span>
-                        <span class="gray">Programming</span>
-                    </p>
-                </div>
-                <div>
-                    <p>Status</p>
-                    <p class="tags">
-                        <span class="green"><span class="icon--nf">&#xf16a;</span>Done</span>
-                    </p>
-                </div>
+                <p class="card-tags">
+                    <span class="tag red"><span class="icon--nf">&#xf16a;</span>coding</span>
+                    <span class="tag green">Civil Engineering</span>
+                    <span class="tag blue">Learning</span>
+                    <span class="tag yellow">Programming</span>
+                    <span class="tag gray">Engineering</span>
+                </p>
+                <p class="card-tags">
+                    <span class="tag done"><span class="icon--nf">&#xf16a;</span>done</span>
+                </p>
             </div>
         </section>
-        <section id="page-body" class="section--page">
+        <section id="page-body" class="section">
             <h2>Description</h2>
             <p>
-                Lorem ipsum, <a class="link">dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
-                Id odit tempore veniam voluptatem at sed tempora porro ullam labore harum, laudantium assumenda velit exercitationem in fuga. Facilis dolorem expedita possimus iusto voluptate eius in aperiam nulla reiciendis ipsa.
-                Adipisci deserunt ipsa earum voluptatem nisi praesentium. Corrupti unde rem aliquam quia repellendus cupiditate ipsa fugit non labore facilis molestias, amet quo explicabo excepturi quidem aspernatur omnis, culpa nam distinctio.
-                Cupiditate, esse. Aperiam voluptates quidem recusandae? Excepturi inventore nam quibusdam fugit ad! Temporibus dignissimos voluptas nemo mollitia corporis! Voluptatum iusto voluptas unde itaque ut suscipit quibusdam optio excepturi eaque odio?
-                Veniam nisi doloremque ex quisquam rerum asperiores cum ad sint iste placeat reiciendis ut ullam dolorem quam fugiat id beatae inventore amet, consequatur, debitis qui dicta delectus. Reprehenderit, veritatis quibusdam.
+                Lorem ipsum, <a href="/" class="link">dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium quia fugit placeat animi aperiam illo porro autem, nulla voluptate veritatis officia accusamus beatae quasi officiis sint ipsam, magnam esse provident.
+                Ratione pariatur error quaerat, unde porro cupiditate facere non laborum excepturi repudiandae corrupti! Repellat, quos? Repellat sunt natus iste dolores? Ipsa est repudiandae cupiditate amet ab perferendis reprehenderit commodi quo.
+                Possimus, non hic ab voluptatem pariatur corrupti consectetur vitae architecto dignissimos. Officia eligendi rem labore, assumenda laborum iusto maiores eius. Autem magni beatae expedita! Adipisci maxime aperiam numquam soluta dolorem.
             </p>
             <h2>Main Goal</h2>
             <ul>
                 <li>Main Goal</li>
             </ul>
-            <figure>
-                <img src="/portfolio/template/coverPage.webp" alt="image" title="images">
-                <figcaption>from: <a href=""> reference text or description </a></figcaption>
-            </figure>
-            <h3 style="text-align: center;">Gallery Pictures</h3>
-            <div class="flex gallery">
+            <div style="display: grid; place-items: center; width: 100%;">
                 <figure>
-                    <img src="/portfolio/template/coverPage.webp" alt="image" title="images">
-                    <figcaption>from: <a href=""> reference text or description </a></figcaption>
-                </figure>
-                <figure>
-                    <img src="/portfolio/template/coverPage.webp" alt="image" title="images">
+                    <img src="/portfolio/P240001/coverPage.webp" alt="image" title="images">
                     <figcaption>from: <a href=""> reference text or description </a></figcaption>
                 </figure>
             </div>
+            <h3 style="text-align: center;">Gallery Pictures</h3>
+                <div style="display: grid; place-items: center; width: 100%;">
+                    <figure>
+                        <img src="/portfolio/P240001/coverPage.webp" alt="image" title="images">
+                        <figcaption>from: <a href=""> reference text or description </a></figcaption>
+                    </figure>
+                </div>
             <div class="repo">
                 <h3>Repositories</h3>
                 <ul>
@@ -107,12 +109,11 @@
 <code class="language-python">/** Python Code **/
     def function():
         print("Hola mundo")
-
 </code>
                 </pre>
             </div>
         </section>
-        <section id="page-references" class="section--page">
+        <section id="page-references" class="section">
             <h2>References</h2>
             <ol>
                 <li id="ref-1">E. H. Miller, “A note on reflector arrays,” <i>IEEE Trans</i>. Antennas Propag, to be published.</li>
@@ -125,17 +126,19 @@
 </div>
 </body>
     <script src="/scripts/loadComponents.js"></script>
-    <script src="/scripts/setCurrentYear.js"></script>
-    <script src="/scripts/setMobileItemsStatus.js"></script>
     <script>
         // Cargar el header y el footer al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
             loadHTML('header', '/components/header.html');
             loadHTML('header-mobile', '/components/header_mobile.html');
             loadHTML('footer', '/components/footer.html');
+            setTimeout(() => {
+                document.dispatchEvent(new Event('componentsLoaded'));
+            }, 300);
         });
     </script>
-    <script>
+    <script src="/scripts/setMobileItemsStatus.js"></script>
+    <script defer>
         document.querySelectorAll('.copy-button').forEach(button => {
             button.addEventListener('click', () => {
                 const originalText = button.innerHTML; // Guardar el contenido original
@@ -151,5 +154,6 @@
             });
         });
     </script>
+    <script src="/scripts/highlight/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </html>

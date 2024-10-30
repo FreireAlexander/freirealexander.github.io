@@ -1,23 +1,22 @@
-window.onload = function(){
+function setMobileItemsStatus() {
     const activePage = window.location.pathname;
     const navLinks = document.querySelectorAll('.mobile-menu-item');
     const headerMenuLinks = document.querySelectorAll('.header-menu > ul > li > a');
-    navLinks.forEach(link => {
-        // Comparamos usando `startsWith` en caso de que haya subpáginas o parámetros
-        const linkHref = link.getAttribute('href');
 
-        // Comparación más estricta para evitar coincidencias incorrectas
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
         if (activePage === linkHref || activePage.startsWith(linkHref + '/') || activePage.startsWith(linkHref + '/index.html')) {
             link.classList.add('active');
         }
     });
-    headerMenuLinks.forEach(link => {
-        // Comparamos usando `startsWith` en caso de que haya subpáginas o parámetros
-        const linkHref = link.getAttribute('href');
 
-        // Comparación más estricta para evitar coincidencias incorrectas
+    headerMenuLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
         if (activePage === linkHref || activePage.startsWith(linkHref + '/') || activePage.startsWith(linkHref + '/index.html')) {
             link.classList.add('active');
         }
     });
 }
+
+// Ejecuta la función solo cuando se haya emitido el evento personalizado 'componentsLoaded'
+document.addEventListener('componentsLoaded', setMobileItemsStatus);

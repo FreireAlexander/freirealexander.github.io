@@ -8,20 +8,29 @@
         <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+                rel="stylesheet"
+                type="text/css"
+            />
+        </noscript>
         <link rel="stylesheet" href="/styles/styles.css">
-        <link rel="stylesheet" href="/styles/mobile.css">
         <link rel="stylesheet" href="/styles/page.css">
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-        <script>
+        <script async>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-TW9HZ9TTYP');
         </script>
-        <!-- Consent Manager -->
-        <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
     </head>
 <body>
     <div class="body">
@@ -69,8 +78,6 @@
     </div>
     </body>
         <script src="/scripts/loadComponents.js"></script>
-        <script src="/scripts/setCurrentYear.js"></script>
-        <script src="/scripts/setMobileItemsStatus.js"></script>
         <script>
             // Cargar el header y el footer al cargar la página
             document.addEventListener("DOMContentLoaded", function() {
@@ -78,7 +85,12 @@
                 loadHTML('header-mobile', '/components/header_mobile.html');
                 loadHTML('footer', '/components/footer.html');
                 loadHTML('top-3', '/components/top_3_projects.html');
+                // Después de un pequeño retraso, emite el evento de carga completa
+                setTimeout(() => {
+                    document.dispatchEvent(new Event('componentsLoaded'));
+                }, 300);
             });
         </script>
+        <script async src="/scripts/setMobileItemsStatus.js"></script>
         <script src="/scripts/setCardsPages.js"></script>
 </html>

@@ -45,6 +45,7 @@ h3 {
 }
 
 h1, h2, h3 {
+  padding: 24px 0;
   color: #f3f5f7;
   font-weight: bolder;
   line-height: 1.15;

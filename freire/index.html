@@ -30,8 +30,6 @@
         gtag('js', new Date());
         gtag('config', 'G-TW9HZ9TTYP');
     </script>
-    <!-- Consent Manager -->
-    <script defer type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/eef0b77d018b7.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
     <style>
         .personal-introduction{
             display: grid;
@@ -119,13 +117,18 @@
     <footer id="header-mobile"></footer>
 </div>
 </body>
-    <script src="/scripts/loadComponents.js" type="text/javascript"></script>
+    <script src="/scripts/loadComponents.js"></script>
     <script>
+        // Cargar el header y el footer al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
             loadHTML('header', '/components/header.html');
             loadHTML('header-mobile', '/components/header_mobile.html');
             loadHTML('footer', '/components/footer.html');
             loadHTML('contact', '/components/contact_form.html');
+            // Después de un pequeño retraso, emite el evento de carga completa
+            setTimeout(() => {
+                document.dispatchEvent(new Event('componentsLoaded'));
+            }, 300);
         });
     </script>
     <script defer src="/scripts/setGreetingMessage.js" type="text/javascript"></script>
