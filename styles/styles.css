@@ -90,6 +90,10 @@ h4, h5, h6, p, li, a {
   height: fit-content;
 }
 
+a {
+  text-decoration: none;
+}
+
 .icon--nf {
   font-family: "NerdFont";
   line-height: 1.15;
@@ -152,6 +156,8 @@ section.section {
   left: 0;
   top: 0;
   z-index: 1000;
+  min-height: 100px;
+  height: fit-content;
   background-color: rgba(1, 6, 29, 0.85);
 }
 @media (width > 768px) {
@@ -199,6 +205,8 @@ section.section {
   position: sticky;
   left: 0;
   bottom: 0;
+  height: fit-content;
+  min-height: 100px;
   z-index: 1000;
   padding: 8px 0px;
   background-color: rgba(1, 6, 29, 0.85);
@@ -250,6 +258,10 @@ section.section {
   filter: grayscale(0);
 }
 
+main #top-3 {
+  height: fit-content;
+  min-height: 100px;
+}
 main #top-3 .container {
   display: flex;
   flex-wrap: wrap;
@@ -290,6 +302,8 @@ main #search-container {
   top: 24px;
   z-index: 1000;
   width: 100%;
+  height: fit-content;
+  min-height: 100px;
   padding: 24px 0 28px 0;
   background-color: rgba(1, 6, 29, 0.85);
 }
@@ -335,6 +349,9 @@ main #cards-container, main #latest-blogs, main #top-projects {
   place-items: center;
   row-gap: 24px;
   padding-bottom: 16px;
+  width: 100%;
+  height: fit-content;
+  min-height: 100px;
 }
 main #cards-container article.card, main #latest-blogs article.card, main #top-projects article.card {
   display: grid;
@@ -464,6 +481,10 @@ main #cards-container article.card:hover, main #cards-container article.card:foc
   transition: transform 200ms ease-in-out;
   transform: scale(1.05);
 }
+main #contact {
+  height: fit-content;
+  min-height: 100px;
+}
 main #contact h2 {
   text-align: center;
   padding-block: 12px 24px;
@@ -493,6 +514,8 @@ main #contact .contact-form .button-primary {
 }
 
 #footer {
+  height: fit-content;
+  min-height: 100px;
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr;

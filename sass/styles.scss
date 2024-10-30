@@ -97,6 +97,10 @@ h4,h5,h6,p,li,a{
     height: fit-content;
 }
 
+a{
+    text-decoration: none;
+}
+
 .icon--nf{
     font-family:'NerdFont';
     line-height: 1.15;
@@ -155,6 +159,8 @@ section.section{
     left: 0;
     top: 0;
     z-index: 1000;
+    min-height: 100px;
+    height: fit-content;
     background-color: rgba($dark_blue, 0.85);
     @media (width>$tablet){
         display: flex;
@@ -201,6 +207,8 @@ section.section{
     position: sticky;
     left: 0;
     bottom: 0;
+    height: fit-content;
+    min-height: 100px;
     z-index: 1000;
     padding: 8px 0px;
     background-color: rgba($dark_blue, 0.85);
@@ -250,6 +258,8 @@ section.section{
 
 main{
     #top-3{
+        height: fit-content;
+        min-height: 100px;
         .container{
             display: flex;
             flex-wrap: wrap;
@@ -291,6 +301,8 @@ main{
         top: 24px;
         z-index: 1000;
         width: 100%;
+        height: fit-content;
+        min-height: 100px;
         padding: 24px 0 28px 0;
         background-color: rgba($dark_blue, 0.85);
         .search-container{
@@ -336,6 +348,9 @@ main{
         place-items: center;
         row-gap: 24px;
         padding-bottom: 16px;
+        width: 100%;
+        height: fit-content;
+        min-height: 100px;
         article.card{
             display: grid;
             place-items: center;
@@ -467,6 +482,8 @@ main{
         }
     }
     #contact{
+        height: fit-content;
+        min-height: 100px;
         h2{
             text-align: center;
             padding-block: 12px 24px;
@@ -498,6 +515,8 @@ main{
 }
 
 #footer{
+    height: fit-content;
+    min-height: 100px;
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr;
