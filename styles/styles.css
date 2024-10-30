@@ -74,6 +74,7 @@ h3 {
 }
 
 h1, h2, h3 {
+  width: 100%;
   padding: 24px 0;
   color: #f3f5f7;
   font-weight: bolder;
@@ -86,6 +87,7 @@ h4, h5, h6, p, li {
   font-weight: normal;
   line-height: 1.15;
   margin: 12px 0;
+  width: 100%;
   min-height: 18px;
   height: fit-content;
 }
@@ -116,7 +118,6 @@ section.section {
   width: 100%;
   min-height: 15px;
   height: fit-content;
-  margin: 0 auto;
   padding: 24px 16px;
 }
 
