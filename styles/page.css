@@ -46,49 +46,9 @@ a.link {
   margin: 0;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  row-gap: 16px;
-  column-gap: 8px;
-  padding: 12px 0;
-}
-.tags span {
-  display: inline-block;
-  width: fit-content;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.tags span.red {
-  background-color: #821F00;
-  box-shadow: 0 0 6px 4px rgba(130, 31, 0, 0.5);
-}
-.tags span.blue {
-  background-color: #0E76B4;
-  box-shadow: 0 0 6px 4px rgba(14, 118, 180, 0.5);
-}
-.tags span.green {
-  background-color: #006158;
-  box-shadow: 0 0 6px 4px rgba(0, 97, 88, 0.5);
-}
-.tags span.yellow {
-  background-color: #916A08;
-  box-shadow: 0 0 6px 4px rgba(145, 106, 8, 0.5);
-}
-.tags span.gray, .tags span.grey {
-  background-color: #444447;
-  box-shadow: 0 0 6px 4px rgba(68, 68, 71, 0.5);
-}
-.tags span .icon--nf {
-  padding: 0;
-  padding-right: 4px;
-}
-
 #page-body {
   width: 100%;
+  margin: 0 auto;
   padding: 4px 16px;
 }
 #page-body figure {
@@ -131,6 +91,63 @@ a.link {
 #page-references ol li::before {
   content: "[ " counter(item) " ]";
   padding-right: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 16px;
+  column-gap: 8px;
+  padding: 12px 0;
+}
+.tags span {
+  display: inline-block;
+  width: fit-content;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.tags span.red {
+  background-color: #821F00;
+  box-shadow: 0 0 6px 4px rgba(130, 31, 0, 0.5);
+}
+.tags span.red .icon--nf {
+  padding: 0;
+  padding-right: 4px;
+}
+.tags span.blue {
+  background-color: #0E76B4;
+  box-shadow: 0 0 6px 4px rgba(14, 118, 180, 0.5);
+}
+.tags span.blue .icon--nf {
+  padding: 0;
+  padding-right: 4px;
+}
+.tags span.green {
+  background-color: #006158;
+  box-shadow: 0 0 6px 4px rgba(0, 97, 88, 0.5);
+}
+.tags span.green .icon--nf {
+  padding: 0;
+  padding-right: 4px;
+}
+.tags span.yellow {
+  background-color: #916A08;
+  box-shadow: 0 0 6px 4px rgba(145, 106, 8, 0.5);
+}
+.tags span.yellow .icon--nf {
+  padding: 0;
+  padding-right: 4px;
+}
+.tags span.gray, .tags span.grey {
+  background-color: #444447;
+  box-shadow: 0 0 6px 4px rgba(68, 68, 71, 0.5);
+}
+.tags span.gray .icon--nf, .tags span.grey .icon--nf {
+  padding: 0;
+  padding-right: 4px;
 }
 
 .code-block {

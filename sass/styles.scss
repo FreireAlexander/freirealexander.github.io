@@ -15,11 +15,6 @@
     font-display: swap;
 }
 
-.icon--nf{
-    font-family:'NerdFont', sans-serif;
-    line-height: 1.15;
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -67,16 +62,21 @@ h1,h2,h3{
 }
 
 h4,h5,h6,p,li{
-    color: $white_azure;
+    color: $white;
     font-size: 1.8rem;
     font-weight: normal;
-    line-height: 2.4rem;
+    line-height: 1.15;
     margin: 12px 0;
 }
 
-a {
-    color: $white;
+a{
     text-decoration: none;
+}
+
+.icon--nf{
+    font-family:'NerdFont';
+    line-height: 1.15;
+    font-size: 1.8rem;
 }
 
 #header{
@@ -288,16 +288,6 @@ nav.navbar{
     }
         
 }
-
-
-.section{
-    margin: 0 auto;
-    padding: 24px 16px;
-    h2{
-        padding: 24px 0;
-    }
-}
-
 
 .button-primary{
     display: block;

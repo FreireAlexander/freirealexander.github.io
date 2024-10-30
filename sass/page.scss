@@ -45,49 +45,10 @@ a{
     }
 }
 
-.tags{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    row-gap: 16px;
-    column-gap: 8px;
-    padding: 12px 0;
-    span{
-        display: inline-block;
-        width: fit-content;
-        border-radius: 4px;
-        padding: 4px 8px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        &.red{
-            background-color: $red;
-            box-shadow: 0 0 6px 4px rgba($red, 0.5);
-        }
-        &.blue{
-            background-color: $light_blue;
-            box-shadow: 0 0 6px 4px rgba($light_blue, 0.5);
-        }
-        &.green{
-            background-color: $green;
-            box-shadow: 0 0 6px 4px rgba($green, 0.5);
-        }
-        &.yellow{
-            background-color: $yellow;
-            box-shadow: 0 0 6px 4px rgba($yellow, 0.5);
-        }
-        &.gray, &.grey{
-            background-color: $gray;
-            box-shadow: 0 0 6px 4px rgba($gray, 0.5);
-        }
-        .icon--nf{
-            padding: 0;
-            padding-right: 4px;
-        }
-    }
-}
 
 #page-body{
     width: 100%;
+    margin: 0 auto;
     padding: 4px 16px;
     figure{
         display: grid;
@@ -130,6 +91,64 @@ a{
         li::before{
             content: "[ " counter(item) " ]";
             padding-right: 12px;
+        }
+    }
+}
+
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 16px;
+    column-gap: 8px;
+    padding: 12px 0;
+    span{
+        display: inline-block;
+        width: fit-content;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        &.red{
+            background-color: $red;
+            box-shadow: 0 0 6px 4px rgba($red, 0.5);
+                .icon--nf{
+                padding: 0;
+                padding-right: 4px;
+            }
+        }
+        &.blue{
+            background-color: $light_blue;
+            box-shadow: 0 0 6px 4px rgba($light_blue, 0.5);
+                .icon--nf{
+                padding: 0;
+                padding-right: 4px;
+            }
+        }
+        &.green{
+            background-color: $green;
+            box-shadow: 0 0 6px 4px rgba($green, 0.5);
+                .icon--nf{
+                padding: 0;
+                padding-right: 4px;
+            }
+        }
+        &.yellow{
+            background-color: $yellow;
+            box-shadow: 0 0 6px 4px rgba($yellow, 0.5);
+                .icon--nf{
+                padding: 0;
+                padding-right: 4px;
+            }
+        }
+        &.gray, &.grey{
+            background-color: $gray;
+            box-shadow: 0 0 6px 4px rgba($gray, 0.5);
+                .icon--nf{
+                padding: 0;
+                padding-right: 4px;
+            }
         }
     }
 }

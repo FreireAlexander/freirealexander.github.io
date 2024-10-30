@@ -14,11 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
   font-display: swap;
 }
-.icon--nf {
-  font-family: "NerdFont", sans-serif;
-  line-height: 1.15;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -55,16 +50,21 @@ h1, h2, h3 {
 }
 
 h4, h5, h6, p, li {
-  color: #F0FFFF;
+  color: #f3f5f7;
   font-size: 1.8rem;
   font-weight: normal;
-  line-height: 2.4rem;
+  line-height: 1.15;
   margin: 12px 0;
 }
 
 a {
-  color: #f3f5f7;
   text-decoration: none;
+}
+
+.icon--nf {
+  font-family: "NerdFont";
+  line-height: 1.15;
+  font-size: 1.8rem;
 }
 
 #header {
@@ -258,14 +258,6 @@ nav.navbar {
   margin-inline: 4px;
   font-size: 2.4rem;
   color: #F0FFFF;
-}
-
-.section {
-  margin: 0 auto;
-  padding: 24px 16px;
-}
-.section h2 {
-  padding: 24px 0;
 }
 
 .button-primary {
