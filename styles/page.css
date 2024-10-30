@@ -70,6 +70,9 @@ main #page-data .card-tags .tag.yellow {
 main #page-data .card-tags .tag.grey {
   background-color: #444447;
 }
+main #page-body {
+  display: grid;
+}
 main #page-body p {
   line-height: 1.5;
 }

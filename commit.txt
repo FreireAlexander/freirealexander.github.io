@@ -1,4 +1,4 @@
-feat(): 
-    - Async component load for Pages
+fixbug(): 
+    - load components together for pages
 author: Zero
 |

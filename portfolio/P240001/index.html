@@ -105,22 +105,16 @@
     <footer id="header-mobile"></footer>
 </div>
 </body>
-    <script src="/scripts/setPageInfo.js"></script>
-    <script>
-        // Función de inicialización que se ejecuta de inmediato
-        (async function init() {
-            const itemId = 'P240001'; // Reemplaza con el ID real, por ejemplo, obtenido de la URL.
-            await loadSingleItemById(itemId);
-        })();
-    </script>
     <script src="/scripts/loadComponents.js"></script>
+    <script src="/scripts/setPageInfo.js"></script>
     <script>
         // Función de inicialización que se autoejecuta para cargar header y footer
         (async function initComponents() {
             await Promise.all([
                 loadHTML('header', '/components/header.html'),
                 loadHTML('header-mobile', '/components/header_mobile.html'),
-                loadHTML('footer', '/components/footer.html')
+                loadHTML('footer', '/components/footer.html'),
+                loadSingleItemById('P240001')
             ]);
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));
