@@ -5,19 +5,18 @@ li {
   list-style-position: inside;
 }
 
-a {
+main a {
   color: #0E76B4;
   cursor: pointer;
 }
-a.ref {
+main a.ref {
   padding: 8px;
   text-transform: uppercase;
   vertical-align: super;
 }
-a.link {
+main a.link {
   text-decoration: underline;
 }
-
 main #page-cover {
   width: 100%;
   margin: 0;
@@ -88,8 +87,7 @@ main .section figure figcaption {
   text-align: center;
 }
 main .section figure figcaption a {
-  text-decoration: none;
-  color: inherit;
+  font-size: 1.2rem;
 }
 main #page-references h2 {
   text-align: center;

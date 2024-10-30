@@ -78,22 +78,16 @@ h1, h2, h3 {
   padding: 24px 0;
   color: #f3f5f7;
   font-weight: bolder;
-  line-height: 1.15;
+  line-height: 1.25;
 }
 
-h4, h5, h6, p, li {
+h4, h5, h6, p, li, a {
   color: #f3f5f7;
   font-size: 1.8rem;
   font-weight: normal;
-  line-height: 1.15;
-  margin: 12px 0;
-  width: 100%;
+  line-height: 1.25;
   min-height: 18px;
   height: fit-content;
-}
-
-a {
-  text-decoration: none;
 }
 
 .icon--nf {
