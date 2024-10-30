@@ -8,7 +8,19 @@
     <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/mobile.css">
     <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.css">
@@ -30,10 +42,10 @@
 <div class="body">
     <header id="header"></header>
     <main>
-        <section id="page-cover" class="section--page">
+        <section id="page-cover" class="section">
             <img class="cover-page" src="/blogs/template/coverPage.webp" alt="cover page">
         </section>
-        <section id="page-data" class="section--page">
+        <section id="page-data" class="section">
             <h1 class="title">Blogs Template</h1>
             <div>
                 <p class="author">Author: Freire Alexander Palomino Palma</p>
@@ -49,7 +61,7 @@
                 </div>
             </div>
         </section>
-        <section id="page-body" class="section--page">
+        <section id="page-body" class="section">
             <h3>Introduction</h3>
             <p>
                 Lorem ipsum, <a class="link">dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
@@ -95,7 +107,7 @@
                 </pre>
             </div>
         </section>
-        <section id="page-references" class="section--page">
+        <section id="page-references" class="section">
             <h2>References</h2>
             <ol>
                 <li id="ref-1">E. H. Miller, “A note on reflector arrays,” <i>IEEE Trans</i>. Antennas Propag, to be published.</li>

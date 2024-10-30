@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "a Civil Engineer",
         "a Web Developer",   
         "a CAD Technician",
-        "a Top Pro"
+        "a Top Professional"
       ];
     const colors = {
         "light_blue": "#0099FF",
