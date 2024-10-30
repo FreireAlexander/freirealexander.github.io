@@ -21,11 +21,11 @@
             type="text/css"
         />
     </noscript>
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/page.css">
+    <link rel="preload" href="/fonts/nerdfonts.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-    <script async>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
+    <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -77,18 +77,20 @@
 </body>
     <script src="/scripts/loadComponents.js"></script>
     <script>
-        // Cargar el header y el footer al cargar la página
-        document.addEventListener("DOMContentLoaded", function() {
-            loadHTML('header', '/components/header.html');
-            loadHTML('header-mobile', '/components/header_mobile.html');
-            loadHTML('footer', '/components/footer.html');
-            loadHTML('top-3', '/components/top_3_blogs.html');
-            // Después de un pequeño retraso, emite el evento de carga completa
+        // Función de inicialización que se autoejecuta para cargar header y footer
+        (async function initComponents() {
+            await Promise.all([
+            loadHTML('header', '/components/header.html'),
+            loadHTML('header-mobile', '/components/header_mobile.html'),
+            loadHTML('footer', '/components/footer.html'),
+            loadHTML('top-3', '/components/top_3_blogs.html'),
+            ]);
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));
-            }, 300);
-        });
+                setMobileItemsStatus();
+            }, 100); 
+        })();
     </script>
-    <script async src="/scripts/setMobileItemsStatus.js"></script>
+    <script src="/scripts/setMobileItemsStatus.js"></script>
     <script src="/scripts/setCardsPages.js"></script>
 </html>

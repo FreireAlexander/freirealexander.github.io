@@ -88,9 +88,11 @@ h4, h5, h6, p, li, a {
   line-height: 1.25;
   min-height: 18px;
   height: fit-content;
+  margin: 12px 0;
 }
 
 a {
+  margin: 0;
   text-decoration: none;
 }
 
@@ -147,6 +149,7 @@ section.section {
 .brand .logo p {
   font-family: "Times New Roman", Times, serif;
   font-size: 3.9rem;
+  line-height: 3.9rem;
   color: #f3f5f7;
 }
 

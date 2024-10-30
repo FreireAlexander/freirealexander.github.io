@@ -24,11 +24,11 @@
     <link rel="preload" href="/fonts/nerdfonts.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/styles.css" type="text/css">
     <link rel="stylesheet" href="/styles/page.css" type="text/css">
-    <link rel="preload" href="/portfolio/P240005/coverPage.webp" as="image">
+    <link rel="preload" href="/portfolio/P240001/coverPage.webp" as="image">
     <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.min.css" type="text/css">
     <!-- Google tag (gtag.js) -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-    <script defer type="text/javascript">
+    <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -107,7 +107,6 @@
 </body>
     <script src="/scripts/loadComponents.js"></script>
     <script src="/scripts/setPageInfo.js"></script>
-    <script src="/scripts/setMobileItemsStatus.js"></script>
     <script>
         // Función de inicialización que se autoejecuta para cargar header y footer
         (async function initComponents() {
@@ -115,14 +114,15 @@
                 loadHTML('header', '/components/header.html'),
                 loadHTML('header-mobile', '/components/header_mobile.html'),
                 loadHTML('footer', '/components/footer.html'),
-                loadSingleItemById('P240005'),
+                loadSingleItemById('P240005')
             ]);
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));
                 setMobileItemsStatus();
-            }, 100);
+            }, 100); 
         })();
     </script>
+    <script src="/scripts/setMobileItemsStatus.js"></script>
     <script defer>
         document.querySelectorAll('.copy-button').forEach(button => {
             button.addEventListener('click', () => {

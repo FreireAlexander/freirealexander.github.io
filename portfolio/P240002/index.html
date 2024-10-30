@@ -21,15 +21,14 @@
             type="text/css"
         />
     </noscript>
-    <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.min.css" type="text/css">
-    <link rel="stylesheet" href="/styles/page.css" type="text/css">
     <link rel="preload" href="/fonts/nerdfonts.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/styles.css" type="text/css">
-    <link rel="preload" href="/portfolio/P240002/coverPage.webp" as="image">
-    
+    <link rel="stylesheet" href="/styles/page.css" type="text/css">
+    <link rel="preload" href="/portfolio/P240001/coverPage.webp" as="image">
+    <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.min.css" type="text/css">
     <!-- Google tag (gtag.js) -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-    <script defer type="text/javascript">
+    <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -40,26 +39,7 @@
 <div class="body">
     <header id="header"></header>
     <main>
-        <section id="page-cover" class="section">
-            <img fetchpriority="high" class="cover-page" src="/portfolio/P240002/coverPage.webp" alt="cover page">
-        </section>
-        <section id="page-data" class="section">
-            <h1 class="title">Civil Projects</h1>
-            <div>
-                <p class="author">Author: Freire Alexander Palomino Palma</p>
-                <p class="publish">Publish date: <time datetime="01-01-2024">01/01/2024</time></p>
-                <p class="card-tags">
-                    <span class="tag red"><span class="icon--nf">&#xf16a;</span>coding</span>
-                    <span class="tag green">Civil Engineering</span>
-                    <span class="tag blue">Learning</span>
-                    <span class="tag yellow">Programming</span>
-                    <span class="tag gray">Engineering</span>
-                </p>
-                <p class="card-tags">
-                    <span class="tag done"><span class="icon--nf">&#xf16a;</span>done</span>
-                </p>
-            </div>
-        </section>
+        <section id="page-info" style="width: 100%; height: fit-content; min-height: 300px;"></section>
         <section id="page-body" class="section">
             <h2>Description</h2>
             <p>
@@ -126,16 +106,21 @@
 </div>
 </body>
     <script src="/scripts/loadComponents.js"></script>
+    <script src="/scripts/setPageInfo.js"></script>
     <script>
-        // Cargar el header y el footer al cargar la página
-        document.addEventListener("DOMContentLoaded", function() {
-            loadHTML('header', '/components/header.html');
-            loadHTML('header-mobile', '/components/header_mobile.html');
-            loadHTML('footer', '/components/footer.html');
+        // Función de inicialización que se autoejecuta para cargar header y footer
+        (async function initComponents() {
+            await Promise.all([
+                loadHTML('header', '/components/header.html'),
+                loadHTML('header-mobile', '/components/header_mobile.html'),
+                loadHTML('footer', '/components/footer.html'),
+                loadSingleItemById('P240002')
+            ]);
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));
-            }, 300);
-        });
+                setMobileItemsStatus();
+            }, 100); 
+        })();
     </script>
     <script src="/scripts/setMobileItemsStatus.js"></script>
     <script defer>

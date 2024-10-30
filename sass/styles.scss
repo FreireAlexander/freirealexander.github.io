@@ -95,9 +95,11 @@ h4,h5,h6,p,li,a{
     line-height: 1.25;
     min-height: 18px;
     height: fit-content;
+    margin: 12px 0;
 }
 
 a{
+    margin: 0;
     text-decoration: none;
 }
 
@@ -141,6 +143,7 @@ section.section{
         border-style: solid;
         height: $logo;
         width: $logo;
+        
         border-radius: 50%;
         font-family: 'Times New Roman', Times, serif;
         background: rgb(3,16,78);
@@ -148,6 +151,7 @@ section.section{
         p{  
             font-family: 'Times New Roman', Times, serif;
             font-size: $logo - 0.1rem;
+            line-height: $logo - 0.1rem;
             color: $white;
         }
     }
