@@ -1,6 +1,30 @@
 @use 'sass:math';
 @use "sass:string";
+@use "sass:meta";
 @import 'variables.scss';
+
+:root{
+    /** Screen Size **/
+    --mobileSmall: #{meta.inspect($mobileSmall)};
+    --mobileMedium: #{meta.inspect($mobileMedium)};
+    --mobileLarge: #{meta.inspect($mobileLarge)};
+    --tablet: #{meta.inspect($tablet)};
+    --laptopSmall: #{meta.inspect($laptopSmall)};
+    --laptopMedium: #{meta.inspect($laptopMedium)};
+    --laptopLarge: #{meta.inspect($laptopLarge)};
+    /** Color Palette **/
+    --black: #{meta.inspect($black)};
+    --white: #{meta.inspect($white)};
+    --white_azure: #{meta.inspect($white_azure)};
+    --gray: #{meta.inspect($gray)};
+    --dark_blue: #{meta.inspect($dark_blue)};
+    --light_blue: #{meta.inspect($light_blue)};
+    --blue: #{meta.inspect($blue)};
+    --red: #{meta.inspect($red)};
+    --green: #{meta.inspect($green)};
+    --yellow: #{meta.inspect($yellow)};
+    --color: #{meta.inspect($color)};
+}
 
 @font-face{
     font-family:'NerdFont';

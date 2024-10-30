@@ -1,4 +1,4 @@
 feat(): 
-    - Layout Define
+    - Async component load for Pages
 author: Zero
 |

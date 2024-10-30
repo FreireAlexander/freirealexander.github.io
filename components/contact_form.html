@@ -1,5 +1,10 @@
 <h2> Let's get in contact </h2>
-<form class="contact-form" action="https://formsubmit.co/freirealexander0214@gmail.com" method="POST">
+<form 
+    id="contact-form" 
+    class="contact-form" 
+    action="https://formspree.io/f/mnnqpqrz"
+    method="POST"
+    >
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" required>
     <label for="email">Email</label>
@@ -10,4 +15,5 @@
     <input type="hidden" name="_subject" value="New submission from home page!">
     <input type="hidden" name="_autoresponse" value="Thank you for your message. We will be in contact as soon as possible, have a nice day &#128075;">
     <button type="submit" id="button--send" class="button-primary container--icon"><span class="icon--nf send" style="display: block;">&#xf1d8;</span>Send Message</button>
+    <p id="status"></p>
 </form>
