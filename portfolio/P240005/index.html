@@ -40,26 +40,7 @@
 <div class="body">
     <header id="header"></header>
     <main>
-        <section id="page-cover" class="section">
-            <img fetchpriority="high" class="cover-page" src="/portfolio/P240005/coverPage.webp" alt="cover page">
-        </section>
-        <section id="page-data" class="section">
-            <h1 class="title">Civil Projects</h1>
-            <div>
-                <p class="author">Author: Freire Alexander Palomino Palma</p>
-                <p class="publish">Publish date: <time datetime="01-01-2024">01/01/2024</time></p>
-                <p class="card-tags">
-                    <span class="tag red"><span class="icon--nf">&#xf16a;</span>coding</span>
-                    <span class="tag green">Civil Engineering</span>
-                    <span class="tag blue">Learning</span>
-                    <span class="tag yellow">Programming</span>
-                    <span class="tag gray">Engineering</span>
-                </p>
-                <p class="card-tags">
-                    <span class="tag done"><span class="icon--nf">&#xf16a;</span>done</span>
-                </p>
-            </div>
-        </section>
+        <section id="page-info"></section>
         <section id="page-body" class="section">
             <h2>Description</h2>
             <p>
@@ -126,16 +107,22 @@
 </div>
 </body>
     <script src="/scripts/loadComponents.js"></script>
+    <script src="/scripts/setPageInfo.js"></script>
     <script>
-        // Cargar el header y el footer al cargar la página
-        document.addEventListener("DOMContentLoaded", function() {
-            loadHTML('header', '/components/header.html');
-            loadHTML('header-mobile', '/components/header_mobile.html');
-            loadHTML('footer', '/components/footer.html');
+        // Función de inicialización que se autoejecuta para cargar header y footer
+        (async function initComponents() {
+            await Promise.all([
+                loadHTML('header', '/components/header.html'),
+                loadHTML('header-mobile', '/components/header_mobile.html'),
+                loadHTML('footer', '/components/footer.html'),
+                loadSingleItemById('P240005')
+            ]);
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));
             }, 300);
-        });
+            // Emitir evento una vez que todos los componentes se hayan cargado
+            document.dispatchEvent(new Event('componentsLoaded'));
+        })();
     </script>
     <script src="/scripts/setMobileItemsStatus.js"></script>
     <script defer>

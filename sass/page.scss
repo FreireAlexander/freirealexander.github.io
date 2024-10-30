@@ -72,11 +72,7 @@ main{
             }
         }
     }
-    #page-body{
-        display: grid;
-        p{
-            line-height: 1.5;
-        }
+    .section{
         figure{
             display: grid;
             place-items: center;
@@ -97,7 +93,7 @@ main{
                     color: inherit;
                 }
             }
-        }   
+        }
     }
     #page-references{
         h2{
