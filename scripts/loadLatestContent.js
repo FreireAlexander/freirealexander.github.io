@@ -52,7 +52,7 @@ function createCards(items, section, clear = false) {
             card.classList.add('card');
             card.innerHTML = `
                 <figure class="card-cover">
-                    <img src="${item.coverPage}" alt="${item.title}">
+                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
                     <div class="status ${item.type}"> ${item.type} </div>
                 </figure>
                 <div class="card-content">
@@ -71,7 +71,7 @@ function createCards(items, section, clear = false) {
                     <div class="card-description">
                         <p>${item.description}</p>
                     </div>
-                    <a href="${item.href}" class="card-button">Look Full Page</a>
+                    <a href="${item.href}" class="card-button">Explore Article</a>
                 </div>
             `;
             container.appendChild(card);
@@ -82,7 +82,7 @@ function createCards(items, section, clear = false) {
             card.classList.add('card');
             card.innerHTML = `
                 <figure class="card-cover">
-                    <img src="${item.coverPage}" alt="${item.title}">
+                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
                     <div class="status ${item.status} "> ${item.status} </div>
                 </figure>
                 <div class="card-content">
