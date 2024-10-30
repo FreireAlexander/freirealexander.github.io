@@ -1,4 +1,3 @@
-fixbug(): 
-    - load components together for pages
+saving(): 
+    - 
 author: Zero
-|
