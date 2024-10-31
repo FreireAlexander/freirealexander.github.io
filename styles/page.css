@@ -72,6 +72,7 @@ main #page-data .card-tags .tag.grey {
 main #page-body {
   min-height: 500px;
   height: auto;
+  contain: layout;
 }
 main .section figure {
   display: grid;

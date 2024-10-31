@@ -75,6 +75,7 @@ main{
     #page-body{
         min-height: 500px;
         height: auto;
+        contain: layout;
     }
     .section{
         figure{
