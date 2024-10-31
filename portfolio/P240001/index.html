@@ -14,13 +14,21 @@
     <link rel="stylesheet" href="/styles/styles.css" type="text/css">
     <link rel="stylesheet" href="/styles/page.css" type="text/css">
     <link rel="preload" href="/portfolio/P240001/coverPage.webp" as="image">
-    <!-- Google tag (gtag.js) - Load async for non-blocking load -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
+    <!-- Google Analytics optimizado -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
     <script>
+    // Espera a que la página esté en estado inactivo para inicializar Analytics
+    window.requestIdleCallback(() => {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        
+        // Configuración inicial de Google Analytics
         gtag('js', new Date());
-        gtag('config', 'G-TW9HZ9TTYP');
+        gtag('config', 'G-TW9HZ9TTYP', {
+        'transport_type': 'beacon', // Reduce el impacto en métricas de carga
+        'anonymize_ip': true        // Activa anonimización para privacidad
+        });
+    });
     </script>
 </head>
 <body>
