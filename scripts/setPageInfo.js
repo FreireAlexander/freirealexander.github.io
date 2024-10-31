@@ -38,7 +38,7 @@ function displayItem(item) {
     const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
     container.innerHTML = `
         <section id="page-cover" class="section">
-            <img fetchpriority="high" class="cover-page" src="${item.href}/coverPageSmall.webp" alt="${item.title}">
+            <img fetchpriority="high" class="cover-page" src="${item.href}coverPageSmall.webp" alt="${item.title}">
         </section>
         <section id="page-data" class="section">
             <h1 class="title">${item.title}</h1>
