@@ -69,24 +69,28 @@ main #page-data .card-tags .tag.yellow {
 main #page-data .card-tags .tag.grey {
   background-color: #444447;
 }
-main .section figure {
+main #page-body, main .section {
+  min-height: 500px;
+  height: auto;
+}
+main #page-body figure, main .section figure {
   display: grid;
   place-items: center;
   width: 250px;
 }
-main .section figure img {
+main #page-body figure img, main .section figure img {
   width: 250px;
   height: 250px;
   object-fit: contain;
 }
-main .section figure figcaption {
+main #page-body figure figcaption, main .section figure figcaption {
   padding: 8px 4px;
   font-size: 1.2rem;
   font-weight: 500;
   width: 80%;
   text-align: center;
 }
-main .section figure figcaption a {
+main #page-body figure figcaption a, main .section figure figcaption a {
   font-size: 1.2rem;
 }
 main #page-references h2 {
