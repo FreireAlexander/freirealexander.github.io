@@ -74,6 +74,9 @@ main #page-body {
   height: auto;
   contain: layout;
 }
+main #page-body p {
+  contain: layout;
+}
 main .section figure {
   display: grid;
   place-items: center;
