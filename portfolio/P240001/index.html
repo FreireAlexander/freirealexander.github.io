@@ -6,29 +6,34 @@
     <meta name="description" content="Civil Engineering, Coding and Learning">
     <title>Project Page</title>
     <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap">
+    <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
     <link rel="preload" href="/fonts/nerdfonts.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/styles.css" type="text/css">
     <link rel="stylesheet" href="/styles/page.css" type="text/css">
     <link rel="preload" href="/portfolio/P240001/coverPage.webp" as="image">
-    <!-- Google Analytics optimizado -->
+    <link rel="stylesheet" href="/scripts/highlight/styles/base16/colors.min.css" type="text/css">
+    <!-- Google tag (gtag.js) -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-    <script>
-    // Espera a que la página esté en estado inactivo para inicializar Analytics
-    window.requestIdleCallback(() => {
+    <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        
-        // Configuración inicial de Google Analytics
         gtag('js', new Date());
-        gtag('config', 'G-TW9HZ9TTYP', {
-        'transport_type': 'beacon', // Reduce el impacto en métricas de carga
-        'anonymize_ip': true        // Activa anonimización para privacidad
-        });
-    });
+        gtag('config', 'G-TW9HZ9TTYP');
     </script>
 </head>
 <body>
@@ -36,7 +41,7 @@
     <header id="header"></header>
     <main>
         <section id="page-info" style="width: 100%; height: fit-content; min-height: 300px;"></section>
-        <section id="page-body" class="section">
+        <section id="page-body" class="section" style="width: 100%; height: fit-content; min-height: 1000px;">
             <h2>Description</h2>
             <p>
                 Lorem ipsum, <a href="/" class="link">dolor sit amet consectetur</a> adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
