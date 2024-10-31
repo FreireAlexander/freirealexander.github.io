@@ -72,7 +72,9 @@ main{
             }
         }
     }
-    .section{
+    #page-body, .section{
+        min-height: 500px;
+        height: auto;
         figure{
             display: grid;
             place-items: center;
