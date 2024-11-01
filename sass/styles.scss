@@ -71,36 +71,46 @@ body{
     font-size-adjust: 0.5; /* Ajusta para la altura de la fuente */
 }
 h1{
-    font-size: 4.2rem;
+    font-size: 4.8rem;
     min-height: 42px;
     height: fit-content;
 }
 h2{
-    font-size: 3.2rem;
+    font-size: 3.62rem;
     min-height: 32px;
     height: fit-content;
 }
 h3{
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     min-height: 24px;
     height: fit-content;
 }
 h1,h2,h3{
     width: 100%;
-    padding: 24px 0;
+    padding: 24px 0 20px 0;
     color: $white;
     font-weight: bolder;
-    line-height: 1.25;
+    line-height: 1.1;
+    contain: layout;
+}
+
+h4,h5,h6{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+p, li, a{
+    font-size: 2rem;
+    font-weight: normal;
 }
 
 h4,h5,h6,p,li,a{
     color: $white;
-    font-size: 1.8rem;
     font-weight: normal;
     line-height: 1.25;
     min-height: 18px;
     height: fit-content;
     margin: 12px 0;
+    contain: layout;
 }
 
 a{
@@ -128,7 +138,7 @@ section.section{
     width: 100%;
     min-height: 15px;
     height: fit-content;
-    padding: 24px 16px;
+    padding: 12px 16px;
 }
 
 .brand{
@@ -279,23 +289,71 @@ main{
                 position: relative;
                 display: grid;
                 place-items: center;
+                width: 250px;
                 img{
                     width: 250px;
-                    height: 250px;
-                    border-radius: 50%;
-                    object-fit: cover;
                 }
-                summary{
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    padding: 8px 4px;
-                    border-radius: 8px;
+                &.portfolio{
+                    img{
+                        height: 250px;
+                        border-radius: 50%;
+                        border: 4px solid #9f7928;
+                        object-fit: cover;
+                    }
+                    h4 {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        padding: 12px 24px;
+                        margin: 0;
+                        text-align: center;
+                        font-size: 2.4rem;
+                        font-weight: bold;
+                        background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                                    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+                        color: $white;
+                        clip-path: polygon(
+                            0 0, 
+                            100% 0,
+                            calc(100% - 20px) 50%,
+                            100% 100%,
+                            0 100%,
+                            20px 50%
+                            );
+                    }
+                }
+                &.article{
+                    width: 300px;
+                    gap: 0;
                     background-color: $white;
-                    font-size: 1.8rem;
-                    line-height: 1;
-                    color: $black;
-                    text-align: center;
+                    padding: 2px;
+                    img{
+                        margin: 0;
+                        width: 100%;
+                        height: 100px;
+                        object-fit: cover;
+                    }
+                    h4{
+                        font-size: 1.8rem;
+                        line-height: 1;
+                        padding: 0 4px 2px 4px;
+                        margin: 0;
+                        color: $black;
+                    }
+                    a{
+                        position: relative;
+                        .status{
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            padding: 2px 16px;
+                            background-color: $yellow;
+                            border-bottom-left-radius: 8px;
+                            &.news{
+                                background-color: $blue;
+                            }
+                        }
+                    }
                 }
                 transition: transform 300ms ease-in-out;
                 &:hover,&:focus{
@@ -410,6 +468,7 @@ main{
                 }
             }
             .card-content{
+                display: grid;
                 width: 100%;
                 padding: 8px 8px 12px 8px;
                 small.update{
@@ -472,17 +531,22 @@ main{
                     }
                 }
                 .card-description{
-                    p{
-                        margin: 0;
-                        height: auto;
+                    p{  
+                        display: -webkit-box;
+                        max-width: 200px;
                         max-height: 50px;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        color: $black;
+                        margin: 4px 0;
                         font-size: 1.2rem;
-                        text-overflow: clip;
                     }
                 }
                 .card-button{
                     display: grid;
                     padding: 4px;
+                    margin: 8px 0 0 0;
                     width: 100%;
                     border: 1px solid $gray;
                     border-radius: 4px;
@@ -520,8 +584,15 @@ main{
             margin: 0 auto;
             label, input, textarea{
                 width: 100%;
+                font-family: 'Oswald';
                 font-size: 1.8rem;
                 padding: 8px;
+                border-radius: 8px;
+                border-color: transparent;
+                &:focus{
+                    outline: $light_blue solid 4px;
+                    background-color: white;
+                }
             }
             label[for="message"]{
                 padding-block: 12px 4px;
