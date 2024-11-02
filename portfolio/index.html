@@ -28,7 +28,28 @@
             </section>
             <section class="section">
                 <h2>Recommend Projects</h2>
-                <section id="top-3"></section>
+                <section id="top-3">
+                    <div class="container">
+                        <article class="portfolio">
+                            <a href="/portfolio/P240001/">
+                                <img loading="lazy" src="/portfolio/P240001/coverPageSmall.webp" alt="Cover Page">
+                                <h4>Civil Projects</h4>
+                            </a>
+                        </article>
+                        <article class="portfolio">
+                            <a href="/portfolio/P240002/">
+                                <img loading="lazy" src="/portfolio/P240002/coverPageSmall.webp" alt="Cover Page">
+                                <h4>OOCAD</h4>
+                            </a>
+                        </article>
+                        <article class="portfolio">
+                            <a href="/portfolio/P240005/">
+                                <img loading="lazy" src="/portfolio/P240005/coverPageSmall.webp" alt="Cover Page">
+                                <h4>Cadenero</h4>
+                            </a>
+                        </article>
+                    </div>
+                </section>
             </section>
             <section class="section">
                 <div id="search-container">
@@ -68,7 +89,6 @@
             // Función de inicialización que se autoejecuta para cargar header y footer
             (async function initComponents() {
                 await Promise.all([
-                    loadHTML('top-3', '/components/top_3_projects.html'),
                     loadHTML('header', '/components/header.html'),
                     loadHTML('header-mobile', '/components/header_mobile.html'),
                     loadHTML('footer', '/components/footer.html')
