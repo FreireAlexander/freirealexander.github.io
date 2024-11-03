@@ -84,7 +84,6 @@
     </div>
     </body>
         <script src="/scripts/loadComponents.js"></script>
-        <script src="/scripts/setMobileItemsStatus.js"></script>
         <script>
             // Función de inicialización que se autoejecuta para cargar header y footer
             (async function initComponents() {
@@ -96,8 +95,9 @@
                 setTimeout(() => {
                     document.dispatchEvent(new Event('componentsLoaded'));
                     setMobileItemsStatus();
-                }, 10); 
+                }, 100); 
             })();
         </script>
+        <script src="/scripts/setMobileItemsStatus.js"></script>
         <script src="/scripts/setCardsPages.js"></script>
 </html>
