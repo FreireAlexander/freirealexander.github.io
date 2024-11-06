@@ -111,6 +111,7 @@
 </div>
 </body>
     <script src="/scripts/loadComponents.js"></script>
+    <script src="/scripts/setMobileItemsStatus.js"></script>
     <script>
         // Cargar el header y el footer al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
@@ -119,10 +120,10 @@
             loadHTML('footer', '/components/footer.html');
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));
+                setMobileItemsStatus();
             }, 300);
         });
     </script>
-    <script src="/scripts/setMobileItemsStatus.js"></script>
     <script defer>
         document.querySelectorAll('.copy-button').forEach(button => {
             button.addEventListener('click', () => {
