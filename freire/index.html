@@ -77,6 +77,58 @@
                 }
             }
         }
+        #certifications{
+            display: grid;
+            place-items: center;
+            gap: 8px;
+            .card{
+                display: grid;
+                align-items: center;
+                grid-template-columns: 1fr 3fr;
+                width: 300px;
+                column-gap: 12px;
+                padding: 8px;
+                background-color: var(--white);
+                border-radius: 8px;
+                img{
+                    place-self: start;
+                    width: 100%;
+                    object-fit: contain;
+                }
+                div{
+                    display: grid;
+                    place-items: start;
+                    h4, p, a, i{
+                        font-size: 1.8rem;
+                        margin: 0;
+                        color: var(--black);
+                    }
+                    p, a, i{
+                        font-size: 1.2rem;
+                    }
+                    a{
+                        place-self: center;
+                        text-align: center;
+                        display: block;
+                        width: 100%;
+                        margin-top: 8px;
+                        padding: 4px 12px;
+                        border: 2px solid var(--gray);
+                        border-radius: 4px;
+                        transform: scale(0.95);
+                        transition-property: transform;
+                        transition-timing-function: ease-in-out;
+                        transition-duration: 400ms;
+                    }
+                    a:hover{
+                            transform: scale(1);
+                            transition-property: transform;
+                            transition-timing-function: ease-in-out;
+                            transition-duration: 400ms;
+                    }
+                }
+            }
+        }
     </style>
 </head>
 <body>
@@ -184,16 +236,57 @@
             <h2>Certifications & Key Achievements</h2>
             <div id="certifications">
                 <article class="card">
-                    <h4>Certified in AutoCAD</h4>
-                    <p>Advanced drafting techniques for engineering and urban projects.</p>
+                    <img src="/media/docs/certifications/icons/platzi_inc_logo.jpeg" alt="icon" loading="lazy">
+                    <div>
+                        <h4>Python</h4>
+                        <p>Platzi</p>
+                        <i>Issued <time datetime="2024-07">Jul 2024</time></i>
+                        <a href="https://platzi.com/p/freirealexander/curso/10002-python/diploma/detalle/">Show credentials</a>
+                    </div>
                 </article>
                 <article class="card">
-                    <h4>MSc in Civil Engineering - Politecnico di Milano</h4>
-                    <p>Specialized in international engineering standards in English and Italian.</p>
+                    <img src="/media/docs/certifications/icons/platzi_inc_logo.jpeg" alt="icon" loading="lazy">
+                    <div>
+                        <h4>HTML y CSS desde cero</h4>
+                        <p>Platzi</p>
+                        <i>Issued <time datetime="2024-06">Jun 2024</time></i>
+                        <a href="https://platzi.com/p/freirealexander/ruta/7040-web-frontend/diploma/detalle/">Show credentials</a>
+                    </div>
                 </article>
                 <article class="card">
-                    <h4>Python Programming for Engineers</h4>
-                    <p>Developing custom automation scripts and web solutions.</p>
+                    <img src="/media/docs/certifications/icons/trimble_logo.jpeg" alt="icon" loading="lazy">
+                    <div>
+                        <h4>Steels Fundamentals Certification</h4>
+                        <p>Trimble Inc</p>
+                        <i>Issued <time datetime="2023-10">Oct 2023</time></i>
+                        <a href="https://credentials.tekla.com/887a3893-20cf-4f28-9e68-fd728a6efaa2">Show credentials</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="/media/docs/certifications/icons/training_and_competitions_by_correlation_one_logo.jpeg" alt="icon" loading="lazy">
+                    <div>
+                        <h4>Data Scientist</h4>
+                        <p>Correlation One</p>
+                        <i>Issued <time datetime="2022-07">Jul 2022</time></i>
+                        <a href="/media/docs/certifications/ds4a.pdf">Show credentials</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="/media/docs/certifications/icons/ecole_nationale_des_ponts_et_chaussees_logo.jpeg" alt="icon" loading="lazy">
+                    <div>
+                        <h4>Mastering bitumen for better roads and innovative applications</h4>
+                        <p>Coursera</p>
+                        <i>Issued <time datetime="2020-12">Dec 2020</time></i>
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/UWMQLYKTJZYQ">Show credentials</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="/media/docs/certifications/icons/polimi_logo.jpeg" alt="icon" loading="lazy">
+                    <div>
+                        <h4>Master in Civil Engineering</h4>
+                        <p>Polimi</p>
+                        <i>Issued <time datetime="2017-12">Dec 2017</time></i>
+                    </div>
                 </article>
             </div>
         </section>        
