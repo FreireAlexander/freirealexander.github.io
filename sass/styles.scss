@@ -427,8 +427,8 @@ main{
         display: grid;
         row-gap: 24px;
         place-items: center;
-        padding-bottom: 16px;
-        width: 100%;
+        padding: 24px 0 16px 0;
+        margin: 24px 0;
         height: fit-content;
         min-height: 100px;
         article.card{
@@ -583,7 +583,9 @@ main{
             place-self: center;
             column-gap: 12px;
             grid-template-columns: repeat(2, 1fr);
-            article.card:last-child:nth-child(odd){
+            article.card:last-child:nth-child(odd),
+            div.card:last-child:nth-child(1),
+            div.card.nothing{
                 grid-column: 1/-1;
             }
         }

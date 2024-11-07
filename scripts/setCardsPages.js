@@ -80,10 +80,10 @@ function createCards(items, clear = false) {
         const noResultsMessage = document.createElement('div');
         noResultsMessage.classList.add('card');
         noResultsMessage.innerHTML = `
-            <h3>No Results</h3>
-            <figure>
+            <figure style="display: grid; place-items: center;">
                 <img src="/media/icons/404-error.webp" alt="No results" style="width: 250px; height: 250px; object-fit: contain;">
             </figure>
+            <h2 style="width: 100%; text-align: center;">NOTHING TO SHOW HERE</h2>
         `;
         container.appendChild(noResultsMessage);
         return;

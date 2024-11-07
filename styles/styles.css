@@ -423,8 +423,8 @@ main #cards-container, main #latest-blogs, main #top-projects {
   display: grid;
   row-gap: 24px;
   place-items: center;
-  padding-bottom: 16px;
-  width: 100%;
+  padding: 24px 0 16px 0;
+  margin: 24px 0;
   height: fit-content;
   min-height: 100px;
 }
@@ -579,7 +579,13 @@ main #cards-container article.card:hover, main #cards-container article.card:foc
     column-gap: 12px;
     grid-template-columns: repeat(2, 1fr);
   }
-  main #cards-container article.card:last-child:nth-child(odd), main #latest-blogs article.card:last-child:nth-child(odd), main #top-projects article.card:last-child:nth-child(odd) {
+  main #cards-container article.card:last-child:nth-child(odd),
+  main #cards-container div.card:last-child:nth-child(1),
+  main #cards-container div.card.nothing, main #latest-blogs article.card:last-child:nth-child(odd),
+  main #latest-blogs div.card:last-child:nth-child(1),
+  main #latest-blogs div.card.nothing, main #top-projects article.card:last-child:nth-child(odd),
+  main #top-projects div.card:last-child:nth-child(1),
+  main #top-projects div.card.nothing {
     grid-column: 1/-1;
   }
 }

@@ -23,7 +23,11 @@ async function loadSingleItemById(itemId) {
         const item = data.find(i => i.id === itemId);
         
         if (item) {
-            displayItem(item); // Mostrar el ítem si se encuentra
+            if (jsonFile === "/data/blogs.json"){
+                displayProject(item);
+            }else {
+                displayBlog(item);
+            }
         } else {
             console.error(`No se encontró el ítem con ID ${itemId}`);
         }
@@ -33,7 +37,34 @@ async function loadSingleItemById(itemId) {
 }
 
 // Función para mostrar el ítem en el contenedor
-function displayItem(item) {
+function displayProject(item) {
+    document.title = `${item.title}`;
+    const container = document.getElementById('page-info'); // ID del contenedor donde mostrarás el ítem
+    const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
+    container.innerHTML = `
+        <section id="page-cover" class="section">
+            <img fetchpriority="high" class="cover-page" src="${item.href}coverPageSmall.webp" alt="${item.title}">
+        </section>
+        <section id="page-data" class="section">
+            <h1 class="title">${item.title}</h1>
+            <div class="status ${item.type}"> ${item.type} </div>
+            <div>
+                <p class="author">Author: ${item.author}</p>
+                <p class="publish">Publish date: ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
+                <p class="card-tags">
+                    ${item.tags.map((tag, index) => {
+                        // Asigna el color correspondiente de la lista (si se excede, vuelve al inicio)
+                        const color = colors[index % colors.length];
+                        return `<span class="tag ${color}">${tag}</span>`;
+                    }).join(' ')}
+                </p>
+            </div>
+        </section>
+    `;
+}
+
+function displayBlog(item) {
+    document.title = `${item.title}`;
     const container = document.getElementById('page-info'); // ID del contenedor donde mostrarás el ítem
     const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
     container.innerHTML = `

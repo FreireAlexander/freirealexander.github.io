@@ -1,4 +1,4 @@
 Feat(Pre-released): 
-    - Desktop Layout for Main Pages done
+    - Icons added
     - About me almost completed
 author: Zero
