@@ -135,6 +135,20 @@ section.section{
     height: fit-content;
     padding: 12px 16px;
     contain: layout;
+    @media (width>$tablet){
+        display: grid;
+        place-self: center;
+        width: 80%;
+        h1, h2{
+            width: 100%;
+            text-align: center;
+            margin: 0 0 16px 0;
+        }
+    }
+    @media (width>=$laptopMedium){
+        width: 70%;
+        margin: 0 auto;
+    }
 }
 
 .brand{
@@ -178,41 +192,45 @@ section.section{
     height: fit-content;
     background-color: rgba($dark_blue, 0.85);
     @media (width>$tablet){
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 24px 16px;
-    }
-    .header-menu{
-        height: max-content;
-    }
-
-    .header-menu > ul{
-        display: flex;
-        align-items: stretch;
-        gap: 16px;
-        list-style: none;
-        li > a {
-            display: block;
-            padding: 0 16px;
-            font-size: 1.8rem;
-            color: $white;
-            transition-property: transform;
-            transition-timing-function: ease-in-out;
-            transition-duration: 400ms;
+        display: block;
+        section{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 16px;
         }
-        li > a:hover, li > a:focus{
-            transform: scale(1.4);
-            transition-property: transform;
-            transition-timing-function: ease-in-out;
-            transition-duration: 400ms;
+    }
+    section{
+        .header-menu{
+            height: max-content;
         }
-        li > a.active {
-            color: $light_blue;
-            border: 0;
-            border-style: solid;
-            border-color: $light_blue;
-            border-bottom-width: 4px;
+        .header-menu > ul{
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            list-style: none;
+            li > a {
+                display: block;
+                padding: 0 16px;
+                font-size: 2rem;
+                color: $white;
+                transition-property: transform;
+                transition-timing-function: ease-in-out;
+                transition-duration: 400ms;
+            }
+            li > a:hover, li > a:focus{
+                transform: scale(1.4);
+                transition-property: transform;
+                transition-timing-function: ease-in-out;
+                transition-duration: 400ms;
+            }
+            li > a.active {
+                color: $light_blue;
+                border: 0;
+                border-style: solid;
+                border-color: $light_blue;
+                border-bottom-width: 4px;
+            }
         }
     }
 }
@@ -561,6 +579,14 @@ main{
                 transform: scale(1.05);
             }
         }
+        @media (width>=600px){
+            place-self: center;
+            column-gap: 12px;
+            grid-template-columns: repeat(2, 1fr);
+            article.card:last-child:nth-child(odd){
+                grid-column: 1/-1;
+            }
+        }
     }
     #contact{
         height: fit-content;
@@ -607,8 +633,8 @@ main{
     min-height: 100px;
     display: grid;
     place-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 16px;
     margin: 36px 0 48px 0;
     .copyright{
         display: grid;
@@ -624,15 +650,19 @@ main{
         align-items: center;
         justify-content: center;
         gap: 8px;
-        grid-row: 2 / 3;
-        grid-column: 1 / 3;
+        grid-column: 1/-1;
         a {
             margin-inline: 4px;
             font-size: 2.4rem;
             color: $white_azure;
         }
     }
-        
+    @media (width>$tablet){
+        grid-template-columns: repeat(3, 1fr);
+        .socials{
+            grid-column: auto;
+        }
+    }        
 }
 
 .flex{
@@ -705,6 +735,19 @@ main{
         transform: scale(1.1);
         transition: transform 600ms;
         transition-timing-function: ease-in-out;
+    }
+}
+
+#keep-exploring{
+    margin: 24px auto;
+    @media (width>$tablet){
+        p{
+            text-align: center;
+        }
+        div.flex{
+            gap: 16px;
+            justify-content: center;
+        }
     }
 }
 

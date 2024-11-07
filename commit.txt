@@ -1,3 +1,4 @@
-FixBug(): 
-    - Fix performance 
+Feat(Pre-released): 
+    - Desktop Layout for Main Pages done
+    - About me almost completed
 author: Zero

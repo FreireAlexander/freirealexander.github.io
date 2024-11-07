@@ -17,16 +17,29 @@
         gtag('config', 'G-TW9HZ9TTYP');
     </script>
     <style>
-        .personal-introduction{
-            display: grid;
-            align-items: center;
-            width: 100%;
-            text-wrap: wrap;
-            text-overflow: ellipsis;
-            margin: 12px 0;
-            overflow: hidden;
-            span{
-                height: 22rem;
+        #section-1{
+            .personal-introduction{
+                text-align: left;
+                display: grid;
+                width: 100%;
+                text-wrap: wrap;
+                text-overflow: ellipsis;
+                margin: 12px 0;
+                overflow: hidden;
+                span{
+                    height: 28rem;
+                }
+            }
+            @media (width>768px){
+                .personal-introduction{
+                    span{
+                        height: 18rem;
+                    }
+                }
+                div.flex{
+                    gap: 16px;
+                    justify-content: center;
+                }
             }
         }
         #skills{
@@ -36,7 +49,7 @@
             .card{
                 display: grid;
                 place-items: center;
-                max-width: 300px;
+                max-width: 280px;
                 padding: 12px 8px;
                 .container-img{
                     display: grid;
@@ -76,6 +89,20 @@
                             );
                 }
             }
+            @media (width>=650px){
+                grid-template-columns: repeat(2, 1fr);
+                align-items: stretch;
+                article.card:last-child:nth-child(odd){
+                    grid-column: 1/-1;
+                }
+            }
+            @media (width>=1440px){
+                grid-template-columns: repeat(3, 1fr);
+                align-items: stretch;
+                article.card:last-child:nth-child(odd){
+                    grid-column: auto;
+                }
+            }
         }
         #services{
             display: grid;
@@ -84,7 +111,9 @@
             .card{
                 display: grid;
                 gap: 4px;
-                width: 280px;
+                width: 80%;
+                min-width: 280px;
+                max-width: 450px;
                 padding: 4px 8px;
                 background-color: var(--white);
                 box-shadow: 0 0 6px 4px #000080;
@@ -124,16 +153,33 @@
                     }
                 }
             }
+            @media (width>=650px){
+                grid-template-columns: repeat(2, 1fr);
+                align-items: stretch;
+                article.card:last-child:nth-child(odd){
+                    grid-column: 1/-1;
+                }
+            }
+            @media (width>=1440px){
+                grid-template-columns: repeat(3, 1fr);
+                align-items: stretch;
+                article.card:last-child:nth-child(odd){
+                    grid-column: 1/-1;
+                }
+            }
         }
         #certifications{
             display: grid;
             place-items: center;
-            gap: 8px;
+            row-gap: 16px;
+            column-gap: 8px;
             .card{
                 display: grid;
                 align-items: center;
                 grid-template-columns: 1fr 3fr;
-                width: 280px;
+                width: 100%;
+                min-width: 280px;
+                max-width: 450px;
                 column-gap: 12px;
                 padding: 8px;
                 background-color: var(--white);
@@ -144,7 +190,9 @@
                 }
                 div{
                     display: grid;
+                    place-self: flex-start;
                     place-items: start;
+                    width: 100%;
                     h4, p, a, i{
                         font-size: 1.8rem;
                         margin: 0;
@@ -154,7 +202,6 @@
                         font-size: 1.2rem;
                     }
                     a{
-                        place-self: center;
                         text-align: center;
                         display: block;
                         width: 100%;
@@ -175,6 +222,20 @@
                     }
                 }
             }
+            @media (width>=650px){
+                grid-template-columns: repeat(2, 1fr);
+                align-items: stretch;
+                article.card:last-child:nth-child(odd){
+                    grid-column: 1/-1;
+                }
+            }
+            @media (width>=1440px){
+                grid-template-columns: repeat(3, 1fr);
+                align-items: stretch;
+                article.card:last-child:nth-child(odd){
+                    grid-column: auto;
+                }
+            }
         }
     </style>
 </head>
@@ -185,7 +246,7 @@
         <section id="section-1" class="section">
             <h1 class="personal-introduction">
                 <span>
-                    Hello <br> I am Freire Palomino
+                    Hello <br> I am Freire Palomino <br>
                     <span class="animated-text"></span>
                 </span>
             </h1>
@@ -249,6 +310,18 @@
                 </article>
                 <article class="card">
                     <div>
+                        <span class="icon--nf">&#xf1ad;</span>
+                        <h3>Drafting &</h3>
+                    </div>
+                    <p>Using AutoCAD and Civil 3D to develop precise plans and documentation that meet industry standards</p>
+                    <div>
+                        <img src="/media/icons/engr/civil3D.svg" alt="civil 3D" >
+                        <img src="/media/icons/engr/AutoCAD-original.svg" alt="AutoCAD" >
+                        <img src="/media/icons/engr/Revit.svg" alt="Revit">
+                    </div>
+                </article>
+                <article class="card">
+                    <div>
                         <span class="icon--nf">&#xe795;</span>
                         <h3>Web Site Layout</h3>
                     </div>
@@ -262,7 +335,7 @@
                     </div>
                 </article>
                 <article class="card">
-                    <div class="card_title">
+                    <div>
                         <span class="icon--nf">&#xf018;</span>
                         <h3>Road Design</h3>
                     </div>
@@ -297,8 +370,8 @@
                     </div>
                 </article>
             </div>
+            <h3 style="margin: 24px 0 20px 0; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 12px;"><span class="icon--nf" style="color: #FDB931;">&#xeb59;</span><span>Top Skills</span><span class="icon--nf" style="color: #FDB931;">&#xeb59;</span></h3>
             <div id="skills">
-                <h3 style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 12px;"><span class="icon--nf" style="color: #FDB931;">&#xeb59;</span><span>Top Skills</span><span class="icon--nf" style="color: #FDB931;">&#xeb59;</span></h3>
                 <article class="card">
                     <div class="container-img">
                         <img src="/media/icons/engr/AutoCAD-original.svg" alt="AutoCAD icon">
@@ -383,7 +456,7 @@
                 </article>
             </div>
         </section>        
-        <section class="section" >
+        <section id="keep-exploring" class="section" >
             <h2>Keep Exploring</h2>
             <p>There are a lot of interesting Blogs and Projects</p>
             <div class="flex">

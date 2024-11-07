@@ -134,6 +134,24 @@ section.section {
   padding: 12px 16px;
   contain: layout;
 }
+@media (width > 768px) {
+  section.section {
+    display: grid;
+    place-self: center;
+    width: 80%;
+  }
+  section.section h1, section.section h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 16px 0;
+  }
+}
+@media (width >= 1440px) {
+  section.section {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
 
 .brand {
   display: flex;
@@ -179,37 +197,40 @@ section.section {
 }
 @media (width > 768px) {
   #header {
+    display: block;
+  }
+  #header section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 16px;
+    padding: 20px 16px;
   }
 }
-#header .header-menu {
+#header section .header-menu {
   height: max-content;
 }
-#header .header-menu > ul {
+#header section .header-menu > ul {
   display: flex;
   align-items: stretch;
-  gap: 16px;
+  gap: 8px;
   list-style: none;
 }
-#header .header-menu > ul li > a {
+#header section .header-menu > ul li > a {
   display: block;
   padding: 0 16px;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #f3f5f7;
   transition-property: transform;
   transition-timing-function: ease-in-out;
   transition-duration: 400ms;
 }
-#header .header-menu > ul li > a:hover, #header .header-menu > ul li > a:focus {
+#header section .header-menu > ul li > a:hover, #header section .header-menu > ul li > a:focus {
   transform: scale(1.4);
   transition-property: transform;
   transition-timing-function: ease-in-out;
   transition-duration: 400ms;
 }
-#header .header-menu > ul li > a.active {
+#header section .header-menu > ul li > a.active {
   color: #0E76B4;
   border: 0;
   border-style: solid;
@@ -552,6 +573,16 @@ main #cards-container article.card:hover, main #cards-container article.card:foc
   transition: transform 200ms ease-in-out;
   transform: scale(1.05);
 }
+@media (width >= 600px) {
+  main #cards-container, main #latest-blogs, main #top-projects {
+    place-self: center;
+    column-gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main #cards-container article.card:last-child:nth-child(odd), main #latest-blogs article.card:last-child:nth-child(odd), main #top-projects article.card:last-child:nth-child(odd) {
+    grid-column: 1/-1;
+  }
+}
 main #contact {
   height: fit-content;
   min-height: 100px;
@@ -596,8 +627,8 @@ main #contact .contact-form .button-primary {
   min-height: 100px;
   display: grid;
   place-items: center;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 16px;
   margin: 36px 0 48px 0;
 }
 #footer .copyright {
@@ -614,13 +645,20 @@ main #contact .contact-form .button-primary {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  grid-row: 2/3;
-  grid-column: 1/3;
+  grid-column: 1/-1;
 }
 #footer .socials a {
   margin-inline: 4px;
   font-size: 2.4rem;
   color: #F0FFFF;
+}
+@media (width > 768px) {
+  #footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #footer .socials {
+    grid-column: auto;
+  }
 }
 
 .flex {
@@ -692,6 +730,19 @@ main #contact .contact-form .button-primary {
   transform: scale(1.1);
   transition: transform 600ms;
   transition-timing-function: ease-in-out;
+}
+
+#keep-exploring {
+  margin: 24px auto;
+}
+@media (width > 768px) {
+  #keep-exploring p {
+    text-align: center;
+  }
+  #keep-exploring div.flex {
+    gap: 16px;
+    justify-content: center;
+  }
 }
 
 .work-in-progress {
