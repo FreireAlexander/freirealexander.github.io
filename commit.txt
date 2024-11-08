@@ -1,4 +1,3 @@
-Feat(Pre-released): 
-    - Page info defined
-    - About me almost completed
+Fix(Bug): 
+    - Blog Template
 author: Zero
