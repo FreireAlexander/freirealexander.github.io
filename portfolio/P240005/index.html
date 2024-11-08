@@ -42,10 +42,10 @@
         // Función de inicialización que se autoejecuta para cargar header y footer
         (async function initComponents() {
             await Promise.all([
+                loadSingleItemById('P240005'),
                 loadHTML('header', '/components/header.html'),
                 loadHTML('header-mobile', '/components/header_mobile.html'),
-                loadHTML('footer', '/components/footer.html'),
-                loadSingleItemById('P240005')
+                loadHTML('footer', '/components/footer.html')
             ]);
             setTimeout(() => {
                 document.dispatchEvent(new Event('componentsLoaded'));

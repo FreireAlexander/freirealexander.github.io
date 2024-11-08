@@ -1,14 +1,38 @@
 [   
     {   
+        "id": "P240007",
+        "title": "Data Science Projects",
+        "version": "0.0.0-dev",
+        "status": "development",
+        "description": "",
+        "author": "Freire A. Palomino Palma",
+        "firstPublishDate": "2024-11-01",
+        "lastUpdate": "2024-11-01",
+        "tags": ["data science", "python", "coding"],
+        "href": "/portfolio/P240007/"
+    },
+    {   
+        "id": "P240006",
+        "title": "Autolisp Repository",
+        "version": "0.0.0-dev",
+        "status": "development",
+        "description": "",
+        "author": "Freire A. Palomino Palma",
+        "firstPublishDate": "2024-11-01",
+        "lastUpdate": "2024-11-01",
+        "tags": ["civil engineering", "autolisp", "coding", "cAD"],
+        "href": "/portfolio/P240006/"
+    },
+    {   
         "id": "P240005",
         "title": "Cadenero",
         "version": "0.0.0-dev",
         "status": "development",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimossssss laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
+        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["civil engineering", "programming", "python", "software"],
+        "tags": ["civil engineering", "python", "software"],
         "href": "/portfolio/P240005/"
     },
     {   
@@ -16,11 +40,11 @@
         "title": "Flexpave",
         "version": "0.0.0-dev",
         "status": "development",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
+        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["Civil Engineering", "Programming", "Python", "Software"], 
+        "tags": ["civil engineering", "python", "software"], 
         "href": "/portfolio/P240004/"
     },
     {   
@@ -28,11 +52,11 @@
         "title": "Joomthund",
         "version": "0.0.0-dev",
         "status": "development",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
+        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["Joomla", "Programming", "Web Design"], 
+        "tags": ["joomla", "pHP" ,"web design"], 
         "href": "/portfolio/P240003/"
     },
     {   
@@ -40,23 +64,23 @@
         "title": "OOCAD",
         "version": "0.0.0-dev",
         "status": "development",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
+        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["CAD", "Design", "Design System"], 
+        "tags": ["cAD", "design", "civil engineering"], 
         "href": "/portfolio/P240002/"
     },
     {   
         "id": "P240001",
         "title": "Civil Engineering",
         "version": "0.0.0-dev",
-        "status": "development",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
+        "status": "archived",
+        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["civil engineering", "cAD", "design"], 
+        "tags": ["civil engineering", "cAD", "design", "pHP"], 
         "href": "/portfolio/P240001/"
     }
 ]

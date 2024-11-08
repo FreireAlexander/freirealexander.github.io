@@ -49,6 +49,10 @@ main #page-cover .status .icon--nf {
   color: inherit;
   font-size: 2.4rem;
 }
+main #page-cover .status.gray {
+  background-color: #444447;
+  color: #f3f5f7;
+}
 main #page-cover .status.white {
   background-color: #f3f5f7;
   color: #1d1e1d;

@@ -2,7 +2,37 @@ let allItems = []; // Variable para almacenar todos los datos cargados
 let filteredItems = []; // Variable para almacenar los elementos filtrados
 let currentIndex = 0; // Índice para el número de tarjetas cargadas inicialmente
 const latest = 3; // Cantidad de tarjetas a cargar por vez
+var icons = {
+    //Status for Projects
+    "archived": ["\uf187", "gray"],
+    "development": ["\ueea7", "green"],
+    "released": ["\uf164", "green"],
+    //Types of Articles
+    "news": ["\uf1ea", "yellow"],
+    "blog": ["\uef36", "red"],
+    "article": ["\uedc2", "blue"],
+    //Tags for everyone
+    "civil engineering": ["&#xf1ad;","red"],
+    "cAD": ["&#xF0821;","blue"],
+    "design": ["\udb83\udf49", "yellow"],
+    "software": ["\udb82\udcb9", "green"],
+    "web design": ["\uebeb","blue"],
+    "coding": ["\uf121","blue"],
+    "learning": ["\udb85\udec9","green"],
+    // Programming language
+    "python": ["\ued1b", "yellow"],
+    "hTML": ["\ue736", "red"],
+    "cSS": ["\ue749", "blue"],
+    "javascript": ["\ue781", "yellow"],
+    "pHP": ["\ue608", "blue"],
+    "go": ["\ue627", "blue"],
+    "lisp": ["\ue6b0", "blue"],
+    "autolisp": ["\ue6b0", "blue"],
+    //CMS
+    "joomla": ["\ue741", "red"],
+    "wordpress": ["\uf19a", "blue"],
 
+}
 // Función para cargar el archivo JSON
 async function loadJSON(jsonFile) {
     try {
@@ -53,7 +83,10 @@ function createCards(items, section, clear = false) {
             card.innerHTML = `
                 <figure class="card-cover">
                     <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
-                    <div class="status ${item.type}"> ${item.type} </div>
+                    <div class="status ${icons[item.type] ? icons[item.type][1] : "blue" }">
+                        <span class="icon--nf">${icons[item.type] ? icons[item.type][0] : "" }</span>
+                        <p>${item.type}</p>
+                    </div>
                 </figure>
                 <div class="card-content">
                     <small class="update"> Last Revision: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
@@ -62,11 +95,14 @@ function createCards(items, section, clear = false) {
                         <small> By <strong>${item.author}</strong> first published on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
                     </div>
                     <div class="card-tags">
-                        ${item.tags.map((tag, index) => {
-                            // Asigna el color correspondiente de la lista (si se excede, vuelve al inicio)
-                            const color = colors[index % colors.length];
-                            return `<span class="tag ${color}">${tag}</span>`;
-                        }).join(' ')}
+                        ${item.tags.map(tag => `
+                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
+                                <span class="icon--nf">
+                                    ${icons[tag] ? icons[tag][0] : ""}
+                                </span>
+                                ${tag}
+                            </p>
+                            `).join('')}
                     </div>
                     <div class="card-description">
                         <p>${item.description}</p>
@@ -83,7 +119,10 @@ function createCards(items, section, clear = false) {
             card.innerHTML = `
                 <figure class="card-cover">
                     <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
-                    <div class="status ${item.status} "> ${item.status} </div>
+                    <div class="status ${icons[item.status] ? icons[item.status][1] : "blue" }">
+                        <span class="icon--nf">${icons[item.status] ? icons[item.status][0] : "" }</span>
+                        <p>${item.status}</p>
+                    </div>
                 </figure>
                 <div class="card-content">
                     <small class="update"> Last Update: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
@@ -92,11 +131,14 @@ function createCards(items, section, clear = false) {
                         <small> By <strong>${item.author}</strong> on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
                     </div>
                     <div class="card-tags">
-                        ${item.tags.map((tag, index) => {
-                            // Asigna el color correspondiente de la lista (si se excede, vuelve al inicio)
-                            const color = colors[index % colors.length];
-                            return `<span class="tag ${color}">${tag}</span>`;
-                        }).join(' ')}
+                        ${item.tags.map(tag => `
+                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
+                                <span class="icon--nf">
+                                    ${icons[tag] ? icons[tag][0] : ""}
+                                </span>
+                                ${tag}
+                            </p>
+                            `).join('')}
                     </div>
                     <div class="card-description">
                         <p>${item.description}</p>

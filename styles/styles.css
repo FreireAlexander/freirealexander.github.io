@@ -425,6 +425,7 @@ main #cards-container, main #latest-blogs, main #top-projects {
   display: grid;
   row-gap: 24px;
   place-items: center;
+  align-items: stretch;
   padding: 24px 0 16px 0;
   margin: 24px 0;
   height: fit-content;
@@ -433,6 +434,7 @@ main #cards-container, main #latest-blogs, main #top-projects {
 main #cards-container article.card, main #latest-blogs article.card, main #top-projects article.card {
   display: grid;
   place-items: center;
+  grid-template-rows: auto 1fr;
   width: 250px;
   height: auto;
   margin: 0 auto;
@@ -481,6 +483,10 @@ main #cards-container article.card figure .status .icon--nf, main #latest-blogs 
   color: inherit;
   font-size: 2.4rem;
 }
+main #cards-container article.card figure .status.gray, main #latest-blogs article.card figure .status.gray, main #top-projects article.card figure .status.gray {
+  background-color: #444447;
+  color: #1d1e1d;
+}
 main #cards-container article.card figure .status.white, main #latest-blogs article.card figure .status.white, main #top-projects article.card figure .status.white {
   background-color: #f3f5f7;
   color: #1d1e1d;
@@ -504,7 +510,10 @@ main #cards-container article.card figure .status.blue, main #latest-blogs artic
 main #cards-container article.card .card-content, main #latest-blogs article.card .card-content, main #top-projects article.card .card-content {
   display: grid;
   width: 100%;
+  height: 100%;
+  align-items: flex-start;
   padding: 8px 8px 12px 8px;
+  grid-template-rows: auto auto auto 1fr 1fr auto;
 }
 main #cards-container article.card .card-content small.update, main #latest-blogs article.card .card-content small.update, main #top-projects article.card .card-content small.update {
   display: block;
