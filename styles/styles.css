@@ -128,7 +128,8 @@ div.body {
 }
 
 section.section {
-  width: 100%;
+  display: grid;
+  place-items: center;
   min-height: 15px;
   height: fit-content;
   padding: 12px 16px;
@@ -139,6 +140,7 @@ section.section {
     display: grid;
     place-self: center;
     width: 80%;
+    margin: 0 auto;
   }
   section.section h1, section.section h2 {
     width: 100%;
@@ -464,19 +466,40 @@ main #cards-container article.card figure .status, main #latest-blogs article.ca
   bottom: 0;
   right: 0;
   width: fit-content;
+  display: flex;
+  gap: 4px;
   border-top-left-radius: 8px;
   padding: 4px 8px;
   font-size: 1.4rem;
   background-color: #006158;
   text-transform: capitalize;
 }
-main #cards-container article.card figure .status.development, main #cards-container article.card figure .status.article, main #latest-blogs article.card figure .status.development, main #latest-blogs article.card figure .status.article, main #top-projects article.card figure .status.development, main #top-projects article.card figure .status.article {
-  color: #F0FFFF;
-  background-color: #006158;
+main #cards-container article.card figure .status p, main #latest-blogs article.card figure .status p, main #top-projects article.card figure .status p {
+  margin: 0;
 }
-main #cards-container article.card figure .status.news, main #latest-blogs article.card figure .status.news, main #top-projects article.card figure .status.news {
-  color: #F0FFFF;
+main #cards-container article.card figure .status .icon--nf, main #latest-blogs article.card figure .status .icon--nf, main #top-projects article.card figure .status .icon--nf {
+  color: inherit;
+  font-size: 2.4rem;
+}
+main #cards-container article.card figure .status.white, main #latest-blogs article.card figure .status.white, main #top-projects article.card figure .status.white {
+  background-color: #f3f5f7;
+  color: #1d1e1d;
+}
+main #cards-container article.card figure .status.red, main #latest-blogs article.card figure .status.red, main #top-projects article.card figure .status.red {
+  background-color: #821F00;
+  color: #f3f5f7;
+}
+main #cards-container article.card figure .status.yellow, main #latest-blogs article.card figure .status.yellow, main #top-projects article.card figure .status.yellow {
+  background-color: #916A08;
+  color: #f3f5f7;
+}
+main #cards-container article.card figure .status.green, main #latest-blogs article.card figure .status.green, main #top-projects article.card figure .status.green {
+  background-color: #006158;
+  color: #f3f5f7;
+}
+main #cards-container article.card figure .status.blue, main #latest-blogs article.card figure .status.blue, main #top-projects article.card figure .status.blue {
   background-color: #000080;
+  color: #f3f5f7;
 }
 main #cards-container article.card .card-content, main #latest-blogs article.card .card-content, main #top-projects article.card .card-content {
   display: grid;
@@ -520,6 +543,7 @@ main #cards-container article.card .card-content .card-tags, main #latest-blogs 
   padding: 8px 0 4px 0;
 }
 main #cards-container article.card .card-content .card-tags .tag, main #latest-blogs article.card .card-content .card-tags .tag, main #top-projects article.card .card-content .card-tags .tag {
+  margin: 0;
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 1.4rem;
@@ -544,13 +568,14 @@ main #cards-container article.card .card-content .card-tags .tag.grey, main #lat
 main #cards-container article.card .card-content .card-description p, main #latest-blogs article.card .card-content .card-description p, main #top-projects article.card .card-content .card-description p {
   display: -webkit-box;
   max-width: 200px;
-  max-height: 50px;
+  max-height: 5.4rem;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: #1d1e1d;
   margin: 4px 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
 }
 main #cards-container article.card .card-content .card-button, main #latest-blogs article.card .card-content .card-button, main #top-projects article.card .card-content .card-button {
   display: grid;

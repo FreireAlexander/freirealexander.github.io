@@ -1,13 +1,13 @@
 [
     {
         "id": "A240001",
-        "type": "Blog",
+        "type": "blog",
         "title": "My First Blog",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
         "author": "Freire A. Palomino Palma",
         "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["Civil Engineering", "Coding", "Learning"], 
+        "tags": ["civil engineering", "coding", "learning"], 
         "coverPage": "/blogs/A240001/coverPage.webp",
         "href": "/blogs/A240001/"
     }

@@ -18,22 +18,125 @@ main a.link {
   text-decoration: underline;
 }
 main #page-cover {
+  position: relative;
   width: 100%;
   margin: 0;
   padding: 0;
+  height: 150px;
 }
 main #page-cover .cover-page {
   width: 100%;
   height: 150px;
   object-fit: cover;
 }
+main #page-cover .status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 8px 20px;
+  border-top-left-radius: 16px;
+}
+main #page-cover .status h3 {
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  color: inherit;
+  padding: 0;
+}
+main #page-cover .status .icon--nf {
+  color: inherit;
+  font-size: 2.4rem;
+}
+main #page-cover .status.white {
+  background-color: #f3f5f7;
+  color: #1d1e1d;
+}
+main #page-cover .status.red {
+  background-color: #821F00;
+  color: #f3f5f7;
+}
+main #page-cover .status.yellow {
+  background-color: #916A08;
+  color: #f3f5f7;
+}
+main #page-cover .status.green {
+  background-color: #006158;
+  color: #f3f5f7;
+}
+main #page-cover .status.blue {
+  background-color: #000080;
+  color: #f3f5f7;
+}
+@media (width >= 768px) {
+  main #page-cover {
+    height: 250px;
+  }
+  main #page-cover .cover-page {
+    height: 250px;
+  }
+}
+@media (width >= 1024px) {
+  main #page-cover {
+    height: 300px;
+  }
+  main #page-cover .cover-page {
+    height: 300px;
+  }
+}
+@media (width >= 1024px) {
+  main #page-cover {
+    height: 400px;
+  }
+  main #page-cover .cover-page {
+    height: 400px;
+  }
+}
+@media (width >= 2560px) {
+  main #page-cover {
+    height: 500px;
+  }
+  main #page-cover .cover-page {
+    height: 500px;
+  }
+}
+@media (width > 768px) {
+  main #page-cover .status {
+    bottom: auto;
+    top: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 16px;
+    padding: 16px 24px;
+  }
+  main #page-cover .status h3, main #page-cover .status span.icon--nf {
+    font-size: 4.8rem;
+  }
+}
+main #page-data {
+  display: grid;
+  place-items: start;
+  width: 100%;
+  background-color: #f3f5f7;
+  color: #1d1e1d;
+  border: 8px solid #F0FFFF;
+  border-style: outset;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+main #page-data h1, main #page-data p {
+  color: inherit;
+}
 main #page-data h1 {
-  display: block;
-  text-align: center;
+  font-size: 2.8rem;
+  text-align: left;
+  white-space: wrap;
+  padding: 0;
 }
 main #page-data div {
   display: grid;
-  place-items: start;
+  width: 100%;
 }
 main #page-data div p {
   margin: 0;
@@ -46,13 +149,17 @@ main #page-data .card-tags {
 }
 main #page-data .card-tags .tag {
   display: flex;
+  align-items: center;
   gap: 4px;
-  padding: 2px 6px;
+  padding: 4px 8px;
   border-radius: 4px;
-  font-weight: normal;
   text-transform: capitalize;
   color: #F0FFFF;
   background-color: #000080;
+  font-size: 1.4rem;
+}
+main #page-data .card-tags .tag span {
+  font-size: inherit;
 }
 main #page-data .card-tags .tag.red {
   background-color: #821F00;
@@ -68,6 +175,28 @@ main #page-data .card-tags .tag.yellow {
 }
 main #page-data .card-tags .tag.grey {
   background-color: #444447;
+}
+main #page-data .breadcrumb {
+  display: inline-block;
+}
+main #page-data .breadcrumb a, main #page-data .breadcrumb p {
+  display: inline;
+  color: inherit;
+  margin-inline: 2px;
+}
+main #page-data .breadcrumb a {
+  text-decoration: underline;
+}
+main #page-data .breadcrumb p {
+  font-weight: 700;
+}
+@media (width > 768px) {
+  main #page-data h1 {
+    font-size: 4.8rem;
+  }
+  main #page-data p {
+    font-size: 1.8rem;
+  }
 }
 main #page-body {
   min-height: 500px;

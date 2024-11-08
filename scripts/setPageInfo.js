@@ -1,3 +1,9 @@
+var icons = {
+    "default": ["", "blue"],
+    "blog": ["", "blue"],
+    "development": ["&#xf1ad;","green"],
+    "civil engineering": ["&#xf1ad;","green"],
+}
 // Función para determinar el archivo JSON según la ruta actual
 function getJSONFilePath() {
     const path = window.location.pathname;
@@ -24,9 +30,9 @@ async function loadSingleItemById(itemId) {
         
         if (item) {
             if (jsonFile === "/data/blogs.json"){
-                displayProject(item);
-            }else {
                 displayBlog(item);
+            }else {
+                displayProject(item);
             }
         } else {
             console.error(`No se encontró el ítem con ID ${itemId}`);
@@ -42,23 +48,54 @@ function displayProject(item) {
     const container = document.getElementById('page-info'); // ID del contenedor donde mostrarás el ítem
     const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
     container.innerHTML = `
-        <section id="page-cover" class="section">
-            <img fetchpriority="high" class="cover-page" src="${item.href}coverPageSmall.webp" alt="${item.title}">
-        </section>
-        <section id="page-data" class="section">
-            <h1 class="title">${item.title}</h1>
-            <div class="status ${item.type}"> ${item.type} </div>
-            <div>
-                <p class="author">Author: ${item.author}</p>
-                <p class="publish">Publish date: ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
-                <p class="card-tags">
-                    ${item.tags.map((tag, index) => {
-                        // Asigna el color correspondiente de la lista (si se excede, vuelve al inicio)
-                        const color = colors[index % colors.length];
-                        return `<span class="tag ${color}">${tag}</span>`;
-                    }).join(' ')}
-                </p>
+        <section id="page-cover">
+            <img 
+                fetchpriority="high" 
+                class="cover-page" 
+                src="${item.href}coverPageSmall.webp" 
+                alt="${item.title}"
+                srcset="
+                    ${item.href}coverPageSmall.webp 425w,
+                    ${item.href}coverPage.webp 768w,
+                    ${item.href}coverPageBig.webp 1024w
+                "
+                sizes="
+                    (max-width: 480px) 425px,
+                    (max-width: 768px) 768px,
+                    1024px
+                "
+            >
+            <div class="status ${icons[item.status] ? icons[item.status][1] : "blue" }">
+                <span class="icon--nf">${icons[item.status] ? icons[item.status][0] : "" }</span>
+                <h3>${item.status}</h3>
             </div>
+        </section>
+        <section id="page-data">
+            <section class="section">
+                <h1 class="title">${item.title} - ${item.version}</h1>
+                <div>
+                    <p class="author">By ${item.author}</p>
+                    <p>Since ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
+                    <p>Last update ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
+                    <div class="card-tags">
+                        ${item.tags.map(tag => `
+                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
+                                <span class="icon--nf">
+                                    ${icons[tag] ? icons[tag][0] : ""}
+                                </span>
+                                ${tag}
+                            </p>
+                            `).join('')}
+                    </div>
+                    <div class="breadcrumb">
+                        <a href="/">Home</a>
+                        <p>  / </p>
+                        <a href="/portfolio/">Portfolio</a>
+                        <p>  / </p>
+                        <p>${item.title}</p>
+                    </div>
+                </div>
+            </section>
         </section>
     `;
 }
@@ -68,23 +105,54 @@ function displayBlog(item) {
     const container = document.getElementById('page-info'); // ID del contenedor donde mostrarás el ítem
     const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
     container.innerHTML = `
-        <section id="page-cover" class="section">
-            <img fetchpriority="high" class="cover-page" src="${item.href}coverPageSmall.webp" alt="${item.title}">
-        </section>
-        <section id="page-data" class="section">
-            <h1 class="title">${item.title}</h1>
-            <div class="status ${item.status} "> ${item.status} </div>
-            <div>
-                <p class="author">Author: ${item.author}</p>
-                <p class="publish">Publish date: ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
-                <p class="card-tags">
-                    ${item.tags.map((tag, index) => {
-                        // Asigna el color correspondiente de la lista (si se excede, vuelve al inicio)
-                        const color = colors[index % colors.length];
-                        return `<span class="tag ${color}">${tag}</span>`;
-                    }).join(' ')}
-                </p>
+        <section id="page-cover">
+            <img 
+                fetchpriority="high" 
+                class="cover-page" 
+                src="${item.href}coverPageSmall.webp" 
+                alt="${item.title}"
+                srcset="
+                    ${item.href}coverPageSmall.webp 425w,
+                    ${item.href}coverPage.webp 768w,
+                    ${item.href}coverPageBig.webp 1024w
+                "
+                sizes="
+                    (max-width: 480px) 425px,
+                    (max-width: 768px) 768px,
+                    1024px
+                "
+            >
+            <div class="status ${icons[item.type] ? icons[item.type][1] : "blue" }">
+                <span class="icon--nf">${icons[item.type] ? icons[item.type][0] : "" }</span>
+                <h3>${item.type}</h3>
             </div>
+        </section>
+        <section id="page-data">
+            <section class="section">
+                <h1 class="title">${item.title} </h1>
+                <div>
+                    <p class="author">By ${item.author}</p>
+                    <p>Since ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
+                    <p>Last update ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
+                    <div class="card-tags">
+                        ${item.tags.map(tag => `
+                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
+                                <span class="icon--nf">
+                                    ${icons[tag] ? icons[tag][0] : ""}
+                                </span>
+                                ${tag}
+                            </p>
+                            `).join('')}
+                    </div>
+                    <div class="breadcrumb">
+                        <a href="/">Home</a>
+                        <p>  / </p>
+                        <a href="/blogs/">Blogs & News</a>
+                        <p>  / </p>
+                        <p>${item.title}</p>
+                    </div>
+                </div>
+            </section>
         </section>
     `;
 }

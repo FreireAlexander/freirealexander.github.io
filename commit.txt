@@ -1,4 +1,4 @@
 Feat(Pre-released): 
-    - Icons added
+    - Page info defined
     - About me almost completed
 author: Zero

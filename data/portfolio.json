@@ -6,10 +6,9 @@
         "status": "development",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimossssss laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
+        "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["Civil Engineering", "Programming", "Python", "Software"], 
-        "coverPage": "/portfolio/P240005/coverPage.webp",
+        "tags": ["civil engineering", "programming", "python", "software"],
         "href": "/portfolio/P240005/"
     },
     {   
@@ -19,10 +18,9 @@
         "status": "development",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
+        "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
         "tags": ["Civil Engineering", "Programming", "Python", "Software"], 
-        "coverPage": "/portfolio/P240004/coverPage.webp",
         "href": "/portfolio/P240004/"
     },
     {   
@@ -32,10 +30,9 @@
         "status": "development",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
+        "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
         "tags": ["Joomla", "Programming", "Web Design"], 
-        "coverPage": "/portfolio/P240003/coverPage.webp",
         "href": "/portfolio/P240003/"
     },
     {   
@@ -45,10 +42,9 @@
         "status": "development",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
+        "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
         "tags": ["CAD", "Design", "Design System"], 
-        "coverPage": "/portfolio/P240002/coverPage.webp",
         "href": "/portfolio/P240002/"
     },
     {   
@@ -58,10 +54,9 @@
         "status": "development",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repellat aperiam dicta illum commodi. Perspiciatis obcaecati, veniam aperiam nostrum, laboriosam dignissimos laborum, dolorum maiores delectus debitis officia tempore voluptatem placeat.",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
+        "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["Civil Engineering", "CAD", "Design"], 
-        "coverPage": "/portfolio/P240001/coverPageSmall.webp",
+        "tags": ["civil engineering", "cAD", "design"], 
         "href": "/portfolio/P240001/"
     }
 ]
