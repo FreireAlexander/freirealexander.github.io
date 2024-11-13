@@ -217,7 +217,7 @@ section.section {
   gap: 8px;
   list-style: none;
 }
-#header section .header-menu > ul li > a {
+#header section .header-menu > ul li > a.header-item {
   display: block;
   padding: 0 16px;
   font-size: 2rem;
@@ -226,13 +226,13 @@ section.section {
   transition-timing-function: ease-in-out;
   transition-duration: 400ms;
 }
-#header section .header-menu > ul li > a:hover, #header section .header-menu > ul li > a:focus {
+#header section .header-menu > ul li > a.header-item:hover, #header section .header-menu > ul li > a.header-item:focus {
   transform: scale(1.4);
   transition-property: transform;
   transition-timing-function: ease-in-out;
   transition-duration: 400ms;
 }
-#header section .header-menu > ul li > a.active {
+#header section .header-menu > ul li > a.header-item.active {
   color: #0E76B4;
   border: 0;
   border-style: solid;

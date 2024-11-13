@@ -85,21 +85,14 @@
 </div>
 </body>
     <script src="/scripts/loadComponents.js"></script>
-    <script src="/scripts/setMobileItemsStatus.js"></script>
+    <script type="module" src="/scripts/loadBasics.js"></script>
     <script>
         // Función de inicialización que se autoejecuta para cargar header y footer
         (async function initComponents() {
             await Promise.all([
-                loadHTML('header', '/components/header.html'),
-                loadHTML('header-mobile', '/components/header_mobile.html'),
-                loadHTML('footer', '/components/footer.html'),
                 loadHTML('contact', '/components/contact_form.html'),
                 loadHTML('buy-me-a-coffe', '/components/buy_me_a_coffe.html')
             ]);
-            setTimeout(() => {
-                document.dispatchEvent(new Event('componentsLoaded'));
-                setMobileItemsStatus();
-            }, 300); 
         })();
     </script>
     <script src="/scripts/loadLatestContent.js"></script>

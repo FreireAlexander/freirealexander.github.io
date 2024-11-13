@@ -211,7 +211,7 @@ section.section{
             align-items: stretch;
             gap: 8px;
             list-style: none;
-            li > a {
+            li > a.header-item {
                 display: block;
                 padding: 0 16px;
                 font-size: 2rem;
@@ -220,13 +220,13 @@ section.section{
                 transition-timing-function: ease-in-out;
                 transition-duration: 400ms;
             }
-            li > a:hover, li > a:focus{
+            li > a.header-item:hover, li > a.header-item:focus{
                 transform: scale(1.4);
                 transition-property: transform;
                 transition-timing-function: ease-in-out;
                 transition-duration: 400ms;
             }
-            li > a.active {
+            li > a.header-item.active {
                 color: $light_blue;
                 border: 0;
                 border-style: solid;

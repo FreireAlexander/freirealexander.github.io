@@ -75,7 +75,6 @@ function createCards(items, section, clear = false) {
         container.appendChild(noResultsMessage);
         return;
     }
-    const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
     if (section === 'latest-blogs') {
         items.forEach(item => {
             const card = document.createElement('article');

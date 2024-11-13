@@ -1,21 +1,20 @@
-// /components/headerMobile.js
 const activePage = window.location.pathname;
+console.log(activePage);
+
 async function setActiveClass(href) {
-    if (href === activePage || activePage.startsWith(href) && activePage !== '/') {
-        return " active";
-    } else if (['/', '/es/'].includes(href)) {
+    if (activePage === href || activePage.startsWith(href + '/') || activePage.startsWith(href + '/index.html')) {
         return " active";
     } else {
         return "";
     }
 }
 
-async function setHeaderMobile() {
-    const homeClass = await setActiveClass("/");
-    const portfolioClass = await setActiveClass("/portfolio/");
-    const blogsClass = await setActiveClass("/blogs/");
-    const freireClass = await setActiveClass("/freire/");
+const homeClass = await setActiveClass("/");
+const portfolioClass = await setActiveClass("/portfolio/");
+const blogsClass = await setActiveClass("/blogs/");
+const freireClass = await setActiveClass("/freire/");
 
+export async function setHeaderMobile() {
     const headerMobile = `
         <nav class="menu">
             <ul>
@@ -57,4 +56,37 @@ async function setHeaderMobile() {
     return headerMobile;
 }
 
-export default setHeaderMobile;
+export async function setHeader() {
+    const header = `
+        <section class="section">
+            <a href="/">
+                <section class="brand">
+                    <div class="logo">
+                        <p style="font-family: 'Times New Roman', Times, serif;">F</p>
+                    </div>
+                    <div>
+                        <p>Freire</p>
+                        <p>Palomino</p>
+                    </div>
+                </section>
+            </a>
+            <nav class="header-menu">
+                <ul>
+                    <li>
+                        <a class="header-item${homeClass}" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="header-item${portfolioClass}" href="/portfolio/">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="header-item${blogsClass}" href="/blogs/">Blogs and News</a>
+                    </li>
+                    <li>
+                        <a class="header-item${freireClass}" href="/freire/">About me</a>
+                    </li>
+                </ul>
+            </nav>    
+        </section>
+    `;
+    return header;
+}
