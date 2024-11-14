@@ -9,7 +9,6 @@ const translations = {
 
 async function setActiveClass(href) {
     if (activePage === href || activePage.startsWith(href + '/') || activePage.startsWith(href + '/es')) {
-        console.log("activePage");
         return " active";
     } else {
         return "";

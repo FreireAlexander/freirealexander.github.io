@@ -243,13 +243,7 @@
 </head>
 <body>
 <div class="body">
-    <header id="lang-selector">
-        <select id="langSelector" onchange="">
-            <option value="es" selected>Español</option>
-            <option value="en">English</option>
-            <option value="it">Italiano</option>
-        </select>
-    </header>
+    <header id="lang-selector"></header>
     <header id="header"></header>
     <main>
         <section id="section-1" class="section">
@@ -500,9 +494,7 @@
         // Función de inicialización que se autoejecuta para cargar header y footer
         (async function initComponents() {
             await Promise.all([
-                loadHTML('footer', '/components/footer.html'),
-                loadHTML('contact', '/components/contact_form.html'),
-                loadHTML('buy-me-a-coffe', '/components/buy_me_a_coffe.html')
+                loadHTML('contact', '/components/contact_form.html')
             ]); 
         })();
     </script>

@@ -10,7 +10,7 @@ async function loadHTML(elementId, filePath) {
         .then(data => {
             document.getElementById(elementId).innerHTML = data;
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error(`Error: ${elementId} y filePath ${filePath}`, error));
 }
 
 

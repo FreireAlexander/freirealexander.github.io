@@ -184,6 +184,25 @@ section.section{
     }
 }
 
+#lang-selector{
+    .section{
+        display: flex;
+        padding-top: 24px;
+        padding-bottom: 0;
+        #langSelector{
+            font-family: inherit;
+            font-size: 1.8rem;
+            padding: 4px 0;
+            padding-right: 24px;
+            text-align: left;
+            option{
+                text-align: left;
+                color: $black;
+            }
+        }
+    }
+}
+
 #header{
     display: none;
     position: sticky;

@@ -3,23 +3,16 @@ import { setHeaderMobile, setHeader } from '../components/headers.js';
 import { setFooter } from '../components/footer.js';
 import { setLanguageSelector } from '../components/languageSelector.js';
 
-function detectLanguage() {
+function getLanguage() {
     const activePage = window.location.pathname;
-    const segments = activePage.slice(0,-1).split('/');
-    const lastSegment = segments[segments.length - 1];
-    const language = ['es', 'en', 'it'].includes(lastSegment) ? lastSegment : '';
-    console.log("detect Language");
-    console.log("Segments");
-    console.log(segments);
-    console.log("Last Segment");
-    console.log(lastSegment);
-    console.log("Language");
-    console.log(language);
-    return language;
+    const splitActivePage = activePage.slice(0,-1).split('/');
+    const lastSegment = splitActivePage[splitActivePage.length-1];
+    const result = ["es", "it"].includes(lastSegment) ? lastSegment : "";
+    return result;
 }
 
 async function loadHeader() {
-    const language = detectLanguage();
+    const language = getLanguage();
     const headerMobileElement = document.getElementById('header-mobile');
     const headerElement = document.getElementById('header');
 
@@ -67,21 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSelector = document.getElementById('langSelector');
     langSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
-        const activePage = window.location.pathname.slice(0,-1);
-        console.log("valor seleccionado");
-        console.log(selectedLanguage);
-        if (!activePage.endsWith("")){
-            const nextPage = activePage+"/"+selectedLanguage;
-            console.log("sgte pagina");
-            console.log(nextPage);
+        const activePage = window.location.pathname;
+        const splitActivePage = activePage.slice(0,-1).split('/');
+        const lastSegment = splitActivePage[splitActivePage.length-1];
+        const result = ["es", "it"].includes(lastSegment) ? lastSegment : "";
+        if (result === ""){
+            window.location.pathname = activePage + selectedLanguage;
         } else{
-            const nextPage = activePage+"/"+selectedLanguage;
-            console.log("sgte pagina");
-            console.log(nextPage);
+            window.location.pathname = activePage.slice(0,-3) + selectedLanguage;
         }
-
-
-        // Falta Logica
-        // window.location.pathname = '/';
     });
 });
