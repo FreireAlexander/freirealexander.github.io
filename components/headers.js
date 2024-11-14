@@ -1,53 +1,62 @@
+// headers.js
 const activePage = window.location.pathname;
-console.log(activePage);
+// Traducciones para los headers en diferentes idiomas
+const translations = {
+    '': { home: "Home", portfolio: "Portfolio", blogs: "Blogs & News", me: "About me" },
+    es: { home: "Inicio", portfolio: "Portafolio", blogs: "Blogs y Noticias", me: "Sobre mí" },
+    it: { home: "Home", portfolio: "Progetti", blogs: "Blog e Notizie", me: "Su di me" }
+};
 
 async function setActiveClass(href) {
-    if (activePage === href || activePage.startsWith(href + '/') || activePage.startsWith(href + '/index.html')) {
+    if (activePage === href || activePage.startsWith(href + '/') || activePage.startsWith(href + '/es')) {
+        console.log("activePage");
         return " active";
     } else {
         return "";
     }
 }
 
-const homeClass = await setActiveClass("/");
-const portfolioClass = await setActiveClass("/portfolio/");
-const blogsClass = await setActiveClass("/blogs/");
-const freireClass = await setActiveClass("/freire/");
 
-export async function setHeaderMobile() {
+const portfolioClass = await setActiveClass("/portfolio");
+const blogsClass = await setActiveClass("/blogs");
+const freireClass = await setActiveClass("/freire");
+
+export async function setHeaderMobile(language) {
+    const homeClass = await setActiveClass(`/${language}`);
+    const { home, portfolio, blogs, me } = translations[language];
     const headerMobile = `
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="/" class="mobile-menu-item${homeClass}">
+                    <a href="/${language}" class="mobile-menu-item${homeClass}">
                         <figure>
                             <img src="/media/icons/home.webp" alt="Home mobile icon">
                         </figure>
-                        <p>Home</p>
+                        <p>${home}</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/portfolio/" class="mobile-menu-item${portfolioClass}">
+                    <a href="/portfolio/${language}" class="mobile-menu-item${portfolioClass}">
                         <figure>
                             <img src="/media/icons/portfolio.webp" alt="Portfolio mobile icon">
                         </figure>
-                        <p>Portfolio</p>
+                        <p>${portfolio}</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/blogs/" class="mobile-menu-item${blogsClass}">
+                    <a href="/blogs/${language}" class="mobile-menu-item${blogsClass}">
                         <figure>
                             <img src="/media/icons/blogs.webp" alt="Blogs mobile icon">
                         </figure>
-                        <p>Blogs & News</p>
+                        <p>${blogs}</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/freire/" class="mobile-menu-item${freireClass}">
+                    <a href="/freire/${language}" class="mobile-menu-item${freireClass}">
                         <figure>
                             <img src="/media/icons/info.webp" alt="More info icon">
                         </figure>
-                        <p>Me</p>
+                        <p>${me}</p>
                     </a>
                 </li>
             </ul>
@@ -56,10 +65,12 @@ export async function setHeaderMobile() {
     return headerMobile;
 }
 
-export async function setHeader() {
+export async function setHeader(language) {
+    const homeClass = await setActiveClass(`/${language}`);
+    const { home, portfolio, blogs, me } = translations[language];
     const header = `
         <section class="section">
-            <a href="/">
+            <a href="/${language}">
                 <section class="brand">
                     <div class="logo">
                         <p style="font-family: 'Times New Roman', Times, serif;">F</p>
@@ -72,20 +83,12 @@ export async function setHeader() {
             </a>
             <nav class="header-menu">
                 <ul>
-                    <li>
-                        <a class="header-item${homeClass}" href="/">Home</a>
-                    </li>
-                    <li>
-                        <a class="header-item${portfolioClass}" href="/portfolio/">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="header-item${blogsClass}" href="/blogs/">Blogs and News</a>
-                    </li>
-                    <li>
-                        <a class="header-item${freireClass}" href="/freire/">About me</a>
-                    </li>
+                    <li><a class="header-item${homeClass}" href="/${language}">${home}</a></li>
+                    <li><a class="header-item${portfolioClass}" href="/portfolio/${language}/">${portfolio}</a></li>
+                    <li><a class="header-item${blogsClass}" href="/blogs/${language}/">${blogs}</a></li>
+                    <li><a class="header-item${freireClass}" href="/freire/${language}/">${me}</a></li>
                 </ul>
-            </nav>    
+            </nav>
         </section>
     `;
     return header;

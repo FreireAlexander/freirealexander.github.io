@@ -100,11 +100,7 @@
                 loadHTML('footer', '/components/footer.html'),
                 loadHTML('contact', '/components/contact_form.html'),
                 loadHTML('buy-me-a-coffe', '/components/buy_me_a_coffe.html')
-            ]);
-            setTimeout(() => {
-                document.dispatchEvent(new Event('componentsLoaded'));
-                setMobileItemsStatus();
-            }, 300); 
+            ]); 
         })();
     </script>
     <script src="/scripts/loadLatestContent.js"></script>
