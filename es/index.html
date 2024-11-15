@@ -88,12 +88,10 @@
     <script src="/scripts/loadComponents.js"></script>
     <script type="module" src="/scripts/loadBasics.js"></script>
     <script>
-        // Función de inicialización que se autoejecuta para cargar header y footer
         (async function initComponents() {
             await Promise.all([
-                loadHTML('footer', '/components/footer.html'),
                 loadHTML('contact', '/components/contact_form.html'),
-                loadHTML('buy-me-a-coffe', '/components/buy_me_a_coffe.html')
+                loadHTML('buy-me-a-coffe', '/components/buy_me_a_coffe.html')            
             ]); 
         })();
     </script>

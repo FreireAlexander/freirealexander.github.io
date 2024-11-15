@@ -1,14 +1,18 @@
 [
     {
         "id": "A240001",
-        "type": "blog",
-        "title": "My First Blog",
-        "description": "",
+        "top": true,
         "author": "Freire A. Palomino Palma",
         "publishDate": "2024-11-01",
-        "lastUpdate": "2024-11-01",
-        "tags": ["civil engineering", "coding", "learning"], 
+        "lastUpdate": "2024-11-01", 
         "coverPage": "/blogs/A240001/coverPage.webp",
-        "href": "/blogs/A240001/"
+        "href": "/blogs/A240001/",
+        "type": {"":"blog"},
+        "title": {
+            "":"My First Blog",
+            "es":"Mi Primer Blog"
+        },
+        "description": {"":""},
+        "tags": {"":["civil engineering", "coding", "learning"]}
     }
 ]

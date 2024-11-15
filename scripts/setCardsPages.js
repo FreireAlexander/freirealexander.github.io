@@ -1,3 +1,6 @@
+import { cardBlog, cardProject } from '../components/cards.js';
+import { getLanguage } from './getLanguage.js';
+
 function updateStickySectionPosition() {
     const header = document.getElementById('header');
     const stickySection = document.getElementById('search-container');
@@ -23,37 +26,7 @@ let allItems = []; // Variable para almacenar todos los datos cargados
 let filteredItems = []; // Variable para almacenar los elementos filtrados
 let currentIndex = 0; // Índice para el número de tarjetas cargadas inicialmente
 const increment = 3; // Cantidad de tarjetas a cargar por vez
-var icons = {
-    //Status for Projects
-    "archived": ["\uf187", "gray"],
-    "development": ["\ueea7", "green"],
-    "released": ["\uf164", "green"],
-    //Types of Articles
-    "news": ["\uf1ea", "yellow"],
-    "blog": ["\uef36", "red"],
-    "article": ["\uedc2", "blue"],
-    //Tags for everyone
-    "civil engineering": ["&#xf1ad;","red"],
-    "cAD": ["&#xF0821;","blue"],
-    "design": ["\udb83\udf49", "yellow"],
-    "software": ["\udb82\udcb9", "green"],
-    "web design": ["\uebeb","blue"],
-    "coding": ["\uf121","blue"],
-    "learning": ["\udb85\udec9","green"],
-    // Programming language
-    "python": ["\ued1b", "yellow"],
-    "hTML": ["\ue736", "red"],
-    "cSS": ["\ue749", "blue"],
-    "javascript": ["\ue781", "yellow"],
-    "pHP": ["\ue608", "blue"],
-    "go": ["\ue627", "blue"],
-    "lisp": ["\ue6b0", "blue"],
-    "autolisp": ["\ue6b0", "blue"],
-    //CMS
-    "joomla": ["\ue741", "red"],
-    "wordpress": ["\uf19a", "blue"],
 
-}
 // Función para determinar el archivo JSON según la ruta actual
 function getJSONFilePath() {
     const path = window.location.pathname;
@@ -68,7 +41,6 @@ function getJSONFilePath() {
 
 function getPath() {
     const path = window.location.pathname;
-
     if (path.includes('/blogs/')) {
         return 'blogs'; // Ruta al archivo JSON para la página de blogs
     } else if (path.includes('/portfolio/')) {
@@ -97,13 +69,11 @@ async function loadJSON() {
 }
 
 // Función para generar las cards y añadirlas al contenedor
-function createCards(items, clear = false) {
+async function createCards(items, clear = false) {
     const container = document.getElementById('cards-container');
-    
     if (clear) {
         container.innerHTML = ''; // Limpiar el contenedor si el parámetro clear es verdadero
     }
-
     if (items.length === 0 && currentIndex === 0) {
         // Mostrar mensaje de "No se encontraron resultados"
         container.innerHTML = ''; // Limpiar cualquier contenido previo
@@ -119,77 +89,20 @@ function createCards(items, clear = false) {
         return;
     }
     const path = getPath();
-    const colors = ['yellow', 'blue', 'red', 'green', 'grey'];
+    const language = await getLanguage();
     if (path === 'blogs') {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            card.innerHTML = `
-                <figure class="card-cover">
-                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
-                    <div class="status ${icons[item.type] ? icons[item.type][1] : "blue" }">
-                        <span class="icon--nf">${icons[item.type] ? icons[item.type][0] : "" }</span>
-                        <p>${item.type}</p>
-                    </div>
-                </figure>
-                <div class="card-content">
-                    <small class="update"> Last Revision: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    <h3>${item.title}</h3>
-                    <div class="card-data">
-                        <small> By <strong>${item.author}</strong> first published on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    </div>
-                    <div class="card-tags">
-                        ${item.tags.map(tag => `
-                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
-                                <span class="icon--nf">
-                                    ${icons[tag] ? icons[tag][0] : ""}
-                                </span>
-                                ${tag}
-                            </p>
-                            `).join('')}
-                    </div>
-                    <div class="card-description">
-                        <p>${item.description}</p>
-                    </div>
-                    <a href="${item.href}" class="card-button">Explore Article</a>
-                </div>
-            `;
+            const CardContent = cardBlog(item, language);
+            card.innerHTML = CardContent;
             container.appendChild(card);
         });
     } else {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            card.innerHTML = `
-                <figure class="card-cover">
-                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
-                    <div class="status ${icons[item.status] ? icons[item.status][1] : "blue" }">
-                        <span class="icon--nf">${icons[item.status] ? icons[item.status][0] : "" }</span>
-                        <p>${item.status}</p>
-                    </div>
-                </figure>
-                <div class="card-content">
-                    <small class="update"> Last Update: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    <h3><span>${item.title}</span><span>${item.version}</span></h3>
-                    <div class="card-data">
-                        <small> By <strong>${item.author}</strong> on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    </div>
-                    <div class="card-tags">
-                        ${item.tags.map(tag => `
-                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
-                                <span class="icon--nf">
-                                    ${icons[tag] ? icons[tag][0] : ""}
-                                </span>
-                                ${tag}
-                            </p>
-                            `).join('')}
-                    </div>
-                    <div class="card-description">
-                        <p>${item.description}</p>
-                    </div>
-                    <a href="${item.href}" class="card-button">Explore Project</a>
-                </div>
-            `;
+            card.innerHTML = cardProject(item, language);
             container.appendChild(card);
         });
     }

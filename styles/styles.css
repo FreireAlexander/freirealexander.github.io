@@ -189,19 +189,30 @@ section.section {
 
 #lang-selector .section {
   display: flex;
-  padding-top: 24px;
+  justify-content: end;
+  padding-top: 16px;
   padding-bottom: 0;
+  gap: 12px;
+}
+#lang-selector .section label img {
+  height: 3.2rem;
+  width: 3.2rem;
 }
 #lang-selector .section #langSelector {
   font-family: inherit;
   font-size: 1.8rem;
   padding: 4px 0;
-  padding-right: 24px;
+  padding-right: 16px;
+  margin-right: 24px;
   text-align: left;
+  background-color: inherit;
+  border: 0;
+  color: inherit;
 }
 #lang-selector .section #langSelector option {
   text-align: left;
   color: #1d1e1d;
+  background-color: #f3f5f7;
 }
 
 #header {
@@ -222,7 +233,7 @@ section.section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 16px;
+    padding: 12px 16px;
   }
 }
 #header section .header-menu {
@@ -318,31 +329,29 @@ section.section {
 main #top-3 {
   height: fit-content;
   min-height: 100px;
-}
-main #top-3 .container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 64px;
 }
-main #top-3 .container article {
+main #top-3 article {
   position: relative;
   display: grid;
   place-items: center;
   width: 250px;
   transition: transform 300ms ease-in-out;
 }
-main #top-3 .container article img {
+main #top-3 article img {
   width: 250px;
 }
-main #top-3 .container article.portfolio img {
+main #top-3 article.portfolio img {
   height: 250px;
   border-radius: 50%;
   border: 4px solid #9f7928;
   object-fit: cover;
 }
-main #top-3 .container article.portfolio h4 {
+main #top-3 article.portfolio h4 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -354,29 +363,32 @@ main #top-3 .container article.portfolio h4 {
   color: #f3f5f7;
   clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%, 20px 50%);
 }
-main #top-3 .container article.article {
+main #top-3 article.article {
   width: 250px;
   gap: 0;
   background-color: #f3f5f7;
   padding: 2px;
 }
-main #top-3 .container article.article img {
+main #top-3 article.article a {
+  width: 100%;
+}
+main #top-3 article.article a img {
   margin: 0;
   width: 100%;
   height: 100px;
   object-fit: cover;
 }
-main #top-3 .container article.article h4 {
+main #top-3 article.article h4 {
   font-size: 1.8rem;
   line-height: 1;
   padding: 0 4px 2px 4px;
   margin: 0;
   color: #1d1e1d;
 }
-main #top-3 .container article.article a {
+main #top-3 article.article a {
   position: relative;
 }
-main #top-3 .container article.article a .status {
+main #top-3 article.article a .status {
   position: absolute;
   top: 0;
   right: 0;
@@ -384,10 +396,10 @@ main #top-3 .container article.article a .status {
   background-color: #916A08;
   border-bottom-left-radius: 8px;
 }
-main #top-3 .container article.article a .status.news {
+main #top-3 article.article a .status.news {
   background-color: #000080;
 }
-main #top-3 .container article:hover, main #top-3 .container article:focus {
+main #top-3 article:hover, main #top-3 article:focus {
   transition: transform 200ms ease-in-out;
   transform: scale(1.05);
 }
@@ -540,6 +552,7 @@ main #cards-container article.card .card-content small.update, main #latest-blog
 }
 main #cards-container article.card .card-content h3, main #latest-blogs article.card .card-content h3, main #top-projects article.card .card-content h3 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -570,11 +583,12 @@ main #cards-container article.card .card-content .card-tags, main #latest-blogs 
 }
 main #cards-container article.card .card-content .card-tags .tag, main #latest-blogs article.card .card-content .card-tags .tag, main #top-projects article.card .card-content .card-tags .tag {
   margin: 0;
-  padding: 2px 6px;
+  padding: 4px 6px;
   border-radius: 4px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #F0FFFF;
   background-color: #000080;
+  text-transform: uppercase;
 }
 main #cards-container article.card .card-content .card-tags .tag.red, main #latest-blogs article.card .card-content .card-tags .tag.red, main #top-projects article.card .card-content .card-tags .tag.red {
   background-color: #821F00;

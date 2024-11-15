@@ -1,86 +1,110 @@
 [   
     {   
         "id": "P240007",
-        "title": "Data Science Projects",
+        "top": false,
         "version": "0.0.0-dev",
-        "status": "development",
-        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["data science", "python", "coding"],
-        "href": "/portfolio/P240007/"
+        "href": "/portfolio/P240007/",
+        "status": {"":"development","es":"en desarrollo"},
+        "title": {
+            "":"Data Science Projects",
+            "es": "Proyectos de Ciencia de Datos"
+        },
+        "description": {"":""},
+        "tags": {
+            "":["data science", "python", "coding", "php"]
+        }
     },
     {   
         "id": "P240006",
-        "title": "Autolisp Repository",
+        "top": false,
         "version": "0.0.0-dev",
-        "status": "development",
-        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["civil engineering", "autolisp", "coding", "cAD"],
-        "href": "/portfolio/P240006/"
+        "href": "/portfolio/P240006/",
+        "status": {"":"development","es":"en desarrollo", "it":"produzione"},
+        "title": {"":"Autolisp Repository"},
+        "description": {"":""},
+        "tags": {
+            "":["civil engineering", "autolisp", "coding", "cad"]
+        }
     },
     {   
         "id": "P240005",
-        "title": "Cadenero",
+        "top": true,
         "version": "0.0.0-dev",
-        "status": "development",
-        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["civil engineering", "python", "software"],
-        "href": "/portfolio/P240005/"
+        "href": "/portfolio/P240005/",
+        "status": {"":"development","es":"en desarrollo", "it":"produzione"},
+        "title": {"":"Cadenero"},
+        "description": {"":""},
+        "tags": {
+            "":["civil engineering", "python", "software"]
+        }
     },
     {   
         "id": "P240004",
-        "title": "Flexpave",
+        "top": false,
         "version": "0.0.0-dev",
-        "status": "development",
-        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
-        "lastUpdate": "2024-11-01",
-        "tags": ["civil engineering", "python", "software"], 
-        "href": "/portfolio/P240004/"
+        "lastUpdate": "2024-11-01", 
+        "href": "/portfolio/P240004/",
+        "status": {"":"development","es":"en desarrollo", "it":"produzione"},
+        "title": {"":"Flexpave"},
+        "description": {"":""},
+        "tags": {
+            "":["civil engineering", "python", "software"]
+        }
     },
     {   
         "id": "P240003",
-        "title": "Joomthund",
+        "top": false,
         "version": "0.0.0-dev",
-        "status": "development",
-        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["joomla", "pHP" ,"web design"], 
-        "href": "/portfolio/P240003/"
+        "href": "/portfolio/P240003/",
+        "status": {"":"development","es":"en desarrollo", "it":"produzione"},
+        "title": {"":"Joomthund"},
+        "description": {"":""},
+        "tags": {
+            "":["joomla", "php" ,"web design"]
+        }
     },
     {   
         "id": "P240002",
-        "title": "OOCAD",
+        "top": true,
         "version": "0.0.0-dev",
-        "status": "development",
-        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["cAD", "design", "civil engineering"], 
-        "href": "/portfolio/P240002/"
+        "href": "/portfolio/P240002/",
+        "status": {"":"development","es":"en desarrollo", "it":"produzione"},
+        "title": {"":"OOCAD"},
+        "description": {"":""},
+        "tags": {
+            "":["cad", "design", "civil engineering"]
+        }
     },
     {   
         "id": "P240001",
-        "title": "Civil Engineering",
+        "top": true,
         "version": "0.0.0-dev",
-        "status": "archived",
-        "description": "",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
-        "tags": ["civil engineering", "cAD", "design", "pHP"], 
-        "href": "/portfolio/P240001/"
+        "href": "/portfolio/P240001/",
+        "status": {"":"development","es":"en desarrollo", "it":"produzione"},
+        "title": {"":"Civil Engineering Projects"},
+        "description": {"":""},
+        "tags": {
+            "":["civil engineering", "cAD", "design", "php"]
+        }
     }
 ]

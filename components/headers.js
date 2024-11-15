@@ -18,7 +18,7 @@ async function setActiveClass(href) {
 
 const portfolioClass = await setActiveClass("/portfolio");
 const blogsClass = await setActiveClass("/blogs");
-const freireClass = await setActiveClass("/freire");
+const aboutMeClass = await setActiveClass("/about-me");
 
 export async function setHeaderMobile(language) {
     const homeClass = await setActiveClass(`/${language}`);
@@ -51,7 +51,7 @@ export async function setHeaderMobile(language) {
                     </a>
                 </li>
                 <li>
-                    <a href="/freire/${language}" class="mobile-menu-item${freireClass}">
+                    <a href="/about-me/${language}" class="mobile-menu-item${aboutMeClass}">
                         <figure>
                             <img src="/media/icons/info.webp" alt="More info icon">
                         </figure>
@@ -85,7 +85,7 @@ export async function setHeader(language) {
                     <li><a class="header-item${homeClass}" href="/${language}">${home}</a></li>
                     <li><a class="header-item${portfolioClass}" href="/portfolio/${language}/">${portfolio}</a></li>
                     <li><a class="header-item${blogsClass}" href="/blogs/${language}/">${blogs}</a></li>
-                    <li><a class="header-item${freireClass}" href="/freire/${language}/">${me}</a></li>
+                    <li><a class="header-item${aboutMeClass}" href="/about-me/${language}/">${me}</a></li>
                 </ul>
             </nav>
         </section>
