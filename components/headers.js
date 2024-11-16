@@ -83,9 +83,9 @@ export async function setHeader(language) {
             <nav class="header-menu">
                 <ul>
                     <li><a class="header-item${homeClass}" href="/${language}">${home}</a></li>
-                    <li><a class="header-item${portfolioClass}" href="/portfolio/${language}/">${portfolio}</a></li>
-                    <li><a class="header-item${blogsClass}" href="/blogs/${language}/">${blogs}</a></li>
-                    <li><a class="header-item${aboutMeClass}" href="/about-me/${language}/">${me}</a></li>
+                    <li><a class="header-item${portfolioClass}" href="/portfolio/${language}">${portfolio}</a></li>
+                    <li><a class="header-item${blogsClass}" href="/blogs/${language}">${blogs}</a></li>
+                    <li><a class="header-item${aboutMeClass}" href="/about-me/${language}">${me}</a></li>
                 </ul>
             </nav>
         </section>
