@@ -62,7 +62,12 @@ async function createCards(items, clear = false) {
     }
     const path = getPath();
     const language = await getLanguage();
-    
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = items[0].href + "coverPageSmall.webp";
+    const head = document.head;
+    head.insertBefore(link, head.children[7]);
     if (path === 'blogs') {
         items.forEach(item => {
             const card = document.createElement('article');
@@ -72,11 +77,6 @@ async function createCards(items, clear = false) {
             container.appendChild(card);
         });
     } else {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = items[0].href + "coverPageSmall.webp";
-        document.head.appendChild(link);
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('portfolio');

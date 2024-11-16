@@ -48,7 +48,7 @@ export function cardProject(item, language) {
     const title = item.title[language] ? item.title[language] : item.title[""];     
     const cardContentBlog = `    
             <a href="${item.href}${language}">
-                <img fetchpriority="high" src="${item.href}coverPageSmall.webp" alt="Cover Page">
+                <img fetchpriority="high" src="${item.href}coverPage.webp" alt="Cover Page">
                 <h4>${title}</h4>
             </a>
             `;
