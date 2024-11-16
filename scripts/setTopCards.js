@@ -72,6 +72,11 @@ async function createCards(items, clear = false) {
             container.appendChild(card);
         });
     } else {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = items[0].href + "coverPageSmall.webp";
+        document.head.appendChild(link);
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('portfolio');

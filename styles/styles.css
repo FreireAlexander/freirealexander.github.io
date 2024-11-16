@@ -328,12 +328,17 @@ section.section {
 
 main #top-3 {
   height: fit-content;
-  min-height: 100px;
+  min-height: 750px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 64px;
+}
+@media (width > 425px) {
+  main #top-3 {
+    min-height: 250px;
+  }
 }
 main #top-3 article {
   position: relative;
