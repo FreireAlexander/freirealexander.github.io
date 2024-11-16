@@ -45,7 +45,10 @@ function getJSONFilePath() {
 }
 
 // Función para cargar un ítem específico basado en su ID
-async function loadSingleItemById(itemId) {
+async function loadSingleItemById() {
+    const activePage = window.location.pathname;
+    const itemId = activePage.split('/')[2];
+    console.log(itemId);
     const jsonFile = getJSONFilePath();
     const language = await getLanguage();
     try {
@@ -75,6 +78,8 @@ async function loadSingleItemById(itemId) {
 // Función para mostrar el ítem en el contenedor
 function displayProject(item, language) {
     // document.title = `${item.title}`;
+    const title = item.title[language] ? item.title[language] : item.title[""];
+    document.title = title;
     const container = document.getElementById('page-info'); // ID del contenedor donde mostrarás el ítem
     container.innerHTML = projectInfo(item, language);
 }
@@ -135,4 +140,4 @@ function displayBlog(item) {
     `;
 }
 
-document.addEventListener('DOMContentLoaded', loadSingleItemById('P240001'));
+document.addEventListener('DOMContentLoaded', loadSingleItemById());
