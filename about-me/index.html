@@ -488,14 +488,13 @@
     <footer id="header-mobile"></footer>
 </div>
 </body>
-    <script src="/scripts/loadComponents.js"></script>
-    <script type="module" src="/scripts/loadBasics.js"></script>
-    <script>
-        (async function initComponents() {
-            await Promise.all([
-                loadHTML('contact', '/components/contact_form.html')           
-            ]); 
-        })();
-    </script>
-    <script src="/scripts/setGreetingMessage.js"></script>
+<script type="module" src="/scripts/loadBasics.js" defer></script>
+<script>
+    (async function initComponents() {
+        await Promise.all([
+            loadHTML('contact', '/components/contact_form.html')           
+        ]); 
+    })();
+</script>
+<script src="/scripts/setGreetingMessage.js" defer></script>
 </html>

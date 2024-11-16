@@ -1,3 +1,6 @@
+import { cardBlog, cardProject } from '../components/cards.js';
+import { getLanguage } from './getLanguage.js';
+
 let allItems = []; // Variable para almacenar todos los datos cargados
 let filteredItems = []; // Variable para almacenar los elementos filtrados
 let currentIndex = 0; // Índice para el número de tarjetas cargadas inicialmente
@@ -54,7 +57,7 @@ async function loadJSON(jsonFile) {
 }
 
 // Función para generar las cards y añadirlas al contenedor
-function createCards(items, section, clear = false) {
+async function createCards(items, section, clear = false) {
     const container = document.getElementById(section);
     
     if (clear) {
@@ -75,76 +78,20 @@ function createCards(items, section, clear = false) {
         container.appendChild(noResultsMessage);
         return;
     }
+    const language = await getLanguage();
     if (section === 'latest-blogs') {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            card.innerHTML = `
-                <figure class="card-cover">
-                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
-                    <div class="status ${icons[item.type] ? icons[item.type][1] : "blue" }">
-                        <span class="icon--nf">${icons[item.type] ? icons[item.type][0] : "" }</span>
-                        <p>${item.type}</p>
-                    </div>
-                </figure>
-                <div class="card-content">
-                    <small class="update"> Last Revision: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    <h3>${item.title}</h3>
-                    <div class="card-data">
-                        <small> By <strong>${item.author}</strong> first published on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    </div>
-                    <div class="card-tags">
-                        ${item.tags.map(tag => `
-                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
-                                <span class="icon--nf">
-                                    ${icons[tag] ? icons[tag][0] : ""}
-                                </span>
-                                ${tag}
-                            </p>
-                            `).join('')}
-                    </div>
-                    <div class="card-description">
-                        <p>${item.description}</p>
-                    </div>
-                    <a href="${item.href}" class="card-button">Explore Article</a>
-                </div>
-            `;
+            const CardContent = cardBlog(item, language);
+            card.innerHTML = CardContent;
             container.appendChild(card);
         });
     } else {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            card.innerHTML = `
-                <figure class="card-cover">
-                    <img src="${item.href}/coverPageSmall.webp" alt="${item.title}">
-                    <div class="status ${icons[item.status] ? icons[item.status][1] : "blue" }">
-                        <span class="icon--nf">${icons[item.status] ? icons[item.status][0] : "" }</span>
-                        <p>${item.status}</p>
-                    </div>
-                </figure>
-                <div class="card-content">
-                    <small class="update"> Last Update: ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    <h3><span>${item.title}</span><span>${item.version}</span></h3>
-                    <div class="card-data">
-                        <small> By <strong>${item.author}</strong> on ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
-                    </div>
-                    <div class="card-tags">
-                        ${item.tags.map(tag => `
-                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
-                                <span class="icon--nf">
-                                    ${icons[tag] ? icons[tag][0] : ""}
-                                </span>
-                                ${tag}
-                            </p>
-                            `).join('')}
-                    </div>
-                    <div class="card-description">
-                        <p>${item.description}</p>
-                    </div>
-                    <a href="${item.href}" class="card-button">Explore Project</a>
-                </div>
-            `;
+            card.innerHTML = cardProject(item, language);
             container.appendChild(card);
         });
     }
