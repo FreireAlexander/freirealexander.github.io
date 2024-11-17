@@ -11,40 +11,40 @@ function getLanguage() {
     return result;
 }
 
-async function loadHeader() {
+function loadHeader() {
     const language = getLanguage();
     const headerMobileElement = document.getElementById('header-mobile');
     const headerElement = document.getElementById('header');
 
     if (headerMobileElement) {
-        const headerMobileContent = await setHeaderMobile(language);
+        const headerMobileContent = setHeaderMobile(language);
         headerMobileElement.innerHTML = headerMobileContent;
     } else {
         console.error('No se encontró el elemento con id "header-mobile".');
     }
 
     if (headerElement) {
-        const headerContent = await setHeader(language);
+        const headerContent = setHeader(language);
         headerElement.innerHTML = headerContent;
     } else {
         console.error('No se encontró el elemento con id "header".');
     }
 }
 
-async function loadFooter() {
+function loadFooter() {
     const footerElement = document.getElementById('footer');
     if (footerElement) {
-        const footerContent = await setFooter();
+        const footerContent =  setFooter();
         footerElement.innerHTML = footerContent;
     } else {
         console.error('No se encontró el elemento con id "footer".');
     }
 }
 
-async function loadLanguageSelector() {
+function loadLanguageSelector() {
     const languageElement = document.getElementById('lang-selector');
     if (languageElement) {
-        const languageContent = await setLanguageSelector();
+        const languageContent =  setLanguageSelector();
         languageElement.innerHTML = languageContent;
     } else {
         console.error('No se encontró el elemento con id "lang-selector".');

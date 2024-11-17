@@ -1,4 +1,4 @@
-async function detectLanguage() {
+function detectLanguage() {
     const activePage = window.location.pathname;
     const segments = activePage.slice(0,-1).split('/');
     const lastSegment = segments[segments.length - 1];
@@ -6,7 +6,7 @@ async function detectLanguage() {
     return language;
 }
 
-const language = await detectLanguage();
+const language = detectLanguage();
 
 const translations = {
     '': {lang: "us", alt: "Select Language"},
@@ -14,7 +14,7 @@ const translations = {
     it: {lang: "it", alt: "Scegliere Lingua"}
 };
 
-export async function setLanguageSelector() {
+export function setLanguageSelector() {
     const langSelector = `
     <section class="section">
     <label for="langSelector"><img src="/media/icons/tech/flag-${translations[language]["lang"]}-svgrepo-com.svg" alt="${translations[language]["alt"]}"></label>

@@ -1,4 +1,4 @@
-export async function setFooter() {
+export function setFooter() {
     const footer = `
         <section class="brand">
             <div class="logo">

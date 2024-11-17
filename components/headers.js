@@ -7,7 +7,7 @@ const translations = {
     it: { home: "Home", portfolio: "Progetti", blogs: "Blog e Notizie", me: "Su di me" }
 };
 
-async function setActiveClass(href) {
+function setActiveClass(href) {
     if (activePage === href || activePage.startsWith(href + '/') || activePage.startsWith(href + '/es')) {
         return " active";
     } else {
@@ -15,13 +15,12 @@ async function setActiveClass(href) {
     }
 }
 
+const portfolioClass = setActiveClass("/portfolio");
+const blogsClass = setActiveClass("/blogs");
+const aboutMeClass = setActiveClass("/about-me");
 
-const portfolioClass = await setActiveClass("/portfolio");
-const blogsClass = await setActiveClass("/blogs");
-const aboutMeClass = await setActiveClass("/about-me");
-
-export async function setHeaderMobile(language) {
-    const homeClass = await setActiveClass(`/${language}`);
+export function setHeaderMobile(language) {
+    const homeClass = setActiveClass(`/${language}`);
     const { home, portfolio, blogs, me } = translations[language];
     const headerMobile = `
         <nav class="menu">
@@ -64,8 +63,8 @@ export async function setHeaderMobile(language) {
     return headerMobile;
 }
 
-export async function setHeader(language) {
-    const homeClass = await setActiveClass(`/${language}`);
+export function setHeader(language) {
+    const homeClass = setActiveClass(`/${language}`);
     const { home, portfolio, blogs, me } = translations[language];
     const header = `
         <section class="section">
