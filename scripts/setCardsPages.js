@@ -98,7 +98,6 @@ function toggleLoadMoreButton() {
     } else {
         loadMoreButton.style.display = 'block';
         loadMoreButton.innerText = translate[language];
-        console.log(loadMoreButton);
     }
 }
 
@@ -178,6 +177,5 @@ dateInput.addEventListener('input', () => {
 });
 
 dateFilter.addEventListener('change', () => {
-    console.log("He Cambiado de Valor");
     filterCards(searchInput.value, searchFilter.value);
 });

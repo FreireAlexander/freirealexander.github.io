@@ -10,7 +10,7 @@ async function loadLatestContent(jsonFile) {
     try {
         const response = await fetch(jsonFile); // Ruta al archivo JSON
         if (!response.ok) {
-            console.log("Error al cargar")
+            console.error("Error al cargar")
             throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
@@ -19,7 +19,6 @@ async function loadLatestContent(jsonFile) {
             createCards(allItems.slice(0, latest),"latest-blogs");
         } if (jsonFile === "/data/portfolio.json"){
             allItems = allItems.sort((a, b) => new Date(b.lastUpdate) - new Date(a.lastUpdate));
-            console.log(allItems);
             createCards(allItems.slice(0, latest),"top-projects");
         }
     } catch (error) {

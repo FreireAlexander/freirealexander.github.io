@@ -328,7 +328,7 @@ section.section {
 
 main #top-3 {
   height: fit-content;
-  min-height: 750px;
+  min-height: 350px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
