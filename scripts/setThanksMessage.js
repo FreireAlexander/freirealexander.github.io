@@ -1,11 +1,9 @@
-// Index.js
 document.addEventListener("DOMContentLoaded", function() {
     function createTypewriterAnimation(element, roles, colors) {
         const colorNames = Object.keys(colors);
         let roleIndex = 0;
         let charIndex = 0;
         let previousColorIndex = -1;
-
         function getRandomColorIndex() {
             let newIndex;
             do {
@@ -13,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
             } while (newIndex === previousColorIndex);
             return newIndex;
         }
-
         function typeWriter() {
             if (charIndex < roles[roleIndex].length) {
                 element.textContent += roles[roleIndex].charAt(charIndex);
@@ -23,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 setTimeout(changeText, 2000); // Espera antes de borrar el texto y cambiar al siguiente rol
             }
         }
-
         function changeText() {
             roleIndex = (roleIndex + 1) % roles.length;
             charIndex = 0;
@@ -33,12 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
             previousColorIndex = colorIndex;
             typeWriter();
         }
-
-        // Iniciar la animación de la máquina de escribir
         typeWriter();
     }
-
-    // Ejemplo de uso
     const textElement1 = document.querySelector("[id='thanks-1']");
     const textElement2 = document.querySelector("#thanks-2");
     const roles = [

@@ -42,17 +42,16 @@
                             <option value="description">Description</option>
                             <option value="date">Date</option>
                         </select>
-                        <!-- Campo de fecha para el filtro de Date -->
                         <input type="date" id="date-input" class="date-input" style="display: none;">
-                        <select id="date-filter" class="date-filter" style="display: none;" aria-label="search-filter">
+                        <select id="date-filter" class="date-filter" style="display: none;" aria-label="date-filter">
                             <option value="on">On</option>
                             <option value="before">Before</option>
                             <option value="after">After</option>
                         </select>
                     </div>
-                </div>            
+                </div>           
                 <section>
-                    <div id="cards-container" style="min-height: 800px;"></div>
+                    <div id="cards-container"></div>
                     <div style="display: grid; place-items: center;">
                         <button id="load-more-button" class="button-primary" style="display: none;">Load More Projects</button>
                     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +21,9 @@
 <div class="body">
     <header id="lang-selector"></header>
     <header id="header"></header>
-    <main>
+    <main id="main">
         <section class="section">
-            <h1>Blogs e Notizie</h1>
+            <h1>Blogs and News</h1>
         </section>
         <section class="section">
             <h2>Recommend Blogs and News</h2>
@@ -40,7 +40,6 @@
                         <option value="description">Description</option>
                         <option value="date">Date</option>
                     </select>
-                    <!-- Campo de fecha para el filtro de Date -->
                     <input type="date" id="date-input" class="date-input" style="display: none;">
                     <select id="date-filter" class="date-filter" style="display: none;" aria-label="date-filter">
                         <option value="on">On</option>
@@ -56,6 +55,7 @@
                 </div>
             </section>
         </section>
+        <section id="buy-me-a-coffe" class="section"></section>
     </main>
     <footer id="footer"></footer>
     <footer id="header-mobile"></footer>

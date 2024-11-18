@@ -413,56 +413,57 @@ main #search-container {
   top: 24px;
   z-index: 1000;
   width: 100%;
-  height: fit-content;
   min-height: 100px;
   padding: 24px 0 28px 0;
   background-color: rgba(1, 6, 29, 0.85);
 }
 main #search-container .search-container {
-  margin: 0;
   display: grid;
-  place-items: flex-start;
-  align-items: baseline;
-  grid-template-columns: 3fr 1fr;
+  justify-content: space-between;
+  align-content: center;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
   width: 100%;
-  height: auto;
-  padding: 12px 8px;
+  height: fit-content;
+  padding: 16px;
   background-color: #f3f5f7;
   color: #1d1e1d;
-  border-radius: 16px;
-  line-height: 3.2rem;
+  border-radius: 12px;
 }
 main #search-container .search-container .search-bar {
   width: 100%;
   border: 0;
   background-color: transparent;
   font-size: 1.8rem;
+  line-height: 3.2rem;
 }
 main #search-container .search-container .date-input {
-  width: 100%;
   font-size: 1.8rem;
   border: 1px solid transparent;
   background: transparent;
   padding: 0;
   display: inline-block;
   visibility: visible;
+  line-height: 3.2rem;
+}
+main #search-container .search-container .date-input, main #search-container .search-container .date-filter {
+  padding-top: 16px;
 }
 main #search-container .search-container .search-filter, main #search-container .search-container .date-filter {
-  padding: 4px 8px;
-  width: 100%;
   border: 0;
   background-color: transparent;
   font-size: 1.8rem;
+  width: 100%;
+  min-width: 50px;
+  text-overflow: ellipsis;
 }
 main #cards-container, main #latest-blogs, main #top-projects {
   display: grid;
   row-gap: 24px;
-  place-items: center;
+  place-items: start;
   align-items: stretch;
   padding: 24px 0 16px 0;
   margin: 24px 0;
-  height: fit-content;
   min-height: 100px;
 }
 main #cards-container article.card, main #latest-blogs article.card, main #top-projects article.card {
@@ -708,13 +709,11 @@ main #contact .contact-form .button-primary {
   margin: 36px 0 48px 0;
 }
 #footer .copyright {
-  display: grid;
-  place-items: center;
-  place-self: center;
+  display: inline-block;
 }
 #footer .copyright #copyright-year, #footer .copyright p {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 #footer .socials {
   display: flex;
@@ -728,12 +727,19 @@ main #contact .contact-form .button-primary {
   font-size: 2.4rem;
   color: #F0FFFF;
 }
+#footer .signature {
+  grid-column: 1/3;
+}
 @media (width > 768px) {
   #footer {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
   #footer .socials {
     grid-column: auto;
+  }
+  #footer .signature {
+    grid-column: 1/4;
   }
 }
 

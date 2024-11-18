@@ -1,6 +1,7 @@
 [   
     {   
         "id": "P240007",
+        "show": false,
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
@@ -19,6 +20,7 @@
     },
     {   
         "id": "P240006",
+        "show": false,
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
@@ -34,6 +36,7 @@
     },
     {   
         "id": "P240005",
+        "show": false,
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
@@ -49,6 +52,7 @@
     },
     {   
         "id": "P240004",
+        "show": false,
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
@@ -64,11 +68,12 @@
     },
     {   
         "id": "P240003",
+        "show": true,
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
-        "lastUpdate": "2024-11-01",
+        "lastUpdate": "2024-11-17",
         "href": "/portfolio/P240003/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
         "title": {"":"Joomthund"},
@@ -79,6 +84,7 @@
     },
     {   
         "id": "P240002",
+        "show": false,
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
@@ -94,11 +100,12 @@
     },
     {   
         "id": "P240001",
+        "show": true,
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
         "firstPublishDate": "2024-11-01",
-        "lastUpdate": "2024-11-01",
+        "lastUpdate": "2024-11-15",
         "href": "/portfolio/P240001/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
         "title": {"":"Civil Engineering Projects"},

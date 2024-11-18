@@ -1,6 +1,4 @@
-// headers.js
 const activePage = window.location.pathname;
-// Traducciones para los headers en diferentes idiomas
 const translations = {
     '': { home: "Home", portfolio: "Portfolio", blogs: "Blogs & News", me: "About me" },
     es: { home: "Inicio", portfolio: "Portafolio", blogs: "Blogs y Noticias", me: "Sobre mí" },

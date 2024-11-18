@@ -1,82 +1,55 @@
 import { cardBlog, cardProject } from '../components/cards.js';
-import { getLanguage } from './getLanguage.js';
+import { getLanguage, getPath, getJSONFilePath } from './utils.js';
+
+let allItems = [];
+let filteredItems = [];
+let currentIndex = 0;
+const increment = 3;
+const path = getPath();
+const language = getLanguage();
+const jsonFile = getJSONFilePath();
 
 function updateStickySectionPosition() {
     const header = document.getElementById('header');
     const stickySection = document.getElementById('search-container');
     const headerHeight = header.offsetHeight;
-    const minWidth = 768; // Ancho mínimo para aplicar el comportamiento
-
+    const minWidth = 768;
     if (window.innerWidth > minWidth) {
-        // Solo aplica si el ancho de la ventana es mayor que el ancho mínimo
         stickySection.style.top = `${headerHeight}px`;
     } else {
-        // Restablece la posición si la pantalla es más pequeña
         stickySection.style.top = '0';
     }
 }
 
-// Actualizar la posición al cargar la página
-window.addEventListener('load', updateStickySectionPosition);
-
-// Actualizar la posición cuando se redimensiona la ventana
-window.addEventListener('resize', updateStickySectionPosition);
-
-let allItems = []; // Variable para almacenar todos los datos cargados
-let filteredItems = []; // Variable para almacenar los elementos filtrados
-let currentIndex = 0; // Índice para el número de tarjetas cargadas inicialmente
-const increment = 3; // Cantidad de tarjetas a cargar por vez
-
-// Función para determinar el archivo JSON según la ruta actual
-function getJSONFilePath() {
-    const path = window.location.pathname;
-
-    if (path.includes('/blogs/')) {
-        return '/data/blogs.json'; // Ruta al archivo JSON para la página de blogs
-    } else if (path.includes('/portfolio/')) {
-        return '/data/portfolio.json'; // Ruta al archivo JSON para la página de portafolio
-    }
-    return null; // En caso de que no coincida con ninguna de las rutas
-}
-
-function getPath() {
-    const path = window.location.pathname;
-    if (path.includes('/blogs/')) {
-        return 'blogs'; // Ruta al archivo JSON para la página de blogs
-    } else if (path.includes('/portfolio/')) {
-        return 'portfolio'; // Ruta al archivo JSON para la página de portafolio
-    }
-    return null; // En caso de que no coincida con ninguna de las rutas
-}
-
-// Función para cargar el archivo JSON
-async function loadJSON() {
-    const jsonFile = getJSONFilePath();
+async function setCardsPages() {
     try {
         const response = await fetch(jsonFile); // Ruta al archivo JSON
         if (!response.ok) {
             throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
-        allItems = data; // Guardar los datos originales
-        filteredItems = allItems; // Inicialmente, los elementos filtrados son todos los elementos
-        createCards(filteredItems.slice(0, increment)); // Generar las primeras tarjetas
-        currentIndex = increment; // Actualizar el índice
-        toggleLoadMoreButton(); // Mostrar u ocultar el botón de cargar más
+        const show = data.filter((item)=>item.show);
+        if (jsonFile.includes('portfolio.json')){
+            allItems = show.sort((a, b) => new Date(b.lastUpdate) - new Date(a.lastUpdate));
+        }else{
+            allItems = show;
+        }
+        filteredItems = allItems;
+        createCards(filteredItems.slice(0, increment)); 
+        currentIndex = increment;
+        toggleLoadMoreButton();
     } catch (error) {
         console.error(error);
     }
 }
 
-// Función para generar las cards y añadirlas al contenedor
-async function createCards(items, clear = false) {
+function createCards(items, clear = false) {
     const container = document.getElementById('cards-container');
     if (clear) {
-        container.innerHTML = ''; // Limpiar el contenedor si el parámetro clear es verdadero
+        container.innerHTML = '';
     }
     if (items.length === 0 && currentIndex === 0) {
-        // Mostrar mensaje de "No se encontraron resultados"
-        container.innerHTML = ''; // Limpiar cualquier contenido previo
+        container.innerHTML = '';
         const noResultsMessage = document.createElement('div');
         noResultsMessage.classList.add('card');
         noResultsMessage.innerHTML = `
@@ -88,8 +61,6 @@ async function createCards(items, clear = false) {
         container.appendChild(noResultsMessage);
         return;
     }
-    const path = getPath();
-    const language = await getLanguage();
     if (path === 'blogs') {
         items.forEach(item => {
             const card = document.createElement('article');
@@ -108,21 +79,26 @@ async function createCards(items, clear = false) {
     }
 }
 
-// Función para manejar el botón de cargar más
 function loadMoreCards() {
     const nextItems = filteredItems.slice(currentIndex, currentIndex + increment);
-    createCards(nextItems); // Agregar las siguientes tarjetas sin borrar las existentes
-    currentIndex += increment; // Actualizar el índice
-    toggleLoadMoreButton(); // Mostrar u ocultar el botón de cargar más si no hay más tarjetas
+    createCards(nextItems);
+    currentIndex += increment;
+    toggleLoadMoreButton();
 }
 
-// Función para mostrar u ocultar el botón de cargar más
 function toggleLoadMoreButton() {
+    const translate = {
+        "": "Load More Cards",
+        es: "Cargar Más Tarjetas",
+        it: "Caricare piú Cards"
+    }
     const loadMoreButton = document.getElementById('load-more-button');
     if (currentIndex >= filteredItems.length) {
         loadMoreButton.style.display = 'none';
     } else {
         loadMoreButton.style.display = 'block';
+        loadMoreButton.innerText = translate[language];
+        console.log(loadMoreButton);
     }
 }
 
@@ -134,10 +110,13 @@ function filterCards(searchTerm, filter) {
     // Filtrado inicial por título, descripción o etiquetas
     filteredItems = allItems.filter(item => {
         const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        const title = item.title[language] ? item.title[language] : item.title[""];
+        const tags = item.tags[language] ? item.tags[language] : item.tags[""];
+        const description = item.description[language] ? item.description[language] : item.description[""]; 
 
-        const titleMatch = item.title.toLowerCase().includes(lowerCaseSearchTerm);
-        const descriptionMatch = item.description.toLowerCase().includes(lowerCaseSearchTerm);
-        const tagsMatch = item.tags.some(tag => tag.toLowerCase().includes(lowerCaseSearchTerm));
+        const titleMatch = title.toLowerCase().includes(lowerCaseSearchTerm);
+        const descriptionMatch = description.toLowerCase().includes(lowerCaseSearchTerm);
+        const tagsMatch = tags.some(tag => tag.toLowerCase().includes(lowerCaseSearchTerm));
 
         return titleMatch || descriptionMatch || tagsMatch;
     });
@@ -164,8 +143,14 @@ function filterCards(searchTerm, filter) {
     toggleLoadMoreButton(); // Mostrar u ocultar el botón de cargar más
 }
 
+// Actualizar la posición al cargar la página
+window.addEventListener('load', updateStickySectionPosition);
+
+// Actualizar la posición cuando se redimensiona la ventana
+window.addEventListener('resize', updateStickySectionPosition);
+
 // Cargar los datos cuando el documento esté listo
-document.addEventListener('DOMContentLoaded', loadJSON);
+document.addEventListener('DOMContentLoaded', setCardsPages);
 
 // Escuchar el clic en el botón de cargar más
 const loadMoreButton = document.getElementById('load-more-button');
@@ -193,7 +178,6 @@ dateInput.addEventListener('input', () => {
 });
 
 dateFilter.addEventListener('change', () => {
+    console.log("He Cambiado de Valor");
     filterCards(searchInput.value, searchFilter.value);
 });
-
-

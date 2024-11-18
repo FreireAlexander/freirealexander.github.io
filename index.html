@@ -59,41 +59,22 @@
             </div>
         </section>
         <section class="section">
-            <h2>Latest Blogs</h2>
-            <section id="latest-blogs"></section>
-        </section>
-        <section class="section">
             <h2>Latest Projects Updates</h2>
             <section id="top-projects"></section>
         </section>
+        <section class="section">
+            <h2>Latest Blogs</h2>
+            <section id="latest-blogs"></section>
+        </section>
         <section id="buy-me-a-coffe" class="section"></section>
         <section id="contact" class="section"></section>
-        <section class="section" >
-            <h2>Keep Exploring</h2>
-            <p>There are a lot of interesting Blogs and Projects</p>
-            <div class="flex">
-                <a href="/portfolio/" class="button-primary">
-                    Take a look on projects
-                </a>
-                <a href="/blogs/" class="button-secondary">
-                    Explore Blogs
-                </a>
-            </div>
-        </section>
+        <section id="keep-exploring" class="section"></section>
     </main>
     <footer id="footer"></footer>
     <footer id="header-mobile"></footer>
 </div>
 </body>
-    <script type="module" src="/scripts/loadBasics.js"></script>
-    <script src="/scripts/loadComponents.js"></script>
-    <script>
-        (async function initComponents() {
-            await Promise.all([
-                loadHTML('contact', '/components/contact_form.html'),
-                loadHTML('buy-me-a-coffe', '/components/buy_me_a_coffe.html')            
-            ]); 
-        })();
-    </script>
-    <script type="module" src="/scripts/loadLatestContent.js"></script>
+<script type="module" src="/scripts/loadBasics.js"></script>
+<script src="/scripts/loadComponents.js"></script>
+<script type="module" src="/scripts/loadLatestContent.js"></script>
 </html>

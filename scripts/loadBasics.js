@@ -2,27 +2,22 @@
 import { setHeaderMobile, setHeader } from '../components/headers.js';
 import { setFooter } from '../components/footer.js';
 import { setLanguageSelector } from '../components/languageSelector.js';
+import { setBuyMeACoffe } from '../components/buyMeACoffe.js';
+import { setContactForm } from '../components/contactForm.js';
+import { setKeepExploring } from '../components/keepExploring.js';
+import { getLanguage } from './utils.js';
 
-function getLanguage() {
-    const activePage = window.location.pathname;
-    const splitActivePage = activePage.slice(0,-1).split('/');
-    const lastSegment = splitActivePage[splitActivePage.length-1];
-    const result = ["es", "it"].includes(lastSegment) ? lastSegment : "";
-    return result;
-}
+const language = getLanguage();
 
 function loadHeader() {
-    const language = getLanguage();
     const headerMobileElement = document.getElementById('header-mobile');
     const headerElement = document.getElementById('header');
-
     if (headerMobileElement) {
         const headerMobileContent = setHeaderMobile(language);
         headerMobileElement.innerHTML = headerMobileContent;
     } else {
         console.error('No se encontró el elemento con id "header-mobile".');
     }
-
     if (headerElement) {
         const headerContent = setHeader(language);
         headerElement.innerHTML = headerContent;
@@ -34,7 +29,7 @@ function loadHeader() {
 function loadFooter() {
     const footerElement = document.getElementById('footer');
     if (footerElement) {
-        const footerContent =  setFooter();
+        const footerContent =  setFooter(language);
         footerElement.innerHTML = footerContent;
     } else {
         console.error('No se encontró el elemento con id "footer".');
@@ -44,18 +39,41 @@ function loadFooter() {
 function loadLanguageSelector() {
     const languageElement = document.getElementById('lang-selector');
     if (languageElement) {
-        const languageContent =  setLanguageSelector();
+        const languageContent =  setLanguageSelector(language);
         languageElement.innerHTML = languageContent;
     } else {
         console.error('No se encontró el elemento con id "lang-selector".');
     }
 }
 
+function loadBuyMeACoffe(){
+    const coffeElement = document.getElementById("buy-me-a-coffe");
+    if (coffeElement){
+        coffeElement.innerHTML = setBuyMeACoffe(language);
+    }
+}
+
+function loadContactForm(){
+    const coffeElement = document.getElementById("contact");
+    if (coffeElement){
+        coffeElement.innerHTML = setContactForm(language);
+    }
+}
+
+function loadKeepExploring(){
+    const coffeElement = document.getElementById("keep-exploring");
+    if (coffeElement){
+        coffeElement.innerHTML = setKeepExploring(language);
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', loadHeader);
 document.addEventListener('DOMContentLoaded', loadFooter);
+document.addEventListener('DOMContentLoaded', loadBuyMeACoffe);
+document.addEventListener('DOMContentLoaded', loadContactForm);
+document.addEventListener('DOMContentLoaded', loadKeepExploring);
 document.addEventListener('DOMContentLoaded', loadLanguageSelector);
-
-// Agregar el selector de idioma
 document.addEventListener('DOMContentLoaded', () => {
     const langSelector = document.getElementById('langSelector');
     langSelector.addEventListener('change', (event) => {

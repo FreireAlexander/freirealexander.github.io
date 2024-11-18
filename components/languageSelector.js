@@ -1,20 +1,10 @@
-function detectLanguage() {
-    const activePage = window.location.pathname;
-    const segments = activePage.slice(0,-1).split('/');
-    const lastSegment = segments[segments.length - 1];
-    const language = ['es', 'it'].includes(lastSegment) ? lastSegment : '';
-    return language;
-}
-
-const language = detectLanguage();
-
 const translations = {
     '': {lang: "us", alt: "Select Language"},
     es: {lang: "es", alt: "Seleccionar Idioma"},
     it: {lang: "it", alt: "Scegliere Lingua"}
 };
 
-export function setLanguageSelector() {
+export function setLanguageSelector(language) {
     const langSelector = `
     <section class="section">
     <label for="langSelector"><img src="/media/icons/tech/flag-${translations[language]["lang"]}-svgrepo-com.svg" alt="${translations[language]["alt"]}"></label>

@@ -1,31 +1,12 @@
 import { cardBlog, cardProject } from '../components/topCards.js';
-import { getLanguage } from './getLanguage.js';
+import { getLanguage, getJSONFilePath, getPath } from './utils.js';
 
-let allItems = []; // Variable para almacenar todos los datos cargados
-let filteredItems = []; // Variable para almacenar los elementos filtrados
+let allItems = [];
+let filteredItems = [];
+const path = getPath();
+const language = getLanguage();
 
-function getJSONFilePath() {
-    const path = window.location.pathname;
-
-    if (path.includes('/blogs/')) {
-        return '/data/blogs.json'; // Ruta al archivo JSON para la página de blogs
-    } else if (path.includes('/portfolio/')) {
-        return '/data/portfolio.json'; // Ruta al archivo JSON para la página de portafolio
-    }
-    return null; // En caso de que no coincida con ninguna de las rutas
-}
-
-function getPath() {
-    const path = window.location.pathname;
-    if (path.includes('/blogs/')) {
-        return 'blogs'; // Ruta al archivo JSON para la página de blogs
-    } else if (path.includes('/portfolio/')) {
-        return 'portfolio'; // Ruta al archivo JSON para la página de portafolio
-    }
-    return null; // En caso de que no coincida con ninguna de las rutas
-}
-
-async function loadJSON() {
+async function setTopCards() {
     const jsonFile = getJSONFilePath();
     try {
         const response = await fetch(jsonFile); // Ruta al archivo JSON
@@ -33,15 +14,15 @@ async function loadJSON() {
             throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
-        allItems = data; // Guardar los datos originales
+        allItems = data.filter((item)=>item.show); // Guardar los datos originales
         filteredItems =  allItems.filter((item) => item.top);
-        createCards(filteredItems); // Generar las primeras tarjetas
+        createTopCards(filteredItems); // Generar las primeras tarjetas
     } catch (error) {
         console.error(error);
     }
 }
 
-async function createCards(items, clear = false) {
+function createTopCards(items, clear = false) {
     const container = document.getElementById('top-3');
     if (clear) {
         container.innerHTML = ''; // Limpiar el contenedor si el parámetro clear es verdadero
@@ -60,12 +41,10 @@ async function createCards(items, clear = false) {
         container.appendChild(noResultsMessage);
         return;
     }
-    const path = getPath();
-    const language = await getLanguage();
     const link = document.createElement('link');
     link.rel = 'preload';
     link.as = 'image';
-    link.href = items[0].href + "coverPage.webp";
+    link.href = items[0].href + "coverPageSmall.webp";
     const head = document.head;
     head.insertBefore(link, head.children[7]);
     if (path === 'blogs') {
@@ -87,4 +66,4 @@ async function createCards(items, clear = false) {
 }
 
 // Cargar los datos cuando el documento esté listo
-document.addEventListener('DOMContentLoaded', loadJSON);
+document.addEventListener('DOMContentLoaded', setTopCards);

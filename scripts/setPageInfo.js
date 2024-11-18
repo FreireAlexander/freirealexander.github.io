@@ -1,69 +1,22 @@
-import { projectInfo } from '../components/pageInfo.js';
-import { getLanguage } from './getLanguage.js';
+import { projectInfo, BlogInfo } from '../components/pageInfo.js';
+import { getJSONFilePath, getLanguage, icons } from './utils.js';
 
-var icons = {
-    //Status for Projects
-    "archived": ["\uf187", "gray"],
-    "development": ["\ueea7", "green"],
-    "released": ["\uf164", "green"],
-    //Types of Articles
-    "news": ["\uf1ea", "yellow"],
-    "blog": ["\uef36", "red"],
-    "article": ["\uedc2", "blue"],
-    //Tags for everyone
-    "civil engineering": ["&#xf1ad;","red"],
-    "cAD": ["&#xF0821;","blue"],
-    "design": ["\udb83\udf49", "yellow"],
-    "software": ["\udb82\udcb9", "green"],
-    "web design": ["\uebeb","blue"],
-    "coding": ["\uf121","blue"],
-    "learning": ["\udb85\udec9","green"],
-    "data science": ["\udb83\udc50","blue"],
-    // Programming language
-    "python": ["\ued1b", "yellow"],
-    "hTML": ["\ue736", "red"],
-    "cSS": ["\ue749", "blue"],
-    "javascript": ["\ue781", "yellow"],
-    "pHP": ["\ue608", "blue"],
-    "go": ["\ue627", "blue"],
-    "lisp": ["\ue6b0", "blue"],
-    "autolisp": ["\ue6b0", "blue"],
-    //CMS
-    "joomla": ["\ue741", "red"],
-    "wordpress": ["\uf19a", "blue"],
+const jsonFile = getJSONFilePath();
+const language = getLanguage();
 
-}
-// Función para determinar el archivo JSON según la ruta actual
-function getJSONFilePath() {
-    const path = window.location.pathname;
-    if (path.includes('/blogs/')) {
-        return '/data/blogs.json';
-    } else if (path.includes('/portfolio/')) {
-        return '/data/portfolio.json';
-    }
-    return null;
-}
-
-// Función para cargar un ítem específico basado en su ID
 async function loadSingleItemById() {
     const activePage = window.location.pathname;
     const itemId = activePage.split('/')[2];
-    console.log(itemId);
-    const jsonFile = getJSONFilePath();
-    const language = await getLanguage();
     try {
         const response = await fetch(jsonFile);
         if (!response.ok) {
             throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
-        
-        // Encontrar el ítem con el ID proporcionado
         const item = data.find(i => i.id === itemId);
-        
         if (item) {
             if (jsonFile === "/data/blogs.json"){
-                
+                displayBlog(item, language);
             }else {
                 displayProject(item, language);
             }
@@ -75,69 +28,18 @@ async function loadSingleItemById() {
     }
 }
 
-// Función para mostrar el ítem en el contenedor
 function displayProject(item, language) {
-    // document.title = `${item.title}`;
     const title = item.title[language] ? item.title[language] : item.title[""];
     document.title = title;
     const container = document.getElementById('page-info'); // ID del contenedor donde mostrarás el ítem
     container.innerHTML = projectInfo(item, language);
 }
 
-function displayBlog(item) {
-    document.title = `${item.title}`;
+function displayBlog(item, language) {
+    const title = item.title[language] ? item.title[language] : item.title[""];
+    document.title = title;
     const container = document.getElementById('page-info'); // ID del contenedor donde mostrarás el ítem
-    container.innerHTML = `
-        <section id="page-cover">
-            <img 
-                fetchpriority="high" 
-                class="cover-page" 
-                src="${item.href}coverPageSmall.webp" 
-                alt="${item.title}"
-                srcset="
-                    ${item.href}coverPageSmall.webp 425w,
-                    ${item.href}coverPage.webp 768w,
-                    ${item.href}coverPageBig.webp 1024w
-                "
-                sizes="
-                    (max-width: 480px) 425px,
-                    (max-width: 768px) 768px,
-                    1024px
-                "
-            >
-            <div class="status ${icons[item.type] ? icons[item.type][1] : "blue" }">
-                <span class="icon--nf">${icons[item.type] ? icons[item.type][0] : "" }</span>
-                <h3>${item.type}</h3>
-            </div>
-        </section>
-        <section id="page-data">
-            <section class="section">
-                <h1 class="title">${item.title} </h1>
-                <div>
-                    <p class="author">By ${item.author}</p>
-                    <p>Since ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
-                    <p>Last update ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
-                    <div class="card-tags">
-                        ${item.tags.map(tag => `
-                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
-                                <span class="icon--nf">
-                                    ${icons[tag] ? icons[tag][0] : ""}
-                                </span>
-                                ${tag}
-                            </p>
-                            `).join('')}
-                    </div>
-                    <div class="breadcrumb">
-                        <a href="/">Home</a>
-                        <p>  / </p>
-                        <a href="/blogs/">Blogs & News</a>
-                        <p>  / </p>
-                        <p>${item.title}</p>
-                    </div>
-                </div>
-            </section>
-        </section>
-    `;
+    container.innerHTML = BlogInfo(item, language);
 }
 
 document.addEventListener('DOMContentLoaded', loadSingleItemById());
