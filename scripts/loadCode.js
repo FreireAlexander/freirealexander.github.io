@@ -1,4 +1,4 @@
-async function loadCode(filePath, elementId, codeLaguage) {
+async function loadCode(filePath, elementId) {
     try {
         // Fetch el archivo de texto
         const response = await fetch(filePath);
@@ -15,7 +15,6 @@ async function loadCode(filePath, elementId, codeLaguage) {
         }
 
         // Insertar el texto en el elemento
-        element.className = "language-"+codeLaguage;
         element.textContent = text;
         
     } catch (error) {
