@@ -351,7 +351,7 @@ main{
                     border: 4px solid #9f7928;
                     object-fit: cover;
                 }
-                h4 {
+                p {
                     position: absolute;
                     bottom: 0;
                     width: 100%;
@@ -373,20 +373,20 @@ main{
                 }
             }
             &.article{
-                width: 250px;
+                width: 254px;
                 gap: 0;
                 background-color: $white;
                 padding: 2px;
                 a{  
-                    width: 100%;
+                    width: 250px;
                     img{
                         margin: 0;
-                        width: 100%;
+                        width: 250px;
                         height: 100px;
                         object-fit: cover;
                     }
                 }
-                h4{
+                p{
                     font-size: 1.8rem;
                     line-height: 1;
                     padding: 0 4px 2px 4px;

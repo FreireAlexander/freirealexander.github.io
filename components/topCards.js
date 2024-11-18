@@ -6,7 +6,7 @@ export function cardBlog(item, language) {
     const cardContentBlog = `
         <a href="${item.href}${language}">
             <img fetchpriority="high" src="${item.href}coverPageSmall.webp" alt="Cover Page">
-            <h4>${title}</h4>
+            <p>${title}</p>
             <div class="status ${icons[type] ? icons[type][1] : icons[""][1] }">${type}</div>
         </a>
     `;
@@ -18,7 +18,7 @@ export function cardProject(item, language) {
     const cardContentBlog = `    
             <a href="${item.href}${language}">
                 <img fetchpriority="high" src="${item.href}coverPageSmall.webp" alt="Cover Page">
-                <h4>${title}</h4>
+                <p>${title}</p>
             </a>
             `;
     return cardContentBlog;

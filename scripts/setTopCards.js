@@ -9,27 +9,23 @@ const language = getLanguage();
 async function setTopCards() {
     const jsonFile = getJSONFilePath();
     try {
-        const response = await fetch(jsonFile); // Ruta al archivo JSON
+        const response = await fetch(jsonFile);
         if (!response.ok) {
             throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
-        allItems = data.filter((item)=>item.show); // Guardar los datos originales
+        allItems = data.filter((item)=>item.show);
         filteredItems =  allItems.filter((item) => item.top);
-        createTopCards(filteredItems); // Generar las primeras tarjetas
+        createTopCards(filteredItems);
     } catch (error) {
         console.error(error);
     }
 }
 
-function createTopCards(items, clear = false) {
+function createTopCards(items) {
     const container = document.getElementById('top-3');
-    if (clear) {
-        container.innerHTML = ''; // Limpiar el contenedor si el parámetro clear es verdadero
-    }
     if (items.length === 0) {
-        // Mostrar mensaje de "No se encontraron resultados"
-        container.innerHTML = ''; // Limpiar cualquier contenido previo
+        container.innerHTML = '';
         const noResultsMessage = document.createElement('div');
         noResultsMessage.classList.add('card');
         noResultsMessage.innerHTML = `
@@ -65,5 +61,4 @@ function createTopCards(items, clear = false) {
     }
 }
 
-// Cargar los datos cuando el documento esté listo
 document.addEventListener('DOMContentLoaded', setTopCards);

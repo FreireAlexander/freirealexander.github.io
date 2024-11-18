@@ -356,7 +356,7 @@ main #top-3 article.portfolio img {
   border: 4px solid #9f7928;
   object-fit: cover;
 }
-main #top-3 article.portfolio h4 {
+main #top-3 article.portfolio p {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -369,21 +369,21 @@ main #top-3 article.portfolio h4 {
   clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%, 20px 50%);
 }
 main #top-3 article.article {
-  width: 250px;
+  width: 254px;
   gap: 0;
   background-color: #f3f5f7;
   padding: 2px;
 }
 main #top-3 article.article a {
-  width: 100%;
+  width: 250px;
 }
 main #top-3 article.article a img {
   margin: 0;
-  width: 100%;
+  width: 250px;
   height: 100px;
   object-fit: cover;
 }
-main #top-3 article.article h4 {
+main #top-3 article.article p {
   font-size: 1.8rem;
   line-height: 1;
   padding: 0 4px 2px 4px;
