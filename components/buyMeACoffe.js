@@ -14,7 +14,7 @@ const translate = {
                 desarrollando más y más proyectos y muchísimos más
                 contenido        
         `,
-        button: "Buy me a coffe "   
+        button: "Invitar Café"   
     },
     it:{
         title: "Invite me a coffe",
@@ -22,7 +22,7 @@ const translate = {
         un caffè mi aiuta a realizzare 
         progetti sempre più interessanti 
         e contenuti`,
-        button: "Buy me a coffe "   
+        button: "Invitare al caffè"   
     }
 }
 
