@@ -326,10 +326,11 @@ section.section{
 
 main{
     #top-3{
-        min-height: 350px;
         display: grid;
         place-items: center;
         row-gap: 64px;
+        min-height: 950px;
+        width: 100%;
         @media (width>=650px){
             grid-template-columns: repeat(2, 1fr);
             column-gap: 64px;
