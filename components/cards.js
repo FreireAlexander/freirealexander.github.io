@@ -106,7 +106,7 @@ export function cardProject(item, language) {
                     <small class="update"> ${translate[language].lastRevision} ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</small>
                     <h3><span>${title}</span><span>${item.version}</span></h3>
                     <div class="card-data">
-                        <small><strong>${item.author}</strong> ${translate[language].firstPublishedOn} ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
+                        <small><strong>${item.author}</strong> ${translate[language].firstPublishedOn} ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</small>
                     </div>
                     <div class="card-tags">
                         ${tags.map(tag => `

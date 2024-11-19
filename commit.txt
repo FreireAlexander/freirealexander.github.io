@@ -1,3 +1,3 @@
-BugFixed(Multilanguages):
-    - Reduce Javascript Files
+feat():
+    - searchBar multilanguage
 author: Zero

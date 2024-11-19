@@ -5,7 +5,7 @@
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "firstPublishDate": "2024-11-01",
+        "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
         "href": "/portfolio/P240007/",
         "status": {"":"development","es":"en desarrollo"},
@@ -24,7 +24,7 @@
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "firstPublishDate": "2024-11-01",
+        "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
         "href": "/portfolio/P240006/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
@@ -36,11 +36,11 @@
     },
     {   
         "id": "P240005",
-        "show": true,
+        "show": false,
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "firstPublishDate": "2024-11-01",
+        "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
         "href": "/portfolio/P240005/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
@@ -56,7 +56,7 @@
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "firstPublishDate": "2024-11-01",
+        "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-01", 
         "href": "/portfolio/P240004/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
@@ -68,11 +68,11 @@
     },
     {   
         "id": "P240003",
-        "show": true,
+        "show": false,
         "top": false,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "firstPublishDate": "2024-11-01",
+        "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-17",
         "href": "/portfolio/P240003/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
@@ -84,11 +84,11 @@
     },
     {   
         "id": "P240002",
-        "show": true,
+        "show": false,
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "firstPublishDate": "2024-11-01",
+        "publishDate": "2024-11-01",
         "lastUpdate": "2024-11-01",
         "href": "/portfolio/P240002/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
@@ -104,12 +104,23 @@
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "firstPublishDate": "2024-11-01",
-        "lastUpdate": "2024-11-15",
+        "publishDate": "2024-11-01",
+        "lastUpdate": "2024-11-19",
         "href": "/portfolio/P240001/",
-        "status": {"":"development","es":"en desarrollo", "it":"produzione"},
-        "title": {"":"Civil Engineering Projects"},
-        "description": {"":""},
+        "status": {
+            "":"development",
+            "es":"en desarrollo",
+            "it":"produzione"
+        },
+        "title": {
+            "":"Civil Engineering Projects",
+            "es":"Proyectos de Ingeniería Civil",
+            "it":"Progetti d'Ingegneria Civile"
+        },
+        "description": {
+            "":"",
+            "es":""
+        },
         "tags": {
             "":["civil engineering", "cAD", "design", "php"]
         }

@@ -1,4 +1,5 @@
 import { cardBlog, cardProject } from '../components/cards.js';
+import { searchBar } from '../components/searchBar.js';
 import { getLanguage, getPath, getJSONFilePath } from './utils.js';
 
 let allItems = [];
@@ -122,15 +123,25 @@ function filterCards(searchTerm, filter) {
 
     // Filtrado adicional por fecha si se selecciona "Date" y hay una fecha ingresada
     if (filter === 'date' && dateInput) {
-        const filterDate = new Date(dateInput);
+        
+        const filterDate = new Date(dateInput + "T00:00:00-05:00").toLocaleDateString();
 
         filteredItems = filteredItems.filter(item => {
             const itemDate = new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString();
             if (dateFilter === 'on') {
-                return itemDate.toDateString() === filterDate.toDateString();
+                console.log("lookig for date ON");
+                console.log(itemDate);
+                console.log(filterDate);
+                return itemDate === filterDate;
             } else if (dateFilter === 'before') {
+                console.log("lookig for date BEFORE");
+                console.log(itemDate);
+                console.log(filterDate);
                 return itemDate < filterDate;
             } else if (dateFilter === 'after') {
+                console.log("lookig for date AFTER");
+                console.log(itemDate);
+                console.log(filterDate);
                 return itemDate > filterDate;
             }
             return false;
@@ -142,40 +153,57 @@ function filterCards(searchTerm, filter) {
     toggleLoadMoreButton(); // Mostrar u ocultar el botón de cargar más
 }
 
-// Actualizar la posición al cargar la página
+function setSearchBar(){
+    const searchBarElement = document.getElementById("search-container");
+    if (searchBarElement){
+        let language = getLanguage();
+        searchBarElement.innerHTML = searchBar(language);
+        initializeSearchBarEvents();
+    }
+}
+
+function initializeSearchBarEvents() {
+    const searchInput = document.getElementById('search-input');
+    const searchFilter = document.getElementById('search-filter');
+    const dateInput = document.getElementById('date-input');
+    const dateFilter = document.getElementById('date-filter');
+
+    if (searchInput && searchFilter) {
+        // Evento para el input de búsqueda
+        searchInput.addEventListener('input', () => {
+            filterCards(searchInput.value, searchFilter.value);
+        });
+
+        // Evento para el cambio de filtro
+        searchFilter.addEventListener('change', () => {
+            const isDateFilter = searchFilter.value === 'date';
+            if (dateInput && dateFilter) {
+                dateInput.style.display = isDateFilter ? 'inline-block' : 'none';
+                dateFilter.style.display = isDateFilter ? 'inline-block' : 'none';
+            }
+            filterCards(searchInput.value, searchFilter.value);
+        });
+    }
+
+    // Eventos para el filtrado por fecha
+    if (dateInput) {
+        dateInput.addEventListener('input', () => {
+            filterCards(searchInput.value, searchFilter.value);
+        });
+    }
+
+    if (dateFilter) {
+        dateFilter.addEventListener('change', () => {
+            filterCards(searchInput.value, searchFilter.value);
+        });
+    }
+}
+
 window.addEventListener('load', updateStickySectionPosition);
-
-// Actualizar la posición cuando se redimensiona la ventana
 window.addEventListener('resize', updateStickySectionPosition);
-
-// Cargar los datos cuando el documento esté listo
+document.addEventListener('DOMContentLoaded', setSearchBar);
 document.addEventListener('DOMContentLoaded', setCardsPages);
-
 // Escuchar el clic en el botón de cargar más
 const loadMoreButton = document.getElementById('load-more-button');
 loadMoreButton.addEventListener('click', loadMoreCards);
 
-// Escuchar los cambios en el campo de búsqueda
-const searchInput = document.getElementById('search-input');
-const searchFilter = document.getElementById('search-filter');
-const dateInput = document.getElementById('date-input');
-const dateFilter = document.getElementById('date-filter');
-
-searchInput.addEventListener('input', () => {
-    filterCards(searchInput.value, searchFilter.value);
-});
-
-searchFilter.addEventListener('change', () => {
-    const isDateFilter = searchFilter.value === 'date';
-    dateInput.style.display = isDateFilter ? 'inline-block' : 'none';
-    dateFilter.style.display = isDateFilter ? 'inline-block' : 'none';
-    filterCards(searchInput.value, searchFilter.value);
-});
-
-dateInput.addEventListener('input', () => {
-    filterCards(searchInput.value, searchFilter.value);
-});
-
-dateFilter.addEventListener('change', () => {
-    filterCards(searchInput.value, searchFilter.value);
-});

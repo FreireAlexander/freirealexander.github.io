@@ -53,6 +53,9 @@ function createTopCards(items) {
             container.appendChild(card);
         });
     }
+    if (items.length === 1){
+        container.style = 'min-height: 350px';
+    }
 }
 
 document.addEventListener('DOMContentLoaded', setTopCards);

@@ -26,9 +26,9 @@ export function setFooter(language) {
             <a href="https://github.com/FreireAlexander"  class="icon--nf">
                 &#xf09b;
             </a>
-            <a href="https://www.youtube.com/channel/UCx2OMBd9f3XKPjedSKJAPqw" class="icon--nf" style="font-size: 2.8rem;">
+            <a href="https://www.youtube.com/channel/UCx2OMBd9f3XKPjedSKJAPqw" class="icon--nf">
                 &#xf16a;
-        </a>
+            </a>
         </section>
         <section class="signature">
             <p>${translate.signature[language]} Freire Alexander Palomino Palma</p>
