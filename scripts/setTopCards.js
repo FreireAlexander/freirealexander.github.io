@@ -1,13 +1,12 @@
-import { cardBlog, cardProject } from '../components/topCards.js';
-import { icons, getLanguage, getJSONFilePath, getPath } from './utils.js';
+import { topCardBlog, topCardProject } from '../components/topCards.js';
+import { getLanguage, getJSONFilePath } from './utils.js';
 
 let allItems = [];
 let filteredItems = [];
-const path = getPath();
 const language = getLanguage();
+const jsonFile = getJSONFilePath();
 
 async function setTopCards() {
-    const jsonFile = getJSONFilePath();
     try {
         const response = await fetch(jsonFile);
         if (!response.ok) {
@@ -37,11 +36,14 @@ function createTopCards(items) {
         container.appendChild(noResultsMessage);
         return;
     }
-    if (path === 'blogs') {
+    if (items.length === 1){
+        container.style = 'min-height: 350px';
+    }
+    if (jsonFile.includes('/blogs')) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('article');
-            const CardContent = cardBlog(item, language, icons);
+            const CardContent = topCardBlog(item, language);
             card.innerHTML = CardContent;
             container.appendChild(card);
         });
@@ -49,12 +51,9 @@ function createTopCards(items) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('portfolio');
-            card.innerHTML = cardProject(item, language, icons);
+            card.innerHTML = topCardProject(item, language);
             container.appendChild(card);
         });
-    }
-    if (items.length === 1){
-        container.style = 'min-height: 350px';
     }
 }
 

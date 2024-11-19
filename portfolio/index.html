@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Civil Engineering, Coding and Learning">
-        <title>Portfolio</title>
-        <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
-        <link rel="stylesheet" href="/styles/styles.css" type="text/css">
-        <link rel="preload" href="/fonts/googleFont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
-        <script type="text/javascript">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-TW9HZ9TTYP');
-        </script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Civil Engineering, Coding and Learning">
+    <title>Portfolio</title>
+    <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
+    <link rel="preload" href="/fonts/googleFont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW9HZ9TTYP"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TW9HZ9TTYP');
+    </script>
+</head>
 <body>
-    <div class="body">
-        <header id="lang-selector"></header>
-        <header id="header"></header>
-        <main>
-            <section class="section">
-                <h1> 
-                    Projects Portfolio
-                </h1>
+<div class="body">
+    <header id="lang-selector"></header>
+    <header id="header"></header>
+    <main>
+        <section class="section">
+            <h1> 
+                Projects Portfolio
+            </h1>
+        </section>
+        <section class="section">
+            <h2>Recommend Projects</h2>
+            <section id="top-3"></section>
+        </section>
+        <section class="section">
+            <div id="search-container"></div>           
+            <section>
+                <div id="cards-container"></div>
+                <div style="display: grid; place-items: center;">
+                    <button id="load-more-button" class="button-primary" style="display: none;">Load More Projects</button>
+                </div>
             </section>
-            <section class="section">
-                <h2>Recommend Projects</h2>
-                <section id="top-3"></section>
-            </section>
-            <section class="section">
-                <div id="search-container"></div>           
-                <section>
-                    <div id="cards-container"></div>
-                    <div style="display: grid; place-items: center;">
-                        <button id="load-more-button" class="button-primary" style="display: none;">Load More Projects</button>
-                    </div>
-                </section>
-            </section>
-            <section id="buy-me-a-coffe" class="section"></section>
-            <section id="keep-exploring" class="section"></section>
-        </main>
-        <footer id="footer"></footer>
-        <footer id="header-mobile"></footer>
-    </div>
+        </section>
+        <section id="buy-me-a-coffe" class="section"></section>
+        <section id="keep-exploring" class="section"></section>
+    </main>
+    <footer id="footer"></footer>
+    <footer id="header-mobile"></footer>
+</div>
 </body>
 <script type="module" src="/scripts/loadBasics.js"></script>
 <script type="module" src="/scripts/setTopCards.js"></script>

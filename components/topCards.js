@@ -1,4 +1,6 @@
-export function cardBlog(item, language, iconsExport) {
+import { icons } from "../scripts/utils.js";
+
+export function topCardBlog(item, language) {
     const title = item.title[language] ? item.title[language] : item.title[""];
     const type = item.type[language] ? item.type[language] : item.type[""];
     const cardContentBlog = `
@@ -6,12 +8,12 @@ export function cardBlog(item, language, iconsExport) {
             <img src="${item.href}coverPageSmall.webp" alt="Cover Page">
             <p>${title}</p>
         </a>
-        <div class="status ${iconsExport[type] ? iconsExport[type][1] : iconsExport[""][1] }">${type}</div>
+        <div class="status ${icons[type] ? icons[type][1] : icons[""][1] }">${type}</div>
     `;
     return cardContentBlog;
 }
 
-export function cardProject(item, language) {
+export function topCardProject(item, language) {
     const title = item.title[language] ? item.title[language] : item.title[""];     
     const cardContentBlog = `    
             <a class="card--top" href="${item.href}${language}">
