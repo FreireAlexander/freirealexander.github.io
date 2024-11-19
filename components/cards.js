@@ -58,7 +58,7 @@ export function cardBlog(item, language) {
     const description = item.description[language] ? item.description[language] : item.description[""];    
     const cardContentBlog = `
         <figure class="card-cover">
-            <img src="${item.href}/coverPageSmall.webp" alt="${title}">
+            <img src="${item.href}coverPageSmall.webp" alt="${title}">
             <div class="status ${icons[type] ? icons[type][1] : icons[""][1] }">
                 <span class="icon--nf">${icons[type] ? icons[type][0] : icons[""][0] }</span>
                 <p>${type}</p>
@@ -96,7 +96,7 @@ export function cardProject(item, language) {
     const description = item.description[language] ? item.description[language] : item.description[""];     
     const cardContentBlog = `
                 <figure class="card-cover">
-                    <img src="${item.href}/coverPageSmall.webp" alt="${title}">
+                    <img src="${item.href}coverPageSmall.webp" alt="${title}">
                     <div class="status ${icons[status] ? icons[status][1] : icons[""][1] }">
                         <span class="icon--nf">${icons[status] ? icons[status][0] : icons[""][0] }</span>
                         <p>${status}</p>

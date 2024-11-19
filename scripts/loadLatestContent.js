@@ -1,5 +1,5 @@
 import { cardBlog, cardProject } from '../components/cards.js';
-import { getLanguage, getJSONFilePath } from './utils.js';
+import { getLanguage } from './utils.js';
 
 let allItems = [];
 let currentIndex = 0;
