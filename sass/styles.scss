@@ -362,6 +362,7 @@ main{
                     place-items: center;
                     width: 250px;
                     img{
+                        width: 250px;
                         height: 250px;
                         border-radius: 50%;
                         border: 4px solid #9f7928;
@@ -399,7 +400,6 @@ main{
                 a.card--top{  
                     width: 250px;
                     img{
-                        margin: 0;
                         width: 250px;
                         height: 100px;
                         object-fit: cover;
