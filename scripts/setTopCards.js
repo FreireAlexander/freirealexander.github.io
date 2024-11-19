@@ -37,12 +37,6 @@ function createTopCards(items) {
         container.appendChild(noResultsMessage);
         return;
     }
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = items[0].href + "coverPageSmall.webp";
-    const head = document.head;
-    head.insertBefore(link, head.children[7]);
     if (path === 'blogs') {
         items.forEach(item => {
             const card = document.createElement('article');
