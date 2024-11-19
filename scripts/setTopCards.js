@@ -36,9 +36,6 @@ function createTopCards(items) {
         container.appendChild(noResultsMessage);
         return;
     }
-    if (items.length === 1){
-        container.style = 'min-height: 350px';
-    }
     if (jsonFile.includes('/blogs')) {
         items.forEach(item => {
             const card = document.createElement('article');
