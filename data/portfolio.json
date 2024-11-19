@@ -36,7 +36,7 @@
     },
     {   
         "id": "P240005",
-        "show": false,
+        "show": true,
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
@@ -84,7 +84,7 @@
     },
     {   
         "id": "P240002",
-        "show": false,
+        "show": true,
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
