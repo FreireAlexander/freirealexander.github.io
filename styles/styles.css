@@ -409,19 +409,42 @@ main #top-3 article.article a.card--top p {
   margin: 0;
   color: #1d1e1d;
 }
-main #top-3 article.article a.card--top a {
-  position: relative;
-}
-main #top-3 article.article a.card--top a .status {
+main #top-3 article.article div.status {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2px 16px;
-  background-color: #916A08;
+  width: fit-content;
+  display: flex;
+  gap: 4px;
   border-bottom-left-radius: 8px;
+  padding: 4px 8px;
+  font-size: 1.4rem;
+  background-color: #006158;
+  text-transform: capitalize;
 }
-main #top-3 article.article a.card--top a .status.news {
+main #top-3 article.article div.status.gray {
+  background-color: #444447;
+  color: #1d1e1d;
+}
+main #top-3 article.article div.status.white {
+  background-color: #f3f5f7;
+  color: #1d1e1d;
+}
+main #top-3 article.article div.status.red {
+  background-color: #821F00;
+  color: #f3f5f7;
+}
+main #top-3 article.article div.status.yellow {
+  background-color: #916A08;
+  color: #f3f5f7;
+}
+main #top-3 article.article div.status.green {
+  background-color: #006158;
+  color: #f3f5f7;
+}
+main #top-3 article.article div.status.blue {
   background-color: #000080;
+  color: #f3f5f7;
 }
 main #top-3 article:hover, main #top-3 article:focus {
   transition: transform 200ms ease-in-out;

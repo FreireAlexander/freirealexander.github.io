@@ -1,4 +1,4 @@
-export var icons = {
+export const icons = {
     "": ["\udb81\udcf9", "green"],
     //Status for Projects
     "archived": ["\uf187", "gray"],

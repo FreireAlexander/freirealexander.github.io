@@ -1,5 +1,5 @@
 import { cardBlog, cardProject } from '../components/topCards.js';
-import { getLanguage, getJSONFilePath, getPath } from './utils.js';
+import { icons, getLanguage, getJSONFilePath, getPath } from './utils.js';
 
 let allItems = [];
 let filteredItems = [];
@@ -41,7 +41,7 @@ function createTopCards(items) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('article');
-            const CardContent = cardBlog(item, language);
+            const CardContent = cardBlog(item, language, icons);
             card.innerHTML = CardContent;
             container.appendChild(card);
         });
@@ -49,7 +49,7 @@ function createTopCards(items) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('portfolio');
-            card.innerHTML = cardProject(item, language);
+            card.innerHTML = cardProject(item, language, icons);
             container.appendChild(card);
         });
     }

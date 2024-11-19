@@ -1,5 +1,5 @@
 import { cardBlog, cardProject } from '../components/cards.js';
-import { getLanguage } from './utils.js';
+import { icons, getLanguage } from './utils.js';
 
 let allItems = [];
 let currentIndex = 0;
@@ -47,7 +47,7 @@ async function createCards(items, section, clear = false) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            const CardContent = cardBlog(item, language);
+            const CardContent = cardBlog(item, language, icons);
             card.innerHTML = CardContent;
             container.appendChild(card);
         });
@@ -55,7 +55,7 @@ async function createCards(items, section, clear = false) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            card.innerHTML = cardProject(item, language);
+            card.innerHTML = cardProject(item, language, icons);
             container.appendChild(card);
         });
     }

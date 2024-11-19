@@ -1,6 +1,6 @@
 import { cardBlog, cardProject } from '../components/cards.js';
 import { searchBar } from '../components/searchBar.js';
-import { getLanguage, getPath, getJSONFilePath } from './utils.js';
+import { icons, getLanguage, getPath, getJSONFilePath } from './utils.js';
 
 let allItems = [];
 let filteredItems = [];
@@ -66,7 +66,7 @@ function createCards(items, clear = false) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            const CardContent = cardBlog(item, language);
+            const CardContent = cardBlog(item, language, icons);
             card.innerHTML = CardContent;
             container.appendChild(card);
         });
@@ -74,7 +74,7 @@ function createCards(items, clear = false) {
         items.forEach(item => {
             const card = document.createElement('article');
             card.classList.add('card');
-            card.innerHTML = cardProject(item, language);
+            card.innerHTML = cardProject(item, language, icons);
             container.appendChild(card);
         });
     }

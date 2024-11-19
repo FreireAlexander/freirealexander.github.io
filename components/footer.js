@@ -1,11 +1,12 @@
+const translate = {
+    signature: {
+        "": "Design by ",
+        "es": "Diseñado por ",
+        "it": "Design di "
+    } 
+};
+
 export function setFooter(language) {
-    const translate = {
-        signature: {
-            "": "Design by ",
-            "es": "Diseñado por ",
-            "it": "Design di "
-        } 
-    };
     const footer = `
         <section class="brand">
             <div class="logo">

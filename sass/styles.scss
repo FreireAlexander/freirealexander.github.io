@@ -391,6 +391,7 @@ main{
                 }
             }
             &.article{
+                $border-radius: 8px;
                 display: grid;
                 place-items: center;
                 width: 254px;
@@ -411,19 +412,42 @@ main{
                         margin: 0;
                         color: $black;
                     }
-                    a{
-                        position: relative;
-                        .status{
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            padding: 2px 16px;
-                            background-color: $yellow;
-                            border-bottom-left-radius: 8px;
-                            &.news{
-                                background-color: $blue;
-                            }
-                        }
+                }
+                div.status{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: fit-content;
+                    display: flex;
+                    gap: 4px;
+                    border-bottom-left-radius: $border-radius;
+                    padding: 4px 8px;
+                    font-size: 1.4rem;
+                    background-color: $green;
+                    text-transform: capitalize;
+                    &.gray{
+                        background-color: $gray;
+                        color: $black;
+                    }
+                    &.white{
+                        background-color: $white;
+                        color: $black;
+                    }
+                    &.red{
+                        background-color: $red;
+                        color: $white;
+                    }
+                    &.yellow{
+                        background-color: $yellow;
+                        color: $white;
+                    }
+                    &.green{
+                        background-color: $green;
+                        color: $white;
+                    }
+                    &.blue{
+                        background-color: $blue;
+                        color: $white;
                     }
                 }
                 
