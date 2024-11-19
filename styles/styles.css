@@ -333,10 +333,14 @@ main #top-3 {
   min-height: 950px;
   width: 100%;
 }
+main #top-3:has(> :nth-child(1)) article.article:nth-child(1) {
+  grid-column: 1/-1;
+}
 @media (width >= 650px) {
   main #top-3 {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 64px;
+    min-height: 650px;
   }
   main #top-3 article:nth-child(3) {
     grid-column: 1/-1;
@@ -345,6 +349,7 @@ main #top-3 {
 @media (width >= 1440px) {
   main #top-3 {
     grid-template-columns: repeat(3, 1fr);
+    min-height: 350px;
   }
   main #top-3 article:nth-child(3) {
     grid-column: auto;
@@ -357,13 +362,10 @@ main #top-3 article {
   width: 250px;
   transition: transform 300ms ease-in-out;
 }
-main #top-3 article img {
-  width: 250px;
-}
 main #top-3 article.portfolio a.card--top {
   display: grid;
   place-items: center;
-  width: 254px;
+  width: 250px;
 }
 main #top-3 article.portfolio a.card--top img {
   height: 250px;

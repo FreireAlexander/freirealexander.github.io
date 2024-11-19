@@ -32,7 +32,7 @@ export function setBuyMeACoffe(language){
         <p>${translate[language].intro}</p>
         <div class="center" id="buy-me-a-coffe">
             <figure style="display: grid; place-items: center; width: 100%;">
-                <img src="/media/icons/dogLaptop.webp" alt="Dog browsing on internet" style="width: 250px; height: 250px; border-radius: 8px; object-fit: cover;">
+                <img src="/media/icons/dogLaptop.webp" alt="Dog browsing on internet" style="width: 280px; height: 280px; border-radius: 8px; object-fit: cover;">
             </figure>
             <div class="flex" style="justify-content: center; padding: 12px;">
                 <a href="https://www.paypal.com/donate/?hosted_button_id=VFUWTH3EM5TFE" class="button-primary container--icon">
