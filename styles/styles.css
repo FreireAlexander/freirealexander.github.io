@@ -332,9 +332,6 @@ main #top-3 {
   row-gap: 64px;
   width: 100%;
 }
-main #top-3:has(> :nth-child(1)) article.article:nth-child(1), main #top-3:has(> :nth-child(1)) article.portfolio:nth-child(1) {
-  grid-column: 1/-1;
-}
 @media (width >= 650px) {
   main #top-3 {
     grid-template-columns: repeat(2, 1fr);
