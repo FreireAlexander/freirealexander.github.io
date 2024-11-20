@@ -5,9 +5,10 @@ import { setLanguageSelector } from '../components/languageSelector.js';
 import { setBuyMeACoffe } from '../components/buyMeACoffe.js';
 import { setContactForm } from '../components/contactForm.js';
 import { setKeepExploring } from '../components/keepExploring.js';
-import { getLanguage } from './utils.js';
+import { getLanguage, getLanguageBack } from './utils.js';
 
-const language = getLanguage();
+const currentPage = window.location.pathname;
+const language = ["/thanks/", "/complete/", "/404"].some(link => currentPage.startsWith(link)) ? getLanguageBack() : getLanguage();
 
 function loadHeader() {
     const headerMobileElement = document.getElementById('header-mobile');

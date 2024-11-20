@@ -1,4 +1,3 @@
-// Index.js
 document.addEventListener("DOMContentLoaded", function() {
     const textElement = document.querySelector(".animated-text");
     const roles = [

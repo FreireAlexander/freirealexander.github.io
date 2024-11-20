@@ -31,8 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         typeWriter();
     }
-    const textElement1 = document.querySelector("[id='thanks-1']");
-    const textElement2 = document.querySelector("#thanks-2");
+    const textElement = document.getElementById("thanks-completed");
     const roles = [
                 "Merci :)",
                 "Obrigado :)",
@@ -48,6 +47,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 "green": "#00ff62",
                 "yellow": "#fff200"
             };
-    createTypewriterAnimation(textElement1, roles, colors);
-    createTypewriterAnimation(textElement2, roles, colors);
+    createTypewriterAnimation(textElement, roles, colors);
 });

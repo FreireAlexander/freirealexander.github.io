@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Civil Engineering, Coding and Learning">
-    <title>404</title>
+    <title>Freire Alexander</title>
     <link rel="shortcut icon" href="/media/brand/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="/styles/styles.css" type="text/css">
     <link rel="preload" href="/fonts/googleFont.woff2" as="font" type="font/woff2" crossorigin="anonymous">  
@@ -16,18 +16,23 @@
         gtag('js', new Date());
         gtag('config', 'G-TW9HZ9TTYP');
     </script>
+    <style>
+        #thanks{
+            display: grid;
+            height: 80vh;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="body">
     <header id="lang-selector" style="min-height: 60px;"></header>
     <header id="header"></header>
     <main>
-        <section class="section" >
-            <h1 id="message" style="text-align: center;"></h1>
+        <section id="thanks" class="section">
+            <h1 id="thanks-completed" ></h1>
+            <p id="message"></p>
             <div id="back-home"></div>
-            <figure class="work-in-progress">
-                <img  src="/media/icons/404-error.webp" alt="Page Not Found">
-            </figure>
         </section>
     </main>
     <footer id="footer"></footer>
@@ -36,15 +41,16 @@
 </body>
 <script>
     let userLanguage = navigator.language || navigator.userLanguage;
+    console.log(userLanguage.split('-')[0]);
     document.addEventListener("DOMContentLoaded", function(){
         userLanguage = userLanguage.split('-')[0];
         const language = ["es", "it"].some(lang => userLanguage.startsWith(lang)) ? userLanguage : "";
         const messageElement = document.getElementById("message");
         const translateMessageTo = {
-            "": "Page Not Found",
-            "en": "Page Not Found",
-            "es": "Pagina No Existir",
-            "it": "Boh!!! Sei Sbagliato"
+            "": "Thank you for your donation, you are very kind",
+            "en": "Thank you for your donation, you are very kind",
+            "es": "Gracias por tu donación, eres muy amable",
+            "it": "Grazie per la vostra donazione, siete molto gentili."
         }
         messageElement.innerText = `
                 ${translateMessageTo[language]}
@@ -64,4 +70,5 @@
     })
 </script>
 <script type="module" src="/scripts/loadBasics.js"></script>
+<script src="/scripts/setThanksMessage.js"></script>
 </html>

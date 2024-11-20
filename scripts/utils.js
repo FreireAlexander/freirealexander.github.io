@@ -39,6 +39,13 @@ export function getLanguage() {
     return result;
 }
 
+export function getLanguageBack() {
+    let userLanguage = navigator.language || navigator.userLanguage;
+    userLanguage = userLanguage.split('-')[0];
+    const result = ["es", "it"].some(lang => userLanguage.startsWith(lang)) ? userLanguage : "";
+    return result;
+}
+
 export function getPath() {
     const path = window.location.pathname;
     if (path.includes('/blogs/')) {
