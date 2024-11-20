@@ -31,22 +31,22 @@ async function setTopCards() {
 function displayTopPortfolio(items, language){
     const container = document.getElementById('top-3');
     items.forEach(item => {
-        counter = counter + 1;
         const card = document.createElement('article');
         card.classList.add('portfolio');
         card.innerHTML = topCardProject(item, language, counter);
         container.appendChild(card);
+        counter = counter + 1;
     });
 }
 
 function displayTopBlogs(items, language){
     const container = document.getElementById('top-3');
     items.forEach(item => {
-        counter = counter + 1;
         const card = document.createElement('article');
         card.classList.add('article');
         card.innerHTML = topCardBlog(item, language, counter);
         container.appendChild(card);
+        counter = counter + 1;
     });
 }
 
