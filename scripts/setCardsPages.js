@@ -129,19 +129,10 @@ function filterCards(searchTerm, filter) {
         filteredItems = filteredItems.filter(item => {
             const itemDate = new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString();
             if (dateFilter === 'on') {
-                console.log("lookig for date ON");
-                console.log(itemDate);
-                console.log(filterDate);
                 return itemDate === filterDate;
             } else if (dateFilter === 'before') {
-                console.log("lookig for date BEFORE");
-                console.log(itemDate);
-                console.log(filterDate);
                 return itemDate < filterDate;
             } else if (dateFilter === 'after') {
-                console.log("lookig for date AFTER");
-                console.log(itemDate);
-                console.log(filterDate);
                 return itemDate > filterDate;
             }
             return false;

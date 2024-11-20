@@ -350,18 +350,22 @@ main #top-3 {
   }
 }
 main #top-3 article {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 250px;
   transition: transform 300ms ease-in-out;
 }
-main #top-3 article.portfolio a.card--top {
+main #top-3 article.portfolio {
   display: grid;
   place-items: center;
   width: 250px;
+  height: 250px;
+  padding: 0;
+  margin: 0;
 }
-main #top-3 article.portfolio a.card--top img {
+main #top-3 article.portfolio a.card--top {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+main #top-3 article.portfolio a.card--top img.card-image {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -381,9 +385,11 @@ main #top-3 article.portfolio a.card--top p {
   clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%, 20px 50%);
 }
 main #top-3 article.article {
+  position: relative;
   display: grid;
   place-items: center;
   width: 254px;
+  height: auto;
   gap: 0;
   background-color: #f3f5f7;
   padding: 2px;
@@ -391,7 +397,7 @@ main #top-3 article.article {
 main #top-3 article.article a.card--top {
   width: 250px;
 }
-main #top-3 article.article a.card--top img {
+main #top-3 article.article a.card--top img.card-image {
   width: 250px;
   height: 100px;
   object-fit: cover;

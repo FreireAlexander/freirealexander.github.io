@@ -344,16 +344,18 @@ main{
             }
         }
         article{
-            position: relative;
-            display: grid;
-            place-items: center;
-            width: 250px;
             &.portfolio{
+                display: grid;
+                place-items: center;
+                width: 250px;
+                height: 250px;
+                padding: 0;
+                margin: 0;
                 a.card--top{
-                    display: grid;
-                    place-items: center;
+                    position: relative;
                     width: 250px;
-                    img{
+                    height: 250px;
+                    img.card-image{
                         width: 250px;
                         height: 250px;
                         border-radius: 50%;
@@ -383,16 +385,18 @@ main{
                 }
             }
             &.article{
+                position: relative;
                 $border-radius: 8px;
                 display: grid;
                 place-items: center;
                 width: 254px;
+                height: auto;
                 gap: 0;
                 background-color: $white;
                 padding: 2px;
-                a.card--top{  
+                a.card--top{ 
                     width: 250px;
-                    img{
+                    img.card-image{
                         width: 250px;
                         height: 100px;
                         object-fit: cover;
