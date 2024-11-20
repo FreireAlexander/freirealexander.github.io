@@ -1,5 +1,5 @@
 import { projectInfo, BlogInfo } from '../components/pageInfo.js';
-import { getJSONFilePath, getLanguage, icons } from './utils.js';
+import { getJSONFilePath, getLanguage } from './utils.js';
 
 const jsonFile = getJSONFilePath();
 const language = getLanguage();

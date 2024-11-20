@@ -1,7 +1,6 @@
 import { topCardBlog, topCardProject } from '../components/topCards.js';
 import { getLanguage, getJSONFilePath } from './utils.js';
 
-let allItems = [];
 let filteredItems = [];
 const language = getLanguage();
 const jsonFile = getJSONFilePath();
@@ -13,45 +12,37 @@ async function setTopCards() {
             throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
-        allItems = data.filter((item)=>item.show);
-        filteredItems =  allItems.filter((item) => item.top);
-        createTopCards(filteredItems);
+        filteredItems =  data.filter((item) => item.top && item.show);
+        if (jsonFile.includes('/portfolio.json')){
+            console.log("Displaying Projects TOP");
+            displayTopPortfolio(filteredItems, language);
+        } else{
+            console.log("Displaying BLOGS TOP")
+            displayTopBlogs(filteredItems, language);
+        }
     } catch (error) {
         console.error(error);
     }
 }
 
-function createTopCards(items) {
+function displayTopPortfolio(items, language){
     const container = document.getElementById('top-3');
-    if (items.length === 0) {
-        container.innerHTML = '';
-        const noResultsMessage = document.createElement('div');
-        noResultsMessage.classList.add('card');
-        noResultsMessage.innerHTML = `
-            <figure style="display: grid; place-items: center;">
-                <img src="/media/icons/404-error.webp" alt="No results" style="width: 250px; height: 250px; object-fit: contain;">
-            </figure>
-            <h2 style="width: 100%; text-align: center;">NOTHING TO SHOW HERE</h2>
-        `;
-        container.appendChild(noResultsMessage);
-        return;
-    }
-    if (jsonFile.includes('/blogs')) {
-        items.forEach(item => {
-            const card = document.createElement('article');
-            card.classList.add('article');
-            const CardContent = topCardBlog(item, language);
-            card.innerHTML = CardContent;
-            container.appendChild(card);
-        });
-    } else {
-        items.forEach(item => {
-            const card = document.createElement('article');
-            card.classList.add('portfolio');
-            card.innerHTML = topCardProject(item, language);
-            container.appendChild(card);
-        });
-    }
+    items.forEach(item => {
+        const card = document.createElement('article');
+        card.classList.add('portfolio');
+        card.innerHTML = topCardProject(item, language);
+        container.appendChild(card);
+    });
+}
+
+function displayTopBlogs(items, language){
+    const container = document.getElementById('top-3');
+    items.forEach(item => {
+        const card = document.createElement('article');
+        card.classList.add('article');
+        card.innerHTML = topCardBlog(item, language);
+        container.appendChild(card);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', setTopCards);
