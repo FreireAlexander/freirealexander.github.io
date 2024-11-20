@@ -4,6 +4,7 @@ import { getLanguage, getJSONFilePath } from './utils.js';
 let filteredItems = [];
 const language = getLanguage();
 const jsonFile = getJSONFilePath();
+let counter = 0;
 
 async function setTopCards() {
     try {
@@ -25,12 +26,15 @@ async function setTopCards() {
     }
 }
 
+
+
 function displayTopPortfolio(items, language){
     const container = document.getElementById('top-3');
     items.forEach(item => {
+        counter = counter + 1;
         const card = document.createElement('article');
         card.classList.add('portfolio');
-        card.innerHTML = topCardProject(item, language);
+        card.innerHTML = topCardProject(item, language, counter);
         container.appendChild(card);
     });
 }
@@ -38,9 +42,10 @@ function displayTopPortfolio(items, language){
 function displayTopBlogs(items, language){
     const container = document.getElementById('top-3');
     items.forEach(item => {
+        counter = counter + 1;
         const card = document.createElement('article');
         card.classList.add('article');
-        card.innerHTML = topCardBlog(item, language);
+        card.innerHTML = topCardBlog(item, language, counter);
         container.appendChild(card);
     });
 }
