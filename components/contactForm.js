@@ -4,29 +4,30 @@ const translate = {
         name: "Name",
         yourName: "Your Name",
         email: "Email",
-        yourEmail: "Your Email myemail@email.com",
+        yourEmail: "youremail@email.com",
         message: "Leave your message",
-        yourMessage: `Feel free to write anything you want to share, I'll be glad to read and get in contact as soon as possible...`,        button: "Send Message"
+        yourMessage: `Feel free to write anything you want to share, I'll be glad to read and get in contact as soon as possible...`,        
+        button: "Send Message"
     },
     es:{
-        title: " Ponte en Contacto Conmigo ",
+        title: " Pongámonos en contacto ",
         name: "Nombre",
         yourName: "Tu Nombre",
         email: "Email",
-        yourEmail: "Tu Email por ejemplo myemail@email.com",
+        yourEmail: "tuemail@email.com",
         message: "Deja tu mensaje",
-        yourMessage: "Sientete libre de escribir lo que quieras, estaré encantado de leer tu mensaje y ponernos en contacto tan pronto como sea posible",
+        yourMessage: "Siéntete libre de escribir cualquier cosa que quieras compartir, estaré encantado de leerte y ponerme en contacto contigo lo antes posible...",
         button: "Enviar Mensaje"  
     },
     it:{
-        title: " Metteti al Contatto con Me ",
+        title: " Mettiamoci in contatto ora ",
         name: "Nome",
-        yourName: "Tu Nome",
+        yourName: "Tuo Nome",
         email: "Email",
-        yourEmail: "La Tua Email come ad esempio myemail@email.com",
-        message: "Lascia il tuo messagio",
+        yourEmail: "latuaemail@email.com",
+        message: "Lasciate il vostro messaggio",
         yourMessage: `Sentitevi liberi di scrivere qualsiasi cosa vogliate condividere, sarò lieto di leggervi e di mettermi in contatto al più presto...`,
-        button: "Invia Messagio" 
+        button: "Invia il Messagio" 
     }
 }
 

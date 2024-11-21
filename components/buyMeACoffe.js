@@ -1,28 +1,26 @@
 const translate = {
     "":{
-        title: "Invite me a coffe",
-        intro: `I invite you to buy me a coffe, 
-                a shot of coffe helps me to bring 
-                more and more interestings projects 
-                and content`,
-        button: "Buy me a coffe "
+        title: "Buy me a coffe",
+        intro: `A shot of coffe brings me energy for
+                creating more interesting projects and content`,
+        button: "Send coffe"
     },
     es:{
         title: "Invitame un Café",
-        intro: `Invitame un café, una copa de café 
-                me brindaría las energías necesarias para continuar
-                desarrollando más y más proyectos y muchísimos más
-                contenido        
+        intro: `Una taza de café 
+                me brinda la energía necesaria para 
+                desarrollar proyectos y contenido 
+                interesante        
         `,
         button: "Invitar Café"   
     },
     it:{
-        title: "Invite me a coffe",
-        intro: `Vi invito a offrirmi un caffè, 
-        un caffè mi aiuta a realizzare 
-        progetti sempre più interessanti 
-        e contenuti`,
-        button: "Invitare al caffè"   
+        title: "Offritemi un caffè",
+        intro: ` 
+        Un caffè mi aiuta a realizzare 
+        progetti e contenuti sempre più interessanti 
+        `,
+        button: "Offrire un caffè"   
     }
 }
 
