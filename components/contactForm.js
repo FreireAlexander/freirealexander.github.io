@@ -37,7 +37,7 @@ export function setContactForm(language){
         <form 
             id="contact-form" 
             class="contact-form" 
-            action="https://formspree.io/f/mnnqpqrz"
+            action="https://formsubmit.co/freirealexander0214+website@gmail.com" 
             method="POST"
             >
             <label for="name">${translation.name}</label>
@@ -46,7 +46,8 @@ export function setContactForm(language){
             <input type="email" id="email" name="email" required autocomplete="email" placeholder="${translation.yourEmail}" required>
             <label  for="message">${translation.message}</label>
             <textarea class="textarea" id="message" name="message" placeholder="${translation.yourMessage}" required></textarea>
-            <input type="hidden" name="_next" value="/thanks.html">
+            <input type="hidden" name="_next" value="https://freirealexander.top/thanks/">
+            <input type="text" name="_honey" style="display:none">
             <input type="hidden" name="_subject" value="New submission from home page!">
             <input type="hidden" name="_autoresponse" value="Thank you for your message. We will be in contact as soon as possible, have a nice day &#128075;">
             <button type="submit" id="button--send" class="button-primary container--icon"><span class="icon--nf send">&#xf1d8;</span>${translation.button}</button>
