@@ -40,8 +40,8 @@ export function BlogInfo(item, language) {
                     1024px
                 "
             >
-            <div class="status ${icons[status] ? icons[status][1] : icons[status][1]}">
-                <span class="icon--nf">${icons[status] ? icons[status][0] : icons[status][0]}</span>
+            <div class="status ${icons[status] ? icons[status][1] : icons[""][1]}">
+                <span class="icon--nf">${icons[status] ? icons[status][0] : icons[""][0]}</span>
                 <h3>${status}</h3>
             </div>
         </section>
@@ -56,7 +56,7 @@ export function BlogInfo(item, language) {
                         ${tags.map(tag => `
                             <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
                                 <span class="icon--nf">
-                                    ${icons[tag] ? icons[tag][0] : ""}
+                                    ${icons[tag] ? icons[tag][0] : icons[""][0]}
                                 </span>
                                 ${tag}
                             </p>
@@ -98,8 +98,8 @@ export function projectInfo(item, language) {
                     1024px
                 "
             >
-            <div class="status ${icons[status] ? icons[status][1] : icons[status][1]}">
-                <span class="icon--nf">${icons[status] ? icons[status][0] : icons[status][0]}</span>
+            <div class="status ${icons[status] ? icons[status][1] : icons[""][1]}">
+                <span class="icon--nf">${icons[status] ? icons[status][0] : icons[""][0]}</span>
                 <h3>${status}</h3>
             </div>
         </section>
@@ -108,13 +108,13 @@ export function projectInfo(item, language) {
                 <h1 class="title">${title} - ${item.version}</h1>
                 <div>
                     <p class="author"> ${item.author}</p>
-                    <p>${translate[language].firstPublishedOn} ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
-                    <p>${translate[language].lastUpdate} ${new Date(item.firstPublishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
+                    <p>${translate[language].firstPublishedOn} ${new Date(item.publishDate + "T00:00:00-05:00").toLocaleDateString()}</p>
+                    <p>${translate[language].lastUpdate} ${new Date(item.lastUpdate + "T00:00:00-05:00").toLocaleDateString()}</p>
                     <div class="card-tags">
                         ${tags.map(tag => `
-                            <p class="tag ${icons[tag] ? icons[tag][1] : "blue"}">
+                            <p class="tag ${icons[tag] ? icons[tag][1] : icons[""][1]}">
                                 <span class="icon--nf">
-                                    ${icons[tag] ? icons[tag][0] : ""}
+                                    ${icons[tag] ? icons[tag][0] : icons[""][0]}
                                 </span>
                                 ${tag}
                             </p>

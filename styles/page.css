@@ -248,16 +248,16 @@ main #page-references ol li::before {
 main .code-block {
   background-color: #444447;
   border-radius: 8px;
+  margin-block: 18px;
   overflow: hidden;
-  margin-block: 28px;
 }
 main .code-block pre {
   display: grid;
   overflow-x: auto;
 }
-main .code-block pre .hljs {
-  font-size: 2rem;
-  padding: 16px 18px;
+main .code-block pre code {
+  font-size: 1.8rem;
+  padding-bottom: 50px;
 }
 main .code-block .code-header {
   display: flex;
@@ -267,13 +267,14 @@ main .code-block .code-header {
 }
 main .code-block .code-header .language-label {
   font-weight: bold;
+  font-size: 1.2rem;
 }
 main .code-block .code-header .copy-button {
   background: none;
   border: none;
   color: #F0FFFF;
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   padding: 4px 8px;
   transition: transform 0.3s;
 }

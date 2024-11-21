@@ -7,6 +7,7 @@ const language = getLanguage();
 async function loadSingleItemById() {
     const activePage = window.location.pathname;
     const itemId = activePage.split('/')[2];
+    console.log({"language":language,"item":itemId})
     try {
         const response = await fetch(jsonFile);
         if (!response.ok) {

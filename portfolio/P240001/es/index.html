@@ -57,16 +57,39 @@
                     <li>Google Colab</li>
                 </ul>
             </div>
-            <div class="code-block">
-                <div class="code-header">
-                    <span class="language-label">Python</span>
-                    <button class="copy-button icon--nf"> Copy</button>
-                </div>
-                <pre>                 
-                    <code id="code" class="language-python">
-                    </code>
-                </pre>
-            </div>
+<div class="code-block">
+    <div class="code-header">
+        <span class="language-label">Python</span>
+        <button class="copy-button icon--nf"> Copy</button>
+    </div>
+<pre><code class="language-python">
+def hello():
+    '''
+    Code From HTML
+    '''
+    print("Hello World")
+    
+if __name__ == "__main__":
+    hello()
+</code></pre>
+</div>
+<div class="code-block">
+    <div class="code-header">
+        <span class="language-label">Python</span>
+        <button class="copy-button icon--nf"> Copy</button>
+    </div>
+<pre><code class="language-python">
+def TobyTo():
+    '''
+    Voy a Copiar y Pegar esto en el html 
+    No se como va a funcionar
+    '''
+    print("Hello World")
+    
+
+if __name__ == "__main__":
+    TobyTo()</code></pre>
+</div>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex numquam asperiores explicabo velit? Ex, consectetur ipsum quo nesciunt doloremque animi, quia eligendi nemo hic quibusdam labore, mollitia asperiores pariatur esse?
                 Id odit tempore veniam voluptatem at sed tempora porro ullam labore harum, laudantium assumenda velit exercitationem in fuga. Facilis dolorem expedita possimus iusto voluptate eius in aperiam nulla reiciendis ipsa.
@@ -89,17 +112,15 @@
 </div>
 </body>
 <script type="module" src="/scripts/loadBasics.js"></script>
-<script type="module" src="/scripts/setPageInfo.js" defer></script>
-<script src="/scripts/loadCode.js"></script>
+<script type="module" src="/scripts/setPageInfo.js"></script>
+<script src="/scripts/highlight/highlight.min.js" defer></script>
 <script>
-    document.addEventListener('DOMContentLoaded', 
-    ( () => {
-        loadCode('/portfolio/P240001/main.py', 'code');
-        } )()
-    );
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+        });
+        });
 </script>
-<script src="/scripts/highlight/highlight.min.js"></script>
-<script >hljs.highlightAll();</script>
 <script defer>
     document.querySelectorAll('.copy-button').forEach(button => {
         button.addEventListener('click', () => {

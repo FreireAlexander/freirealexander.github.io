@@ -246,14 +246,14 @@ main{
     .code-block {
         background-color: $gray;
         border-radius: 8px;
+        margin-block: 18px;
         overflow: hidden;
-        margin-block: 28px;
         pre {
             display: grid;
             overflow-x: auto;
-            .hljs{
-                font-size: 2rem;
-                padding: 16px 18px;
+            code{
+                font-size: 1.8rem;
+                padding-bottom: 50px;
             }
         }
         .code-header {
@@ -263,13 +263,14 @@ main{
             padding: 8px 12px;
             .language-label {
                 font-weight: bold;
+                font-size: 1.2rem;
             }
             .copy-button {
                 background: none;
                 border: none;
                 color: $white_azure;
                 cursor: pointer;
-                font-size: 0.875rem;
+                font-size: 1.2rem;
                 padding: 4px 8px;
                 transition: transform 0.3s;
                 &:hover{
