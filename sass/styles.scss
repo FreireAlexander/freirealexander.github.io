@@ -136,6 +136,11 @@ section.section{
     height: fit-content;
     padding: 12px 16px;
     contain: layout;
+    @media (width>$mobileLarge){
+        place-self: center;
+        display: grid;
+        width: 90%;
+    }
     @media (width>$tablet){
         display: grid;
         place-self: center;

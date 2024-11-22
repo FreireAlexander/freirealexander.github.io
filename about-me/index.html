@@ -34,12 +34,75 @@
                 }
             }
         }
+        #services{
+            display: grid;
+            place-items: center;
+            row-gap: 16px;
+            .card{
+                display: grid;
+                grid-template-rows: 1fr 1fr auto;
+                gap: 4px;
+                width: 80%;
+                min-width: 280px;
+                max-width: 450px;
+                padding: 4px 8px;
+                background-color: var(--white);
+                box-shadow: 0 0 6px 4px #000080;
+                border: 2px solid #000080;
+                border-radius: 8px;
+                div{
+                    align-self: stretch;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    padding: 12px 0 8px 0;
+                    .icon--nf{
+                        height: calc(2rem + 18px);
+                        width: calc(2rem + 18px);
+                        font-size: 2rem;
+                        margin-right: 8px;
+                        padding: 4px;
+                        border-width: 3px;
+                        border-style: solid;
+                        border-color: #B58A00;
+                        border-radius: 8px;
+                        background-color: #000080;
+                        color: #B58A00;
+                    }
+                    h3{
+                        padding: 0;
+                    }
+                }
+                h3, p{
+                    margin: 0;
+                    color: var(--black);
+                }
+                div:last-child{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 8px;
+                    margin: 12px 0;
+                    text-align: right;
+                    img{
+                        width: 32px;
+                        height: 32px;
+                        object-fit: contain;
+                    }
+                }
+            }
+            @media (width>=650px){
+                grid-template-columns: repeat(2, 1fr);
+                align-items: stretch;
+            }
+        }
         #skills{
             display: grid;
             place-items: center;
             row-gap: 8px;
             .card{
                 display: grid;
+                grid-template-rows: auto 1fr;
                 place-items: center;
                 max-width: 280px;
                 padding: 12px 8px;
@@ -65,7 +128,11 @@
                     height: 150px;
                 }
                 p{  
+                    justify-self: stretch;
+                    display: grid;
+                    place-items: center;
                     width: 100%;
+                    height: 100%;
                     font-weight: 700;
                     text-align: center;
                     padding: 8px 36px;
@@ -84,80 +151,6 @@
             @media (width>=650px){
                 grid-template-columns: repeat(2, 1fr);
                 align-items: stretch;
-                article.card:last-child:nth-child(odd){
-                    grid-column: 1/-1;
-                }
-            }
-            @media (width>=1440px){
-                grid-template-columns: repeat(3, 1fr);
-                align-items: stretch;
-                article.card:last-child:nth-child(odd){
-                    grid-column: auto;
-                }
-            }
-        }
-        #services{
-            display: grid;
-            place-items: center;
-            row-gap: 16px;
-            .card{
-                display: grid;
-                gap: 4px;
-                width: 80%;
-                min-width: 280px;
-                max-width: 450px;
-                padding: 4px 8px;
-                background-color: var(--white);
-                box-shadow: 0 0 6px 4px #000080;
-                border: 2px solid #000080;
-                border-radius: 8px;
-                div{
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    .icon--nf{
-                        font-size: 2rem;
-                        margin-right: 8px;
-                        padding: 4px;
-                        border-width: 3px;
-                        border-style: solid;
-                        border-color: #B58A00;
-                        border-radius: 8px;
-                        background-color: #000080;
-                        color: #B58A00;
-                    }
-                }
-                h3, p{
-                    margin: 0;
-                    color: var(--black);
-                }
-                div:last-child{
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                    gap: 8px;
-                    margin: 12px 0;
-                    text-align: right;
-                    img{
-                        width: 32px;
-                        height: 32px;
-                        object-fit: contain;
-                    }
-                }
-            }
-            @media (width>=650px){
-                grid-template-columns: repeat(2, 1fr);
-                align-items: stretch;
-                article.card:last-child:nth-child(odd){
-                    grid-column: 1/-1;
-                }
-            }
-            @media (width>=1440px){
-                grid-template-columns: repeat(3, 1fr);
-                align-items: stretch;
-                article.card:last-child:nth-child(odd){
-                    grid-column: 1/-1;
-                }
             }
         }
         #certifications{
@@ -249,61 +242,65 @@
             <section id="section-1" class="section">
                 <h1 class="personal-introduction">
                     <span>
-                        Hola <br> Soy Freire Palomino <br>
+                        Hi <br> I am Freire Palomino <br>
                         <span class="animated-text"></span>
                     </span>
                 </h1>
                 <div class="flex">
                     <a href="#contact" class="button-primary">
-                        Contáctame
+                        Text me
                     </a>
                     <a href="/media/docs/Freire_Palomino_ENG.pdf" class="button-secondary">
-                        <span class="icon--nf">&#xf409;</span> Descargar CV 
+                        <span class="icon--nf">&#xf409;</span> Download CV 
                     </a>
                 </div>
                 <h2>
-                    Soluciones Excepcionales, Siempre Superando Expectativas
+                    Exceptional Solutions, Always Exceeding Expectations
                 </h2>
                 <p>
-                    Soy un profesional con una sólida formación en ingeniería civil 
-                    y programación, capaz de ofrecer soluciones innovadoras y creativas 
-                    en una amplia variedad de proyectos. Mi versatilidad me permite adaptarme 
-                    rápidamente a nuevas herramientas y tecnologías, asegurando que cada proyecto 
-                    esté alineado con las necesidades de los clientes.
+                    I am a professional with a solid background in 
+                    civil engineering and programming, capable of 
+                    delivering innovative and creative solutions across 
+                    a wide variety of projects. My versatility allows me 
+                    to quickly adapt to new tools and technologies, 
+                    ensuring each project aligns with the clients' needs
                 </p>
-                <p>
-                    A lo largo de mi carrera he tenido la oportunidad de trabajar en mercados 
-                    internacionales como Estados Unidos y Europa, lo que me ha permitido adaptarme 
-                    a diferentes normativas y contextos. Además, hablo español, inglés e italiano, 
-                    lo que me facilita colaborar con equipos diversos y clientes de distintas culturas.           
-                </p>
-                <p>
-                    Me distingo por mi enfoque creativo y curioso, siempre 
-                    buscando soluciones más allá de lo esperado. La ingeniería 
-                    y la programación se combinan perfectamente en mi trabajo, 
-                    donde utilizo mis habilidades en ambas áreas para generar 
-                    resultados eficientes y de alta calidad.
+                <p> 
+                    Throughout my career, I have had the opportunity to 
+                    work in international markets such as the United States 
+                    and Europe, which has allowed me to adapt to diverse regulations 
+                    and contexts. Additionally, I speak Spanish, English, 
+                    and Italian, which enables me to collaborate with diverse 
+                    teams and clients from different cultures
+                </p> 
+                <p> 
+                    I stand out for my creative and curious approach, 
+                    always seeking solutions that go beyond expectations. 
+                    Engineering and programming blend seamlessly in my work, 
+                    where I use my skills in both fields to deliver efficient 
+                    and high-quality results
                 </p>
             </section>
             <section class="section">
-                <h2>Más que un ingeniero civil, un creador de soluciones</h2>
-                <p>
-                    Mi enfoque en la ingeniería va más allá del diseño; 
-                    también me involucro en el cálculo de cantidades, presupuestos 
-                    y en la gestión eficiente de cada fase del proyecto. Además, mis 
-                    conocimientos en programación me permiten optimizar procesos y 
-                    crear soluciones tecnológicas que complementan mis proyectos de ingeniería.
-                </p>
-                <h3>Soluciones</h3>
+                <h2>More Than a Civil Engineer, a Solution Creator</h2> 
+                <p> 
+                    My approach to engineering goes beyond design; 
+                    I am also involved in quantity estimation, budgeting, 
+                    and the efficient management of every phase of the project. 
+                    Additionally, my programming expertise enables me to optimize 
+                    processes and create technological solutions that 
+                    enhance my engineering projects. 
+                </p> 
+                <h3>Solutions</h3>
                 <div id="services">
                     <article class="card">
                         <div>
                             <span class="icon--nf">&#xf1ad;</span>
-                            <h3>Proyectos de Ingeniería Civil</h3>
+                            <h3>Civil Engineering Projects</h3>
                         </div>
                         <p>
-                            Diseñar y analizar infrastructura vial 
-                            que cumpla con tus expectativas y normmativas 
+                            Designing and analyzing road infrastructure that 
+                            meets your expectations and standards 
                         </p>
                         <div>
                             <img src="/media/icons/engr/helmet-construction-svgrepo-com.svg" alt="">
@@ -316,11 +313,11 @@
                     <article class="card">
                         <div>
                             <span class="icon--nf">&#xF0821;</span>
-                            <h3>Dibujo y Modelado</h3>
-                        </div>
-                        <p>
-                            Crear planos detallados y fáciles de entender 
-                            utilizando AutoCAD, Civil3D entre otros
+                            <h3>Drawing and Modeling</h3>
+                         </div> 
+                         <p> 
+                            Creating detailed and easy-to-understand 
+                            plans using AutoCAD, Civil3D, and other tools. 
                         </p>
                         <div>
                             <img src="/media/icons/engr/civil3D.svg" alt="civil 3D" >
@@ -333,11 +330,11 @@
                     <article class="card">
                         <div>
                             <span class="icon--nf">&#xe795;</span>
-                            <h3>Maquetación de Sitios Web</h3>
-                        </div>
-                        <p>
-                            Hacer que tus sitios web se vean bien desde 
-                            un dispositivo móvil hasta un computador
+                            <h3>Website Layout Design</h3> 
+                        </div> 
+                        <p> 
+                            Ensuring your websites look great 
+                            on both mobile devices and computers. 
                         </p>
                         <div>
                             <img src="/media/icons/tech/html5.svg" alt="HTML" >
@@ -350,11 +347,11 @@
                     <article class="card">
                         <div>
                             <span class="icon--nf">&#xF0127;</span>
-                            <h3>Análisis e Investigación</h3>
-                        </div>
-                        <p>
-                            Analizar e investigar problemáticas para 
-                            encontrar soluciones prácticas y viables
+                            <h3>Analysis and Research</h3> 
+                        </div> 
+                        <p> 
+                            Analyzing and researching issues to 
+                            find practical and feasible solutions. 
                         </p>
                         <div>
                             <img src="/media/icons/tech/python.svg" alt="Python" >
@@ -369,15 +366,15 @@
             <section class="section">
                 <h2 style="margin: 24px 0 20px 0; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 12px;">
                     <span class="icon--nf" style="color: #FDB931;">&#xeb59;</span>
-                    <span>Experiencia y habilidades internacionales</span>
+                    <span>International Experience and Skills</span>
                     <span class="icon--nf" style="color: #FDB931;">&#xeb59;</span>
                 </h2>
                 <p>
-                    A lo largo de mi carrera he tenido la oportunidad de trabajar en 
-                    mercados internacionales como Estados Unidos y Europa, lo que me 
-                    ha permitido adaptarme a diferentes normativas y contextos. Además, 
-                    hablo español, inglés e italiano, lo que me facilita colaborar con 
-                    equipos diversos y clientes de distintas culturas.
+                    Throughout my career, I have had the opportunity to work 
+                    in international markets such as the United States and Europe, 
+                    which has allowed me to adapt to different regulations and contexts. 
+                    Additionally, I speak Spanish, English, and Italian, which makes it 
+                    easier for me to collaborate with diverse teams and clients from various cultures.
                 </p>
                 <div id="skills">
                     <article class="card">
@@ -387,7 +384,7 @@
                             <img src="/media/icons/engr/Revit.svg" alt="Revit Icon">
                         </div>
                         <p>
-                            Creación de planos y modelos
+                            Elaborate Draws and Models
                         </p>
                     </article>
                     <article class="card">
@@ -397,7 +394,7 @@
                             <img src="/media/icons/tech/javascript.svg" alt="Javascript Icon">
                         </div>
                         <p>
-                            Diseño y personalización de sitios web
+                            Web Design and Customization
                         </p>
                     </article>
                     <article class="card">
@@ -407,7 +404,7 @@
                             <img src="/media/icons/tech/matplotlib-original.svg" alt="matplotlib icon">
                         </div>
                         <p>
-                            Análisis de datos y reportes de estados
+                            Data Analysis and Reports
                         </p>
                     </article>
                     <article class="card">
@@ -417,12 +414,12 @@
                             <abbr title="C++ is a Programming language"><img src="/media/icons/tech/cplusplus.svg" alt="C++ icon"></abbr>
                         </div>
                         <p>
-                            Desarrollo de aplicaciones y servicios
+                            Application and Service Development
                         </p>
                     </article>
                 </div>
                 <h3>
-                    Certificados y habilidades
+                    Certifications and Skills
                 </h3>
                 <div id="certifications">
                     <article class="card">
@@ -480,7 +477,7 @@
                     </article>
                 </div>
                 <p>
-                    Te invito a ver mis certificados y más en LinkedIn
+                    I invite you to check out my certifications and more on LinkedIn
                 </p>
                 <div>
                     <a href="https://www.linkedin.com/in/freirealexander/" class="button-primary container--icon">
