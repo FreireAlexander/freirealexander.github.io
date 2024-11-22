@@ -1,4 +1,3 @@
-feat():
-    - Thanks and Complete Page done
-    - Start multilanguage projects P240001
+realese():
+    - Released web site template
 author: Zero
