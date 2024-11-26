@@ -1,6 +1,10 @@
 /** Screen Size **/
 /** Color Palette **/
 /** Font Family **/
+ol, ul {
+  width: 100%;
+}
+
 li {
   list-style-position: inside;
 }
@@ -157,7 +161,7 @@ main #page-data .card-tags .tag {
   gap: 4px;
   padding: 4px 8px;
   border-radius: 4px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #F0FFFF;
   background-color: #000080;
   font-size: 1.4rem;

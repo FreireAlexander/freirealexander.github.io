@@ -4,16 +4,23 @@
         "show": true,
         "top": true,
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
-        "lastUpdate": "2024-11-01", 
+        "publishDate": "2024-11-27",
+        "lastUpdate": "2024-11-27", 
         "coverPage": "/blogs/A240001/coverPage.webp",
         "href": "/blogs/A240001/",
         "type": {"":"blog"},
         "title": {
-            "":"My First Blog",
-            "es":"Mi Primer Blog"
+            "":"The Challenge of Creating My Own Website",
+            "es":"El reto de crear mi propia página web",
+            "it": "La Sfida di Creare il Mio Sito Web"
         },
-        "description": {"":""},
-        "tags": {"":["civil engineering", "coding", "learning"]}
+        "description": {
+            "": "Creating your own website is quite an experience, but I assure you, seeing your project published on the internet is a truly rewarding achievement. Earlier this year, I set myself the challenge of developing my own website. From the beginning, I established a few rules: I had to build it using only HTML, CSS, and JavaScript Vanilla. Yes, JavaScript Vanilla — because I wanted to test my web development skills.",
+            "es": "Crear tu propia página web es toda una experiencia, pero te aseguro que ver tu proyecto publicado en internet es un premio muy gratificante. A mediados de este año me propuse el desafío de desarrollar mi propia página web, y desde el principio establecí una serie de reglas: debía crearla utilizando únicamente HTML, CSS y JavaScript puro, sí, JavaScript puro, porque quería poner a prueba mi aprendizaje en desarrollo web.",
+            "it":"Creare un sito web personale è un’esperienza straordinaria, ma ti assicuro che vedere il tuo progetto pubblicato su internet è una ricompensa davvero gratificante. All’inizio di quest’anno, mi sono posto la sfida di sviluppare il mio sito web. Fin dall’inizio, ho stabilito alcune regole: dovevo costruirlo utilizzando solo HTML, CSS e JavaScript Vanilla. Sì, JavaScript Vanilla, perché volevo mettere alla prova le mie competenze nello sviluppo web."
+        },
+        "tags": {
+            "":["web design", "learning", "html", "css", "javascript"]
+        }
     }
 ]
