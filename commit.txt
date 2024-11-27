@@ -1,3 +1,3 @@
-new Blog():
-    - Blog A240001
+fixBug():
+    - page Info translation
 author: Zero

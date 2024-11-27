@@ -4,24 +4,36 @@ const translate = {
     "": {
         lastUpdate: "Last Update ",
         lastRevision: "Last Revision:", 
-        firstPublishedOn: "First published on "
+        firstPublishedOn: "First published on ",
+        blogs: "Blogs",
+        portfolio: "Portfolio",
+        home: "Home"
     },
     "es": {
         lastUpdate: "Ultima Actualización ",
         lastRevision: "Ultima Revisión:", 
-        firstPublishedOn: "Publicado por primera vez el"
+        firstPublishedOn: "Publicado por primera vez el",
+        blogs: "Blogs",
+        portfolio: "Portafolio",
+        home: "Inicio"
     },
     "it": {
         lastUpdate: "Ultima Actualizazione ",
         lastRevision: "Ultima Revisione:", 
-        firstPublishedOn: "primo rilascio il"
+        firstPublishedOn: "primo rilascio il",
+        blogs: "Blogs",
+        portfolio: "Portafoglio",
+        home: "Inizio"
     }
 }
 
 export function BlogInfo(item, language) {
     const title = item.title[language] ? item.title[language] : item.title[""];
     const status = item.type[language] ? item.type[language] : item.type[""];
-    const tags = item.tags[language] ? item.tags[language] : item.tags[""];    
+    const tags = item.tags[language] ? item.tags[language] : item.tags[""];
+    const blogsTranslate = translate[language].blogs ? translate[language].blogs : translate[""].blogs;
+    const homeTranslate = translate[language].home ? translate[language].home : translate[""].home;
+    
     const cardContentBlog = `
         <section id="page-cover">
             <img 
@@ -63,9 +75,9 @@ export function BlogInfo(item, language) {
                             `).join('')}
                     </div>
                     <div class="breadcrumb">
-                        <a href="/">Home</a>
+                        <a href="/">${homeTranslate}</a>
                         <p>  / </p>
-                        <a href="/portfolio/">Portfolio</a>
+                        <a href="/blogs/${language}">${blogsTranslate}</a>
                         <p>  / </p>
                         <p>${title}</p>
                     </div>
@@ -79,7 +91,10 @@ export function BlogInfo(item, language) {
 export function projectInfo(item, language) {
     const title = item.title[language] ? item.title[language] : item.title[""];
     const status = item.status[language] ? item.status[language] : item.status[""];
-    const tags = item.tags[language] ? item.tags[language] : item.tags[""];    
+    const tags = item.tags[language] ? item.tags[language] : item.tags[""];
+    const portfolioTranslate = translate[language].portfolio ? translate[language].portfolio : translate[""].portfolio;
+    const homeTranslate = translate[language].home ? translate[language].home : translate[""].home;
+
     const cardContentBlog = `
         <section id="page-cover">
             <img 
@@ -121,9 +136,9 @@ export function projectInfo(item, language) {
                             `).join('')}
                     </div>
                     <div class="breadcrumb">
-                        <a href="/">Home</a>
+                        <a href="/">${homeTranslate}</a>
                         <p>  / </p>
-                        <a href="/portfolio/">Portfolio</a>
+                        <a href="/portfolio/${language}">${portfolioTranslate}</a>
                         <p>  / </p>
                         <p>${title}</p>
                     </div>
