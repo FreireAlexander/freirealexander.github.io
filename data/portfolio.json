@@ -40,14 +40,20 @@
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
-        "lastUpdate": "2024-11-01",
+        "publishDate": "2024-11-27",
+        "lastUpdate": "2024-11-27",
         "href": "/portfolio/P240005/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
         "title": {"":"Cadenero"},
-        "description": {"":""},
+        "description": {
+            "":"Cadenero is designed to be the essential support for civil engineers, both in the field and in the office, offering reliable tools for design, calculations, and estimations in civil engineering projects. Its purpose is to streamline daily tasks such as topographic calculations, material quantity estimates, and budget preparation.",
+            "es": "Cadenero está diseñado para ser el apoyo esencial del ingeniero civil, tanto en el campo como en la oficina, proporcionando herramientas confiables para diseños, cálculos y estimaciones en proyectos de obras civiles. Su propósito es simplificar tareas cotidianas como cálculos topográficos, estimación de cantidades de materiales, elaboración de presupuestos, entre otras actividades clave.",
+            "it": "Cadenero è progettato per essere il supporto essenziale per gli ingegneri civili, sia sul campo che in ufficio, offrendo strumenti affidabili per progettazione, calcoli e stime nei progetti di ingegneria civile. Il suo obiettivo è semplificare le attività quotidiane come calcoli topografici, stime delle quantità di materiali e preparazione del budget."
+        },
         "tags": {
-            "":["civil engineering", "python", "software"]
+            "":["civil engineering", "python", "software"],
+            "es":["ingeniería civil", "python", "software"],
+            "it":["ingegneria civile", "python", "software"]
         }
     },
     {   

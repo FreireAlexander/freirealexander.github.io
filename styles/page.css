@@ -210,6 +210,9 @@ main #page-body {
   min-height: 500px;
   height: auto;
 }
+main #page-body p {
+  width: 100%;
+}
 main .section figure {
   display: grid;
   place-items: center;
