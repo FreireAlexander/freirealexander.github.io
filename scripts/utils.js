@@ -3,6 +3,8 @@ export const icons = {
     //Status for Projects
     "archived": ["\uf187", "gray"],
     "development": ["\ueea7", "green"],
+    "en desarrollo": ["\ueea7", "green"],
+    "produzione": ["\ueea7", "green"],
     "released": ["\uf164", "green"],
     //Types of Articles
     "news": ["\uf1ea", "yellow"],
@@ -10,8 +12,11 @@ export const icons = {
     "article": ["\uedc2", "blue"],
     //Tags for everyone
     "civil engineering": ["&#xf1ad;","red"],
+    "ingeniería civil": ["&#xf1ad;","red"],
+    "ingegneria civile": ["&#xf1ad;","red"],
     "cad": ["&#xF0821;","blue"],
     "design": ["\udb83\udf49", "yellow"],
+    "diseño": ["\udb83\udf49", "yellow"],
     "software": ["\udb82\udcb9", "green"],
     "web design": ["\uebeb","blue"],
     "coding": ["\uf121","blue"],
@@ -28,6 +33,9 @@ export const icons = {
     //CMS
     "joomla": ["\ue741", "red"],
     "wordpress": ["\uf19a", "blue"],
+    // Civil Engineering softwares
+    "civil 3d": ["\ueb2f", "blue"],
+    "autocad": ["&#xF0821;","red"],
 
 }
 

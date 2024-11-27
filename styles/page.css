@@ -1,7 +1,7 @@
 /** Screen Size **/
 /** Color Palette **/
 /** Font Family **/
-ol, ul {
+ol, ul, section {
   width: 100%;
 }
 

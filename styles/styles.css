@@ -785,6 +785,9 @@ main #contact .contact-form .button-primary {
 #footer .signature {
   grid-column: 1/3;
 }
+#footer .signature p {
+  text-align: center;
+}
 @media (width > 768px) {
   #footer {
     grid-template-columns: repeat(3, 1fr);

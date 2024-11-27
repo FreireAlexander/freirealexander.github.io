@@ -88,24 +88,30 @@
         "top": true,
         "version": "0.0.0-dev",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
-        "lastUpdate": "2024-11-01",
+        "publishDate": "2024-11-27",
+        "lastUpdate": "2024-11-27",
         "href": "/portfolio/P240002/",
         "status": {"":"development","es":"en desarrollo", "it":"produzione"},
         "title": {"":"OOCAD"},
-        "description": {"":""},
+        "description": {
+            "":"OOCAD is an innovative system that applies object-oriented programming principles and software design patterns to CAD projects. Its main goal is to enhance team productivity, streamline version control, and modularize components to avoid design repetition, making projects easier to modify and maintain.",
+            "es": "OOCAD es un sistema innovador que aplica principios de la programación orientada a objetos y conceptos de patrones de diseño de software para desarrollar proyectos CAD. Su objetivo principal es aumentar la productividad en equipos de trabajo, facilitando el control de versiones y modularizando componentes para evitar la repetición de diseños, haciendo que los proyectos sean más fáciles de modificar y mantener.",
+            "it": "OOCAD è un sistema innovativo che applica i principi della programmazione orientata agli oggetti e i concetti di design pattern del software ai progetti CAD. L'obiettivo principale è migliorare la produttività dei team, semplificando il controllo delle versioni e modularizzando i componenti per evitare la ripetizione dei design, rendendo i progetti più facili da modificare e mantenere."
+        },
         "tags": {
-            "":["cad", "design", "civil engineering"]
+            "":["civil engineering", "cad", "design", "autocad","civil 3d"],
+            "es":["ingeniería civil", "cad", "diseño", "autocad","civil 3d"],
+            "it":["ingegneria civile", "cad", "design", "autocad","civil 3d"]
         }
     },
     {   
         "id": "P240001",
         "show": true,
         "top": true,
-        "version": "0.0.0-dev",
+        "version": "0.0.0",
         "author": "Freire A. Palomino Palma",
-        "publishDate": "2024-11-01",
-        "lastUpdate": "2024-11-19",
+        "publishDate": "2024-11-27",
+        "lastUpdate": "2024-11-27",
         "href": "/portfolio/P240001/",
         "status": {
             "":"development",
@@ -118,11 +124,14 @@
             "it":"Progetti d'Ingegneria Civile"
         },
         "description": {
-            "":"",
-            "es":""
+            "":"Welcome to my Civil Engineering Projects section. Here, you'll find a selection of projects showcasing my expertise in consulting, design, and advanced software usage. You can download the technical files for each project to explore them in detail.",
+            "es":"Bienvenido a mi sección de Proyectos de Ingeniería Civil. Aquí encontrarás una selección de proyectos que reflejan mi experiencia en consultoría, diseño y uso de software avanzado. Puedes descargar los archivos técnicos de cada proyecto para explorarlos en detalle.",
+            "it": "Benvenuto nella mia sezione dedicata ai Progetti di Ingegneria Civile. Qui troverai una selezione di progetti che mostrano la mia esperienza in consulenza, progettazione e utilizzo di software avanzati. Puoi scaricare i file tecnici di ciascun progetto per esplorarli nel dettaglio."
         },
         "tags": {
-            "":["civil engineering", "cAD", "design", "php"]
+            "":["civil engineering", "cad", "design", "autocad","civil 3d"],
+            "es":["ingeniería civil", "cad", "diseño", "autocad","civil 3d"],
+            "it":["ingegneria civile", "cad", "design", "autocad","civil 3d"]
         }
     }
 ]
